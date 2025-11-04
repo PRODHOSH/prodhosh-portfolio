@@ -24,24 +24,22 @@ export default function Home() {
       id: "python-data-science",
       title: "Python for Data Science",
       issuer: "NPTEL • Sep 2025 • With Distinction",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nptel_cert-FBISKfsYmfB2IXvt5Bqsdr2XnW7MhX.png",
-      link: "https://nptel.ac.in",
+      image: "/certificates/nptel_cert.png",
+      link: "https://nptel.ac.in/noc/E_Certificate/NPTEL25CS104S433201599",
     },
     {
       id: "supervised-ml",
       title: "Supervised ML: Regression & Classification",
       issuer: "DeepLearning.AI • Sep 2025 • Top 10%",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/supervised_cert-gJ1gFAgsnRobMiOsSf34pr0lItYk1S.png",
-      link: "https://deeplearning.ai",
+      image: "/certificates/supervised_cert.png",
+      link: "https://coursera.org/verify/HLVKAONEGOFX",
     },
     {
       id: "ai-for-everyone",
       title: "AI For Everyone",
       issuer: "DeepLearning.AI • Jul 2025 • Certificate of Excellence",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ai_for_everyone_cert-FFM0YKMx6KadkY7h8JoXnNghsHQS11.png",
-      link: "https://deeplearning.ai",
+      image: "/certificates/ai_for_everyone_cert.png",
+      link: "https://coursera.org/verify/Z0TWSPS0B0S",
     },
   ]
 
@@ -188,7 +186,7 @@ export default function Home() {
                 <div className="absolute w-64 h-64 md:w-80 md:h-80 bg-primary rounded-full" />
                 <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-background/50">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DP%20Photo-T6YVAewtnsAiWWRIWxUrcly1ndSAfu.jpg"
+                    src="/images/profile-photo.jpg"
                     alt="Prodhosh V.S"
                     width={288}
                     height={288}
@@ -270,7 +268,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/imdb-sentiment-analysis-machine-learning-nlp.jpg"
+                    src="/certificates/ai_ml_output.png"
                     alt="IMDb Sentiment Analysis"
                     width={400}
                     height={192}
@@ -312,7 +310,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/cgpa-calculator-web-application-student-grades.jpg"
+                    src="/certificates/cgpa_calc.png"
                     alt="IITM CGPA Calculator"
                     width={400}
                     height={192}
@@ -356,7 +354,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/quantum-key-distribution-bb84-protocol-simulation.jpg"
+                    src="/certificates/bb84_photo.png"
                     alt="Quantum Key Distribution"
                     width={400}
                     height={192}
@@ -400,7 +398,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/terminal-command-line-portfolio-interactive-interf.jpg"
+                    src="/certificates/prodshell.png"
                     alt="ProdShell Portfolio"
                     width={400}
                     height={192}
@@ -460,7 +458,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dav-logo-don8n53ghnSpUYDa2UbHwfpddogWaa.png"
+                        src="/logos/dav-logo.png"
                         alt="DAV Group of Schools"
                         width={56}
                         height={56}
@@ -485,7 +483,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/math-club-logo-5HcbWyyiqQNKAHJxlQhQdNzaz09qZu.jpeg"
+                        src="/logos/math-club-logo.jpeg"
                         alt="Mathematics Club"
                         width={56}
                         height={56}
@@ -509,7 +507,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/microsoft-club-logo-PccNzHMVrVHV4Sis4Kwd0W0R7OTooC.jpeg"
+                        src="/logos/microsoft-club-logo.jpeg"
                         alt="Microsoft Innovations Club"
                         width={56}
                         height={56}
@@ -538,7 +536,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vit_logo-zvdG4dPr1YRgUVhYPWYxkSbuoiDCys.png"
+                        src="/logos/vit-logo.png"
                         alt="VIT Chennai"
                         width={56}
                         height={56}
@@ -563,7 +561,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/iit_madras-nh7SCZvGRLlpOfRnhJJb6v9RLtmdyt.png"
+                        src="/logos/iit-madras-logo.png"
                         alt="IIT Madras"
                         width={56}
                         height={56}
@@ -595,7 +593,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/volunteer-image-Xvuoz2HTBmiYy7mJDz1Cd876v54xUK.jpeg"
+                        src="/logos/v-volunteers-logo.jpeg"
                         alt="V The Volunteers"
                         width={56}
                         height={56}
@@ -619,7 +617,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/math-club-logo-5HcbWyyiqQNKAHJxlQhQdNzaz09qZu.jpeg"
+                        src="/logos/math-club-logo.jpeg"
                         alt="Mathematics Club"
                         width={56}
                         height={56}
