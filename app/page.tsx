@@ -154,30 +154,39 @@ export default function Home() {
           <section id="about" className="mb-32 relative">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
               {/* LEFT SIDE - TEXT BOX */}
-              <div className="space-y-6">
-                <div className="space-y-3">
-                  <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">Prodhosh</h1>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white">Igniting Innovation</h2>
+              <div className="relative">
+                <div className="space-y-6 p-8 bg-card/30 backdrop-blur-sm border border-primary/20 rounded-2xl shadow-lg shadow-primary/10">
+                  <div className="space-y-3">
+                    <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">Prodhosh</h1>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white">Igniting Innovation</h2>
+                  </div>
+
+                  <p className="text-sm text-foreground/80 leading-relaxed max-w-lg">
+                    CS Sophomore @ VIT Chennai | Data Science Student @ IIT Madras | Full-Stack Developer @ Microsoft
+                    Innovations Club | AI/ML Explorer | Design Lead @ OSPC
+                  </p>
+
+                  <p className="text-lg text-primary font-semibold">Shaping the Future of Tech</p>
+
+                  <p className="text-xs text-muted-foreground">Explore more on my LinkedIn</p>
+
+                  <div className="flex flex-wrap gap-3 pt-4">
+                    <a
+                      href="https://linkedin.com/in/prodhoshvs"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all text-sm uppercase tracking-wide"
+                    >
+                      Explore My Work
+                    </a>
+                  </div>
                 </div>
-
-                <p className="text-sm text-foreground/80 leading-relaxed max-w-lg">
-                  CS Sophomore @ VIT Chennai | Data Science Student @ IIT Madras | Full-Stack Developer @ Microsoft
-                  Innovations Club | AI/ML Explorer | Design Lead @ OSPC
-                </p>
-
-                <p className="text-lg text-primary font-semibold">Shaping the Future of Tech</p>
-
-                <p className="text-xs text-muted-foreground">Explore more on my LinkedIn</p>
-
-                <div className="flex flex-wrap gap-3 pt-4">
-                  <a
-                    href="https://linkedin.com/in/prodhoshvs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all text-sm uppercase tracking-wide"
-                  >
-                    Explore My Work
-                  </a>
+                
+                {/* Pointer/Arrow to the circle */}
+                <div className="hidden md:block absolute -right-8 top-1/2 transform -translate-y-1/2">
+                  <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 30 L45 30 M45 30 L35 20 M45 30 L35 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary animate-pulse" />
+                  </svg>
                 </div>
               </div>
 
@@ -190,7 +199,8 @@ export default function Home() {
                     alt="Prodhosh V.S"
                     width={288}
                     height={288}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
+                    style={{ objectPosition: '50% 20%' }}
                   />
                 </div>
               </div>
