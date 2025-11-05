@@ -182,20 +182,56 @@ export default function Home() {
         }}
       />
 
-      {/* Animated background elements with network pattern */}
+      {/* Animated Galaxy Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-float" />
+        {/* Deep space gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0118] via-[#0d0221] to-background" />
+        
+        {/* Animated stars layers */}
+        <div className="stars-layer-1" />
+        <div className="stars-layer-2" />
+        <div className="stars-layer-3" />
+        
+        {/* Nebula clouds */}
+        <div className="absolute top-10 right-20 w-[800px] h-[800px] bg-gradient-radial from-purple-600/20 via-blue-500/10 to-transparent rounded-full blur-3xl animate-float opacity-40" />
         <div
-          className="absolute bottom-20 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "2s" }}
+          className="absolute bottom-20 left-10 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/20 via-primary/15 to-transparent rounded-full blur-3xl animate-float opacity-50"
+          style={{ animationDelay: "3s" }}
         />
         <div
-          className="absolute top-1/2 right-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "4s" }}
+          className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-gradient-radial from-indigo-500/15 via-primary/10 to-transparent rounded-full blur-3xl animate-float opacity-30"
+          style={{ animationDelay: "5s" }}
         />
+        
+        {/* Glowing planets/orbs */}
+        <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-primary/30 rounded-full blur-2xl animate-float-slow" 
+          style={{ animationDelay: "1s" }} />
+        <div className="absolute bottom-1/3 left-1/5 w-24 h-24 bg-purple-500/25 rounded-full blur-2xl animate-float-slow" 
+          style={{ animationDelay: "4s" }} />
+        <div className="absolute top-2/3 right-1/3 w-20 h-20 bg-cyan-400/30 rounded-full blur-xl animate-float-slow" 
+          style={{ animationDelay: "2s" }} />
 
-        {/* Network pattern SVG */}
-        <svg className="absolute inset-0 w-full h-full opacity-10" preserveAspectRatio="none">
+        {/* Animated cosmic dust particles */}
+        {[...Array(30)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary/40 rounded-full animate-twinkle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${2 + Math.random() * 3}s`
+            }}
+          />
+        ))}
+
+        {/* Shooting stars */}
+        <div className="shooting-star" style={{ top: '20%', left: '10%', animationDelay: '2s' }} />
+        <div className="shooting-star" style={{ top: '50%', left: '80%', animationDelay: '5s' }} />
+        <div className="shooting-star" style={{ top: '70%', left: '30%', animationDelay: '8s' }} />
+        
+        {/* Network pattern overlay */}
+        <svg className="absolute inset-0 w-full h-full opacity-5" preserveAspectRatio="none">
           <defs>
             <pattern id="network" x="100" y="100" width="200" height="200" patternUnits="userSpaceOnUse">
               <circle cx="50" cy="50" r="1.5" fill="currentColor" className="text-primary" />

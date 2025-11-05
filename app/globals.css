@@ -124,6 +124,11 @@
   }
 }
 
+/* Utility classes */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}
+
 /* Custom Cursor Styles */
 .custom-cursor {
   position: fixed;
@@ -202,11 +207,113 @@ a, button, input, textarea, select, [role="button"] {
 @keyframes float {
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) translateX(0px);
+  }
+  33% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-30px) translateX(20px) scale(1.1);
   }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-300px) translateY(300px);
+    opacity: 0;
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(90deg, #fff, transparent);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 10px #fff,
+    0 0 20px oklch(0.7 0.25 200),
+    0 0 30px oklch(0.6 0.25 200);
+  animation: shooting-star 3s ease-out infinite;
+  opacity: 0;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, oklch(0.8 0.25 200), transparent);
+  transform: translateX(2px);
+}
+
+/* Starfield layers */
+.stars-layer-1,
+.stars-layer-2,
+.stars-layer-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 80%, white, transparent),
+    radial-gradient(1px 1px at 15% 90%, white, transparent);
+  background-size: 200% 200%;
+  opacity: 0.5;
+}
+
+.stars-layer-2 {
+  background-size: 150% 150%;
+  opacity: 0.3;
+  animation: float 20s ease-in-out infinite;
+}
+
+.stars-layer-3 {
+  background-size: 250% 250%;
+  opacity: 0.2;
+  animation: float 30s ease-in-out infinite reverse;
 }
 
 @keyframes fade-in {
