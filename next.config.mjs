@@ -2,9 +2,6 @@
 const nextConfig = {
   output: 'export',
   basePath: '/prodhosh-portfolio',
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
