@@ -127,40 +127,50 @@
 /* Custom Cursor Styles */
 .custom-cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background: oklch(0.6 0.25 200);
+  background: oklch(0.8 0.25 200);
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
-  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  transition: transform 0.1s ease-out;
   box-shadow: 
-    0 0 10px oklch(0.6 0.25 200),
-    0 0 20px oklch(0.6 0.25 200),
-    0 0 30px oklch(0.6 0.25 200 / 0.5);
+    0 0 10px oklch(0.8 0.25 200),
+    0 0 20px oklch(0.7 0.25 200),
+    0 0 40px oklch(0.6 0.25 200),
+    0 0 60px oklch(0.6 0.25 200 / 0.8),
+    0 0 80px oklch(0.6 0.25 200 / 0.6),
+    0 0 100px oklch(0.6 0.25 200 / 0.4);
+  filter: blur(0.5px);
 }
 
 .custom-cursor-follower {
   position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 2px solid oklch(0.6 0.25 200 / 0.5);
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  background: radial-gradient(circle, oklch(0.6 0.25 200 / 0.4) 0%, oklch(0.6 0.25 200 / 0.1) 40%, transparent 70%);
   pointer-events: none;
   z-index: 9998;
-  transition: transform 0.3s cubic-bezier(0.75, -0.5, 0.25, 1.5), opacity 0.3s ease;
+  transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   box-shadow: 
-    0 0 15px oklch(0.6 0.25 200 / 0.3),
-    inset 0 0 10px oklch(0.6 0.25 200 / 0.2);
+    0 0 20px oklch(0.6 0.25 200 / 0.6),
+    0 0 40px oklch(0.6 0.25 200 / 0.4),
+    0 0 60px oklch(0.6 0.25 200 / 0.3),
+    inset 0 0 20px oklch(0.6 0.25 200 / 0.3);
+  filter: blur(2px);
 }
 
 .custom-cursor.clicking {
-  transform: scale(0.8);
+  transform: scale(0.7);
 }
 
 .custom-cursor-follower.clicking {
-  transform: scale(1.3);
+  transform: scale(1.4);
+  box-shadow: 
+    0 0 30px oklch(0.6 0.25 200 / 0.8),
+    0 0 50px oklch(0.6 0.25 200 / 0.6),
+    0 0 80px oklch(0.6 0.25 200 / 0.4);
 }
 
 /* Show pointer cursor on interactive elements */
@@ -170,13 +180,23 @@ a, button, input, textarea, select, [role="button"] {
 
 /* Scale cursor on hover over interactive elements */
 .custom-cursor.hovering {
-  transform: scale(1.5);
-  background: oklch(0.7 0.25 200);
+  transform: scale(2);
+  background: oklch(0.85 0.25 200);
+  box-shadow: 
+    0 0 15px oklch(0.85 0.25 200),
+    0 0 30px oklch(0.75 0.25 200),
+    0 0 50px oklch(0.65 0.25 200),
+    0 0 80px oklch(0.6 0.25 200 / 0.8),
+    0 0 120px oklch(0.6 0.25 200 / 0.6);
 }
 
 .custom-cursor-follower.hovering {
-  transform: scale(1.5);
-  border-color: oklch(0.7 0.25 200);
+  transform: scale(1.6);
+  background: radial-gradient(circle, oklch(0.6 0.25 200 / 0.5) 0%, oklch(0.6 0.25 200 / 0.2) 40%, transparent 70%);
+  box-shadow: 
+    0 0 30px oklch(0.6 0.25 200 / 0.7),
+    0 0 60px oklch(0.6 0.25 200 / 0.5),
+    0 0 90px oklch(0.6 0.25 200 / 0.4);
 }
 
 @keyframes float {
