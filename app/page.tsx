@@ -450,7 +450,7 @@ export default function Home() {
                     width={400}
                     height={192}
                     className="object-cover w-full h-full"
-                    style={{ objectPosition: '50% 10%' }}
+                    style={{ objectPosition: '50% 3%' }}
                   />
                 </div>
                 <div className="p-6">
