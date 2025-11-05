@@ -4,6 +4,8 @@ import { useState } from "react"
 import Image from "next/image"
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Download } from "lucide-react"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 type Certificate = {
   id: string
   title: string
@@ -195,7 +197,7 @@ export default function Home() {
                 <div className="absolute w-64 h-64 md:w-80 md:h-80 bg-primary rounded-full" />
                 <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-background/50">
                   <Image
-                    src="/images/profile-photo.jpg"
+                    src={`${basePath}/images/profile-photo.jpg`}
                     alt="Prodhosh V.S"
                     width={288}
                     height={288}
@@ -278,7 +280,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/certificates/prodshell.png"
+                    src={`${basePath}/certificates/prodshell.png`}
                     alt="ProdShell Portfolio"
                     width={400}
                     height={192}
@@ -324,7 +326,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/certificates/bb84_photo.png"
+                    src={`${basePath}/certificates/bb84_photo.png`}
                     alt="Quantum Key Distribution"
                     width={400}
                     height={192}
@@ -368,7 +370,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/certificates/cgpa_calc.png"
+                    src={`${basePath}/certificates/cgpa_calc.png`}
                     alt="IITM CGPA Calculator"
                     width={400}
                     height={192}
@@ -412,7 +414,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/certificates/ai_ml_output.png"
+                    src={`${basePath}/certificates/ai_ml_output.png`}
                     alt="IMDb Sentiment Analysis"
                     width={400}
                     height={192}
@@ -468,7 +470,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="/logos/microsoft-club-logo.jpeg"
+                        src={`${basePath}/logos/microsoft-club-logo.jpeg`}
                         alt="Microsoft Innovations Club"
                         width={56}
                         height={56}
@@ -492,7 +494,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="/logos/math-club-logo.jpeg"
+                        src={`${basePath}/logos/math-club-logo.jpeg`}
                         alt="Mathematics Club"
                         width={56}
                         height={56}
@@ -516,7 +518,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="/logos/dav-logo.png"
+                        src={`${basePath}/logos/dav-logo.png`}
                         alt="DAV Group of Schools"
                         width={56}
                         height={56}
@@ -546,7 +548,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="/logos/vit-logo.png"
+                        src={`${basePath}/logos/vit-logo.png`}
                         alt="VIT Chennai"
                         width={56}
                         height={56}
@@ -571,7 +573,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="/logos/iit-madras-logo.png"
+                        src={`${basePath}/logos/iit-madras-logo.png`}
                         alt="IIT Madras"
                         width={56}
                         height={56}
@@ -603,7 +605,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="/logos/v-volunteers-logo.jpeg"
+                        src={`${basePath}/logos/v-volunteers-logo.jpeg`}
                         alt="V The Volunteers"
                         width={56}
                         height={56}
@@ -627,7 +629,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="/logos/math-club-logo.jpeg"
+                        src={`${basePath}/logos/math-club-logo.jpeg`}
                         alt="Mathematics Club"
                         width={56}
                         height={56}
@@ -753,7 +755,7 @@ export default function Home() {
                 </div>
 
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:bg-card/80">
-                  <a href="/resume.pdf" download="resume.pdf" className="flex items-center gap-3 hover:text-primary transition-colors">
+                  <a href={`${basePath}/resume.pdf`} download="Prodhosh_Resume.pdf" className="flex items-center gap-3 hover:text-primary transition-colors">
                     <Download size={20} className="text-primary flex-shrink-0" />
                     <div>
                       <p className="text-xs text-muted-foreground font-mono">RESUME</p>

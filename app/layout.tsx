@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Portfolio of Prodhosh V.S - CSE & Data Science Student",
   generator: "v0.app",
   icons: {
-    icon: '/images/favicon.png',
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/images/favicon.png`,
   },
 }
 

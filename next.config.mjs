@@ -3,6 +3,9 @@ const nextConfig = {
   output: 'export',
   basePath: '/prodhosh-portfolio',
   assetPrefix: '/prodhosh-portfolio',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: '/prodhosh-portfolio',
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
