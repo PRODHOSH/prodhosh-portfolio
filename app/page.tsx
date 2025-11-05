@@ -55,8 +55,8 @@ export default function Home() {
   // Scroll animation hook
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -67,9 +67,13 @@ export default function Home() {
       })
     }, observerOptions)
 
-    // Observe all elements with scroll-animate class
-    const elements = document.querySelectorAll('.scroll-animate')
-    elements.forEach(el => observer.observe(el))
+    // Observe all elements with scroll-animate classes
+    const animateClasses = ['.scroll-animate', '.scroll-animate-left', '.scroll-animate-right', '.scroll-animate-scale']
+    
+    animateClasses.forEach(className => {
+      const elements = document.querySelectorAll(className)
+      elements.forEach(el => observer.observe(el))
+    })
 
     return () => observer.disconnect()
   }, [])
@@ -178,7 +182,7 @@ export default function Home() {
           <section id="about" className="mb-32 relative">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
               {/* LEFT SIDE - TEXT BOX */}
-              <div className="relative scroll-animate-left">
+              <div className="relative">
                 <div className="space-y-6 p-8 bg-card/30 backdrop-blur-sm border border-primary/20 rounded-2xl shadow-lg shadow-primary/10">
                   <div className="space-y-3">
                     <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">Prodhosh</h1>
@@ -215,7 +219,7 @@ export default function Home() {
               </div>
 
               {/* RIGHT SIDE - LARGE CYAN CIRCLE WITH PROFILE PHOTO */}
-              <div className="relative flex items-center justify-center h-96 scroll-animate-right">
+              <div className="relative flex items-center justify-center h-96">
                 <div className="absolute w-64 h-64 md:w-80 md:h-80 bg-primary rounded-full" />
                 <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-background/50">
                   <Image

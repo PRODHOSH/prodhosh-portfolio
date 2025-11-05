@@ -209,8 +209,8 @@
 /* Scroll animations */
 .scroll-animate {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .scroll-animate.animate-in {
@@ -221,8 +221,8 @@
 
 .scroll-animate-left {
   opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateX(-20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .scroll-animate-left.animate-in {
@@ -232,8 +232,8 @@
 
 .scroll-animate-right {
   opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateX(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .scroll-animate-right.animate-in {
@@ -243,8 +243,8 @@
 
 .scroll-animate-scale {
   opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: scale(0.98);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .scroll-animate-scale.animate-in {
