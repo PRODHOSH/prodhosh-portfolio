@@ -18,8 +18,12 @@ export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("about")
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null)
+  const [typedText, setTypedText] = useState("")
+  const [roleIndex, setRoleIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
 
   const sections = ["about", "projects", "experience", "volunteering", "contact"]
+  const roles = ["AI/ML Explorer", "Data Scientist", "Full-Stack Developer", "Tech Innovator"]
 
   const certificates: Certificate[] = [
     {
@@ -51,6 +55,38 @@ export default function Home() {
     const element = document.getElementById(section)
     element?.scrollIntoView({ behavior: "smooth" })
   }
+
+  // Typing effect for roles
+  useEffect(() => {
+    const currentRole = roles[roleIndex]
+    const typingSpeed = isDeleting ? 50 : 100
+    const pauseTime = isDeleting ? 500 : 3000
+
+    if (!isDeleting && typedText === currentRole) {
+      // Pause before deleting
+      const timeout = setTimeout(() => setIsDeleting(true), pauseTime)
+      return () => clearTimeout(timeout)
+    }
+
+    if (isDeleting && typedText === "") {
+      // Move to next role
+      setIsDeleting(false)
+      setRoleIndex((prev) => (prev + 1) % roles.length)
+      return
+    }
+
+    const timeout = setTimeout(() => {
+      setTypedText(prev => {
+        if (isDeleting) {
+          return currentRole.substring(0, prev.length - 1)
+        } else {
+          return currentRole.substring(0, prev.length + 1)
+        }
+      })
+    }, typingSpeed)
+
+    return () => clearTimeout(timeout)
+  }, [typedText, isDeleting, roleIndex, roles])
 
   // Scroll animation hook
   useEffect(() => {
@@ -242,9 +278,8 @@ export default function Home() {
                 <span className="text-foreground font-mono">I'm a</span>
                 <div className="inline-block min-w-[200px]">
                   <span className="text-primary font-bold text-2xl font-mono">
-                    {["AI/ML Explorer", "Data Scientist", "Full-Stack Developer", "Tech Innovator"][
-                      Math.floor(Date.now() / 3000) % 4
-                    ] || "AI/ML Explorer"}
+                    {typedText}
+                    <span className="animate-pulse">|</span>
                   </span>
                 </div>
               </div>
@@ -359,6 +394,7 @@ export default function Home() {
                     width={400}
                     height={192}
                     className="object-cover w-full h-full"
+                    style={{ objectPosition: '50% 20%' }}
                   />
                 </div>
                 <div className="p-6">
@@ -405,6 +441,7 @@ export default function Home() {
                     width={400}
                     height={192}
                     className="object-cover w-full h-full"
+                    style={{ objectPosition: '50% 20%' }}
                   />
                 </div>
                 <div className="p-6">
@@ -585,12 +622,13 @@ export default function Home() {
                       <h4 className="font-bold text-base font-mono">Vellore Institute of Technology</h4>
                       <p className="text-primary text-sm font-mono">B.Tech, Computer Science & Engineering</p>
                       <p className="text-xs text-muted-foreground font-mono mt-1">
-                        Jun 2022 - Jul 2028 | Chennai, India
+                        Expected Graduation: Jul 2029 | Chennai, India
                       </p>
                     </div>
                   </div>
                   <p className="text-sm text-foreground/70 font-mono">
-                    First-year student focusing on full-stack development, AI applications, and software engineering.
+                  Currently studying Engineering Drawing, Quantum Mechanics, Python Programming, Technical English, and Multivariable Calculus & Differential Equations.
+Focused on applying computational and mathematical concepts to real-world engineering and software problems.
                   </p>
                 </div>
 
@@ -615,8 +653,7 @@ export default function Home() {
                     </div>
                   </div>
                   <p className="text-sm text-foreground/70 font-mono">
-                    Specializing in machine learning, data analysis, and statistical foundations with strong focus on
-                    real-world applications.
+                    Pursuing foundational courses in Statistics, Linear Algebra, and Python Programming with emphasis on building strong analytical and data-driven problem-solving skills.
                   </p>
                 </div>
               </div>
