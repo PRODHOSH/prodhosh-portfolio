@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import { Menu, X, Github, Linkedin, Mail, ExternalLink, Download } from "lucide-react"
 
@@ -26,21 +26,21 @@ export default function Home() {
       id: "python-data-science",
       title: "Python for Data Science",
       issuer: "NPTEL • Sep 2025 • With Distinction",
-      image: "/certificates/nptel_cert.png",
+      image: `${basePath}/certificates/nptel_cert.png`,
       link: "https://nptel.ac.in/noc/E_Certificate/NPTEL25CS104S433201599",
     },
     {
       id: "supervised-ml",
       title: "Supervised ML: Regression & Classification",
       issuer: "DeepLearning.AI • Sep 2025 • Top 10%",
-      image: "/certificates/supervised_cert.png",
+      image: `${basePath}/certificates/supervised_cert.png`,
       link: "https://coursera.org/verify/HLVKAONEGOFX",
     },
     {
       id: "ai-for-everyone",
       title: "AI For Everyone",
       issuer: "DeepLearning.AI • Jul 2025 • Certificate of Excellence",
-      image: "/certificates/ai_for_everyone_cert.png",
+      image: `${basePath}/certificates/ai_for_everyone_cert.png`,
       link: "https://coursera.org/verify/Z0TWSPS0B0S",
     },
   ]
@@ -51,6 +51,28 @@ export default function Home() {
     const element = document.getElementById(section)
     element?.scrollIntoView({ behavior: "smooth" })
   }
+
+  // Scroll animation hook
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in')
+        }
+      })
+    }, observerOptions)
+
+    // Observe all elements with scroll-animate class
+    const elements = document.querySelectorAll('.scroll-animate')
+    elements.forEach(el => observer.observe(el))
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <div className="min-h-screen bg-background font-mono">
@@ -156,7 +178,7 @@ export default function Home() {
           <section id="about" className="mb-32 relative">
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
               {/* LEFT SIDE - TEXT BOX */}
-              <div className="relative">
+              <div className="relative scroll-animate-left">
                 <div className="space-y-6 p-8 bg-card/30 backdrop-blur-sm border border-primary/20 rounded-2xl shadow-lg shadow-primary/10">
                   <div className="space-y-3">
                     <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">Prodhosh</h1>
@@ -193,7 +215,7 @@ export default function Home() {
               </div>
 
               {/* RIGHT SIDE - LARGE CYAN CIRCLE WITH PROFILE PHOTO */}
-              <div className="relative flex items-center justify-center h-96">
+              <div className="relative flex items-center justify-center h-96 scroll-animate-right">
                 <div className="absolute w-64 h-64 md:w-80 md:h-80 bg-primary rounded-full" />
                 <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-background/50">
                   <Image
@@ -208,7 +230,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="mb-16 mt-12">
+            <div className="mb-16 mt-12 scroll-animate">
               <h3 className="text-4xl font-bold mb-6">
                 About <span className="text-primary">Me</span>
               </h3>
@@ -231,7 +253,7 @@ export default function Home() {
 
             {/* SKILLS SECTION */}
             <div className="grid md:grid-cols-3 gap-6 mt-20">
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors scroll-animate">
                 <h3 className="text-primary font-mono font-semibold mb-4 text-xs tracking-widest">LANGUAGES</h3>
                 <ul className="space-y-2 text-xs text-muted-foreground font-mono">
                   {["Python", "C++", "JavaScript", "TypeScript", "HTML5 & CSS3", "SQL"].map((lang) => (
@@ -243,7 +265,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors scroll-animate">
                 <h3 className="text-primary font-mono font-semibold mb-4 text-xs tracking-widest">FRAMEWORKS</h3>
                 <ul className="space-y-2 text-xs text-muted-foreground font-mono">
                   {["React", "Next.js", "FastAPI", "TailwindCSS", "NumPy & Pandas", "Scikit-learn"].map((fw) => (
@@ -255,7 +277,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors">
+              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors scroll-animate">
                 <h3 className="text-primary font-mono font-semibold mb-4 text-xs tracking-widest">TOOLS</h3>
                 <ul className="space-y-2 text-xs text-muted-foreground font-mono">
                   {["Git", "VS Code", "Jupyter", "Figma", "Docker", "Github"].map((tool) => (
@@ -271,13 +293,13 @@ export default function Home() {
 
           {/* PROJECTS SECTION */}
           <section id="projects" className="mb-32">
-            <h2 className="text-4xl font-bold mb-12">
+            <h2 className="text-4xl font-bold mb-12 scroll-animate">
               Featured <span className="text-primary">Projects</span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Project 1 - ProdShell */}
-              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
+              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all scroll-animate-scale">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
                     src={`${basePath}/certificates/prodshell.png`}
@@ -323,7 +345,7 @@ export default function Home() {
               </div>
 
               {/* Project 2 - Quantum Key Distribution */}
-              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
+              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all scroll-animate-scale">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
                     src={`${basePath}/certificates/bb84_photo.png`}
@@ -367,7 +389,7 @@ export default function Home() {
               </div>
 
               {/* Project 3 - IITM CGPA Calculator */}
-              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
+              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all scroll-animate-scale">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
                     src={`${basePath}/certificates/cgpa_calc.png`}
@@ -411,7 +433,7 @@ export default function Home() {
               </div>
 
               {/* Project 4 - IMDb Sentiment Analysis */}
-              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
+              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all scroll-animate-scale">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
                     src={`${basePath}/certificates/ai_ml_output.png`}
@@ -456,13 +478,13 @@ export default function Home() {
 
           {/* EXPERIENCE & EDUCATION SECTION */}
           <section id="experience" className="mb-32">
-            <h2 className="text-4xl font-bold mb-12">
+            <h2 className="text-4xl font-bold mb-12 scroll-animate">
               Experience & <span className="text-primary">Education</span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* EXPERIENCE */}
-              <div className="space-y-6">
+              <div className="space-y-6 scroll-animate-left">
                 <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// EXPERIENCE</h3>
 
                 {/* AI/ML Member - Microsoft Club */}
@@ -540,7 +562,7 @@ export default function Home() {
               </div>
 
               {/* EDUCATION */}
-              <div className="space-y-6">
+              <div className="space-y-6 scroll-animate-right">
                 <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// EDUCATION</h3>
 
                 {/* VIT Chennai */}
@@ -597,7 +619,7 @@ export default function Home() {
             </div>
 
             {/* VOLUNTEERING SECTION */}
-            <div className="mt-16">
+            <div className="mt-16 scroll-animate">
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// VOLUNTEERING</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Student Volunteer */}
@@ -651,7 +673,7 @@ export default function Home() {
             </div>
 
             {/* CERTIFICATIONS WITH MODAL */}
-            <div className="mt-16">
+            <div className="mt-16 scroll-animate">
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// ACHIEVEMENTS & CERTIFICATIONS</h3>
               <div className="grid md:grid-cols-3 gap-4">
                 {certificates.map((cert) => (
@@ -675,7 +697,7 @@ export default function Home() {
 
           {/* CONTACT SECTION */}
           <section id="contact" className="mb-32">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="text-4xl font-bold mb-4 scroll-animate">
               Let's <span className="text-primary">Connect</span>
             </h2>
             <p className="text-muted-foreground mb-12 max-w-2xl font-mono text-sm">
@@ -685,7 +707,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Contact Form */}
-              <div className="space-y-6">
+              <div className="space-y-6 scroll-animate-left">
                 <div>
                   <p className="text-xs text-primary font-semibold tracking-widest mb-3 font-mono">EMAIL</p>
                   <input
@@ -708,7 +730,7 @@ export default function Home() {
               </div>
 
               {/* Quick Links */}
-              <div className="space-y-4">
+              <div className="space-y-4 scroll-animate-right">
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:bg-card/80">
                   <div className="flex items-center gap-3">
                     <Mail size={20} className="text-primary flex-shrink-0" />
