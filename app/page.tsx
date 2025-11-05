@@ -292,8 +292,8 @@ export default function Home() {
                   </div>
 
                   <p className="text-sm text-foreground/80 leading-relaxed max-w-lg">
-                    CS Sophomore @ VIT Chennai | Data Science Student @ IIT Madras | Full-Stack Developer @ Microsoft
-                    Innovations Club | AI/ML Explorer | Design Lead @ OSPC
+                    CS Freshman @ VIT Chennai | Data Science Student @ IIT Madras | AI/ML Member @ Microsoft 
+                    Innovations Club | AI/ML Explorer | Technical Member @ Math Club
                   </p>
 
                   <p className="text-lg text-primary font-semibold">Shaping the Future of Tech</p>
@@ -359,9 +359,10 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-foreground/70 mt-6 leading-relaxed max-w-3xl font-mono text-sm">
-                Passionate about building elegant solutions that combine design and functionality. Currently exploring
-                AI/ML applications while leading design initiatives at OSPC and developing at Microsoft Innovations
-                Club. Committed to open source and continuously pushing the boundaries of web development.
+                Hi, I’m Prodhosh — a first-year CSE student at VIT Chennai and a BS Data Science student at IIT Madras.
+
+I’m passionate about data science, machine learning, and AI, and I enjoy using code to solve real-world problems. My curiosity drives me to constantly explore new technologies and sharpen my problem-solving skills.
+Currently, I’m an AI/ML Member at the Microsoft Innovations Club (VITC) and a Technical Team Member at the Mathematics Club (VITC), where I collaborate with peers on projects and challenges that push me to grow as a learner and a team player.
               </p>
             </div>
 
@@ -370,7 +371,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors scroll-animate">
                 <h3 className="text-primary font-mono font-semibold mb-4 text-xs tracking-widest">LANGUAGES</h3>
                 <ul className="space-y-2 text-xs text-muted-foreground font-mono">
-                  {["Python", "C++", "JavaScript", "TypeScript", "HTML5 & CSS3", "SQL"].map((lang) => (
+                  {["Python", "C++", "JavaScript", "HTML5 & CSS3", "SQL"].map((lang) => (
                     <li key={lang} className="flex items-center gap-2">
                       <span className="w-1 h-1 bg-primary rounded-full" />
                       {lang}
@@ -382,7 +383,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors scroll-animate">
                 <h3 className="text-primary font-mono font-semibold mb-4 text-xs tracking-widest">FRAMEWORKS</h3>
                 <ul className="space-y-2 text-xs text-muted-foreground font-mono">
-                  {["React", "Next.js", "FastAPI", "TailwindCSS", "NumPy & Pandas", "Scikit-learn"].map((fw) => (
+                  {["React","NumPy & Pandas","Matplotlib","Seaborn", "Scikit-learn"].map((fw) => (
                     <li key={fw} className="flex items-center gap-2">
                       <span className="w-1 h-1 bg-primary rounded-full" />
                       {fw}
@@ -394,7 +395,7 @@ export default function Home() {
               <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors scroll-animate">
                 <h3 className="text-primary font-mono font-semibold mb-4 text-xs tracking-widest">TOOLS</h3>
                 <ul className="space-y-2 text-xs text-muted-foreground font-mono">
-                  {["Git", "VS Code", "Jupyter", "Figma", "Docker", "Github"].map((tool) => (
+                  {["Git", "VS Code", "Jupyter", "Figma", "Github"].map((tool) => (
                     <li key={tool} className="flex items-center gap-2">
                       <span className="w-1 h-1 bg-primary rounded-full" />
                       {tool}
@@ -943,7 +944,7 @@ Focused on applying computational and mathematical concepts to real-world engine
             <div>
               <h3 className="text-primary font-semibold mb-3 text-xs tracking-widest font-mono">TECH STACK</h3>
               <p className="text-muted-foreground text-sm font-mono">
-                React • Next.js • TypeScript • Python • TailwindCSS • Machine Learning • Data Science
+                React • Next.js • Python • TailwindCSS • Machine Learning • Data Science
               </p>
             </div>
           </div>
