@@ -249,7 +249,16 @@ export default function Home() {
                 {/* Pointer/Arrow to the circle */}
                 <div className="hidden md:block absolute -right-8 top-1/2 transform -translate-y-1/2">
                   <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 30 L45 30 M45 30 L35 20 M45 30 L35 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary animate-pulse" />
+                    <defs>
+                      <filter id="glow">
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                        <feMerge>
+                          <feMergeNode in="coloredBlur"/>
+                          <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                      </filter>
+                    </defs>
+                    <path d="M5 30 L45 30 M45 30 L35 20 M45 30 L35 40" stroke="oklch(0.6 0.25 200)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#glow)" className="animate-pulse" />
                   </svg>
                 </div>
               </div>
@@ -441,7 +450,7 @@ export default function Home() {
                     width={400}
                     height={192}
                     className="object-cover w-full h-full"
-                    style={{ objectPosition: '50% 20%' }}
+                    style={{ objectPosition: '50% 10%' }}
                   />
                 </div>
                 <div className="p-6">
