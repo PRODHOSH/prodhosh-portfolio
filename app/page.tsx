@@ -918,7 +918,7 @@ export default function Home() {
                 </div>
 
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:bg-card/80">
-                  <a href="/resume.pdf" download="Prodhosh_Resume.pdf" className="flex items-center gap-3 hover:text-primary transition-colors">
+                  <a href="/resume.pdf" download="resume.pdf" className="flex items-center gap-3 hover:text-primary transition-colors">
                     <Download size={20} className="text-primary flex-shrink-0" />
                     <div>
                       <p className="text-xs text-muted-foreground font-mono">RESUME</p>

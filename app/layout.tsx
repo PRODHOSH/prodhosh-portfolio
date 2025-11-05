@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Prodhosh V.S - Data Science & ML",
   description: "Portfolio of Prodhosh V.S - CSE & Data Science Student",
   generator: "v0.app",
+  icons: {
+    icon: '/images/favicon.png',
+  },
 }
 
 export default function RootLayout({
