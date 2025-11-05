@@ -200,7 +200,7 @@ export default function Home() {
                     width={288}
                     height={288}
                     className="w-full h-full object-cover object-top"
-                    style={{ objectPosition: '50% 20%' }}
+                    style={{ objectPosition: '50% 30%' }}
                   />
                 </div>
               </div>
@@ -274,7 +274,141 @@ export default function Home() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Project 1 */}
+              {/* Project 1 - ProdShell */}
+              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
+                <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/certificates/prodshell.png"
+                    alt="ProdShell Portfolio"
+                    width={400}
+                    height={192}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-mono">ProdShell - Terminal Portfolio</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Command-line style portfolio with interactive terminal interface and minimalist design
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
+                      HTML/CSS
+                    </span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
+                      JavaScript
+                    </span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
+                      Creative
+                    </span>
+                  </div>
+                  <div className="flex gap-3 flex-wrap">
+                    <a
+                      href="https://github.com/PRODHOSH"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
+                    >
+                      GitHub <ExternalLink size={12} />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
+                    >
+                      Live Demo <ExternalLink size={12} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 2 - Quantum Key Distribution */}
+              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
+                <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/certificates/bb84_photo.png"
+                    alt="Quantum Key Distribution"
+                    width={400}
+                    height={192}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-mono">Quantum Key Distribution Simulation</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Interactive BB84 QKD protocol simulation demonstrating secure quantum key exchange
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
+                      TypeScript
+                    </span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">Quantum</span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
+                      Security
+                    </span>
+                  </div>
+                  <div className="flex gap-3 flex-wrap">
+                    <a
+                      href="https://github.com/PRODHOSH"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
+                    >
+                      GitHub <ExternalLink size={12} />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
+                    >
+                      Live Demo <ExternalLink size={12} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 3 - IITM CGPA Calculator */}
+              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
+                <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src="/certificates/cgpa_calc.png"
+                    alt="IITM CGPA Calculator"
+                    width={400}
+                    height={192}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-mono">IITM CGPA Calculator</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Web-based CGPA calculator serving 200+ IITM students with real-time computation
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
+                      HTML/CSS
+                    </span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
+                      JavaScript
+                    </span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">Web</span>
+                  </div>
+                  <div className="flex gap-3 flex-wrap">
+                    <a
+                      href="https://github.com/PRODHOSH"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
+                    >
+                      GitHub <ExternalLink size={12} />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
+                    >
+                      Live Demo <ExternalLink size={12} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 4 - IMDb Sentiment Analysis */}
               <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all">
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
                   <Image
@@ -285,6 +419,37 @@ export default function Home() {
                     className="object-cover w-full h-full"
                   />
                 </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 font-mono">IMDb Sentiment Analysis Engine</h3>
+                  <p className="text-muted-foreground text-sm mb-4">
+                    Logistic regression classifier processing 50,000 IMDb reviews with 87% accuracy
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">Python</span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">ML</span>
+                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
+                      scikit-learn
+                    </span>
+                  </div>
+                  <div className="flex gap-3 flex-wrap">
+                    <a
+                      href="https://github.com/PRODHOSH"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
+                    >
+                      GitHub <ExternalLink size={12} />
+                    </a>
+                    <a
+                      href="#"
+                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
+                    >
+                      Live Demo <ExternalLink size={12} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
                 <div className="p-6">
                   <h3 className="text-lg font-bold mb-2 font-mono">IMDb Sentiment Analysis Engine</h3>
                   <p className="text-muted-foreground text-sm mb-4">
@@ -463,32 +628,31 @@ export default function Home() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// EXPERIENCE</h3>
 
-                {/* Student House Captain */}
+                {/* AI/ML Member - Microsoft Club */}
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="/logos/dav-logo.png"
-                        alt="DAV Group of Schools"
+                        src="/logos/microsoft-club-logo.jpeg"
+                        alt="Microsoft Innovations Club"
                         width={56}
                         height={56}
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-base font-mono">Student House Captain</h4>
-                      <p className="text-primary text-sm font-mono">DAV Group of Schools (TNAES), Chennai</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">Jun 2023 - Apr 2024 · 11 mos</p>
+                      <h4 className="font-bold text-base font-mono">AI/ML Member</h4>
+                      <p className="text-primary text-sm font-mono">Microsoft Innovations Club, VIT Chennai</p>
+                      <p className="text-xs text-muted-foreground font-mono mt-1">Oct 2025 - Present</p>
                     </div>
                   </div>
                   <p className="text-sm text-foreground/70 font-mono">
-                    Managed and coordinated House Virajanand activities with responsibility for organizing and
-                    overseeing sports events, managing team activities, and fostering collaboration among house members
-                    during intramural competitions.
+                    Contributed to AI/ML projects and workshops, collaborating with peers to explore cutting-edge
+                    technologies in artificial intelligence and machine learning.
                   </p>
                 </div>
 
-                {/* Technical Team Member */}
+                {/* Technical Team Member - Mathematics Club */}
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
@@ -512,27 +676,28 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* AI/ML Member */}
+                {/* Student House Captain */}
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src="/logos/microsoft-club-logo.jpeg"
-                        alt="Microsoft Innovations Club"
+                        src="/logos/dav-logo.png"
+                        alt="DAV Group of Schools"
                         width={56}
                         height={56}
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-base font-mono">AI/ML Member</h4>
-                      <p className="text-primary text-sm font-mono">Microsoft Innovations Club, VIT Chennai</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">Oct 2025 - Present</p>
+                      <h4 className="font-bold text-base font-mono">Student House Captain</h4>
+                      <p className="text-primary text-sm font-mono">DAV Group of Schools (TNAES), Chennai</p>
+                      <p className="text-xs text-muted-foreground font-mono mt-1">Jun 2023 - Apr 2024 · 11 mos</p>
                     </div>
                   </div>
                   <p className="text-sm text-foreground/70 font-mono">
-                    Contributed to AI/ML projects and workshops, collaborating with peers to explore cutting-edge
-                    technologies in artificial intelligence and machine learning.
+                    Managed and coordinated House Virajanand activities with responsibility for organizing and
+                    overseeing sports events, managing team activities, and fostering collaboration among house members
+                    during intramural competitions.
                   </p>
                 </div>
               </div>
@@ -753,7 +918,7 @@ export default function Home() {
                 </div>
 
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:bg-card/80">
-                  <a href="#" className="flex items-center gap-3 hover:text-primary transition-colors">
+                  <a href="/resume.pdf" download="Prodhosh_Resume.pdf" className="flex items-center gap-3 hover:text-primary transition-colors">
                     <Download size={20} className="text-primary flex-shrink-0" />
                     <div>
                       <p className="text-xs text-muted-foreground font-mono">RESUME</p>
