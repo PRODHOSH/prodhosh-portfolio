@@ -21,6 +21,10 @@ export default function Home() {
   const [typedText, setTypedText] = useState("")
   const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
+  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
+  const [followerPos, setFollowerPos] = useState({ x: 0, y: 0 })
+  const [isClicking, setIsClicking] = useState(false)
+  const [isHovering, setIsHovering] = useState(false)
 
   const sections = ["about", "projects", "experience", "volunteering", "contact"]
   const roles = ["AI/ML Explorer", "Data Scientist", "Full-Stack Developer", "Tech Innovator"]
@@ -88,6 +92,50 @@ export default function Home() {
     return () => clearTimeout(timeout)
   }, [typedText, isDeleting, roleIndex, roles])
 
+  // Custom cursor effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setCursorPos({ x: e.clientX, y: e.clientY })
+      
+      // Smooth follower with delay
+      setTimeout(() => {
+        setFollowerPos({ x: e.clientX, y: e.clientY })
+      }, 100)
+    }
+
+    const handleMouseDown = () => setIsClicking(true)
+    const handleMouseUp = () => setIsClicking(false)
+
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (
+        target.tagName === 'A' ||
+        target.tagName === 'BUTTON' ||
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.tagName === 'SELECT' ||
+        target.getAttribute('role') === 'button' ||
+        target.closest('a, button')
+      ) {
+        setIsHovering(true)
+      } else {
+        setIsHovering(false)
+      }
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    window.addEventListener('mousedown', handleMouseDown)
+    window.addEventListener('mouseup', handleMouseUp)
+    window.addEventListener('mouseover', handleMouseOver)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('mousedown', handleMouseDown)
+      window.removeEventListener('mouseup', handleMouseUp)
+      window.removeEventListener('mouseover', handleMouseOver)
+    }
+  }, [])
+
   // Scroll animation hook
   useEffect(() => {
     const observerOptions = {
@@ -116,6 +164,24 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background font-mono">
+      {/* Custom Cursor */}
+      <div
+        className={`custom-cursor ${isClicking ? 'clicking' : ''} ${isHovering ? 'hovering' : ''}`}
+        style={{
+          left: `${cursorPos.x}px`,
+          top: `${cursorPos.y}px`,
+          transform: 'translate(-50%, -50%)'
+        }}
+      />
+      <div
+        className={`custom-cursor-follower ${isClicking ? 'clicking' : ''} ${isHovering ? 'hovering' : ''}`}
+        style={{
+          left: `${followerPos.x}px`,
+          top: `${followerPos.y}px`,
+          transform: 'translate(-50%, -50%)'
+        }}
+      />
+
       {/* Animated background elements with network pattern */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-10 w-96 h-96 bg-primary/8 rounded-full blur-3xl animate-float" />
