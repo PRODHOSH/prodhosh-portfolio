@@ -457,37 +457,37 @@ Currently, I’m an AI/ML Member at the Microsoft Innovations Club (VITC) and a 
             </div>
 
             {/* SKILLS SECTION */}
-            <div className="grid md:grid-cols-3 gap-6 mt-20">
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors scroll-animate">
-                <h3 className="text-primary font-mono font-semibold mb-4 text-xs tracking-widest">LANGUAGES</h3>
-                <ul className="space-y-2 text-xs text-muted-foreground font-mono">
+            <div className="grid md:grid-cols-3 gap-8 mt-20">
+              <div className="bg-card border border-border rounded-xl p-8 hover:border-primary/50 transition-colors scroll-animate">
+                <h3 className="text-primary font-mono font-semibold mb-5 text-sm tracking-widest">LANGUAGES</h3>
+                <ul className="space-y-3 text-base text-muted-foreground font-mono">
                   {["Python", "C++", "JavaScript", "HTML5 & CSS3", "SQL"].map((lang) => (
-                    <li key={lang} className="flex items-center gap-2">
-                      <span className="w-1 h-1 bg-primary rounded-full" />
+                    <li key={lang} className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full" />
                       {lang}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors scroll-animate">
-                <h3 className="text-primary font-mono font-semibold mb-4 text-xs tracking-widest">FRAMEWORKS</h3>
-                <ul className="space-y-2 text-xs text-muted-foreground font-mono">
+              <div className="bg-card border border-border rounded-xl p-8 hover:border-primary/50 transition-colors scroll-animate">
+                <h3 className="text-primary font-mono font-semibold mb-5 text-sm tracking-widest">FRAMEWORKS</h3>
+                <ul className="space-y-3 text-base text-muted-foreground font-mono">
                   {["React","NumPy & Pandas","Matplotlib","Seaborn", "Scikit-learn"].map((fw) => (
-                    <li key={fw} className="flex items-center gap-2">
-                      <span className="w-1 h-1 bg-primary rounded-full" />
+                    <li key={fw} className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full" />
                       {fw}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-colors scroll-animate">
-                <h3 className="text-primary font-mono font-semibold mb-4 text-xs tracking-widest">TOOLS</h3>
-                <ul className="space-y-2 text-xs text-muted-foreground font-mono">
+              <div className="bg-card border border-border rounded-xl p-8 hover:border-primary/50 transition-colors scroll-animate">
+                <h3 className="text-primary font-mono font-semibold mb-5 text-sm tracking-widest">TOOLS</h3>
+                <ul className="space-y-3 text-base text-muted-foreground font-mono">
                   {["Git", "VS Code", "Jupyter", "Figma", "Github"].map((tool) => (
-                    <li key={tool} className="flex items-center gap-2">
-                      <span className="w-1 h-1 bg-primary rounded-full" />
+                    <li key={tool} className="flex items-center gap-3">
+                      <span className="w-1.5 h-1.5 bg-primary rounded-full" />
                       {tool}
                     </li>
                   ))}
