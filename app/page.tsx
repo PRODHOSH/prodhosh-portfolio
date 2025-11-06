@@ -14,10 +14,22 @@ type Certificate = {
   link: string
 }
 
+type Project = {
+  id: string
+  title: string
+  description: string
+  fullDescription: string
+  image: string
+  tags: string[]
+  githubLink: string
+  liveLink?: string
+}
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("about")
   const [selectedCert, setSelectedCert] = useState<Certificate | null>(null)
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [typedText, setTypedText] = useState("")
   const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
@@ -28,6 +40,48 @@ export default function Home() {
 
   const sections = ["about", "projects", "experience", "volunteering", "contact"]
   const roles = ["AI/ML Explorer", "Data Scientist", "Full-Stack Developer", "Tech Innovator"]
+
+  const projects: Project[] = [
+    {
+      id: "prodshell",
+      title: "ProdShell - Terminal Portfolio",
+      description: "Command-line style portfolio with interactive terminal interface and minimalist design",
+      fullDescription: "A unique command-line style portfolio website that provides an interactive terminal experience. Features custom commands, real-time responses, and a minimalist design that showcases technical skills in a creative way.",
+      image: `${basePath}/certificates/prodshell.png`,
+      tags: ["HTML/CSS", "JavaScript", "Creative"],
+      githubLink: "https://github.com/PRODHOSH/prodshell",
+      liveLink: "https://prodhosh.github.io/prodshell/"
+    },
+    {
+      id: "bb84",
+      title: "Quantum Key Distribution Simulation",
+      description: "Interactive BB84 QKD protocol simulation demonstrating secure quantum key exchange",
+      fullDescription: "Interactive BB84 QKD protocol simulation that demonstrates secure quantum key exchange. Visualizes quantum states, basis selection, and key sifting process with real-time animations and educational explanations.",
+      image: `${basePath}/certificates/bb84_photo.png`,
+      tags: ["TypeScript", "Quantum", "Security"],
+      githubLink: "https://github.com/PRODHOSH/bb84_simulation",
+      liveLink: "https://prodhosh.github.io/bb84_simulation/"
+    },
+    {
+      id: "cgpa-calc",
+      title: "IITM CGPA Calculator",
+      description: "Web-based CGPA calculator serving 200+ IITM students with real-time computation",
+      fullDescription: "A streamlined web application designed for IIT Madras students to calculate their CGPA efficiently. Features real-time computation, grade management, and serves over 200 active users with an intuitive interface.",
+      image: `${basePath}/certificates/cgpa_calc.png`,
+      tags: ["HTML/CSS", "JavaScript", "Web"],
+      githubLink: "https://github.com/PRODHOSH/iitm-cgpa-calculator",
+      liveLink: "https://prodhosh.github.io/iitm-cgpa-calculator/"
+    },
+    {
+      id: "sentiment",
+      title: "IMDb Sentiment Analysis Engine",
+      description: "Logistic regression classifier processing 50,000 IMDb reviews with 87% accuracy",
+      fullDescription: "Machine learning project that analyzes sentiment in IMDb movie reviews using logistic regression. Processes 50,000 reviews with 87% accuracy, implementing natural language processing techniques and data preprocessing pipelines.",
+      image: `${basePath}/certificates/ai_ml_output.png`,
+      tags: ["Python", "ML", "scikit-learn"],
+      githubLink: "https://github.com/PRODHOSH/mic_ai_ml"
+    }
+  ]
 
   const certificates: Certificate[] = [
     {
@@ -448,184 +502,48 @@ Currently, I’m an AI/ML Member at the Microsoft Innovations Club (VITC) and a 
               Featured <span className="text-primary">Projects</span>
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Project 1 - ProdShell */}
-              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all scroll-animate-scale">
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={`${basePath}/certificates/prodshell.png`}
-                    alt="ProdShell Portfolio"
-                    width={400}
-                    height={192}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold mb-2 font-mono">ProdShell - Terminal Portfolio</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Command-line style portfolio with interactive terminal interface and minimalist design
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
-                      HTML/CSS
-                    </span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
-                      JavaScript
-                    </span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
-                      Creative
-                    </span>
+            <div className="grid md:grid-cols-2 gap-8">
+              {projects.map((project) => (
+                <button
+                  key={project.id}
+                  onClick={() => setSelectedProject(project)}
+                  className="bg-gradient-to-br from-card/50 to-card border-2 border-primary/30 rounded-2xl overflow-hidden hover:border-primary transition-all scroll-animate-scale hover:scale-105 transform duration-300 text-left group backdrop-blur-sm"
+                >
+                  {/* Square-like image container - slightly wide */}
+                  <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center overflow-hidden relative p-6">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      width={500}
+                      height={375}
+                      className="object-contain w-full h-full group-hover:scale-110 transition-transform duration-300"
+                    />
                   </div>
-                  <div className="flex gap-3 flex-wrap">
-                    <a
-                      href="https://github.com/PRODHOSH/prodshell"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
-                    >
-                      GitHub <ExternalLink size={12} />
-                    </a>
-                    <a
-                      href="https://prodhosh.github.io/prodshell/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
-                    >
-                      Live Demo <ExternalLink size={12} />
-                    </a>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3 font-mono text-primary group-hover:text-accent transition-colors">{project.title}</h3>
+                    <p className="text-muted-foreground text-lg mb-5 leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-5">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="px-4 py-1.5 bg-primary/20 text-primary text-base rounded-full font-mono border border-primary/30">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-4 flex-wrap items-center">
+                      <span className="text-primary text-base font-semibold font-mono flex items-center gap-2">
+                        <Github size={18} /> View Code
+                      </span>
+                      {project.liveLink && (
+                        <span className="text-primary text-base font-semibold font-mono flex items-center gap-2">
+                          <ExternalLink size={18} /> Try Demo
+                        </span>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Project 2 - Quantum Key Distribution */}
-              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all scroll-animate-scale">
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={`${basePath}/certificates/bb84_photo.png`}
-                    alt="Quantum Key Distribution"
-                    width={400}
-                    height={192}
-                    className="object-cover w-full h-full"
-                    style={{ objectPosition: '50% 20%' }}
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold mb-2 font-mono">Quantum Key Distribution Simulation</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Interactive BB84 QKD protocol simulation demonstrating secure quantum key exchange
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
-                      TypeScript
-                    </span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">Quantum</span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
-                      Security
-                    </span>
-                  </div>
-                  <div className="flex gap-3 flex-wrap">
-                    <a
-                      href="https://github.com/PRODHOSH/bb84_simulation"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
-                    >
-                      GitHub <ExternalLink size={12} />
-                    </a>
-                    <a
-                      href="https://prodhosh.github.io/bb84_simulation/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
-                    >
-                      Live Demo <ExternalLink size={12} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 3 - IITM CGPA Calculator */}
-              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all scroll-animate-scale">
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={`${basePath}/certificates/cgpa_calc.png`}
-                    alt="IITM CGPA Calculator"
-                    width={400}
-                    height={192}
-                    className="object-cover w-full h-full"
-                    style={{ objectPosition: '50% 3%' }}
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold mb-2 font-mono">IITM CGPA Calculator</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Web-based CGPA calculator serving 200+ IITM students with real-time computation
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
-                      HTML/CSS
-                    </span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
-                      JavaScript
-                    </span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">Web</span>
-                  </div>
-                  <div className="flex gap-3 flex-wrap">
-                    <a
-                      href="https://github.com/PRODHOSH/iitm-cgpa-calculator"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
-                    >
-                      GitHub <ExternalLink size={12} />
-                    </a>
-                    <a
-                      href="https://prodhosh.github.io/iitm-cgpa-calculator/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
-                    >
-                      Live Demo <ExternalLink size={12} />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project 4 - IMDb Sentiment Analysis */}
-              <div className="bg-card border border-border rounded-xl overflow-hidden hover:border-primary/50 transition-all scroll-animate-scale">
-                <div className="h-48 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden">
-                  <Image
-                    src={`${basePath}/certificates/ai_ml_output.png`}
-                    alt="IMDb Sentiment Analysis"
-                    width={400}
-                    height={192}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-bold mb-2 font-mono">IMDb Sentiment Analysis Engine</h3>
-                  <p className="text-muted-foreground text-sm mb-4">
-                    Logistic regression classifier processing 50,000 IMDb reviews with 87% accuracy
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">Python</span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">ML</span>
-                    <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-mono">
-                      scikit-learn
-                    </span>
-                  </div>
-                  <div className="flex gap-3 flex-wrap">
-                    <a
-                      href="https://github.com/PRODHOSH/mic_ai_ml"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:text-accent transition-colors flex items-center gap-2 text-xs font-semibold font-mono"
-                    >
-                      GitHub <ExternalLink size={12} />
-                    </a>
-                  </div>
-                </div>
-              </div>
+                </button>
+              ))}
             </div>
           </section>
 
@@ -995,6 +913,88 @@ Focused on applying computational and mathematical concepts to real-world engine
           </div>
         </div>
       </footer>
+
+      {/* PROJECT MODAL */}
+      {selectedProject && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-background/90 backdrop-blur-md p-4"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div
+            className="bg-card border-2 border-primary/30 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto animate-in fade-in zoom-in-95 duration-200 shadow-2xl shadow-primary/20"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-6 border-b border-primary/30 flex justify-between items-center bg-gradient-to-r from-primary/10 to-accent/10">
+              <h3 className="text-2xl font-bold font-mono text-primary">{selectedProject.title}</h3>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            <div className="p-8">
+              {/* Image */}
+              <div className="relative w-full aspect-video bg-gradient-to-br from-primary/10 to-accent/10 rounded-xl overflow-hidden mb-8 p-6 flex items-center justify-center">
+                <Image
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  width={800}
+                  height={450}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+
+              {/* Full Description */}
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm text-muted-foreground font-mono mb-2 uppercase tracking-wider">About</p>
+                  <p className="text-lg text-foreground leading-relaxed">{selectedProject.fullDescription}</p>
+                </div>
+
+                {/* Tech Stack */}
+                <div>
+                  <p className="text-sm text-muted-foreground font-mono mb-3 uppercase tracking-wider">Tech Stack</p>
+                  <div className="flex flex-wrap gap-3">
+                    {selectedProject.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-4 py-2 bg-primary/20 text-primary text-base rounded-full font-mono border border-primary/30"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Links */}
+                <div className="flex gap-4 pt-4">
+                  <a
+                    href={selectedProject.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-primary/20 hover:bg-primary/30 border-2 border-primary text-primary hover:text-accent transition-all py-3 px-6 rounded-lg font-mono text-base font-semibold flex items-center justify-center gap-3"
+                  >
+                    <Github size={20} />
+                    View on GitHub
+                  </a>
+                  {selectedProject.liveLink && (
+                    <a
+                      href={selectedProject.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-accent/20 hover:bg-accent/30 border-2 border-accent text-accent hover:text-primary transition-all py-3 px-6 rounded-lg font-mono text-base font-semibold flex items-center justify-center gap-3"
+                    >
+                      <ExternalLink size={20} />
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* CERTIFICATE MODAL */}
       {selectedCert && (
