@@ -2,7 +2,7 @@
 
 # 🌌 PRODHOSH PORTFOLIO 🌌
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&random=false&width=800&height=100&lines=AI+%2F+ML+Explorer+%F0%9F%9A%80;Data+Scientist+%F0%9F%93%8A;Quantum+Computing+Enthusiast+%E2%9A%9B%EF%B8%8F;Full+Stack+Developer+%F0%9F%92%BB" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&random=false&width=800&height=100&lines=AI+%2F+ML+Explorer+%F0%9F%9A%80;Data+Scientist+%F0%9F%93%8A;Full+Stack+Developer+%F0%9F%92%BB" alt="Typing SVG" />
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
