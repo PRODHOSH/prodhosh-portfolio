@@ -449,8 +449,9 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-foreground/70 mt-6 leading-relaxed max-w-3xl font-mono text-sm">
-                Hi, I’m Prodhosh — a first-year CSE student at VIT Chennai and a BS Data Science student at IIT Madras.
-
+                Hi, I'm Prodhosh — a first-year CSE student at VIT Chennai and a BS Data Science student at IIT Madras.</p>
+                <br></br>
+<p className="text-foreground/70 mt-6 leading-relaxed max-w-3xl font-mono text-sm">
 I’m passionate about data science, machine learning, and AI, and I enjoy using code to solve real-world problems. My curiosity drives me to constantly explore new technologies and sharpen my problem-solving skills.
 Currently, I’m an AI/ML Member at the Microsoft Innovations Club (VITC) and a Technical Team Member at the Mathematics Club (VITC), where I collaborate with peers on projects and challenges that push me to grow as a learner and a team player.
               </p>
@@ -502,42 +503,42 @@ Currently, I’m an AI/ML Member at the Microsoft Innovations Club (VITC) and a 
               Featured <span className="text-primary">Projects</span>
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-6">
               {projects.map((project) => (
                 <button
                   key={project.id}
                   onClick={() => setSelectedProject(project)}
-                  className="bg-gradient-to-br from-card/50 to-card border-2 border-primary/30 rounded-2xl overflow-hidden hover:border-primary transition-all scroll-animate-scale hover:scale-105 transform duration-300 text-left group backdrop-blur-sm"
+                  className="bg-gradient-to-br from-card/50 to-card border-2 border-primary/30 rounded-xl overflow-hidden hover:border-primary transition-all scroll-animate-scale hover:scale-105 transform duration-300 text-left group backdrop-blur-sm"
                 >
-                  {/* Square-like image container - slightly wide */}
-                  <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center overflow-hidden relative p-6">
+                  {/* Image container with proper cover */}
+                  <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden relative">
                     <Image
                       src={project.image}
                       alt={project.title}
                       width={500}
-                      height={375}
-                      className="object-contain w-full h-full group-hover:scale-110 transition-transform duration-300"
+                      height={300}
+                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3 font-mono text-primary group-hover:text-accent transition-colors">{project.title}</h3>
-                    <p className="text-muted-foreground text-lg mb-5 leading-relaxed">
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold mb-2 font-mono text-primary group-hover:text-accent transition-colors">{project.title}</h3>
+                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-5">
+                    <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag) => (
-                        <span key={tag} className="px-4 py-1.5 bg-primary/20 text-primary text-base rounded-full font-mono border border-primary/30">
+                        <span key={tag} className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-mono border border-primary/30">
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <div className="flex gap-4 flex-wrap items-center">
-                      <span className="text-primary text-base font-semibold font-mono flex items-center gap-2">
-                        <Github size={18} /> View Code
+                    <div className="flex gap-3 flex-wrap items-center">
+                      <span className="text-primary text-xs font-semibold font-mono flex items-center gap-2">
+                        <Github size={16} /> View Code
                       </span>
                       {project.liveLink && (
-                        <span className="text-primary text-base font-semibold font-mono flex items-center gap-2">
-                          <ExternalLink size={18} /> Try Demo
+                        <span className="text-primary text-xs font-semibold font-mono flex items-center gap-2">
+                          <ExternalLink size={16} /> Try Demo
                         </span>
                       )}
                     </div>
