@@ -242,7 +242,7 @@ export default function Home() {
       }, 500)
       
       // Hide celebration after animation
-      setTimeout(() => setShowCelebration(false), 4000)
+      setTimeout(() => setShowCelebration(false), 5000)
       
     } catch (error) {
       // Even if fetch fails, show celebration (Google Forms was likely submitted)
@@ -254,14 +254,18 @@ export default function Home() {
         form.reset()
       }, 500)
       
-      setTimeout(() => setShowCelebration(false), 4000)
+      setTimeout(() => setShowCelebration(false), 5000)
     }
   }
 
-  // Confetti animation function
+  // Enhanced professional confetti animation
   const triggerConfetti = () => {
-    const colors = ["#ff4d6d", "#ffb86b", "#7df9ff", "#7ee787", "#c77bff", "#ffd166"]
-    const count = 80
+    const colors = [
+      '#ff4d6d', '#ffb86b', '#7df9ff', '#7ee787', '#c77bff', '#ffd166',
+      '#ff006e', '#00f5ff', '#ffbe0b', '#fb5607', '#8338ec', '#06ffa5'
+    ]
+    const shapes = ['square', 'circle', 'triangle']
+    const count = 150 // More confetti!
     const container = document.createElement('div')
     container.style.position = 'fixed'
     container.style.left = '0'
@@ -273,31 +277,88 @@ export default function Home() {
     container.style.zIndex = '9999'
     document.body.appendChild(container)
 
-    for (let i = 0; i < count; i++) {
-      const el = document.createElement('div')
-      const size = Math.floor(Math.random() * 10) + 8
-      el.style.position = 'absolute'
-      el.style.width = `${size}px`
-      el.style.height = `${Math.max(4, Math.floor(size * 0.6))}px`
-      el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
-      el.style.left = `${50 + Math.random() * 20 - 10}%`
-      el.style.top = `${30 + Math.random() * 10}%`
-      el.style.opacity = '1'
-      el.style.transform = `translateY(0) rotate(${Math.random() * 360}deg)`
-      el.style.borderRadius = '3px'
-      el.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)'
-      el.style.willChange = 'transform, opacity'
-      el.style.transition = `transform ${2 + Math.random() * 1.5}s cubic-bezier(.2,.8,.2,1), opacity 1.5s linear`
-      container.appendChild(el)
+    // Create multiple bursts from different positions
+    const burstPositions = [
+      { x: 50, y: 30 }, // Center
+      { x: 30, y: 35 }, // Left
+      { x: 70, y: 35 }, // Right
+    ]
 
-      // Animate confetti on next frame
-      requestAnimationFrame(() => {
-        const dx = (Math.random() * 1800 - 900)
-        const dy = 800 + Math.random() * 400
-        const rot = Math.random() * 1080
-        el.style.transform = `translate(${dx}px, ${dy}px) rotate(${rot}deg)`
-        el.style.opacity = '0'
-      })
+    burstPositions.forEach((burst, burstIndex) => {
+      for (let i = 0; i < count / 3; i++) {
+        setTimeout(() => {
+          const el = document.createElement('div')
+          const size = Math.floor(Math.random() * 12) + 6
+          const shape = shapes[Math.floor(Math.random() * shapes.length)]
+          
+          el.style.position = 'absolute'
+          el.style.width = `${size}px`
+          el.style.height = `${size}px`
+          el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
+          el.style.left = `${burst.x + Math.random() * 8 - 4}%`
+          el.style.top = `${burst.y + Math.random() * 5}%`
+          el.style.opacity = '1'
+          el.style.transform = `translateY(0) rotate(${Math.random() * 360}deg) scale(1)`
+          
+          // Different shapes
+          if (shape === 'circle') {
+            el.style.borderRadius = '50%'
+          } else if (shape === 'triangle') {
+            el.style.borderRadius = '20%'
+            el.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)'
+          } else {
+            el.style.borderRadius = '2px'
+          }
+          
+          el.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)'
+          el.style.willChange = 'transform, opacity'
+          
+          // Varied timing for more natural feel
+          const duration = 2.5 + Math.random() * 1.5
+          const delay = Math.random() * 0.1
+          el.style.transition = `transform ${duration}s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${delay}s, opacity ${duration * 0.8}s linear ${delay + 0.5}s`
+          
+          container.appendChild(el)
+
+          // Animate confetti with varied physics
+          requestAnimationFrame(() => {
+            const angle = Math.random() * Math.PI * 2
+            const velocity = 800 + Math.random() * 600
+            const dx = Math.cos(angle) * velocity
+            const dy = Math.sin(angle) * velocity + 500 // Gravity effect
+            const rot = 720 + Math.random() * 1080
+            const scale = 0.3 + Math.random() * 0.4
+            
+            el.style.transform = `translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(${scale})`
+            el.style.opacity = '0'
+          })
+        }, burstIndex * 50) // Stagger each burst slightly
+      }
+    })
+
+    // Add some floating particles
+    for (let i = 0; i < 30; i++) {
+      setTimeout(() => {
+        const particle = document.createElement('div')
+        const size = Math.floor(Math.random() * 6) + 3
+        particle.style.position = 'absolute'
+        particle.style.width = `${size}px`
+        particle.style.height = `${size}px`
+        particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
+        particle.style.left = `${Math.random() * 100}%`
+        particle.style.top = `${20 + Math.random() * 20}%`
+        particle.style.borderRadius = '50%'
+        particle.style.opacity = '0.8'
+        particle.style.boxShadow = `0 0 20px ${colors[Math.floor(Math.random() * colors.length)]}`
+        particle.style.filter = 'blur(1px)'
+        particle.style.transition = 'all 3s ease-out'
+        container.appendChild(particle)
+        
+        requestAnimationFrame(() => {
+          particle.style.transform = `translateY(${600 + Math.random() * 400}px)`
+          particle.style.opacity = '0'
+        })
+      }, i * 20)
     }
 
     // Cleanup after animation
@@ -307,9 +368,9 @@ export default function Home() {
           document.body.removeChild(container) 
         }
       } catch (e) {
-        console.log('Confetti cleanup already done')
+        console.log('Confetti cleanup complete')
       }
-    }, 3500)
+    }, 4500)
   }
 
   return (
@@ -1031,19 +1092,63 @@ Focused on applying computational and mathematical concepts to real-world engine
         </div>
       </footer>
 
-      {/* Celebration Overlay */}
+      {/* Enhanced Celebration Overlay */}
       {showCelebration && (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center pointer-events-none animate-in fade-in duration-300">
-          <div className="bg-card/95 backdrop-blur-md border-2 border-primary/50 shadow-2xl shadow-primary/30 p-8 rounded-2xl text-center pointer-events-auto animate-in zoom-in-95 duration-500" style={{ maxWidth: '480px' }}>
-            <div className="text-6xl mb-4 animate-bounce">🎉</div>
-            <h3 className="text-3xl font-bold text-primary mb-3 font-mono">Message Sent!</h3>
-            <p className="text-base text-muted-foreground font-mono leading-relaxed">
-              ✅ Thank you for reaching out!<br />
-              I'll get back to you as soon as possible.
-            </p>
+        <div className="fixed inset-0 z-[60] flex items-center justify-center pointer-events-none animate-in fade-in duration-500">
+          <div 
+            className="bg-gradient-to-br from-card/98 via-card/95 to-card/98 backdrop-blur-xl border-2 border-primary/60 shadow-2xl shadow-primary/40 p-10 rounded-3xl text-center pointer-events-auto animate-in zoom-in-95 duration-700" 
+            style={{ 
+              maxWidth: '520px',
+              animation: 'celebrationPulse 2s ease-in-out infinite'
+            }}
+          >
+            <div className="relative">
+              {/* Animated emoji */}
+              <div className="text-7xl mb-5 animate-bounce" style={{ animationDuration: '0.6s', animationIterationCount: '3' }}>
+                🎉
+              </div>
+              
+              {/* Success checkmark with animation */}
+              <div className="mx-auto w-20 h-20 rounded-full bg-primary/20 border-4 border-primary flex items-center justify-center mb-6 animate-in zoom-in-50 duration-500" style={{ animationDelay: '0.2s' }}>
+                <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" 
+                    style={{
+                      strokeDasharray: 20,
+                      strokeDashoffset: 20,
+                      animation: 'drawCheck 0.5s ease-out 0.3s forwards'
+                    }}
+                  />
+                </svg>
+              </div>
+
+              <h3 className="text-4xl font-bold text-primary mb-4 font-mono animate-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: '0.4s' }}>
+                Message Sent!
+              </h3>
+              <p className="text-lg text-muted-foreground font-mono leading-relaxed animate-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: '0.5s' }}>
+                ✨ Thank you for reaching out!
+              </p>
+              <p className="text-base text-muted-foreground/80 font-mono mt-2 animate-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: '0.6s' }}>
+                I'll get back to you as soon as possible.
+              </p>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary rounded-full animate-ping" style={{ animationDuration: '1.5s' }}></div>
+              <div className="absolute -bottom-2 -left-2 w-3 h-3 bg-accent rounded-full animate-ping" style={{ animationDuration: '2s', animationDelay: '0.5s' }}></div>
+            </div>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes celebrationPulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.02); }
+        }
+        
+        @keyframes drawCheck {
+          to { strokeDashoffset: 0; }
+        }
+      `}</style>
 
       {/* PROJECT MODAL */}
       {selectedProject && (
