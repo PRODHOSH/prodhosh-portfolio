@@ -1102,6 +1102,15 @@ Focused on applying computational and mathematical concepts to real-world engine
               animation: 'celebrationPulse 2s ease-in-out infinite'
             }}
           >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowCelebration(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-primary/10 rounded-full"
+              aria-label="Close"
+            >
+              <X size={24} />
+            </button>
+
             <div className="relative">
               {/* Animated emoji */}
               <div className="text-7xl mb-5 animate-bounce" style={{ animationDuration: '0.6s', animationIterationCount: '3' }}>
