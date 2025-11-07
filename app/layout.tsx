@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import Script from "next/script"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -26,6 +27,12 @@ export default function RootLayout({
       <body className={`font-sans antialiased ${_geist.className}`}>
         {children}
         <Analytics />
+        
+        {/* AI Chatbot Integration */}
+        <Script
+          src="https://www.noupe.com/embed/019a5f326bc371db8edb4182f43ee958f2ea.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )
