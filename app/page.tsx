@@ -691,7 +691,7 @@ Focused on applying computational and mathematical concepts to real-world engine
             </div>
 
             {/* VOLUNTEERING SECTION */}
-            <div className="mt-16 scroll-animate">
+            <div id="volunteering" className="mt-16 scroll-animate">
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// VOLUNTEERING</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Student Volunteer */}
