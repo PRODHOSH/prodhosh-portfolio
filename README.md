@@ -27,6 +27,7 @@
 ║   ✨ Custom Glowing Cursor     🎨 3D Animated Cards             ║
 ║   🌠 Starfield Background      ⚡ Lightning Fast Loading        ║
 ║   🎭 Interactive Modals        🔮 Smooth Animations             ║
+║   🤖 AI Chatbot Assistant      💬 Google Forms Integration      ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
@@ -59,6 +60,7 @@
 - 💫 **Custom Glowing Cursor** that follows you
 - 🎭 **Smooth Scroll Animations**
 - 🔮 **3D Hover Effects** on cards
+- 🎬 **Success Celebration** animations
 
 </td>
 <td width="50%">
@@ -69,6 +71,7 @@
 - 🎯 **TypeScript** for type safety
 - 💅 **Tailwind CSS** for styling
 - 🔥 **Static Export** for blazing speed
+- 🤖 **AI Chatbot** integration
 
 </td>
 </tr>
@@ -166,8 +169,34 @@ git subtree push --prefix out origin gh-pages
 | ⌨️ **Typing Animation** | Dynamic role text that types and deletes | ✅ Active |
 | 🎴 **Project Modals** | Interactive popups with full project details | ✅ Active |
 | 🌌 **Galaxy Background** | Animated stars and nebula clouds | ✅ Active |
+| 🤖 **AI Chatbot** | Intelligent assistant for visitor queries | ✅ Active |
+| 💬 **Contact Form** | Google Forms integration with celebration | ✅ Active |
 | 📱 **Responsive Design** | Perfect on all devices | ✅ Active |
 | ⚡ **Performance** | Lighthouse score 95+ | ✅ Optimized |
+
+</div>
+
+<br>
+
+## 🤖 AI Chatbot Feature
+
+<div align="center">
+
+### **24/7 Intelligent Assistant**
+
+The portfolio features an integrated AI chatbot that provides instant answers to visitor questions about:
+- 💼 **Work Experience** & Projects
+- 🎓 **Education** & Certifications  
+- 💻 **Technical Skills** & Expertise
+- 📧 **Contact Information** & Availability
+
+**Why it matters:**
+- ⚡ Instant responses without waiting
+- 🌐 Available 24/7 for global visitors
+- 🤝 Enhanced user engagement
+- 🚀 Shows innovation & AI integration skills
+
+<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="100">
 
 </div>
 
@@ -200,6 +229,8 @@ git subtree push --prefix out origin gh-pages
 - 🖱️ Custom cursor throughout
 - 🎨 Smooth transitions
 - 📱 Touch-friendly mobile UI
+- 🤖 AI-powered chatbot assistant
+- 💬 Real-time form submissions
 
 </td>
 <td>
@@ -209,6 +240,8 @@ git subtree push --prefix out origin gh-pages
 - 🔄 Code splitting
 - 🎯 Optimized images
 - 💾 Minimal bundle size
+- 🎬 Lazy-loaded animations
+- 📦 Efficient React hooks
 
 </td>
 </tr>
