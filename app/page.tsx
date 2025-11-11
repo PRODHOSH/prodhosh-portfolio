@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
@@ -605,12 +605,14 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <p className="text-foreground/70 mt-6 leading-relaxed max-w-3xl font-mono text-sm">
-                Hi, I'm Prodhosh — a first-year CSE student at VIT Chennai and a BS Data Science student at IIT Madras.</p>
-                <br></br>
-<p className="text-foreground/70 mt-6 leading-relaxed max-w-3xl font-mono text-sm">
-I’m passionate about data science, machine learning, and AI, and I enjoy using code to solve real-world problems. My curiosity drives me to constantly explore new technologies and sharpen my problem-solving skills.
-Currently, I’m an AI/ML Member at the Microsoft Innovations Club (VITC) and a Technical Team Member at the Mathematics Club (VITC), where I collaborate with peers on projects and challenges that push me to grow as a learner and a team player.
+              <p className="text-foreground/90 mt-6 leading-relaxed max-w-3xl font-mono text-base">
+                Hi, I'm Prodhosh — a first-year CSE student at <span className="text-primary font-semibold">VIT Chennai</span> and BS Data Science student at <span className="text-primary font-semibold">IIT Madras</span>.
+              </p>
+              <p className="text-foreground/90 mt-4 leading-relaxed max-w-3xl font-mono text-base">
+                I'm passionate about AI, ML, and data science, and love building solutions that bridge tech with real-world impact. Curiosity drives me to explore new technologies and constantly level up my problem-solving skills.
+              </p>
+              <p className="text-foreground/90 mt-4 leading-relaxed max-w-3xl font-mono text-base">
+                Currently, I'm an AI/ML Member at the <span className="text-primary font-semibold">Microsoft Innovations Club (VITC)</span> and a Technical Team Member at the <span className="text-primary font-semibold">Mathematics Club (VITC)</span>, collaborating on projects that challenge me to grow as both a learner and teammate.
               </p>
             </div>
 
