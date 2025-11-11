@@ -478,8 +478,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">PV</span>
+              <div className="w-8 h-8 rounded-lg overflow-hidden">
+                <Image
+                  src={`${basePath}/images/favicon.png`}
+                  alt="Prodhosh Logo"
+                  width={32}
+                  height={32}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="text-lg font-bold text-primary font-mono">Prodhosh</span>
             </div>
