@@ -59,9 +59,9 @@ export default function Home() {
       description: "Interactive BB84 QKD protocol simulation demonstrating secure quantum key exchange",
       fullDescription: "Interactive BB84 QKD protocol simulation that demonstrates secure quantum key exchange. Visualizes quantum states, basis selection, and key sifting process with real-time animations and educational explanations.",
       image: `${basePath}/certificates/bb84_photo.png`,
-      tags: ["TypeScript", "Quantum", "Security"],
+      tags: ["TypeScript", "Quantum", "SupaBase"],
       githubLink: "https://github.com/PRODHOSH/bb84_simulation",
-      liveLink: "https://prodhosh.github.io/bb84_simulation/"
+      liveLink: "https://bb84-simulation.vercel.app/"
     },
     {
       id: "cgpa-calc",
