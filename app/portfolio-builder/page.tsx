@@ -80,7 +80,7 @@ export default function PortfolioBuilder() {
   }
 
   return (
-    <div className="min-h-screen bg-background font-mono" style={{ cursor: 'default' }}>
+    <div className="min-h-screen bg-background font-mono">
       {/* Animated Galaxy Background - Same as main page */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0118] via-[#0d0221] to-background" />
