@@ -15,7 +15,7 @@
 "use client"
 
 import { useState } from "react"
-import { Copy, Check, ArrowLeft, Sparkles, Zap, Code, Rocket } from "lucide-react"
+import { Copy, Check, ArrowLeft, Sparkles, Zap, Code, Rocket, Github, ExternalLink } from "lucide-react"
 import Link from "next/link"
 
 // Base path for GitHub Pages deployment
@@ -312,7 +312,7 @@ export default function PortfolioBuilder() {
           {/* Recommended Tools */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">
-              Step 4: Use Your Final Prompt in These <span className="text-primary">AI Tools</span>
+              Use Your Final Prompt in These <span className="text-primary">AI Tools</span>
             </h2>
             
             <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -398,7 +398,8 @@ export default function PortfolioBuilder() {
               © 2025 Portfolio Builder by Prodhosh V.S. Made with <span className="text-red-500">❤️</span> for learning.
             </p>
             <div className="flex items-center justify-center gap-6 text-xs text-muted-foreground font-mono">
-              <Link href="/" className="hover:text-primary transition-colors">
+              <Link href="/" className="hover:text-primary transition-colors inline-flex items-center gap-1">
+                <ExternalLink size={14} />
                 Portfolio
               </Link>
               <span>•</span>
@@ -406,8 +407,9 @@ export default function PortfolioBuilder() {
                 href="https://github.com/PRODHOSH/prodhosh-portfolio" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
+                className="hover:text-primary transition-colors inline-flex items-center gap-1"
               >
+                <Github size={14} />
                 GitHub Repository
               </a>
             </div>
