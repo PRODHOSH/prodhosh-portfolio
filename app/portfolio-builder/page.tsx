@@ -436,9 +436,11 @@ export default function PortfolioBuilder() {
                   <input
                     id="portfolio-link"
                     name="entry.29359426"
-                    type="url"
+                    type="text"
                     placeholder="https://your-portfolio.com"
                     required
+                    pattern="https?://.+"
+                    title="Please enter a valid URL starting with http:// or https://"
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors font-mono text-sm"
                   />
                   <button
