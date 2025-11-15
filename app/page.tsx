@@ -911,7 +911,11 @@ Focused on applying computational and mathematical concepts to real-world engine
               </div>
             </div>
 
-            {/* PORTFOLIO BUILDER SECTION */}
+            {/* 
+              PORTFOLIO BUILDER SECTION 
+              Free tool for non-coders to create portfolios using AI
+              Links to /portfolio-builder page with detailed instructions
+            */}
             <div className="mt-16 scroll-animate">
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// FREE PORTFOLIO BUILDER</h3>
               <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">

@@ -1,11 +1,31 @@
+/**
+ * Portfolio Builder Page
+ * 
+ * A free tool that helps non-coders create professional portfolios using AI.
+ * Users copy a prompt, paste it in ChatGPT to get personalized portfolio requirements,
+ * then use that output in tools like Lovable, v0, or Bolt to generate their portfolio.
+ * 
+ * Workflow:
+ * 1. User copies the AI prompt from this page
+ * 2. Pastes it into ChatGPT and answers 14 questions
+ * 3. ChatGPT generates a comprehensive portfolio prompt
+ * 4. User pastes that final prompt into Lovable/v0/Bolt
+ */
+
 "use client"
 
 import { useState } from "react"
 import { Copy, Check, ArrowLeft, Sparkles, Zap, Code, Rocket } from "lucide-react"
 import Link from "next/link"
 
+// Base path for GitHub Pages deployment
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
+/**
+ * AI Prompt Template
+ * This prompt guides ChatGPT to act as a portfolio consultant,
+ * asking questions and generating a final portfolio creation prompt
+ */
 const AI_PROMPT = `You are an AI assistant designed to craft a polished, modern-style portfolio website prompt. 
 Start by asking the user the following questions one at a time and wait for their response before 
 moving forward:
@@ -42,8 +62,13 @@ Present the final output in this exact format:
 </portfolio_prompt>`
 
 export default function PortfolioBuilder() {
+  // State to track if the prompt has been copied to clipboard
   const [copied, setCopied] = useState(false)
 
+  /**
+   * Copy AI prompt to clipboard
+   * Shows success feedback for 2 seconds
+   */
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(AI_PROMPT)
