@@ -33,7 +33,6 @@ export default function Home() {
   const [typedText, setTypedText] = useState("")
   const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
   const [followerPos, setFollowerPos] = useState({ x: 0, y: 0 })
   const [isClicking, setIsClicking] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
@@ -147,30 +146,39 @@ export default function Home() {
     return () => clearTimeout(timeout)
   }, [typedText, isDeleting, roleIndex, roles])
 
-  // Custom cursor effect
+  // Techy cursor ring effect
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setCursorPos({ x: e.clientX, y: e.clientY })
-      
-      // Smooth follower with delay
-      setTimeout(() => {
-        setFollowerPos({ x: e.clientX, y: e.clientY })
-      }, 100)
-    }
+    let rafId: number
+    const target = { x: followerPos.x, y: followerPos.y }
 
+    const animate = () => {
+      // Linear interpolation for smooth movement
+      const dx = target.x - followerPos.x
+      const dy = target.y - followerPos.y
+      const speed = 0.2
+      if (Math.abs(dx) > 0.1 || Math.abs(dy) > 0.1) {
+        setFollowerPos(prev => ({ x: prev.x + dx * speed, y: prev.y + dy * speed }))
+      }
+      rafId = requestAnimationFrame(animate)
+    }
+    animate()
+
+    const handleMouseMove = (e: MouseEvent) => {
+      target.x = e.clientX
+      target.y = e.clientY
+    }
     const handleMouseDown = () => setIsClicking(true)
     const handleMouseUp = () => setIsClicking(false)
-
     const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
+      const el = e.target as HTMLElement
       if (
-        target.tagName === 'A' ||
-        target.tagName === 'BUTTON' ||
-        target.tagName === 'INPUT' ||
-        target.tagName === 'TEXTAREA' ||
-        target.tagName === 'SELECT' ||
-        target.getAttribute('role') === 'button' ||
-        target.closest('a, button')
+        el.tagName === 'A' ||
+        el.tagName === 'BUTTON' ||
+        el.tagName === 'INPUT' ||
+        el.tagName === 'TEXTAREA' ||
+        el.tagName === 'SELECT' ||
+        el.getAttribute('role') === 'button' ||
+        el.closest('a, button')
       ) {
         setIsHovering(true)
       } else {
@@ -184,11 +192,13 @@ export default function Home() {
     window.addEventListener('mouseover', handleMouseOver)
 
     return () => {
+      cancelAnimationFrame(rafId)
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('mousedown', handleMouseDown)
       window.removeEventListener('mouseup', handleMouseUp)
       window.removeEventListener('mouseover', handleMouseOver)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // Scroll animation hook
@@ -375,25 +385,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background font-mono">
-      {/* Custom Cursor */}
+      {/* Techy Cursor Ring */}
       <div
-        className={`custom-cursor ${isClicking ? 'clicking' : ''} ${isHovering ? 'hovering' : ''}`}
-        style={{
-          left: `${cursorPos.x}px`,
-          top: `${cursorPos.y}px`,
-          transform: 'translate(-50%, -50%)'
-        }}
-      />
-      <div
-        className={`custom-cursor-follower ${isClicking ? 'clicking' : ''} ${isHovering ? 'hovering' : ''}`}
+        className={`cursor-ring ${isClicking ? 'clicking' : ''} ${isHovering ? 'hovering' : ''}`}
         style={{
           left: `${followerPos.x}px`,
           top: `${followerPos.y}px`,
           transform: 'translate(-50%, -50%)'
         }}
-      >
-        <span className="cursor-text">Go</span>
-      </div>
+      />
 
       {/* Animated Galaxy Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
