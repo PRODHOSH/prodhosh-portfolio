@@ -664,6 +664,67 @@ export default function Home() {
             </div>
           </section>
 
+          {/* PORTFOLIO BUILDER CTA - NEW SECTION */}
+          <section className="mb-32">
+            <div className="bg-gradient-to-br from-primary/20 via-purple-600/20 to-blue-600/20 backdrop-blur-sm border-2 border-primary/30 rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-500 hover:scale-[1.02] scroll-animate">
+              <div className="p-8 md:p-12">
+                <div className="flex items-start gap-6 mb-6">
+                  <div className="text-6xl">🎁</div>
+                  <div className="flex-1">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/20 border border-primary/40 rounded-full mb-4 text-primary text-xs font-bold">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                      </span>
+                      NEW & FREE
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-3">
+                      <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+                        Free Portfolio Builder Kit
+                      </span>
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-2 font-semibold">
+                      New to coding but want a portfolio?
+                    </p>
+                    <p className="text-base text-foreground/80 leading-relaxed max-w-3xl">
+                      I've created an AI prompt that you can use with tools like{" "}
+                      <span className="text-cyan-400 font-semibold">Lovable</span>,{" "}
+                      <span className="text-purple-400 font-semibold">v0</span>, or{" "}
+                      <span className="text-blue-400 font-semibold">Bolt</span> to generate your own professional
+                      portfolio in minutes — <span className="text-primary font-semibold">no coding required!</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-4 mb-8">
+                  <div className="bg-black/30 rounded-xl p-4 border border-primary/20 text-center">
+                    <div className="text-3xl mb-2">⚡</div>
+                    <div className="text-cyan-400 font-bold text-lg">5 Minutes</div>
+                    <div className="text-muted-foreground text-sm">Total Setup Time</div>
+                  </div>
+                  <div className="bg-black/30 rounded-xl p-4 border border-purple-500/20 text-center">
+                    <div className="text-3xl mb-2">🚫</div>
+                    <div className="text-purple-400 font-bold text-lg">Zero Code</div>
+                    <div className="text-muted-foreground text-sm">No Programming Needed</div>
+                  </div>
+                  <div className="bg-black/30 rounded-xl p-4 border border-blue-500/20 text-center">
+                    <div className="text-3xl mb-2">🎨</div>
+                    <div className="text-blue-400 font-bold text-lg">100% Free</div>
+                    <div className="text-muted-foreground text-sm">No Hidden Costs</div>
+                  </div>
+                </div>
+
+                <a
+                  href="/portfolio-builder"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-600 to-blue-600 text-white font-bold rounded-xl hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/50 hover:shadow-primary/70 text-lg group"
+                >
+                  Get Your Portfolio Prompt
+                  <span className="group-hover:translate-x-1 transition-transform">🎯</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
           {/* PROJECTS SECTION */}
           <section id="projects" className="mb-32">
             <h2 className="text-4xl font-bold mb-12 scroll-animate">
