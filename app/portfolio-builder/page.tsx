@@ -323,8 +323,12 @@ export default function PortfolioBuilder() {
                 className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    <Rocket size={24} />
+                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
+                    <img 
+                      src={`${basePath}/images/tools/lovable.png`} 
+                      alt="Lovable Logo" 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <h3 className="text-xl font-bold">Lovable</h3>
                 </div>
@@ -341,8 +345,12 @@ export default function PortfolioBuilder() {
                 className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-black to-gray-800 rounded-lg flex items-center justify-center text-white font-bold">
-                    v0
+                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
+                    <img 
+                      src={`${basePath}/images/tools/v0.png`} 
+                      alt="v0 Logo" 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <h3 className="text-xl font-bold">v0 by Vercel</h3>
                 </div>
@@ -359,8 +367,12 @@ export default function PortfolioBuilder() {
                 className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-lg flex items-center justify-center">
-                    <Zap size={24} />
+                  <div className="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
+                    <img 
+                      src={`${basePath}/images/tools/bolt.png`} 
+                      alt="Bolt Logo" 
+                      className="w-full h-full object-contain"
+                    />
                   </div>
                   <h3 className="text-xl font-bold">Bolt</h3>
                 </div>
