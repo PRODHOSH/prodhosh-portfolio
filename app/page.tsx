@@ -988,20 +988,15 @@ Focused on applying computational and mathematical concepts to real-world engine
 
               {/* Quick Links */}
               <div className="space-y-4 scroll-animate-right">
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:bg-card/80">
-                  <div className="flex items-center gap-3">
-                    <Mail size={20} className="text-primary flex-shrink-0" />
-                    <div>
-                      <p className="text-xs text-muted-foreground font-mono">EMAIL</p>
-                      <a
-                        href="mailto:prodhosh3@gmail.com"
-                        className="font-semibold text-sm hover:text-primary transition-colors font-mono"
-                      >
-                        prodhosh3@gmail.com
-                      </a>
-                    </div>
+                <a href="mailto:prodhosh3@gmail.com" className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:bg-card/80 flex items-center gap-3 hover:text-primary transition-all">
+                  <Mail size={20} className="text-primary flex-shrink-0" />
+                  <div>
+                    <p className="text-xs text-muted-foreground font-mono">EMAIL</p>
+                    <p className="font-semibold text-sm font-mono">
+                      prodhosh3@gmail.com
+                    </p>
                   </div>
-                </div>
+                </a>
 
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:bg-card/80">
                   <a
