@@ -216,11 +216,11 @@ export default function PortfolioBuilder() {
 
               {/* Prompt Content - Image Display */}
               <div className="p-8">
-                <div className="bg-[#1e1e1e] rounded-xl p-6 border border-primary/20 overflow-hidden">
+                <div className="rounded-xl overflow-hidden max-w-4xl mx-auto">
                   <img 
-                    src={`${basePath}/public/images/image.png`}
+                    src={`${basePath}/images/image.png`}
                     alt="AI Prompt Instructions"
-                    className="w-full h-auto rounded-lg"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
               </div>
