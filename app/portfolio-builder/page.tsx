@@ -64,6 +64,7 @@ Present the final output in this exact format:
 export default function PortfolioBuilder() {
   // State to track if the prompt has been copied to clipboard
   const [copied, setCopied] = useState(false)
+  const [portfolioSubmitted, setPortfolioSubmitted] = useState(false)
 
   /**
    * Copy AI prompt to clipboard
@@ -77,6 +78,28 @@ export default function PortfolioBuilder() {
     } catch (err) {
       console.error('Failed to copy:', err)
     }
+  }
+
+  /**
+   * Handle portfolio submission to Google Form
+   */
+  const handlePortfolioSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const form = e.currentTarget
+    const formData = new FormData(form)
+    
+    // Submit to Google Form
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      mode: 'no-cors'
+    }).then(() => {
+      setPortfolioSubmitted(true)
+      form.reset()
+      setTimeout(() => setPortfolioSubmitted(false), 3000)
+    }).catch((err) => {
+      console.error('Form submission error:', err)
+    })
   }
 
   return (
@@ -385,6 +408,48 @@ export default function PortfolioBuilder() {
                 </p>
                 <span className="text-primary text-sm font-semibold">Try Bolt →</span>
               </a>
+            </div>
+          </section>
+
+          {/* Portfolio Review Section */}
+          <section className="mt-20 mb-16">
+            <div className="bg-card/30 backdrop-blur-sm border-2 border-primary/30 rounded-2xl p-8">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-bold mb-3 font-mono">
+                  Built Your Portfolio? <span className="text-primary">Get a Review!</span>
+                </h2>
+                <p className="text-muted-foreground text-sm font-mono max-w-xl mx-auto">
+                  Send me your portfolio link and I'll provide feedback to help you improve it.
+                </p>
+              </div>
+
+              <form
+                action="https://docs.google.com/forms/d/e/1FAIpQLSdjVPQxfAYFtEkiRKjfkYRrAOFw8FXPwPCV9QQTDGMaUZsV4A/formResponse"
+                method="POST"
+                onSubmit={handlePortfolioSubmit}
+                className="max-w-md mx-auto"
+              >
+                <div className="flex flex-col gap-3">
+                  <label htmlFor="portfolio-link" className="text-xs text-primary font-semibold tracking-widest font-mono">
+                    PORTFOLIO LINK
+                  </label>
+                  <input
+                    id="portfolio-link"
+                    name="entry.29359426"
+                    type="url"
+                    placeholder="https://your-portfolio.com"
+                    required
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors font-mono text-sm"
+                  />
+                  <button
+                    type="submit"
+                    disabled={portfolioSubmitted}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-primary to-purple-600 text-white font-bold rounded-lg hover:shadow-xl hover:shadow-primary/50 transition-all hover:scale-105 transform duration-300 disabled:opacity-50 disabled:cursor-not-allowed font-mono"
+                  >
+                    {portfolioSubmitted ? '✓ Submitted!' : 'Submit for Review'}
+                  </button>
+                </div>
+              </form>
             </div>
           </section>
         </div>
