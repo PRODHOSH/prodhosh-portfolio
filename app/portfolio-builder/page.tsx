@@ -218,7 +218,7 @@ export default function PortfolioBuilder() {
               <div className="p-8">
                 <div className="bg-[#1e1e1e] rounded-xl p-6 border border-primary/20 overflow-hidden">
                   <img 
-                    src={`${basePath}/images/image.png`}
+                    src={`${basePath}/public/images/image.png`}
                     alt="AI Prompt Instructions"
                     className="w-full h-auto rounded-lg"
                   />
