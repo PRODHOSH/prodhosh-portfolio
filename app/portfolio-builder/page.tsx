@@ -4,6 +4,8 @@ import { useState } from "react"
 import { Copy, Check, ArrowLeft, Sparkles, Zap, Code, Rocket } from "lucide-react"
 import Link from "next/link"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 const AI_PROMPT = `You are an AI assistant designed to craft a polished, modern-style portfolio website prompt. 
 Start by asking the user the following questions one at a time and wait for their response before 
 moving forward:
@@ -53,7 +55,7 @@ export default function PortfolioBuilder() {
   }
 
   return (
-    <div className="min-h-screen bg-background font-mono">
+    <div className="min-h-screen bg-background font-mono" style={{ cursor: 'default' }}>
       {/* Animated Galaxy Background - Same as main page */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0118] via-[#0d0221] to-background" />
@@ -96,7 +98,7 @@ export default function PortfolioBuilder() {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              No coding skills required. Just copy the AI prompt below, paste it into your favorite AI tool, and get a professional portfolio instantly!
+              Copy the AI prompt, paste it in <span className="text-primary font-semibold">ChatGPT</span> to get your personalized portfolio prompt, then use that in Lovable, v0, or Bolt!
             </p>
           </section>
 
@@ -134,8 +136,8 @@ export default function PortfolioBuilder() {
               <div className="bg-gradient-to-r from-primary/20 to-purple-600/20 border-b border-primary/30 p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="text-2xl font-bold text-primary mb-2">✨ Your Magic Prompt</h2>
-                    <p className="text-sm text-muted-foreground">Copy this prompt and use it in Lovable, v0, Bolt, or any AI tool</p>
+                    <h2 className="text-2xl font-bold text-primary mb-2">✨ Step 1: Copy This Prompt</h2>
+                    <p className="text-sm text-muted-foreground">Paste this into ChatGPT to get your personalized portfolio prompt</p>
                   </div>
                   <button
                     onClick={handleCopy}
@@ -160,11 +162,69 @@ export default function PortfolioBuilder() {
                 </div>
               </div>
 
-              {/* Prompt Content */}
+              {/* Prompt Content with Syntax Highlighting */}
               <div className="p-8">
-                <div className="bg-black/40 rounded-xl p-6 border border-primary/20">
-                  <pre className="text-sm text-gray-300 whitespace-pre-wrap font-mono leading-relaxed overflow-x-auto">
-                    {AI_PROMPT}
+                <div className="bg-[#1e1e1e] rounded-xl p-6 border border-primary/20 overflow-x-auto">
+                  <pre className="text-sm leading-relaxed font-mono">
+                    <code>
+                      <span className="text-[#569cd6]">You are an AI assistant</span> <span className="text-gray-400">designed to craft a polished, modern-style portfolio website prompt.</span>
+                      {'\n'}
+                      <span className="text-[#4ec9b0]">Start by asking the user</span> <span className="text-gray-400">the following questions</span> <span className="text-[#ce9178]">one at a time</span> <span className="text-gray-400">and wait for their response before</span>
+                      {'\n'}
+                      <span className="text-gray-400">moving forward:</span>
+                      {'\n\n'}
+                      <span className="text-[#d7ba7d]">1.</span> <span className="text-gray-300">What is your full name and how would you like it displayed on your website?</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">2.</span> <span className="text-gray-300">Upload or describe the profile picture you want on your homepage.</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">3.</span> <span className="text-gray-300">Write a short personal intro</span> <span className="text-[#608b4e]">(tone options: professional, friendly, casual, bold)</span><span className="text-gray-300">.</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">4.</span> <span className="text-gray-300">What's your educational background?</span> <span className="text-[#608b4e]">(Degrees, institutions, expected graduation year if studying)</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">5.</span> <span className="text-gray-300">Describe your work experience</span> <span className="text-[#608b4e]">(if any)</span><span className="text-gray-300">. Include roles, companies, project types, dates.</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">6.</span> <span className="text-gray-300">What are your core skills and tools you are confident in?</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">7.</span> <span className="text-gray-300">What services do you offer</span> <span className="text-[#608b4e]">(if any)</span><span className="text-gray-300">? Who is the target audience</span> <span className="text-[#608b4e]">(recruiters, clients, collaborators)</span><span className="text-gray-300">?</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">8.</span> <span className="text-gray-300">List your best projects: name, description, tech stack, links, and visuals if available.</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">9.</span> <span className="text-gray-300">Any notable achievements, awards, certificates, publications, or leadership roles?</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">10.</span> <span className="text-gray-300">Contact details: email, social links</span> <span className="text-[#608b4e]">(LinkedIn, GitHub, Twitter)</span><span className="text-gray-300">, resume download?</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">11.</span> <span className="text-gray-300">What aesthetic do you want?</span> <span className="text-[#608b4e]">(dark/light, minimal, futuristic, playful, etc.)</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">12.</span> <span className="text-gray-300">Preferable color palette or brand colors?</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">13.</span> <span className="text-gray-300">Any example websites you love for style inspiration?</span>
+                      {'\n'}
+                      <span className="text-[#d7ba7d]">14.</span> <span className="text-gray-300">Do you want additional sections like Testimonials, Blog, Hiring, FAQs?</span>
+                      {'\n\n'}
+                      <span className="text-[#c586c0]">After collecting all responses</span><span className="text-gray-400">, use them to generate a comprehensive prompt for designing the</span>
+                      {'\n'}
+                      <span className="text-gray-400">portfolio website. Include:</span>
+                      {'\n\n'}
+                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">A short bio summary + hero section details</span>
+                      {'\n'}
+                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Full site structure with section-by-section content</span>
+                      {'\n'}
+                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Calls-to-action tailored to user's goals</span>
+                      {'\n'}
+                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Visual and branding suggestions aligned with preferences</span>
+                      {'\n'}
+                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Profile image, project media, icons, and illustration guidance</span>
+                      {'\n'}
+                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Accessibility, performance, and responsive design notes</span>
+                      {'\n\n'}
+                      <span className="text-[#dcdcaa]">Present the final output in this exact format:</span>
+                      {'\n\n'}
+                      <span className="text-[#808080]">&lt;</span><span className="text-[#569cd6]">portfolio_prompt</span><span className="text-[#808080]">&gt;</span>
+                      {'\n'}
+                      <span className="text-[#ce9178]">[Detailed prompt for a modern, polished portfolio website using the user's data]</span>
+                      {'\n'}
+                      <span className="text-[#808080]">&lt;/</span><span className="text-[#569cd6]">portfolio_prompt</span><span className="text-[#808080]">&gt;</span>
+                    </code>
                   </pre>
                 </div>
               </div>
@@ -177,34 +237,44 @@ export default function PortfolioBuilder() {
               How to <span className="text-primary">Use It</span>
             </h2>
             
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-4 gap-6">
               <div className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-8 relative">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-xl font-bold">
                   1
                 </div>
-                <h3 className="text-xl font-bold mb-3 mt-2 text-primary">Copy the Prompt</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Click the "Copy Prompt" button above to copy the AI prompt to your clipboard.
+                <h3 className="text-xl font-bold mb-3 mt-2 text-primary">Copy Prompt</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  Click "Copy Prompt" button above to copy the AI assistant prompt.
+                </p>
+              </div>
+
+              <div className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-8 relative">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center text-xl font-bold">
+                  2
+                </div>
+                <h3 className="text-xl font-bold mb-3 mt-2 text-cyan-400">Paste in ChatGPT</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  Open ChatGPT and paste the prompt. Answer all 14 questions about your portfolio.
                 </p>
               </div>
 
               <div className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-8 relative">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-xl font-bold">
-                  2
+                  3
                 </div>
-                <h3 className="text-xl font-bold mb-3 mt-2 text-purple-400">Paste in AI Tool</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Open Lovable, v0, Bolt, or any AI coding tool and paste the prompt. Answer the questions.
+                <h3 className="text-xl font-bold mb-3 mt-2 text-purple-400">Get Final Prompt</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  ChatGPT will generate a detailed portfolio prompt inside <code className="text-primary">&lt;portfolio_prompt&gt;</code> tags.
                 </p>
               </div>
 
               <div className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-8 relative">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold">
-                  3
+                  4
                 </div>
-                <h3 className="text-xl font-bold mb-3 mt-2 text-blue-400">Get Your Portfolio!</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  The AI will generate a complete, professional portfolio based on your answers. Deploy it instantly!
+                <h3 className="text-xl font-bold mb-3 mt-2 text-blue-400">Build Portfolio!</h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  Copy that final prompt and paste it into Lovable, v0, or Bolt to generate your portfolio!
                 </p>
               </div>
             </div>
@@ -213,8 +283,12 @@ export default function PortfolioBuilder() {
           {/* Recommended Tools */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold mb-8 text-center">
-              Recommended <span className="text-primary">AI Tools</span>
+              Step 4: Use Your Final Prompt in These <span className="text-primary">AI Tools</span>
             </h2>
+            
+            <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
+              After ChatGPT generates your personalized prompt, copy it and paste it into one of these tools:
+            </p>
             
             <div className="grid md:grid-cols-3 gap-6">
               <a
@@ -277,7 +351,7 @@ export default function PortfolioBuilder() {
           <section className="text-center bg-gradient-to-br from-primary/10 to-purple-600/10 border border-primary/30 rounded-2xl p-12">
             <h2 className="text-3xl font-bold mb-4">Ready to Build Your Portfolio?</h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Copy the prompt above and start creating your professional portfolio in minutes. No coding experience required!
+              Step 1: Copy the prompt → Step 2: Paste in ChatGPT → Step 3: Get your final prompt → Step 4: Use it in Lovable/v0/Bolt!
             </p>
             <button
               onClick={handleCopy}
