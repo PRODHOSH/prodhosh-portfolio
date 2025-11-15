@@ -942,7 +942,7 @@ Focused on applying computational and mathematical concepts to real-world engine
               </div>
             </div>
 
-            {/* CERTIFICATIONS WITH MODAL */
+            {/* CERTIFICATIONS WITH MODAL */}
             <div className="mt-16 scroll-animate">
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// ACHIEVEMENTS & CERTIFICATIONS'}</h3>
               <div className="grid md:grid-cols-3 gap-4">
@@ -963,7 +963,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                 ))}
               </div>
             </div>
-          </section>
+      </section>
 
           {/* CONTACT SECTION */}
           <section id="contact" className="mb-32">
