@@ -323,7 +323,7 @@ export default function PortfolioBuilder() {
                 className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
+                  <div className="w-25 h-25 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
                     <img 
                       src={`${basePath}/images/tools/lovable.png`} 
                       alt="Lovable Logo" 
@@ -345,7 +345,7 @@ export default function PortfolioBuilder() {
                 className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
+                  <div className="w-25 h-25 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
                     <img 
                       src={`${basePath}/images/tools/v0.png`} 
                       alt="v0 Logo" 
@@ -367,7 +367,7 @@ export default function PortfolioBuilder() {
                 className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-20 h-20 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
+                  <div className="w-25 h-25 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
                     <img 
                       src={`${basePath}/images/tools/bolt.png`} 
                       alt="Bolt Logo" 
