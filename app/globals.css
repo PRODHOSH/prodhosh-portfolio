@@ -117,10 +117,13 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    cursor: none; /* Hide default cursor */
   }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Hide default cursor only on pages with custom cursor */
+  body:has(.custom-cursor) * {
+    cursor: none !important;
   }
 }
 
@@ -197,8 +200,13 @@
     0 0 80px oklch(0.6 0.25 200 / 0.4);
 }
 
-/* Show pointer cursor on interactive elements */
-a, button, input, textarea, select, [role="button"] {
+/* Cursor styles for pages with custom cursor */
+body:has(.custom-cursor) a,
+body:has(.custom-cursor) button,
+body:has(.custom-cursor) input,
+body:has(.custom-cursor) textarea,
+body:has(.custom-cursor) select,
+body:has(.custom-cursor) [role="button"] {
   cursor: none !important;
 }
 
