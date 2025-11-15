@@ -1298,10 +1298,10 @@ Focused on applying computational and mathematical concepts to real-world engine
         </div>
       )}
 
-      {/* Floating Gift Icon - Bottom Left */}
+      {/* Gift Icon - Bottom Left */}
       <button
         onClick={() => setShowGiftModal(true)}
-        className="fixed bottom-8 left-8 z-50 w-16 h-16 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-3xl shadow-2xl shadow-primary/50 hover:scale-110 transition-all duration-300 animate-float"
+        className="fixed bottom-8 left-8 z-50 text-5xl hover:scale-110 transition-transform duration-300"
         aria-label="Open Portfolio Builder"
       >
         🎁
