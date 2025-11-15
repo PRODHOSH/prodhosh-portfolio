@@ -724,7 +724,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               {/* EXPERIENCE */}
               <div className="space-y-6 scroll-animate-left">
-                <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// EXPERIENCE</h3>
+                <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// EXPERIENCE'}</h3>
 
                 {/* AI/ML Member - Microsoft Club */}
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
@@ -802,7 +802,7 @@ export default function Home() {
 
               {/* EDUCATION */}
               <div className="space-y-6 scroll-animate-right">
-                <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// EDUCATION</h3>
+                <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// EDUCATION'}</h3>
 
                 {/* VIT Chennai */}
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
@@ -859,7 +859,7 @@ Focused on applying computational and mathematical concepts to real-world engine
 
             {/* VOLUNTEERING SECTION */}
             <div id="volunteering" className="mt-16 scroll-animate">
-              <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// VOLUNTEERING</h3>
+              <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// VOLUNTEERING'}</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Student Volunteer */}
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
@@ -917,7 +917,7 @@ Focused on applying computational and mathematical concepts to real-world engine
               Links to /portfolio-builder page with detailed instructions
             */}
             <div className="mt-16 scroll-animate">
-              <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// FREE PORTFOLIO BUILDER</h3>
+              <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// FREE PORTFOLIO BUILDER'}</h3>
               <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="text-5xl">🎁</div>
@@ -944,7 +944,7 @@ Focused on applying computational and mathematical concepts to real-world engine
 
             {/* CERTIFICATIONS WITH MODAL */
             <div className="mt-16 scroll-animate">
-              <h3 className="text-2xl font-bold mb-6 text-primary font-mono">// ACHIEVEMENTS & CERTIFICATIONS</h3>
+              <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// ACHIEVEMENTS & CERTIFICATIONS'}</h3>
               <div className="grid md:grid-cols-3 gap-4">
                 {certificates.map((cert) => (
                   <button
