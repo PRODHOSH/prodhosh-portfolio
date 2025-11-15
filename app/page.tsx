@@ -38,6 +38,7 @@ export default function Home() {
   const [isClicking, setIsClicking] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
   const [showCelebration, setShowCelebration] = useState(false)
+  const [showGiftModal, setShowGiftModal] = useState(false)
 
   const sections = ["about", "projects", "experience", "volunteering", "contact"]
   const roles = ["AI/ML Explorer", "Data Scientist", "Full-Stack Developer", "Tech Innovator"]
@@ -932,83 +933,6 @@ Focused on applying computational and mathematical concepts to real-world engine
                 ))}
               </div>
             </div>
-
-            {/* 
-              🎁 GIFT SECTION - PORTFOLIO BUILDER 
-              Positioned after all content as a "thank you" gift for exploring the portfolio
-              Free tool for non-coders to create portfolios using AI
-            */}
-            <div className="mt-20 scroll-animate">
-              <div className="bg-gradient-to-br from-primary/10 via-purple-600/10 to-primary/5 border-2 border-primary/30 rounded-2xl p-8 relative overflow-hidden">
-                {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-600/10 rounded-full blur-3xl"></div>
-                
-                <div className="relative">
-                  {/* Header with gift emoji */}
-                  <div className="flex items-center justify-center gap-3 mb-6">
-                    <div className="text-6xl animate-float">🎁</div>
-                  </div>
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-3xl font-bold mb-3 font-mono">
-                      Made It This Far? <span className="text-primary">Here's a Gift!</span>
-                    </h3>
-                    <p className="text-muted-foreground font-mono text-sm max-w-2xl mx-auto">
-                      You explored my journey — now let me help you build yours! I've created a free AI-powered tool to generate your portfolio in minutes.
-                    </p>
-                  </div>
-
-                  {/* Features grid */}
-                  <div className="grid md:grid-cols-3 gap-4 mb-6">
-                    <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center">
-                      <div className="text-2xl mb-2">⚡</div>
-                      <p className="text-sm font-semibold font-mono text-primary">5 Minute Setup</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">Lightning fast</p>
-                    </div>
-                    <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center">
-                      <div className="text-2xl mb-2">🚫</div>
-                      <p className="text-sm font-semibold font-mono text-primary">Zero Code Needed</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">No skills required</p>
-                    </div>
-                    <div className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl p-4 text-center">
-                      <div className="text-2xl mb-2">🎨</div>
-                      <p className="text-sm font-semibold font-mono text-primary">100% Free</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">Always free</p>
-                    </div>
-                  </div>
-
-                  {/* Tool logos preview */}
-                  <div className="flex items-center justify-center gap-6 mb-6 flex-wrap">
-                    <p className="text-sm text-muted-foreground font-mono">Works with:</p>
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 bg-card rounded-lg flex items-center justify-center border border-border">
-                        <img src={`${basePath}/images/tools/lovable.png`} alt="Lovable" className="w-7 h-7 object-contain" />
-                      </div>
-                      <div className="w-10 h-10 bg-card rounded-lg flex items-center justify-center border border-border">
-                        <img src={`${basePath}/images/tools/v0.png`} alt="v0" className="w-7 h-7 object-contain" />
-                      </div>
-                      <div className="w-10 h-10 bg-card rounded-lg flex items-center justify-center border border-border">
-                        <img src={`${basePath}/images/tools/bolt.png`} alt="Bolt" className="w-7 h-7 object-contain" />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* CTA Button */}
-                  <div className="text-center">
-                    <a
-                      href={`${basePath}/portfolio-builder`}
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-purple-600 text-white rounded-xl font-bold hover:shadow-2xl hover:shadow-primary/50 transition-all hover:scale-105 transform duration-300 text-base font-mono"
-                    >
-                      <span>🚀</span>
-                      Get Your Free Portfolio Builder
-                      <span>→</span>
-                    </a>
-                    <p className="text-xs text-muted-foreground font-mono mt-3">Click to get the AI prompt & instructions</p>
-                  </div>
-                </div>
-              </div>
-            </div>
       </section>
 
           {/* CONTACT SECTION */}
@@ -1370,6 +1294,69 @@ Focused on applying computational and mathematical concepts to real-world engine
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Floating Gift Icon - Bottom Left */}
+      <button
+        onClick={() => setShowGiftModal(true)}
+        className="fixed bottom-8 left-8 z-50 w-16 h-16 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-3xl shadow-2xl shadow-primary/50 hover:scale-110 transition-all duration-300 animate-float"
+        aria-label="Open Portfolio Builder"
+      >
+        🎁
+      </button>
+
+      {/* Gift Modal */}
+      {showGiftModal && (
+        <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 animate-in fade-in duration-300">
+          <div 
+            className="absolute inset-0 bg-background/80 backdrop-blur-sm"
+            onClick={() => setShowGiftModal(false)}
+          ></div>
+          <div className="relative bg-card border-2 border-primary/30 rounded-2xl p-8 max-w-lg w-full shadow-2xl shadow-primary/20 animate-in zoom-in-95 duration-300">
+            <button
+              onClick={() => setShowGiftModal(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-primary transition-colors"
+              aria-label="Close"
+            >
+              <X size={24} />
+            </button>
+
+            <div className="text-center mb-6">
+              <div className="text-6xl mb-4 animate-float">🎁</div>
+              <h3 className="text-2xl font-bold mb-3 font-mono">
+                New to <span className="text-primary">Coding?</span>
+              </h3>
+              <p className="text-lg font-semibold mb-2 font-mono">
+                Wanna make a portfolio <span className="text-primary">easily?</span>
+              </p>
+              <p className="text-muted-foreground text-sm font-mono">
+                Check this out!!!
+              </p>
+            </div>
+
+            <div className="space-y-4 mb-6">
+              <div className="flex items-center gap-3 text-sm font-mono">
+                <span className="text-2xl">⚡</span>
+                <span className="text-muted-foreground">5-minute setup, zero code required</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm font-mono">
+                <span className="text-2xl">🤖</span>
+                <span className="text-muted-foreground">AI-powered portfolio generator</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm font-mono">
+                <span className="text-2xl">🎨</span>
+                <span className="text-muted-foreground">100% free, no hidden costs</span>
+              </div>
+            </div>
+
+            <a
+              href={`${basePath}/portfolio-builder`}
+              className="block w-full py-3 bg-gradient-to-r from-primary to-purple-600 text-white text-center rounded-xl font-bold hover:shadow-xl hover:shadow-primary/50 transition-all hover:scale-105 transform duration-300 font-mono"
+            >
+              Get Started Now 🚀
+            </a>
           </div>
         </div>
       )}
