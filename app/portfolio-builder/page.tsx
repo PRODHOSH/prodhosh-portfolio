@@ -214,70 +214,14 @@ export default function PortfolioBuilder() {
                 </div>
               </div>
 
-              {/* Prompt Content with Syntax Highlighting */}
+              {/* Prompt Content - Image Display */}
               <div className="p-8">
-                <div className="bg-[#1e1e1e] rounded-xl p-6 border border-primary/20 overflow-x-auto">
-                  <pre className="text-sm leading-relaxed font-mono">
-                    <code>
-                      <span className="text-[#569cd6]">You are an AI assistant</span> <span className="text-gray-400">designed to craft a polished, modern-style portfolio website prompt.</span>
-                      {'\n'}
-                      <span className="text-[#4ec9b0]">Start by asking the user</span> <span className="text-gray-400">the following questions</span> <span className="text-[#ce9178]">one at a time</span> <span className="text-gray-400">and wait for their response before</span>
-                      {'\n'}
-                      <span className="text-gray-400">moving forward:</span>
-                      {'\n\n'}
-                      <span className="text-[#d7ba7d]">1.</span> <span className="text-gray-300">What is your full name and how would you like it displayed on your website?</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">2.</span> <span className="text-gray-300">Upload or describe the profile picture you want on your homepage.</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">3.</span> <span className="text-gray-300">Write a short personal intro</span> <span className="text-[#608b4e]">(tone options: professional, friendly, casual, bold)</span><span className="text-gray-300">.</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">4.</span> <span className="text-gray-300">What's your educational background?</span> <span className="text-[#608b4e]">(Degrees, institutions, expected graduation year if studying)</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">5.</span> <span className="text-gray-300">Describe your work experience</span> <span className="text-[#608b4e]">(if any)</span><span className="text-gray-300">. Include roles, companies, project types, dates.</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">6.</span> <span className="text-gray-300">What are your core skills and tools you are confident in?</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">7.</span> <span className="text-gray-300">What services do you offer</span> <span className="text-[#608b4e]">(if any)</span><span className="text-gray-300">? Who is the target audience</span> <span className="text-[#608b4e]">(recruiters, clients, collaborators)</span><span className="text-gray-300">?</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">8.</span> <span className="text-gray-300">List your best projects: name, description, tech stack, links, and visuals if available.</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">9.</span> <span className="text-gray-300">Any notable achievements, awards, certificates, publications, or leadership roles?</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">10.</span> <span className="text-gray-300">Contact details: email, social links</span> <span className="text-[#608b4e]">(LinkedIn, GitHub, Twitter)</span><span className="text-gray-300">, resume download?</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">11.</span> <span className="text-gray-300">What aesthetic do you want?</span> <span className="text-[#608b4e]">(dark/light, minimal, futuristic, playful, etc.)</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">12.</span> <span className="text-gray-300">Preferable color palette or brand colors?</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">13.</span> <span className="text-gray-300">Any example websites you love for style inspiration?</span>
-                      {'\n'}
-                      <span className="text-[#d7ba7d]">14.</span> <span className="text-gray-300">Do you want additional sections like Testimonials, Blog, Hiring, FAQs?</span>
-                      {'\n\n'}
-                      <span className="text-[#c586c0]">After collecting all responses</span><span className="text-gray-400">, use them to generate a comprehensive prompt for designing the</span>
-                      {'\n'}
-                      <span className="text-gray-400">portfolio website. Include:</span>
-                      {'\n\n'}
-                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">A short bio summary + hero section details</span>
-                      {'\n'}
-                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Full site structure with section-by-section content</span>
-                      {'\n'}
-                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Calls-to-action tailored to user's goals</span>
-                      {'\n'}
-                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Visual and branding suggestions aligned with preferences</span>
-                      {'\n'}
-                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Profile image, project media, icons, and illustration guidance</span>
-                      {'\n'}
-                      <span className="text-[#4fc1ff]">-</span> <span className="text-gray-300">Accessibility, performance, and responsive design notes</span>
-                      {'\n\n'}
-                      <span className="text-[#dcdcaa]">Present the final output in this exact format:</span>
-                      {'\n\n'}
-                      <span className="text-[#808080]">&lt;</span><span className="text-[#569cd6]">portfolio_prompt</span><span className="text-[#808080]">&gt;</span>
-                      {'\n'}
-                      <span className="text-[#ce9178]">[Detailed prompt for a modern, polished portfolio website using the user's data]</span>
-                      {'\n'}
-                      <span className="text-[#808080]">&lt;/</span><span className="text-[#569cd6]">portfolio_prompt</span><span className="text-[#808080]">&gt;</span>
-                    </code>
-                  </pre>
+                <div className="bg-[#1e1e1e] rounded-xl p-6 border border-primary/20 overflow-hidden">
+                  <img 
+                    src={`${basePath}/images/image.png`}
+                    alt="AI Prompt Instructions"
+                    className="w-full h-auto rounded-lg"
+                  />
                 </div>
               </div>
             </div>
