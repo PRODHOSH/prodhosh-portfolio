@@ -664,7 +664,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* PROJECTS SECTION */
+          {/* PROJECTS SECTION */}
           <section id="projects" className="mb-32">
             <h2 className="text-4xl font-bold mb-12 scroll-animate">
               Featured <span className="text-primary">Projects</span>
@@ -715,7 +715,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* EXPERIENCE & EDUCATION SECTION */}
+        {/* EXPERIENCE & EDUCATION SECTION */}
           <section id="experience" className="mb-32">
             <h2 className="text-4xl font-bold mb-12 scroll-animate">
               Experience & <span className="text-primary">Education</span>
