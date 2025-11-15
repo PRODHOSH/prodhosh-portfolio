@@ -122,6 +122,10 @@ export default function PortfolioBuilder() {
               <br />in 5 Minutes
             </h1>
             
+            <p className="text-sm text-muted-foreground font-mono mb-4">
+              Created by <span className="text-primary font-semibold">Prodhosh V.S</span>
+            </p>
+            
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Copy the AI prompt, paste it in <span className="text-primary font-semibold">ChatGPT</span> to get your personalized portfolio prompt, then use that in Lovable, v0, or Bolt!
             </p>
@@ -323,7 +327,7 @@ export default function PortfolioBuilder() {
                 className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-25 h-25 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
+                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2 shadow-md">
                     <img 
                       src={`${basePath}/images/tools/lovable.png`} 
                       alt="Lovable Logo" 
@@ -345,7 +349,7 @@ export default function PortfolioBuilder() {
                 className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-25 h-25 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
+                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2 shadow-md">
                     <img 
                       src={`${basePath}/images/tools/v0.png`} 
                       alt="v0 Logo" 
@@ -367,7 +371,7 @@ export default function PortfolioBuilder() {
                 className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-25 h-25 bg-white rounded-xl flex items-center justify-center p-3 shadow-lg">
+                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2 shadow-md">
                     <img 
                       src={`${basePath}/images/tools/bolt.png`} 
                       alt="Bolt Logo" 
@@ -383,33 +387,33 @@ export default function PortfolioBuilder() {
               </a>
             </div>
           </section>
-
-          {/* CTA Section */}
-          <section className="text-center bg-gradient-to-br from-primary/10 to-purple-600/10 border border-primary/30 rounded-2xl p-12">
-            <h2 className="text-3xl font-bold mb-4">Ready to Build Your Portfolio?</h2>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Step 1: Copy the prompt → Step 2: Paste in ChatGPT → Step 3: Get your final prompt → Step 4: Use it in Lovable/v0/Bolt!
-            </p>
-            <button
-              onClick={handleCopy}
-              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg shadow-primary/50 text-lg"
-            >
-              Copy Prompt & Get Started 🚀
-            </button>
-          </section>
-
-          {/* Share Section */}
-          <section className="mt-16 text-center">
-            <p className="text-muted-foreground mb-4">Built your portfolio? I'd love to see it!</p>
-            <Link
-              href="/#contact"
-              className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors font-semibold"
-            >
-              Share Your Portfolio With Me →
-            </Link>
-          </section>
         </div>
       </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border bg-background/50 backdrop-blur-md mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center">
+            <p className="text-muted-foreground text-sm font-mono mb-2">
+              © 2025 Portfolio Builder by Prodhosh V.S. Made with <span className="text-red-500">❤️</span> for learning.
+            </p>
+            <div className="flex items-center justify-center gap-6 text-xs text-muted-foreground font-mono">
+              <Link href="/" className="hover:text-primary transition-colors">
+                Portfolio
+              </Link>
+              <span>•</span>
+              <a 
+                href="https://github.com/PRODHOSH/prodhosh-portfolio" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
+                GitHub Repository
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }
