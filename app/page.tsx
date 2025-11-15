@@ -391,7 +391,9 @@ export default function Home() {
           top: `${followerPos.y}px`,
           transform: 'translate(-50%, -50%)'
         }}
-      />
+      >
+        <span className="cursor-text">Go</span>
+      </div>
 
       {/* Animated Galaxy Background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
