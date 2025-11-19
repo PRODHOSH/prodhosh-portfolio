@@ -1185,9 +1185,19 @@ Focused on applying computational and mathematical concepts to real-world engine
                 </a>
               </div>
               
-              <p className="text-muted-foreground text-xs font-mono">
-                Crafted with passion & code
-              </p>
+              {/* GitHub Repo Badge */}
+              <a 
+                href="https://github.com/PRODHOSH/prodhosh-portfolio" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group"
+                aria-label="View Repository"
+              >
+                <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg hover:border-primary/50 transition-all group-hover:shadow-lg group-hover:shadow-primary/10">
+                  <Github size={16} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                  <span className="text-xs font-mono text-muted-foreground group-hover:text-primary transition-colors">GitHub Repository</span>
+                </div>
+              </a>
             </div>
           </div>
         </div>
