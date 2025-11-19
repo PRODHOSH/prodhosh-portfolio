@@ -568,7 +568,7 @@ export default function Home() {
                     <div className="relative inline-block">
                       <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">Prodhosh</h1>
                       {/* Animated dash */}
-                      <div className="absolute -bottom-2 left-0 w-24 h-1 bg-primary animate-dash-move rounded-full"></div>
+                      <div className="absolute -bottom-2 left-0 h-1 bg-primary animate-dash-move rounded-full" style={{ maxWidth: '100%' }}></div>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-white min-h-[3rem]">
                       {ignitionTyped}
@@ -754,6 +754,29 @@ export default function Home() {
               {/* EXPERIENCE */}
               <div className="space-y-6 scroll-animate-left">
                 <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// EXPERIENCE'}</h3>
+
+                {/* Open Source Contributor - Y-SoC */}
+                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                      <Image
+                        src={`${basePath}/logos/Y-SoC-logo.png`}
+                        alt="Youth Season of Code"
+                        width={56}
+                        height={56}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-base font-mono">Open Source Contributor</h4>
+                      <p className="text-primary text-sm font-mono">Youth Season of Code (Y-SoC)</p>
+                      <p className="text-xs text-muted-foreground font-mono mt-1">Nov 2025 - Present</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground/70 font-mono">
+                    Contributing to AI and development projects, collaborating with a team to build practical solutions and improve open-source tools.
+                  </p>
+                </div>
 
                 {/* AI/ML Member - Microsoft Club */}
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">

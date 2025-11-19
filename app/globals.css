@@ -319,10 +319,13 @@ body:has(.custom-cursor) [role="button"] {
 
 @keyframes dash-move {
   0% {
-    transform: translateX(0);
+    width: 0;
+  }
+  50% {
+    width: 100%;
   }
   100% {
-    transform: translateX(400%);
+    width: 0;
   }
 }
 
@@ -331,7 +334,7 @@ body:has(.custom-cursor) [role="button"] {
 }
 
 .animate-dash-move {
-  animation: dash-move 2s ease-in-out infinite;
+  animation: dash-move 3s ease-in-out infinite;
 }
 
 @keyframes shooting-star {
