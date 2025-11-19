@@ -1142,6 +1142,20 @@ Focused on applying computational and mathematical concepts to real-world engine
             <p className="text-muted-foreground text-xs font-mono">
               © 2025 Prodhosh V.S. Built with React + Next.js • Hosted on Github Pages
             </p>
+            <a 
+              href="https://github.com/PRODHOSH/prodhosh-portfolio" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs font-mono group"
+            >
+              <Image
+                src={`${basePath}/images/github-repo-badge.png`}
+                alt="GitHub Repository"
+                width={140}
+                height={28}
+                className="opacity-80 group-hover:opacity-100 transition-opacity"
+              />
+            </a>
             <p className="text-muted-foreground text-xs font-mono">
               Crafted with attention to design, performance, and accessibility
             </p>
