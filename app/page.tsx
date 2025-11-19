@@ -1138,27 +1138,57 @@ Focused on applying computational and mathematical concepts to real-world engine
             </div>
           </div>
 
-          <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-xs font-mono">
-              © 2025 Prodhosh V.S. Built with React + Next.js • Hosted on Github Pages
-            </p>
-            <a 
-              href="https://github.com/PRODHOSH/prodhosh-portfolio" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-xs font-mono group"
-            >
-              <Image
-                src={`${basePath}/images/github-repo-badge.png`}
-                alt="GitHub Repository"
-                width={140}
-                height={28}
-                className="opacity-80 group-hover:opacity-100 transition-opacity"
-              />
-            </a>
-            <p className="text-muted-foreground text-xs font-mono">
-              Crafted with attention to design, performance, and accessibility
-            </p>
+          <div className="border-t border-border pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
+              <p className="text-muted-foreground text-xs font-mono">
+                © 2025 Prodhosh V.S. Built with React + Next.js
+              </p>
+              
+              {/* Social Links */}
+              <div className="flex items-center gap-4">
+                <a 
+                  href="https://github.com/PRODHOSH" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-primary/10 rounded-lg"
+                  aria-label="GitHub"
+                >
+                  <Github size={20} />
+                </a>
+                <a 
+                  href="https://linkedin.com/in/prodhoshvs" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-primary/10 rounded-lg"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={20} />
+                </a>
+                <a 
+                  href="https://twitter.com/prodhoshvs" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-primary/10 rounded-lg"
+                  aria-label="Twitter"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                  </svg>
+                </a>
+                <a 
+                  href="mailto:prodhosh3@gmail.com" 
+                  className="text-muted-foreground hover:text-primary transition-colors p-2 hover:bg-primary/10 rounded-lg"
+                  aria-label="Email"
+                >
+                  <Mail size={20} />
+                </a>
+              </div>
+              
+              <p className="text-muted-foreground text-xs font-mono">
+                Crafted with passion & code
+              </p>
+            </div>
           </div>
         </div>
       </footer>
