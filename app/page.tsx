@@ -768,7 +768,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-base font-mono">Open Source Contributor</h4>
+                      <h4 className="font-bold text-base font-mono">Open Source Contributor · Intern</h4>
                       <p className="text-primary text-sm font-mono">Youth Season of Code (Y-SoC)</p>
                       <p className="text-xs text-muted-foreground font-mono mt-1">Nov 2025 - Present</p>
                     </div>
