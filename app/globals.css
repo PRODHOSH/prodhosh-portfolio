@@ -317,8 +317,21 @@ body:has(.custom-cursor) [role="button"] {
   }
 }
 
+@keyframes dash-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
 .animate-dash-slide {
   animation: dash-slide 1.5s ease-out forwards;
+}
+
+.animate-dash-move {
+  animation: dash-move 2s ease-in-out infinite;
 }
 
 @keyframes shooting-star {

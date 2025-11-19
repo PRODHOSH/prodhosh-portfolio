@@ -568,7 +568,7 @@ export default function Home() {
                     <div className="relative inline-block">
                       <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">Prodhosh</h1>
                       {/* Animated dash */}
-                      <div className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-cyan-400 animate-dash-slide rounded-full"></div>
+                      <div className="absolute -bottom-2 left-0 w-24 h-1 bg-primary animate-dash-move rounded-full"></div>
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-white min-h-[3rem]">
                       {ignitionTyped}
@@ -576,12 +576,11 @@ export default function Home() {
                     </h2>
                   </div>
 
-                  <p className="text-sm text-foreground/80 leading-relaxed max-w-lg">
-                    CS Freshman @ VIT Chennai | Data Science Student @ IIT Madras | AI/ML Member @ Microsoft 
-                    Innovations Club | AI/ML Explorer | Technical Member @ Math Club
+                  <p className="text-base text-foreground/80 leading-relaxed max-w-lg font-semibold">
+                    Freshman at VIT | AI/ML | Intern at Y-SoC
                   </p>
 
-                  <p className="text-lg text-primary font-semibold">Shaping the Future of Tech</p>
+                  <p className="text-lg text-primary font-semibold">Coding. Researching. Creating.</p>
 
                   <p className="text-xs text-muted-foreground">Explore more on my LinkedIn</p>
 
@@ -647,10 +646,10 @@ export default function Home() {
                 Hi, I'm Prodhosh — a first-year CSE student at <span className="text-primary font-semibold">VIT Chennai</span> and BS Data Science student at <span className="text-primary font-semibold">IIT Madras</span>.
               </p>
               <p className="text-foreground/90 mt-4 leading-relaxed max-w-3xl font-mono text-base">
-                I'm passionate about AI, ML, and data science, and love building solutions that bridge tech with real-world impact. Curiosity drives me to explore new technologies and constantly level up my problem-solving skills.
+                I'm passionate about AI, ML, and data science, and love building solutions that bridge tech with real-world impact. Currently, I'm an intern at <span className="text-primary font-semibold">Y-SoC</span>, contributing to AI and development.
               </p>
               <p className="text-foreground/90 mt-4 leading-relaxed max-w-3xl font-mono text-base">
-                Currently, I'm an AI/ML Member at the <span className="text-primary font-semibold">Microsoft Innovations Club (VITC)</span> and a Technical Team Member at the <span className="text-primary font-semibold">Mathematics Club (VITC)</span>, collaborating on projects that challenge me to grow as both a learner and teammate.
+                Additionally, I'm an active member of the <span className="text-primary font-semibold">Microsoft Innovations Club</span> and <span className="text-primary font-semibold">Math Club</span> at VIT Chennai, working on projects that sharpen both my technical and collaborative skills.
               </p>
             </div>
 
