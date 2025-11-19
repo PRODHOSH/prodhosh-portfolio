@@ -38,6 +38,8 @@ export default function Home() {
   const [isClicking, setIsClicking] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
   const [showCelebration, setShowCelebration] = useState(false)
+  const [ignitionTyped, setIgnitionTyped] = useState("")
+  const [ignitionComplete, setIgnitionComplete] = useState(false)
   const [showGiftModal, setShowGiftModal] = useState(false)
 
   const sections = ["about", "projects", "experience", "volunteering", "contact"]
@@ -115,6 +117,26 @@ export default function Home() {
     const element = document.getElementById(section)
     element?.scrollIntoView({ behavior: "smooth" })
   }
+
+  // One-time typing effect for "Igniting Innovation"
+  useEffect(() => {
+    const text = "Igniting Innovation"
+    let index = 0
+    
+    if (!ignitionComplete) {
+      const interval = setInterval(() => {
+        if (index <= text.length) {
+          setIgnitionTyped(text.substring(0, index))
+          index++
+        } else {
+          setIgnitionComplete(true)
+          clearInterval(interval)
+        }
+      }, 100)
+      
+      return () => clearInterval(interval)
+    }
+  }, [ignitionComplete])
 
   // Typing effect for roles
   useEffect(() => {
@@ -543,8 +565,15 @@ export default function Home() {
               <div className="relative hero-animate-text">
                 <div className="space-y-6 p-8 bg-card/30 backdrop-blur-sm border border-primary/20 rounded-2xl shadow-lg shadow-primary/10">
                   <div className="space-y-3">
-                    <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">Prodhosh</h1>
-                    <h2 className="text-3xl md:text-4xl font-bold text-white">Igniting Innovation</h2>
+                    <div className="relative inline-block">
+                      <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">Prodhosh</h1>
+                      {/* Animated dash */}
+                      <div className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-primary via-purple-500 to-cyan-400 animate-dash-slide rounded-full"></div>
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white min-h-[3rem]">
+                      {ignitionTyped}
+                      {!ignitionComplete && <span className="animate-pulse">|</span>}
+                    </h2>
                   </div>
 
                   <p className="text-sm text-foreground/80 leading-relaxed max-w-lg">

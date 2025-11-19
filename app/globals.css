@@ -303,6 +303,24 @@ body:has(.custom-cursor) [role="button"] {
   }
 }
 
+@keyframes dash-slide {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.animate-dash-slide {
+  animation: dash-slide 1.5s ease-out forwards;
+}
+
 @keyframes shooting-star {
   0% {
     transform: translateX(0) translateY(0);
