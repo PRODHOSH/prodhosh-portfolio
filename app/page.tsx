@@ -651,6 +651,9 @@ export default function Home() {
               <p className="text-foreground/90 mt-4 leading-relaxed max-w-3xl font-mono text-base">
                 Additionally, I'm an active member of the <span className="text-primary font-semibold">Microsoft Innovations Club</span> and <span className="text-primary font-semibold">Math Club</span> at VIT Chennai, working on projects that sharpen both my technical and collaborative skills.
               </p>
+              <p className="text-foreground/90 mt-4 leading-relaxed max-w-3xl font-mono text-base">
+                Beyond coding, I'm an <span className="text-primary font-semibold">Internshala Student Partner</span>, helping fellow students discover opportunities and kickstart their careers.
+              </p>
             </div>
 
             {/* SKILLS SECTION */}
