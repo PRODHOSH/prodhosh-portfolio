@@ -755,29 +755,6 @@ export default function Home() {
               <div className="space-y-6 scroll-animate-left">
                 <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// EXPERIENCE'}</h3>
 
-                {/* Internshala Student Partner */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
-                      <Image
-                        src={`${basePath}/logos/internshala-logo.jpg`}
-                        alt="Internshala"
-                        width={56}
-                        height={56}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-base font-mono">Internshala Student Partner — ISP</h4>
-                      <p className="text-primary text-sm font-mono">Internshala</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">Nov 2025 - Present · 1 mo</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-foreground/70 font-mono">
-                    Helping students learn about Internshala internships and online trainings. Spreading awareness through campus outreach and social media.
-                  </p>
-                </div>
-
                 {/* Open Source Contributor - Y-SoC */}
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
                   <div className="flex items-start gap-4 mb-4">
@@ -936,6 +913,29 @@ Focused on applying computational and mathematical concepts to real-world engine
             <div id="volunteering" className="mt-16 scroll-animate">
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// VOLUNTEERING'}</h3>
               <div className="grid md:grid-cols-2 gap-6">
+                {/* Internshala Student Partner */}
+                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                      <Image
+                        src={`${basePath}/logos/internshala-logo.jpg`}
+                        alt="Internshala"
+                        width={56}
+                        height={56}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-base font-mono">Internshala Student Partner — ISP</h4>
+                      <p className="text-primary text-sm font-mono">Internshala</p>
+                      <p className="text-xs text-muted-foreground font-mono mt-1">Nov 2025 - Present · 1 mo</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-foreground/70 font-mono">
+                    Helping students learn about Internshala internships and online trainings. Spreading awareness through campus outreach and social media.
+                  </p>
+                </div>
+
                 {/* Student Volunteer */}
                 <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
                   <div className="flex items-start gap-4 mb-4">
