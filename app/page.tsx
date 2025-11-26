@@ -33,7 +33,6 @@ type ThemeOption = {
 
 const themes: ThemeOption[] = [
   { id: 'galaxy', name: '🌌 Galaxy', color: '#00b4d8' },
-  { id: 'sunset', name: '🔥 Inferno', color: '#ff6b35' },
   { id: 'cyberpunk', name: '🌃 Night City', color: '#ff00ff' },
 ]
 
@@ -542,145 +541,103 @@ export default function Home() {
         </div>
       )}
 
-      {/* ===== INFERNO FIRE THEME ===== */}
-      {currentTheme === 'sunset' && (
+      {/* ===== DUBAI/CYBERPUNK NIGHT CITY THEME ===== */}
+      {currentTheme === 'cyberpunk' && (
         <div className="fixed inset-0 overflow-hidden pointer-events-none transition-all duration-1000">
-          {/* Dark smoky sky */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0000] via-[#1a0505] to-[#3d0a0a]" />
+          {/* Dark purple/pink night sky */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0012] via-[#15002a] to-[#0d0015]" />
           
-          {/* Stars barely visible through smoke */}
-          {[...Array(30)].map((_, i) => (
-            <div key={i} className="absolute w-1 h-1 bg-white/20 rounded-full animate-twinkle"
+          {/* Stars */}
+          {[...Array(40)].map((_, i) => (
+            <div key={i} className="absolute w-1 h-1 bg-white/40 rounded-full animate-twinkle"
               style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 40}%`, animationDelay: `${Math.random() * 5}s` }} />
           ))}
           
-          {/* Fire glow illuminating the sky */}
-          <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-orange-600/60 via-red-600/30 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-yellow-500/40 via-orange-500/20 to-transparent" />
+          {/* City glow reflection - purple/pink */}
+          <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-fuchsia-600/30 via-purple-600/15 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-pink-500/20 via-purple-500/10 to-transparent" />
           
-          {/* Main Fire Wall - Multiple realistic flames */}
-          <div className="fire-wall-container">
-            {/* Back layer flames - taller, more orange/red */}
-            {[...Array(40)].map((_, i) => (
-              <div key={`back-${i}`} className="flame-back"
-                style={{ 
-                  left: `${i * 2.5}%`, 
-                  animationDelay: `${Math.random() * 0.8}s`,
-                  height: `${180 + Math.random() * 120}px`
-                }} />
-            ))}
-            
-            {/* Middle layer flames */}
-            {[...Array(50)].map((_, i) => (
-              <div key={`mid-${i}`} className="flame-mid"
-                style={{ 
-                  left: `${i * 2}%`, 
-                  animationDelay: `${Math.random() * 0.5}s`,
-                  height: `${120 + Math.random() * 100}px`
-                }} />
-            ))}
-            
-            {/* Front layer flames - shorter, more yellow/white */}
-            {[...Array(60)].map((_, i) => (
-              <div key={`front-${i}`} className="flame-front"
-                style={{ 
-                  left: `${i * 1.7}%`, 
-                  animationDelay: `${Math.random() * 0.3}s`,
-                  height: `${80 + Math.random() * 70}px`
-                }} />
-            ))}
-            
-            {/* Hot core flames - brightest */}
-            {[...Array(35)].map((_, i) => (
-              <div key={`core-${i}`} className="flame-core"
-                style={{ 
-                  left: `${i * 3}%`, 
-                  animationDelay: `${Math.random() * 0.2}s`,
-                  height: `${50 + Math.random() * 40}px`
-                }} />
-            ))}
+          {/* Water reflection at very bottom */}
+          <div className="dubai-water" />
+          
+          {/* Dubai-style Tall Buildings with lit windows */}
+          <div className="dubai-building" style={{ left: '2%', height: '55%', width: '35px' }}>
+            <div className="building-windows" data-color="cyan" />
+          </div>
+          <div className="dubai-building" style={{ left: '6%', height: '70%', width: '28px' }}>
+            <div className="building-windows" data-color="pink" />
+          </div>
+          <div className="dubai-building" style={{ left: '10%', height: '60%', width: '32px' }}>
+            <div className="building-windows" data-color="purple" />
+          </div>
+          <div className="dubai-building dubai-twist" style={{ left: '14%', height: '80%', width: '30px' }}>
+            <div className="building-windows" data-color="cyan" />
+          </div>
+          <div className="dubai-building" style={{ left: '18%', height: '50%', width: '38px' }}>
+            <div className="building-windows" data-color="yellow" />
+          </div>
+          <div className="dubai-building" style={{ left: '23%', height: '75%', width: '25px' }}>
+            <div className="building-windows" data-color="pink" />
+          </div>
+          <div className="dubai-building" style={{ left: '27%', height: '65%', width: '30px' }}>
+            <div className="building-windows" data-color="green" />
+          </div>
+          <div className="dubai-building dubai-spire" style={{ left: '32%', height: '90%', width: '22px' }}>
+            <div className="building-windows" data-color="cyan" />
+          </div>
+          <div className="dubai-building" style={{ left: '36%', height: '58%', width: '35px' }}>
+            <div className="building-windows" data-color="purple" />
+          </div>
+          <div className="dubai-building" style={{ left: '41%', height: '72%', width: '28px' }}>
+            <div className="building-windows" data-color="pink" />
+          </div>
+          <div className="dubai-building dubai-twist" style={{ left: '45%', height: '85%', width: '26px' }}>
+            <div className="building-windows" data-color="yellow" />
+          </div>
+          <div className="dubai-building" style={{ left: '50%', height: '62%', width: '32px' }}>
+            <div className="building-windows" data-color="cyan" />
+          </div>
+          <div className="dubai-building" style={{ left: '55%', height: '78%', width: '24px' }}>
+            <div className="building-windows" data-color="green" />
+          </div>
+          <div className="dubai-building dubai-spire" style={{ left: '59%', height: '95%', width: '20px' }}>
+            <div className="building-windows" data-color="pink" />
+          </div>
+          <div className="dubai-building" style={{ left: '63%', height: '55%', width: '36px' }}>
+            <div className="building-windows" data-color="purple" />
+          </div>
+          <div className="dubai-building" style={{ left: '68%', height: '68%', width: '30px' }}>
+            <div className="building-windows" data-color="cyan" />
+          </div>
+          <div className="dubai-building dubai-twist" style={{ left: '73%', height: '82%', width: '25px' }}>
+            <div className="building-windows" data-color="yellow" />
+          </div>
+          <div className="dubai-building" style={{ left: '78%', height: '60%', width: '33px' }}>
+            <div className="building-windows" data-color="pink" />
+          </div>
+          <div className="dubai-building" style={{ left: '83%', height: '75%', width: '28px' }}>
+            <div className="building-windows" data-color="green" />
+          </div>
+          <div className="dubai-building" style={{ left: '88%', height: '52%', width: '35px' }}>
+            <div className="building-windows" data-color="cyan" />
+          </div>
+          <div className="dubai-building dubai-spire" style={{ left: '93%', height: '70%', width: '22px' }}>
+            <div className="building-windows" data-color="purple" />
           </div>
           
-          {/* Flying sparks and embers */}
-          {[...Array(60)].map((_, i) => (
-            <div key={i} className="fire-spark-realistic"
-              style={{ 
-                left: `${Math.random() * 100}%`, 
-                animationDelay: `${Math.random() * 4}s`,
-                animationDuration: `${1.5 + Math.random() * 2}s`
-              }} />
-          ))}
+          {/* Flying Drones with lights */}
+          <div className="cyber-drone-v2" style={{ top: '15%', animationDelay: '0s' }} />
+          <div className="cyber-drone-v2" style={{ top: '25%', animationDelay: '5s' }} />
+          <div className="cyber-drone-v2" style={{ top: '35%', animationDelay: '10s' }} />
+          <div className="cyber-drone-v2" style={{ top: '20%', animationDelay: '15s' }} />
           
-          {/* Rising smoke */}
-          {[...Array(15)].map((_, i) => (
-            <div key={i} className="fire-smoke"
-              style={{ 
-                left: `${5 + Math.random() * 90}%`, 
-                animationDelay: `${Math.random() * 6}s`,
-                animationDuration: `${6 + Math.random() * 4}s`
-              }} />
-          ))}
+          {/* Ambient purple/pink glow orbs */}
+          <div className="absolute top-20 left-1/4 w-[400px] h-[400px] bg-gradient-radial from-fuchsia-600/30 via-purple-600/10 to-transparent rounded-full blur-3xl animate-pulse opacity-50" style={{ animationDuration: '4s' }} />
+          <div className="absolute top-1/3 right-1/4 w-[350px] h-[350px] bg-gradient-radial from-pink-500/25 via-fuchsia-600/10 to-transparent rounded-full blur-3xl animate-pulse opacity-40" style={{ animationDuration: '5s', animationDelay: '2s' }} />
           
-          {/* Heat shimmer effect */}
-          <div className="heat-shimmer" />
-        </div>
-      )}
-
-      {/* ===== NIGHT CITY (NYC/TOKYO STYLE) THEME BACKGROUND ===== */}
-      {currentTheme === 'cyberpunk' && (
-        <div className="fixed inset-0 overflow-hidden pointer-events-none transition-all duration-1000">
-          {/* Sunset/dusk gradient sky like the image */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a2e] via-[#2d1b4e] to-[#0a0a1a]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#4a1942]/60 via-[#2d1b4e]/40 to-transparent" style={{ height: '40%' }} />
-          <div className="absolute top-0 left-0 right-0 h-[35%] bg-gradient-to-b from-[#ff6b9d]/20 via-[#c44569]/15 to-transparent" />
-          
-          {/* City light glow from below */}
-          <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-[#ffa726]/30 via-[#ff7043]/10 to-transparent" />
-          
-          {/* NYC/Tokyo Skyline - Multiple building layers */}
-          <div className="nyc-skyline-back" />
-          <div className="nyc-skyline-mid" />
-          <div className="nyc-skyline-front" />
-          
-          {/* Individual iconic buildings */}
-          <div className="building-empire" />
-          <div className="building-chrysler" />
-          <div className="building-one-wtc" />
-          <div className="building-tower-1" />
-          <div className="building-tower-2" />
-          <div className="building-tower-3" />
-          
-          {/* Lit windows - scattered across buildings */}
-          <div className="city-windows-layer" />
-          
-          {/* Street lights glow at bottom */}
-          <div className="street-glow" />
-          
-          {/* Subtle light rays from buildings */}
-          {[...Array(8)].map((_, i) => (
-            <div key={i} className="building-light-ray"
-              style={{ 
-                left: `${10 + i * 12}%`, 
-                animationDelay: `${i * 0.5}s`
-              }} />
-          ))}
-          
-          {/* Ambient city haze */}
-          <div className="city-haze" />
-          
-          {/* Moving car lights on streets */}
-          {[...Array(6)].map((_, i) => (
-            <div key={i} className="car-light"
-              style={{ 
-                bottom: `${8 + (i % 3) * 2}%`,
-                animationDelay: `${i * 2}s`,
-                animationDuration: `${8 + Math.random() * 4}s`
-              }} />
-          ))}
-          
-          {/* Airplane lights in sky */}
-          <div className="airplane-light" style={{ top: '15%', animationDelay: '0s' }} />
-          <div className="airplane-light" style={{ top: '25%', animationDelay: '8s' }} />
+          {/* Boat lights on water */}
+          <div className="boat-light" style={{ animationDelay: '0s' }} />
+          <div className="boat-light" style={{ animationDelay: '6s' }} />
         </div>
       )}
 
@@ -718,10 +675,46 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-foreground">
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* Theme Switcher & Mobile Menu */}
+            <div className="flex items-center gap-2">
+              {/* Theme Switcher in Navbar */}
+              <div className="relative">
+                <button
+                  onClick={() => setShowThemeMenu(!showThemeMenu)}
+                  className="p-2 rounded-lg hover:bg-primary/10 transition-all border border-primary/30 hover:border-primary/50"
+                  aria-label="Change theme"
+                >
+                  <Palette className="w-5 h-5 text-primary" />
+                </button>
+                
+                {showThemeMenu && (
+                  <div className="absolute right-0 top-full mt-2 bg-card/95 backdrop-blur-md border border-primary/30 rounded-xl p-2 min-w-[150px] shadow-xl shadow-primary/10 z-50">
+                    {themes.map((theme) => (
+                      <button
+                        key={theme.id}
+                        onClick={() => changeTheme(theme.id)}
+                        className={`flex items-center gap-3 w-full px-3 py-2 rounded-lg transition-all text-sm ${
+                          currentTheme === theme.id
+                            ? 'bg-primary/20 text-primary'
+                            : 'text-foreground/70 hover:bg-primary/10 hover:text-foreground'
+                        }`}
+                      >
+                        <div
+                          className="w-3 h-3 rounded-full"
+                          style={{ background: theme.color, boxShadow: `0 0 8px ${theme.color}` }}
+                        />
+                        <span>{theme.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+              
+              {/* Mobile Menu Button */}
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-foreground">
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
