@@ -543,89 +543,145 @@ export default function Home() {
         </div>
       )}
 
-      {/* ===== FOREST THEME BACKGROUND ===== */}
+      {/* ===== MINECRAFT FOREST THEME BACKGROUND ===== */}
       {currentTheme === 'forest' && (
         <div className="fixed inset-0 overflow-hidden pointer-events-none transition-all duration-1000">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a1a0a] via-[#0d2818] to-[#0a0f0a]" />
+          {/* Minecraft blue sky gradient */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#7ba4d9] via-[#a8c8e8] to-[#c8e0f0]" />
           
-          {/* Fireflies */}
-          {[...Array(40)].map((_, i) => (
-            <div key={i} className="firefly"
-              style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 8}s` }} />
-          ))}
+          {/* Pixelated sun */}
+          <div className="mc-sun" />
           
-          {/* Green ambient glows */}
-          <div className="absolute top-20 right-10 w-[600px] h-[600px] bg-gradient-radial from-emerald-600/20 via-green-500/10 to-transparent rounded-full blur-3xl animate-float opacity-50" />
-          <div className="absolute bottom-10 left-20 w-[700px] h-[700px] bg-gradient-radial from-green-500/25 via-emerald-600/10 to-transparent rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: "3s" }} />
-          <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-gradient-radial from-lime-500/15 via-green-600/10 to-transparent rounded-full blur-3xl animate-float opacity-30" style={{ animationDelay: "5s" }} />
+          {/* Pixelated clouds */}
+          <div className="mc-cloud" style={{ top: '10%', left: '10%', animationDelay: '0s' }} />
+          <div className="mc-cloud" style={{ top: '15%', left: '50%', animationDelay: '5s' }} />
+          <div className="mc-cloud" style={{ top: '8%', left: '75%', animationDelay: '10s' }} />
           
-          {/* Forest mist layers */}
-          <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-emerald-900/30 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-green-900/20 to-transparent animate-pulse" style={{ animationDuration: '4s' }} />
+          {/* Background mountains/hills */}
+          <div className="mc-hills" />
           
-          {/* Floating leaves */}
-          {[...Array(15)].map((_, i) => (
-            <div key={i} className="floating-leaf"
-              style={{ left: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 10}s`, animationDuration: `${15 + Math.random() * 10}s` }}>
-              🍃
-            </div>
+          {/* Minecraft trees in background */}
+          <div className="mc-tree" style={{ left: '5%', bottom: '15%', transform: 'scale(0.8)' }} />
+          <div className="mc-tree" style={{ left: '15%', bottom: '18%', transform: 'scale(1)' }} />
+          <div className="mc-tree" style={{ left: '25%', bottom: '14%', transform: 'scale(0.7)' }} />
+          <div className="mc-tree" style={{ left: '60%', bottom: '16%', transform: 'scale(0.9)' }} />
+          <div className="mc-tree" style={{ left: '75%', bottom: '19%', transform: 'scale(1.1)' }} />
+          <div className="mc-tree" style={{ left: '88%', bottom: '13%', transform: 'scale(0.75)' }} />
+          
+          {/* Grass ground */}
+          <div className="mc-grass" />
+          
+          {/* Flying birds */}
+          <div className="mc-bird" style={{ top: '20%', animationDelay: '0s' }} />
+          <div className="mc-bird" style={{ top: '25%', animationDelay: '3s' }} />
+          <div className="mc-bird" style={{ top: '15%', animationDelay: '7s' }} />
+          <div className="mc-bird" style={{ top: '30%', animationDelay: '11s' }} />
+          
+          {/* Floating particles (like Minecraft) */}
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="mc-particle"
+              style={{ left: `${Math.random() * 100}%`, top: `${30 + Math.random() * 50}%`, animationDelay: `${Math.random() * 5}s` }} />
           ))}
         </div>
       )}
 
-      {/* ===== SUNSET THEME BACKGROUND ===== */}
+      {/* ===== SUNSET CAMPFIRE THEME BACKGROUND ===== */}
       {currentTheme === 'sunset' && (
         <div className="fixed inset-0 overflow-hidden pointer-events-none transition-all duration-1000">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a05] via-[#2d1810] to-[#0f0505]" />
+          {/* Dark sunset sky */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#1a0505] via-[#2d1208] to-[#0a0202]" />
           
-          {/* Sun glow */}
-          <div className="absolute top-10 right-1/4 w-[400px] h-[400px] bg-gradient-radial from-orange-500/40 via-red-500/20 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-          
-          {/* Warm clouds */}
-          <div className="absolute top-20 left-10 w-[700px] h-[500px] bg-gradient-radial from-orange-600/25 via-red-500/15 to-transparent rounded-full blur-3xl animate-float opacity-60" />
-          <div className="absolute top-1/3 right-20 w-[600px] h-[400px] bg-gradient-radial from-amber-500/30 via-orange-600/15 to-transparent rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: "2s" }} />
-          <div className="absolute bottom-1/4 left-1/3 w-[500px] h-[500px] bg-gradient-radial from-red-600/20 via-pink-500/10 to-transparent rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: "4s" }} />
-          
-          {/* Horizon glow */}
-          <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-orange-900/40 via-red-900/20 to-transparent" />
-          
-          {/* Floating embers */}
-          {[...Array(25)].map((_, i) => (
-            <div key={i} className="ember"
-              style={{ left: `${Math.random() * 100}%`, bottom: '10%', animationDelay: `${Math.random() * 8}s` }} />
+          {/* Stars appearing */}
+          {[...Array(50)].map((_, i) => (
+            <div key={i} className="absolute w-1 h-1 bg-white/40 rounded-full animate-twinkle"
+              style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 40}%`, animationDelay: `${Math.random() * 5}s` }} />
           ))}
           
-          {/* Birds silhouette */}
-          <div className="absolute top-1/4 left-1/4 text-4xl opacity-20 animate-float" style={{ animationDuration: '20s' }}>🦅</div>
-          <div className="absolute top-1/3 right-1/3 text-3xl opacity-15 animate-float" style={{ animationDuration: '25s', animationDelay: '5s' }}>🦅</div>
+          {/* Distant warm glow on horizon */}
+          <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-orange-900/30 via-red-900/10 to-transparent" />
+          
+          {/* Campfire container */}
+          <div className="campfire-container">
+            {/* Fire glow on ground */}
+            <div className="fire-glow" />
+            
+            {/* Wood logs */}
+            <div className="fire-logs" />
+            
+            {/* Main fire */}
+            <div className="fire">
+              <div className="fire-flame flame-1" />
+              <div className="fire-flame flame-2" />
+              <div className="fire-flame flame-3" />
+              <div className="fire-flame flame-4" />
+              <div className="fire-flame flame-5" />
+            </div>
+            
+            {/* Sparks */}
+            {[...Array(20)].map((_, i) => (
+              <div key={i} className="fire-spark"
+                style={{ left: `${45 + Math.random() * 10}%`, animationDelay: `${Math.random() * 2}s`, animationDuration: `${1 + Math.random() * 2}s` }} />
+            ))}
+            
+            {/* Smoke */}
+            <div className="fire-smoke smoke-1" />
+            <div className="fire-smoke smoke-2" />
+            <div className="fire-smoke smoke-3" />
+          </div>
+          
+          {/* Ambient fire light flicker on edges */}
+          <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-orange-600/20 to-transparent animate-pulse" style={{ animationDuration: '0.5s' }} />
         </div>
       )}
 
       {/* ===== CYBERPUNK THEME BACKGROUND ===== */}
       {currentTheme === 'cyberpunk' && (
         <div className="fixed inset-0 overflow-hidden pointer-events-none transition-all duration-1000">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0010] via-[#10001a] to-[#050008]" />
+          {/* Dark cyber sky */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0015] via-[#15002a] to-[#0a0012]" />
+          
+          {/* City skyline silhouette */}
+          <div className="cyber-city" />
           
           {/* Neon grid floor */}
           <div className="cyber-grid" />
           
-          {/* Neon glows */}
-          <div className="absolute top-10 left-20 w-[600px] h-[600px] bg-gradient-radial from-fuchsia-600/30 via-purple-500/15 to-transparent rounded-full blur-3xl animate-pulse opacity-60" style={{ animationDuration: '2s' }} />
-          <div className="absolute bottom-20 right-10 w-[700px] h-[700px] bg-gradient-radial from-cyan-500/30 via-blue-500/15 to-transparent rounded-full blur-3xl animate-pulse opacity-50" style={{ animationDuration: '3s', animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-gradient-radial from-pink-500/25 via-fuchsia-600/10 to-transparent rounded-full blur-3xl animate-float opacity-40" />
+          {/* Matrix rain */}
+          <div className="matrix-rain">
+            {[...Array(30)].map((_, i) => (
+              <div key={i} className="matrix-column" style={{ left: `${i * 3.33}%`, animationDelay: `${Math.random() * 5}s`, animationDuration: `${3 + Math.random() * 4}s` }}>
+                {Array.from({ length: 20 }, () => String.fromCharCode(0x30A0 + Math.random() * 96)).join('')}
+              </div>
+            ))}
+          </div>
+          
+          {/* Neon glows - Pink/Purple */}
+          <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-gradient-radial from-fuchsia-600/35 via-purple-600/20 to-transparent rounded-full blur-3xl animate-pulse opacity-70" style={{ animationDuration: '2s' }} />
+          <div className="absolute top-1/3 right-20 w-[400px] h-[400px] bg-gradient-radial from-purple-500/30 via-pink-600/15 to-transparent rounded-full blur-3xl animate-pulse opacity-60" style={{ animationDuration: '3s', animationDelay: '1s' }} />
+          <div className="absolute bottom-1/3 left-1/3 w-[600px] h-[600px] bg-gradient-radial from-pink-500/25 via-fuchsia-700/10 to-transparent rounded-full blur-3xl animate-float opacity-50" />
           
           {/* Scanlines */}
           <div className="scanlines" />
           
-          {/* Glitch elements */}
-          {[...Array(20)].map((_, i) => (
+          {/* Floating neon signs */}
+          <div className="neon-sign" style={{ top: '15%', left: '10%', animationDelay: '0s' }}>サイバー</div>
+          <div className="neon-sign neon-pink" style={{ top: '25%', right: '15%', animationDelay: '2s' }}>NEON</div>
+          <div className="neon-sign" style={{ top: '60%', left: '5%', animationDelay: '4s' }}>2077</div>
+          
+          {/* Holographic triangles */}
+          <div className="holo-triangle" style={{ top: '30%', left: '20%' }} />
+          <div className="holo-triangle" style={{ top: '50%', right: '25%', animationDelay: '2s' }} />
+          
+          {/* Cyber particles */}
+          {[...Array(25)].map((_, i) => (
             <div key={i} className="cyber-particle"
               style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }} />
           ))}
           
-          {/* Neon lines */}
-          <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-fuchsia-500/50 to-transparent animate-pulse" />
-          <div className="absolute top-3/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
+          {/* Horizontal neon lines */}
+          <div className="absolute top-1/4 left-0 right-0 h-px bg-gradient-to-r from-transparent via-fuchsia-500/60 to-transparent animate-pulse" />
+          <div className="absolute top-2/3 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/60 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-pink-400/40 to-transparent animate-pulse" style={{ animationDelay: '0.5s' }} />
         </div>
       )}
 
