@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
-import { Menu, X, Github, Linkedin, Mail, ExternalLink, Download } from "lucide-react"
+import { Menu, X, Github, Linkedin, Mail, ExternalLink, Download, Palette } from "lucide-react"
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
 
@@ -25,6 +25,21 @@ type Project = {
   liveLink?: string
 }
 
+type ThemeOption = {
+  id: string
+  name: string
+  color: string
+}
+
+const themes: ThemeOption[] = [
+  { id: 'galaxy', name: 'Galaxy', color: '#00b4d8' },
+  { id: 'ocean', name: 'Ocean', color: '#0077b6' },
+  { id: 'forest', name: 'Forest', color: '#38b000' },
+  { id: 'sunset', name: 'Sunset', color: '#ff6b35' },
+  { id: 'cyberpunk', name: 'Cyberpunk', color: '#ff00ff' },
+  { id: 'aurora', name: 'Aurora', color: '#00ff88' },
+]
+
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState("about")
@@ -34,13 +49,15 @@ export default function Home() {
   const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 })
-  const [followerPos, setFollowerPos] = useState({ x: 0, y: 0 })
   const [isClicking, setIsClicking] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
   const [showCelebration, setShowCelebration] = useState(false)
   const [ignitionTyped, setIgnitionTyped] = useState("")
   const [ignitionComplete, setIgnitionComplete] = useState(false)
   const [showGiftModal, setShowGiftModal] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+  const [currentTheme, setCurrentTheme] = useState('galaxy')
+  const [showThemeMenu, setShowThemeMenu] = useState(false)
 
   const sections = ["about", "projects", "experience", "volunteering", "contact"]
   const roles = ["AI/ML Explorer", "Data Scientist", "Full-Stack Developer", "Tech Innovator"]
@@ -174,11 +191,6 @@ export default function Home() {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setCursorPos({ x: e.clientX, y: e.clientY })
-      
-      // Smooth follower with delay
-      setTimeout(() => {
-        setFollowerPos({ x: e.clientX, y: e.clientY })
-      }, 100)
     }
 
     const handleMouseDown = () => setIsClicking(true)
@@ -213,6 +225,30 @@ export default function Home() {
       window.removeEventListener('mouseover', handleMouseOver)
     }
   }, [])
+
+  // Loading screen effect
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2500)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Theme effect
+  useEffect(() => {
+    // Load saved theme or use default
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'galaxy'
+    setCurrentTheme(savedTheme)
+    document.documentElement.className = `dark theme-${savedTheme}`
+  }, [])
+
+  // Handle theme change
+  const changeTheme = (themeId: string) => {
+    setCurrentTheme(themeId)
+    localStorage.setItem('portfolio-theme', themeId)
+    document.documentElement.className = `dark theme-${themeId}`
+    setShowThemeMenu(false)
+  }
 
   // Scroll animation hook
   useEffect(() => {
@@ -398,6 +434,48 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background font-mono">
+      {/* Loading Screen */}
+      {isLoading && (
+        <div className={`loading-screen ${!isLoading ? 'fade-out' : ''}`}>
+          <div className="flex flex-col items-center gap-6">
+            {/* Animated Logo */}
+            <div className="loading-logo w-24 h-24 rounded-2xl overflow-hidden border-2 border-primary/50">
+              <Image
+                src={`${basePath}/images/favicon.png`}
+                alt="Logo"
+                width={96}
+                height={96}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            {/* Name with typing effect */}
+            <div className="text-center">
+              <h1 className="text-3xl font-bold text-primary mb-2">Prodhosh V.S</h1>
+              <p className="text-muted-foreground text-sm">AI/ML Explorer • Developer</p>
+            </div>
+            
+            {/* Loading bar */}
+            <div className="loading-bar">
+              <div className="loading-bar-fill" />
+            </div>
+            
+            {/* Floating particles */}
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="loading-particle"
+                style={{
+                  left: `${20 + Math.random() * 60}%`,
+                  bottom: '20%',
+                  animationDelay: `${i * 0.2}s`
+                }}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Custom Cursor */}
       <div
         className={`custom-cursor ${isClicking ? 'clicking' : ''} ${isHovering ? 'hovering' : ''}`}
@@ -407,15 +485,34 @@ export default function Home() {
           transform: 'translate(-50%, -50%)'
         }}
       />
-      <div
-        className={`custom-cursor-follower ${isClicking ? 'clicking' : ''} ${isHovering ? 'hovering' : ''}`}
-        style={{
-          left: `${followerPos.x}px`,
-          top: `${followerPos.y}px`,
-          transform: 'translate(-50%, -50%)'
-        }}
-      >
-        <span className="cursor-text">Go</span>
+
+      {/* Theme Switcher */}
+      <div className="theme-switcher">
+        <button
+          onClick={() => setShowThemeMenu(!showThemeMenu)}
+          className="theme-btn"
+          aria-label="Change theme"
+        >
+          <Palette className="w-5 h-5 text-primary" />
+        </button>
+        
+        {showThemeMenu && (
+          <div className="theme-menu">
+            {themes.map((theme) => (
+              <button
+                key={theme.id}
+                onClick={() => changeTheme(theme.id)}
+                className={`theme-option ${currentTheme === theme.id ? 'active' : ''}`}
+              >
+                <div
+                  className="theme-dot"
+                  style={{ background: theme.color }}
+                />
+                <span>{theme.name}</span>
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Animated Galaxy Background */}
@@ -428,23 +525,23 @@ export default function Home() {
         <div className="stars-layer-2" />
         <div className="stars-layer-3" />
         
-        {/* Nebula clouds */}
-        <div className="absolute top-10 right-20 w-[800px] h-[800px] bg-gradient-radial from-purple-600/20 via-blue-500/10 to-transparent rounded-full blur-3xl animate-float opacity-40" />
+        {/* Nebula clouds - now using theme variables */}
+        <div className="absolute top-10 right-20 w-[800px] h-[800px] bg-gradient-radial from-[var(--nebula-1)]/20 via-[var(--nebula-2)]/10 to-transparent rounded-full blur-3xl animate-float opacity-40" />
         <div
-          className="absolute bottom-20 left-10 w-[600px] h-[600px] bg-gradient-radial from-cyan-500/20 via-primary/15 to-transparent rounded-full blur-3xl animate-float opacity-50"
+          className="absolute bottom-20 left-10 w-[600px] h-[600px] bg-gradient-radial from-[var(--nebula-2)]/20 via-primary/15 to-transparent rounded-full blur-3xl animate-float opacity-50"
           style={{ animationDelay: "2s" }}
         />
         <div
-          className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-gradient-radial from-indigo-500/15 via-primary/10 to-transparent rounded-full blur-3xl animate-float opacity-30"
+          className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-gradient-radial from-[var(--nebula-3)]/15 via-primary/10 to-transparent rounded-full blur-3xl animate-float opacity-30"
           style={{ animationDelay: "2s" }}
         />
         
         {/* Glowing planets/orbs */}
         <div className="absolute top-1/4 right-1/4 w-32 h-32 bg-primary/30 rounded-full blur-2xl animate-float-slow" 
           style={{ animationDelay: "1s" }} />
-        <div className="absolute bottom-1/3 left-1/5 w-24 h-24 bg-purple-500/25 rounded-full blur-2xl animate-float-slow" 
+        <div className="absolute bottom-1/3 left-1/5 w-24 h-24 bg-[var(--nebula-1)]/25 rounded-full blur-2xl animate-float-slow" 
           style={{ animationDelay: "2s" }} />
-        <div className="absolute top-2/3 right-1/3 w-20 h-20 bg-cyan-400/30 rounded-full blur-xl animate-float-slow" 
+        <div className="absolute top-2/3 right-1/3 w-20 h-20 bg-[var(--nebula-2)]/30 rounded-full blur-xl animate-float-slow" 
           style={{ animationDelay: "2s" }} />
 
         {/* Animated cosmic dust particles */}

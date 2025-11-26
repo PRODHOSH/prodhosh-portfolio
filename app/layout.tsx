@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark theme-galaxy">
       <body className={`font-sans antialiased ${_geist.className}`}>
         {children}
         <Analytics />
