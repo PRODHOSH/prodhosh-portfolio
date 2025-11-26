@@ -1554,10 +1554,12 @@ Focused on applying computational and mathematical concepts to real-world engine
                 />
                 {/* Loading overlay for pending certificates */}
                 {selectedCert.pending && (
-                  <div className="absolute inset-0 bg-background/70 backdrop-blur-sm flex flex-col items-center justify-center">
-                    <div className="w-16 h-16 border-4 border-primary/30 border-t-primary rounded-full animate-spin mb-4" />
-                    <p className="text-primary font-mono text-sm font-semibold">In Progress...</p>
-                    <p className="text-muted-foreground font-mono text-xs mt-1">Certificate coming soon</p>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="bg-background/80 backdrop-blur-sm rounded-2xl px-8 py-6 flex flex-col items-center">
+                      <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mb-3" />
+                      <p className="text-primary font-mono text-sm font-semibold">In Progress...</p>
+                      <p className="text-muted-foreground font-mono text-xs mt-1">Certificate coming soon</p>
+                    </div>
                   </div>
                 )}
               </div>
