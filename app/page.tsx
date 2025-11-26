@@ -482,35 +482,6 @@ export default function Home() {
         }}
       />
 
-      {/* Theme Switcher */}
-      <div className="theme-switcher">
-        <button
-          onClick={() => setShowThemeMenu(!showThemeMenu)}
-          className="theme-btn"
-          aria-label="Change theme"
-        >
-          <Palette className="w-5 h-5 text-primary" />
-        </button>
-        
-        {showThemeMenu && (
-          <div className="theme-menu">
-            {themes.map((theme) => (
-              <button
-                key={theme.id}
-                onClick={() => changeTheme(theme.id)}
-                className={`theme-option ${currentTheme === theme.id ? 'active' : ''}`}
-              >
-                <div
-                  className="theme-dot"
-                  style={{ background: theme.color }}
-                />
-                <span>{theme.name}</span>
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-
       {/* ===== GALAXY THEME BACKGROUND ===== */}
       {currentTheme === 'galaxy' && (
         <div className="fixed inset-0 overflow-hidden pointer-events-none transition-all duration-1000">
@@ -560,69 +531,57 @@ export default function Home() {
           {/* Water reflection at very bottom */}
           <div className="dubai-water" />
           
-          {/* Dubai-style Tall Buildings with lit windows */}
-          <div className="dubai-building" style={{ left: '2%', height: '55%', width: '35px' }}>
-            <div className="building-windows" data-color="cyan" />
+          {/* Dubai-style Tall Buildings with white lit windows */}
+          <div className="dubai-building" style={{ left: '1%', height: '55%', width: '50px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '6%', height: '70%', width: '28px' }}>
-            <div className="building-windows" data-color="pink" />
+          <div className="dubai-building" style={{ left: '6%', height: '70%', width: '45px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '10%', height: '60%', width: '32px' }}>
-            <div className="building-windows" data-color="purple" />
+          <div className="dubai-building" style={{ left: '11%', height: '60%', width: '48px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building dubai-twist" style={{ left: '14%', height: '80%', width: '30px' }}>
-            <div className="building-windows" data-color="cyan" />
+          <div className="dubai-building dubai-twist" style={{ left: '16%', height: '80%', width: '42px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '18%', height: '50%', width: '38px' }}>
-            <div className="building-windows" data-color="yellow" />
+          <div className="dubai-building" style={{ left: '22%', height: '50%', width: '52px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '23%', height: '75%', width: '25px' }}>
-            <div className="building-windows" data-color="pink" />
+          <div className="dubai-building" style={{ left: '28%', height: '75%', width: '40px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '27%', height: '65%', width: '30px' }}>
-            <div className="building-windows" data-color="green" />
+          <div className="dubai-building" style={{ left: '33%', height: '65%', width: '46px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building dubai-spire" style={{ left: '32%', height: '90%', width: '22px' }}>
-            <div className="building-windows" data-color="cyan" />
+          <div className="dubai-building dubai-spire" style={{ left: '39%', height: '90%', width: '38px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '36%', height: '58%', width: '35px' }}>
-            <div className="building-windows" data-color="purple" />
+          <div className="dubai-building" style={{ left: '45%', height: '58%', width: '50px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '41%', height: '72%', width: '28px' }}>
-            <div className="building-windows" data-color="pink" />
+          <div className="dubai-building" style={{ left: '51%', height: '72%', width: '44px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building dubai-twist" style={{ left: '45%', height: '85%', width: '26px' }}>
-            <div className="building-windows" data-color="yellow" />
+          <div className="dubai-building dubai-twist" style={{ left: '56%', height: '85%', width: '40px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '50%', height: '62%', width: '32px' }}>
-            <div className="building-windows" data-color="cyan" />
+          <div className="dubai-building" style={{ left: '62%', height: '62%', width: '48px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '55%', height: '78%', width: '24px' }}>
-            <div className="building-windows" data-color="green" />
+          <div className="dubai-building" style={{ left: '68%', height: '78%', width: '42px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building dubai-spire" style={{ left: '59%', height: '95%', width: '20px' }}>
-            <div className="building-windows" data-color="pink" />
+          <div className="dubai-building dubai-spire" style={{ left: '73%', height: '95%', width: '36px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '63%', height: '55%', width: '36px' }}>
-            <div className="building-windows" data-color="purple" />
+          <div className="dubai-building" style={{ left: '78%', height: '55%', width: '50px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building" style={{ left: '68%', height: '68%', width: '30px' }}>
-            <div className="building-windows" data-color="cyan" />
+          <div className="dubai-building" style={{ left: '84%', height: '68%', width: '45px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
-          <div className="dubai-building dubai-twist" style={{ left: '73%', height: '82%', width: '25px' }}>
-            <div className="building-windows" data-color="yellow" />
-          </div>
-          <div className="dubai-building" style={{ left: '78%', height: '60%', width: '33px' }}>
-            <div className="building-windows" data-color="pink" />
-          </div>
-          <div className="dubai-building" style={{ left: '83%', height: '75%', width: '28px' }}>
-            <div className="building-windows" data-color="green" />
-          </div>
-          <div className="dubai-building" style={{ left: '88%', height: '52%', width: '35px' }}>
-            <div className="building-windows" data-color="cyan" />
-          </div>
-          <div className="dubai-building dubai-spire" style={{ left: '93%', height: '70%', width: '22px' }}>
-            <div className="building-windows" data-color="purple" />
+          <div className="dubai-building dubai-twist" style={{ left: '90%', height: '82%', width: '40px' }}>
+            <div className="building-windows" data-color="white" />
           </div>
           
           {/* Flying Drones with lights */}
