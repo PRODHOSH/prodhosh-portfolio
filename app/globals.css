@@ -49,80 +49,42 @@
 
 /* Galaxy Theme (Default) */
 .theme-galaxy {
-  --primary: oklch(0.6 0.25 200);
-  --accent: oklch(0.6 0.25 200);
-  --ring: oklch(0.6 0.25 200);
-  --nebula-1: oklch(0.4 0.2 280);
-  --nebula-2: oklch(0.5 0.15 220);
-  --nebula-3: oklch(0.45 0.18 250);
-  --cursor-color: oklch(0.7 0.25 200);
-  --cursor-hover: oklch(0.8 0.25 200);
-  --cursor-glow: oklch(0.6 0.25 200 / 0.6);
-}
-
-/* Ocean Theme */
-.theme-ocean {
-  --primary: oklch(0.6 0.2 220);
-  --accent: oklch(0.55 0.18 200);
-  --ring: oklch(0.6 0.2 220);
-  --nebula-1: oklch(0.35 0.15 220);
-  --nebula-2: oklch(0.45 0.12 200);
-  --nebula-3: oklch(0.4 0.14 190);
-  --cursor-color: oklch(0.65 0.2 220);
-  --cursor-hover: oklch(0.75 0.22 220);
-  --cursor-glow: oklch(0.55 0.2 220 / 0.6);
+  --primary: oklch(0.7 0.2 200);
+  --accent: oklch(0.65 0.22 280);
+  --ring: oklch(0.7 0.2 200);
+  --cursor-color: #00b4d8;
+  --cursor-hover: #48cae4;
+  --cursor-glow: rgba(0, 180, 216, 0.6);
 }
 
 /* Forest Theme */
 .theme-forest {
-  --primary: oklch(0.55 0.2 150);
-  --accent: oklch(0.5 0.18 140);
-  --ring: oklch(0.55 0.2 150);
-  --nebula-1: oklch(0.3 0.12 150);
-  --nebula-2: oklch(0.4 0.15 130);
-  --nebula-3: oklch(0.35 0.1 160);
-  --cursor-color: oklch(0.6 0.2 150);
-  --cursor-hover: oklch(0.7 0.22 150);
-  --cursor-glow: oklch(0.5 0.2 150 / 0.6);
+  --primary: oklch(0.65 0.22 145);
+  --accent: oklch(0.6 0.2 160);
+  --ring: oklch(0.65 0.22 145);
+  --cursor-color: #38b000;
+  --cursor-hover: #70e000;
+  --cursor-glow: rgba(56, 176, 0, 0.6);
 }
 
 /* Sunset Theme */
 .theme-sunset {
-  --primary: oklch(0.65 0.25 30);
-  --accent: oklch(0.6 0.22 45);
-  --ring: oklch(0.65 0.25 30);
-  --nebula-1: oklch(0.45 0.2 350);
-  --nebula-2: oklch(0.55 0.18 30);
-  --nebula-3: oklch(0.5 0.22 15);
-  --cursor-color: oklch(0.7 0.25 30);
-  --cursor-hover: oklch(0.8 0.28 35);
-  --cursor-glow: oklch(0.6 0.25 30 / 0.6);
+  --primary: oklch(0.7 0.22 30);
+  --accent: oklch(0.65 0.25 15);
+  --ring: oklch(0.7 0.22 30);
+  --cursor-color: #ff6b35;
+  --cursor-hover: #ff8c42;
+  --cursor-glow: rgba(255, 107, 53, 0.6);
 }
 
 /* Cyberpunk Theme */
 .theme-cyberpunk {
   --primary: oklch(0.7 0.3 320);
-  --accent: oklch(0.65 0.28 180);
+  --accent: oklch(0.7 0.25 190);
   --ring: oklch(0.7 0.3 320);
-  --nebula-1: oklch(0.4 0.25 320);
-  --nebula-2: oklch(0.5 0.22 180);
-  --nebula-3: oklch(0.45 0.2 280);
-  --cursor-color: oklch(0.75 0.3 320);
-  --cursor-hover: oklch(0.85 0.32 320);
-  --cursor-glow: oklch(0.65 0.3 320 / 0.7);
-}
-
-/* Aurora Theme */
-.theme-aurora {
-  --primary: oklch(0.6 0.22 160);
-  --accent: oklch(0.55 0.2 280);
-  --ring: oklch(0.6 0.22 160);
-  --nebula-1: oklch(0.4 0.18 160);
-  --nebula-2: oklch(0.5 0.2 280);
-  --nebula-3: oklch(0.45 0.15 120);
-  --cursor-color: oklch(0.65 0.22 160);
-  --cursor-hover: oklch(0.75 0.25 160);
-  --cursor-glow: oklch(0.55 0.22 160 / 0.6);
+  --cursor-color: #ff00ff;
+  --cursor-hover: #ff66ff;
+  --cursor-glow: rgba(255, 0, 255, 0.7);
 }
 
 .dark {
@@ -708,4 +670,179 @@
   height: 16px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===== THEME-SPECIFIC BACKGROUND ELEMENTS ===== */
+
+/* FOREST THEME - Fireflies */
+.firefly {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #a8ff78 0%, #78ffd6 50%, transparent 100%);
+  border-radius: 50%;
+  animation: firefly-float 8s ease-in-out infinite, firefly-glow 2s ease-in-out infinite;
+  box-shadow: 0 0 10px #a8ff78, 0 0 20px #78ffd6, 0 0 30px #a8ff78;
+}
+
+@keyframes firefly-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(30px, -50px) scale(1.2);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes firefly-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px #a8ff78, 0 0 10px #78ffd6;
+  }
+  50% {
+    box-shadow: 0 0 15px #a8ff78, 0 0 30px #78ffd6, 0 0 45px #a8ff78;
+  }
+}
+
+/* Floating leaves */
+.floating-leaf {
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: leaf-fall linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes leaf-fall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* SUNSET THEME - Embers */
+.ember {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #ff6b35 0%, #ff8c42 50%, transparent 100%);
+  border-radius: 50%;
+  animation: ember-rise 6s ease-out infinite;
+  box-shadow: 0 0 8px #ff6b35, 0 0 16px #ff8c42;
+}
+
+@keyframes ember-rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-400px) translateX(50px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* CYBERPUNK THEME - Grid & Effects */
+.cyber-grid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: 
+    linear-gradient(to bottom, transparent 0%, rgba(255, 0, 255, 0.03) 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 100px,
+      rgba(255, 0, 255, 0.1) 100px,
+      rgba(255, 0, 255, 0.1) 101px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 100px,
+      rgba(0, 255, 255, 0.1) 100px,
+      rgba(0, 255, 255, 0.1) 101px
+    );
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: bottom;
+  animation: grid-scroll 20s linear infinite;
+}
+
+@keyframes grid-scroll {
+  0% {
+    background-position: 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 0, 0 200px, 200px 0;
+  }
+}
+
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  animation: scanline-flicker 0.1s infinite;
+}
+
+@keyframes scanline-flicker {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.9; }
+}
+
+.cyber-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ff00ff;
+  box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+  animation: cyber-glitch 3s ease-in-out infinite;
+}
+
+@keyframes cyber-glitch {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  25% {
+    transform: translate(10px, -5px);
+  }
+  50% {
+    transform: translate(-5px, 10px);
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
+  }
+  75% {
+    transform: translate(5px, -10px);
+  }
 }
