@@ -1187,516 +1187,563 @@
   75% { opacity: 0.4; }
 }
 
-/* ===== FIRE WALL SUNSET THEME ===== */
+/* ===== REALISTIC INFERNO FIRE THEME ===== */
 
-.fire-wall {
+.fire-wall-container {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 200px;
-  overflow: hidden;
+  height: 350px;
+  overflow: visible;
 }
 
-.fire-wall-flame {
+/* Back layer flames - taller, darker orange/red */
+.flame-back {
   position: absolute;
   bottom: 0;
-  width: 8%;
+  width: 6%;
   background: linear-gradient(to top, 
-    #ff4500 0%, 
-    #ff6a00 20%, 
-    #ff8c00 40%, 
-    #ffa500 60%, 
-    #ffcc00 80%, 
+    #cc2200 0%, 
+    #dd3300 15%, 
+    #ee4400 30%, 
+    #ff5500 50%, 
+    #ff7700 70%, 
+    #ff9944 85%,
     transparent 100%
   );
-  border-radius: 50% 50% 20% 20% / 100% 100% 20% 20%;
-  filter: blur(3px);
-  animation: flame-dance 0.4s ease-in-out infinite alternate;
+  border-radius: 50% 50% 20% 20% / 80% 80% 20% 20%;
+  filter: blur(4px);
+  animation: flame-realistic 0.5s ease-in-out infinite alternate;
   transform-origin: bottom center;
+  opacity: 0.9;
 }
 
-.fire-wall-flame-inner {
+/* Middle layer flames */
+.flame-mid {
   position: absolute;
   bottom: 0;
-  width: 5%;
+  width: 4%;
   background: linear-gradient(to top, 
-    #ffcc00 0%, 
-    #ffdd44 30%, 
-    #ffee88 60%, 
-    #ffffaa 80%, 
+    #ff4400 0%, 
+    #ff5500 20%, 
+    #ff7700 40%, 
+    #ff9900 60%, 
+    #ffbb00 80%, 
     transparent 100%
   );
-  border-radius: 50% 50% 20% 20% / 100% 100% 20% 20%;
+  border-radius: 50% 50% 15% 15% / 70% 70% 15% 15%;
   filter: blur(2px);
-  animation: flame-dance-inner 0.3s ease-in-out infinite alternate;
+  animation: flame-realistic-mid 0.35s ease-in-out infinite alternate;
   transform-origin: bottom center;
 }
 
-@keyframes flame-dance {
-  0% { transform: scaleY(1) scaleX(1) skewX(-3deg); }
-  100% { transform: scaleY(1.15) scaleX(0.9) skewX(3deg); }
-}
-
-@keyframes flame-dance-inner {
-  0% { transform: scaleY(1) scaleX(1.1) skewX(2deg); }
-  100% { transform: scaleY(1.2) scaleX(0.85) skewX(-2deg); }
-}
-
-.fire-wall-spark {
+/* Front layer flames - bright yellow/orange */
+.flame-front {
   position: absolute;
-  bottom: 80px;
-  width: 4px;
-  height: 4px;
+  bottom: 0;
+  width: 3%;
+  background: linear-gradient(to top, 
+    #ff8800 0%, 
+    #ffaa00 25%, 
+    #ffcc00 50%, 
+    #ffdd44 75%, 
+    #ffee88 90%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 10% 10% / 60% 60% 10% 10%;
+  filter: blur(1px);
+  animation: flame-realistic-front 0.25s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+/* Hot core flames - white/yellow center */
+.flame-core {
+  position: absolute;
+  bottom: 0;
+  width: 2%;
+  background: linear-gradient(to top, 
+    #ffdd00 0%, 
+    #ffee44 30%, 
+    #ffff88 60%, 
+    #ffffcc 85%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 5% 5% / 50% 50% 5% 5%;
+  animation: flame-core-dance 0.2s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes flame-realistic {
+  0% { 
+    transform: scaleY(1) scaleX(1) skewX(-5deg) translateX(-2px); 
+    opacity: 0.85;
+  }
+  100% { 
+    transform: scaleY(1.2) scaleX(0.85) skewX(5deg) translateX(2px); 
+    opacity: 0.95;
+  }
+}
+
+@keyframes flame-realistic-mid {
+  0% { 
+    transform: scaleY(1) scaleX(1.1) skewX(3deg); 
+  }
+  100% { 
+    transform: scaleY(1.25) scaleX(0.9) skewX(-4deg); 
+  }
+}
+
+@keyframes flame-realistic-front {
+  0% { 
+    transform: scaleY(1) scaleX(1) skewX(-2deg); 
+  }
+  100% { 
+    transform: scaleY(1.3) scaleX(0.85) skewX(3deg); 
+  }
+}
+
+@keyframes flame-core-dance {
+  0% { 
+    transform: scaleY(1) scaleX(1.2); 
+    opacity: 0.9;
+  }
+  100% { 
+    transform: scaleY(1.4) scaleX(0.8); 
+    opacity: 1;
+  }
+}
+
+/* Realistic sparks */
+.fire-spark-realistic {
+  position: absolute;
+  bottom: 20%;
+  width: 3px;
+  height: 3px;
   background: #ffdd00;
   border-radius: 50%;
-  animation: spark-fly 3s ease-out infinite;
-  box-shadow: 0 0 6px #ff6600, 0 0 12px #ffaa00;
+  animation: spark-fly-realistic ease-out infinite;
+  box-shadow: 0 0 4px #ff6600, 0 0 8px #ffaa00, 0 0 12px #ffcc00;
 }
 
-@keyframes spark-fly {
+@keyframes spark-fly-realistic {
   0% {
     transform: translateY(0) translateX(0) scale(1);
     opacity: 1;
   }
-  100% {
-    transform: translateY(-300px) translateX(var(--spark-x, 30px)) scale(0);
-    opacity: 0;
-  }
-}
-
-.fire-wall-spark:nth-child(odd) { --spark-x: -40px; }
-.fire-wall-spark:nth-child(even) { --spark-x: 50px; }
-.fire-wall-spark:nth-child(3n) { --spark-x: -20px; }
-.fire-wall-spark:nth-child(4n) { --spark-x: 60px; }
-
-.heat-distortion {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: transparent;
-  animation: heat-wave 2s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes heat-wave {
-  0%, 100% { filter: blur(0px); }
-  50% { filter: blur(1px); }
-}
-
-.ember-float {
-  position: absolute;
-  bottom: 15%;
-  width: 3px;
-  height: 3px;
-  background: radial-gradient(circle, #ff6600 0%, #ff4400 50%, transparent 100%);
-  border-radius: 50%;
-  animation: ember-float-up ease-out infinite;
-  box-shadow: 0 0 4px #ff6600;
-}
-
-@keyframes ember-float-up {
-  0% {
-    transform: translateY(0) translateX(0);
-    opacity: 0;
-  }
-  10% {
+  20% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-400px) translateX(var(--ember-drift, 20px));
+    transform: translateY(-500px) translateX(var(--spark-drift)) scale(0);
     opacity: 0;
   }
 }
 
-.ember-float:nth-child(odd) { --ember-drift: -30px; }
-.ember-float:nth-child(even) { --ember-drift: 40px; }
-.ember-float:nth-child(3n) { --ember-drift: -50px; }
+.fire-spark-realistic:nth-child(odd) { --spark-drift: -60px; }
+.fire-spark-realistic:nth-child(even) { --spark-drift: 50px; }
+.fire-spark-realistic:nth-child(3n) { --spark-drift: -30px; }
+.fire-spark-realistic:nth-child(4n) { --spark-drift: 80px; }
+.fire-spark-realistic:nth-child(5n) { --spark-drift: -90px; }
 
-/* ===== ENHANCED CYBERPUNK THEME ===== */
-
-/* City Skyline */
-.cyber-city {
+/* Rising smoke */
+.fire-smoke {
   position: absolute;
-  bottom: 20%;
-  left: 0;
-  right: 0;
-  height: 300px;
-  background: 
-    linear-gradient(90deg, 
-      transparent 0%, 
-      #0a0012 5%,
-      #0a0012 5.5%,
-      transparent 5.5%,
-      transparent 10%,
-      #0f0018 10%,
-      #0f0018 15%,
-      transparent 15%,
-      transparent 18%,
-      #0a0012 18%,
-      #0a0012 22%,
-      transparent 22%,
-      transparent 30%,
-      #12001f 30%,
-      #12001f 38%,
-      transparent 38%,
-      transparent 45%,
-      #0a0012 45%,
-      #0a0012 48%,
-      transparent 48%,
-      transparent 55%,
-      #0f0018 55%,
-      #0f0018 65%,
-      transparent 65%,
-      transparent 70%,
-      #0a0012 70%,
-      #0a0012 75%,
-      transparent 75%,
-      transparent 82%,
-      #12001f 82%,
-      #12001f 88%,
-      transparent 88%,
-      transparent 92%,
-      #0a0012 92%,
-      #0a0012 97%,
-      transparent 97%
-    );
-  opacity: 0.8;
+  bottom: 25%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, rgba(60, 60, 60, 0.4) 0%, rgba(40, 40, 40, 0.2) 50%, transparent 70%);
+  border-radius: 50%;
+  animation: smoke-rise-realistic ease-out infinite;
+  filter: blur(15px);
 }
 
-.cyber-city::before {
-  content: '';
+@keyframes smoke-rise-realistic {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-600px) scale(4);
+    opacity: 0;
+  }
+}
+
+/* Heat shimmer effect */
+.heat-shimmer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  background: linear-gradient(to top, rgba(255, 0, 255, 0.1) 0%, transparent 50%);
+  height: 60%;
+  background: transparent;
+  animation: shimmer-wave 0.8s ease-in-out infinite;
+  pointer-events: none;
 }
 
-/* Matrix Rain */
-.matrix-rain {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  opacity: 0.15;
-}
-
-.matrix-column {
-  position: absolute;
-  top: -100%;
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff;
-  writing-mode: vertical-rl;
-  animation: matrix-fall linear infinite;
-  opacity: 0.8;
-}
-
-@keyframes matrix-fall {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(200vh); }
-}
-
-/* Neon Signs */
-.neon-sign {
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  font-size: 24px;
-  font-weight: bold;
-  color: #00ffff;
-  text-shadow: 
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #0088ff;
-  animation: neon-flicker 3s ease-in-out infinite;
-  letter-spacing: 4px;
-}
-
-.neon-sign.neon-pink {
-  color: #ff00ff;
-  text-shadow: 
-    0 0 5px #ff00ff,
-    0 0 10px #ff00ff,
-    0 0 20px #ff00ff,
-    0 0 40px #ff0088;
-}
-
-@keyframes neon-flicker {
-  0%, 100% { opacity: 1; }
-  5% { opacity: 0.8; }
-  10% { opacity: 1; }
-  15% { opacity: 0.9; }
-  20% { opacity: 1; }
-  50% { opacity: 1; }
-  55% { opacity: 0.7; }
-  60% { opacity: 1; }
-}
-
-/* Holographic Triangles */
-.holo-triangle {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border: 2px solid rgba(255, 0, 255, 0.5);
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: holo-rotate 10s linear infinite, holo-glow 2s ease-in-out infinite;
-}
-
-@keyframes holo-rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes holo-glow {
+@keyframes shimmer-wave {
   0%, 100% { 
-    border-color: rgba(255, 0, 255, 0.5);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+    filter: blur(0px);
+    transform: scaleY(1);
   }
   50% { 
-    border-color: rgba(0, 255, 255, 0.5);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+    filter: blur(0.5px);
+    transform: scaleY(1.002);
   }
 }
 
-/* Detailed City Skyline */
-.cyber-city-detailed {
+/* ===== NYC/TOKYO NIGHT CITY THEME ===== */
+
+/* Back layer skyline - silhouette */
+.nyc-skyline-back {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 55%;
   background: 
-    linear-gradient(90deg, 
-      transparent 0%, 
-      #0a0015 2%, #0a0015 4%, 
-      transparent 4%, transparent 6%,
-      #12001f 6%, #12001f 10%, 
-      transparent 10%, transparent 12%,
-      #0a0015 12%, #0a0015 14%, 
-      transparent 14%, transparent 16%,
-      #1a0030 16%, #1a0030 22%, 
+    linear-gradient(90deg,
+      transparent 0%,
+      #0a0a15 2%, #0a0a15 3.5%,
+      transparent 3.5%, transparent 5%,
+      #0c0c18 5%, #0c0c18 8%,
+      transparent 8%, transparent 10%,
+      #0a0a15 10%, #0a0a15 12%,
+      transparent 12%, transparent 14%,
+      #0d0d1a 14%, #0d0d1a 18%,
+      transparent 18%, transparent 20%,
+      #0a0a15 20%, #0a0a15 22%,
       transparent 22%, transparent 25%,
-      #0f0020 25%, #0f0020 28%, 
-      transparent 28%, transparent 32%,
-      #15002a 32%, #15002a 40%, 
-      transparent 40%, transparent 42%,
-      #0a0015 42%, #0a0015 45%, 
-      transparent 45%, transparent 48%,
-      #1a0030 48%, #1a0030 52%, 
-      transparent 52%, transparent 55%,
-      #12001f 55%, #12001f 62%, 
-      transparent 62%, transparent 65%,
-      #0a0015 65%, #0a0015 68%, 
-      transparent 68%, transparent 72%,
-      #15002a 72%, #15002a 78%, 
-      transparent 78%, transparent 82%,
-      #0f0020 82%, #0f0020 86%, 
-      transparent 86%, transparent 90%,
-      #12001f 90%, #12001f 95%, 
+      #0c0c18 25%, #0c0c18 30%,
+      transparent 30%, transparent 32%,
+      #0a0a15 32%, #0a0a15 34%,
+      transparent 34%, transparent 38%,
+      #0d0d1a 38%, #0d0d1a 44%,
+      transparent 44%, transparent 46%,
+      #0a0a15 46%, #0a0a15 48%,
+      transparent 48%, transparent 52%,
+      #0c0c18 52%, #0c0c18 58%,
+      transparent 58%, transparent 60%,
+      #0a0a15 60%, #0a0a15 62%,
+      transparent 62%, transparent 66%,
+      #0d0d1a 66%, #0d0d1a 72%,
+      transparent 72%, transparent 75%,
+      #0a0a15 75%, #0a0a15 77%,
+      transparent 77%, transparent 80%,
+      #0c0c18 80%, #0c0c18 85%,
+      transparent 85%, transparent 88%,
+      #0a0a15 88%, #0a0a15 92%,
+      transparent 92%, transparent 95%,
+      #0d0d1a 95%, #0d0d1a 100%
+    );
+  opacity: 0.95;
+}
+
+/* Mid layer skyline - more defined buildings */
+.nyc-skyline-mid {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: 
+    linear-gradient(90deg,
+      transparent 0%,
+      #111118 3%, #111118 5%,
+      transparent 5%, transparent 8%,
+      #0f0f16 8%, #0f0f16 12%,
+      transparent 12%, transparent 16%,
+      #111118 16%, #111118 19%,
+      transparent 19%, transparent 24%,
+      #0f0f16 24%, #0f0f16 28%,
+      transparent 28%, transparent 33%,
+      #111118 33%, #111118 38%,
+      transparent 38%, transparent 42%,
+      #0f0f16 42%, #0f0f16 45%,
+      transparent 45%, transparent 50%,
+      #111118 50%, #111118 56%,
+      transparent 56%, transparent 60%,
+      #0f0f16 60%, #0f0f16 64%,
+      transparent 64%, transparent 70%,
+      #111118 70%, #111118 75%,
+      transparent 75%, transparent 80%,
+      #0f0f16 80%, #0f0f16 84%,
+      transparent 84%, transparent 90%,
+      #111118 90%, #111118 95%,
       transparent 95%
     );
   opacity: 0.9;
 }
 
-.cyber-city-detailed::before {
-  content: '';
+/* Front layer skyline - closest buildings */
+.nyc-skyline-front {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  background: linear-gradient(to top, rgba(200, 0, 255, 0.15) 0%, transparent 40%);
-}
-
-/* Building window lights */
-.cyber-windows {
-  position: absolute;
-  bottom: 5%;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background-image: 
-    radial-gradient(ellipse 2px 3px at 8% 60%, rgba(255, 200, 255, 0.9) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 8% 70%, rgba(200, 150, 255, 0.8) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 8% 80%, rgba(255, 200, 255, 0.7) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 20% 50%, rgba(255, 150, 255, 0.9) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 20% 65%, rgba(200, 100, 255, 0.8) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 20% 75%, rgba(255, 200, 255, 0.7) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 35% 55%, rgba(255, 150, 255, 0.9) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 35% 70%, rgba(200, 150, 255, 0.8) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 35% 85%, rgba(255, 200, 255, 0.7) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 50% 45%, rgba(255, 200, 255, 0.9) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 50% 60%, rgba(200, 100, 255, 0.8) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 50% 80%, rgba(255, 150, 255, 0.7) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 65% 50%, rgba(255, 150, 255, 0.9) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 65% 65%, rgba(200, 150, 255, 0.8) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 75% 55%, rgba(255, 200, 255, 0.9) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 75% 75%, rgba(200, 100, 255, 0.8) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 90% 60%, rgba(255, 150, 255, 0.9) 0%, transparent 100%),
-    radial-gradient(ellipse 2px 3px at 90% 80%, rgba(200, 150, 255, 0.8) 0%, transparent 100%);
-  animation: window-flicker 4s ease-in-out infinite;
-}
-
-@keyframes window-flicker {
-  0%, 100% { opacity: 1; }
-  5% { opacity: 0.9; }
-  10% { opacity: 1; }
-  50% { opacity: 0.95; }
-  55% { opacity: 0.85; }
-  60% { opacity: 1; }
-}
-
-/* Cyber billboards */
-.cyber-billboard {
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  color: #00ffff;
-  text-shadow: 
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #0088ff;
-  animation: neon-flicker 3s ease-in-out infinite;
-  letter-spacing: 6px;
-}
-
-.cyber-billboard.pink {
-  color: #ff00ff;
-  text-shadow: 
-    0 0 5px #ff00ff,
-    0 0 10px #ff00ff,
-    0 0 20px #ff00ff,
-    0 0 40px #ff0088;
-}
-
-/* Cyber drones */
-.cyber-drone {
-  position: absolute;
-  left: -50px;
-  width: 30px;
-  height: 10px;
-  background: linear-gradient(90deg, #ff00ff, #00ffff);
-  border-radius: 15px 15px 5px 5px;
-  animation: drone-fly 12s linear infinite;
-  box-shadow: 
-    0 0 10px #ff00ff,
-    0 0 20px rgba(255, 0, 255, 0.5);
-}
-
-.cyber-drone::before {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 2px;
-  animation: propeller-spin 0.1s linear infinite;
-}
-
-.cyber-drone::after {
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 20px;
-  background: linear-gradient(to bottom, rgba(0, 255, 255, 0.8), transparent);
-}
-
-@keyframes drone-fly {
-  0% { left: -50px; transform: translateY(0); }
-  25% { transform: translateY(-15px); }
-  50% { transform: translateY(10px); }
-  75% { transform: translateY(-8px); }
-  100% { left: 105%; transform: translateY(0); }
-}
-
-@keyframes propeller-spin {
-  0% { opacity: 0.3; }
-  50% { opacity: 1; }
-  100% { opacity: 0.3; }
-}
-
-/* Enhanced cyber grid */
-.cyber-grid-enhanced {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30%;
+  height: 35%;
   background: 
-    linear-gradient(90deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(255, 0, 255, 0.1) 1px, transparent 1px);
-  background-size: 60px 60px;
-  transform: perspective(500px) rotateX(60deg);
-  transform-origin: bottom;
-  animation: grid-pulse 2s ease-in-out infinite;
+    linear-gradient(90deg,
+      transparent 0%,
+      #16161f 5%, #16161f 9%,
+      transparent 9%, transparent 15%,
+      #141420 15%, #141420 20%,
+      transparent 20%, transparent 28%,
+      #16161f 28%, #16161f 34%,
+      transparent 34%, transparent 42%,
+      #141420 42%, #141420 48%,
+      transparent 48%, transparent 55%,
+      #16161f 55%, #16161f 62%,
+      transparent 62%, transparent 70%,
+      #141420 70%, #141420 78%,
+      transparent 78%, transparent 85%,
+      #16161f 85%, #16161f 92%,
+      transparent 92%
+    );
+  opacity: 0.85;
 }
 
-@keyframes grid-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.7; }
-}
-
-/* Cyber rain */
-.cyber-rain {
+/* Empire State Building style */
+.building-empire {
   position: absolute;
-  inset: 0;
+  bottom: 10%;
+  left: 15%;
+  width: 25px;
+  height: 50%;
+  background: linear-gradient(to top, #1a1a24 0%, #151520 50%, #12121a 100%);
+  clip-path: polygon(20% 100%, 80% 100%, 75% 30%, 55% 30%, 55% 15%, 50% 0%, 45% 15%, 45% 30%, 25% 30%);
+}
+
+.building-empire::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 10%;
+  height: 15%;
+  background: linear-gradient(to top, #1a1a24 0%, rgba(255, 200, 150, 0.3) 100%);
+}
+
+/* Chrysler Building style - art deco spire */
+.building-chrysler {
+  position: absolute;
+  bottom: 10%;
+  left: 35%;
+  width: 22px;
+  height: 45%;
+  background: linear-gradient(to top, #18181f 0%, #141420 100%);
+  clip-path: polygon(15% 100%, 85% 100%, 80% 40%, 60% 40%, 55% 20%, 52% 8%, 50% 0%, 48% 8%, 45% 20%, 40% 40%, 20% 40%);
+}
+
+/* One WTC style - tall rectangular */
+.building-one-wtc {
+  position: absolute;
+  bottom: 10%;
+  right: 25%;
+  width: 20px;
+  height: 55%;
+  background: linear-gradient(135deg, #1c1c26 0%, #16161f 50%, #12121a 100%);
+  clip-path: polygon(10% 100%, 90% 100%, 85% 5%, 50% 0%, 15% 5%);
+}
+
+/* Generic towers */
+.building-tower-1 {
+  position: absolute;
+  bottom: 10%;
+  left: 55%;
+  width: 30px;
+  height: 40%;
+  background: linear-gradient(to top, #191922 0%, #141420 100%);
+}
+
+.building-tower-2 {
+  position: absolute;
+  bottom: 10%;
+  right: 45%;
+  width: 35px;
+  height: 38%;
+  background: linear-gradient(to top, #171720 0%, #14141d 100%);
+}
+
+.building-tower-3 {
+  position: absolute;
+  bottom: 10%;
+  right: 12%;
+  width: 28px;
+  height: 42%;
+  background: linear-gradient(135deg, #1a1a24 0%, #15151f 100%);
+}
+
+/* City windows - warm yellow/orange lights */
+.city-windows-layer {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
+  height: 50%;
   background-image: 
-    linear-gradient(to bottom, transparent 0%, rgba(0, 255, 255, 0.1) 50%, transparent 100%);
-  background-size: 2px 20px;
-  animation: rain-fall 0.5s linear infinite;
-  opacity: 0.3;
+    /* Row 1 - scattered windows */
+    radial-gradient(ellipse 2px 2px at 5% 60%, rgba(255, 220, 150, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 5% 70%, rgba(255, 200, 120, 0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 7% 55%, rgba(255, 230, 180, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 8% 75%, rgba(255, 200, 100, 0.6) 0%, transparent 100%),
+    /* More windows across */
+    radial-gradient(ellipse 2px 2px at 12% 50%, rgba(255, 220, 150, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 14% 62%, rgba(255, 200, 120, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 16% 72%, rgba(255, 230, 180, 0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 18% 58%, rgba(255, 200, 100, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 22% 65%, rgba(255, 220, 150, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 25% 55%, rgba(255, 200, 120, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 28% 70%, rgba(255, 230, 180, 0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 32% 48%, rgba(255, 200, 100, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 35% 60%, rgba(255, 220, 150, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 38% 75%, rgba(255, 200, 120, 0.6) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 42% 52%, rgba(255, 230, 180, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 45% 68%, rgba(255, 200, 100, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 48% 58%, rgba(255, 220, 150, 0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 52% 72%, rgba(255, 200, 120, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 55% 50%, rgba(255, 230, 180, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 58% 65%, rgba(255, 200, 100, 0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 62% 55%, rgba(255, 220, 150, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 65% 70%, rgba(255, 200, 120, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 68% 48%, rgba(255, 230, 180, 0.6) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 72% 62%, rgba(255, 200, 100, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 75% 75%, rgba(255, 220, 150, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 78% 55%, rgba(255, 200, 120, 0.7) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 82% 68%, rgba(255, 230, 180, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 85% 52%, rgba(255, 200, 100, 0.9) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 88% 72%, rgba(255, 220, 150, 0.6) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 92% 60%, rgba(255, 200, 120, 0.8) 0%, transparent 100%),
+    radial-gradient(ellipse 2px 2px at 95% 65%, rgba(255, 230, 180, 0.9) 0%, transparent 100%);
+  animation: windows-twinkle 4s ease-in-out infinite;
 }
 
-@keyframes rain-fall {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 20px; }
+@keyframes windows-twinkle {
+  0%, 100% { opacity: 1; }
+  25% { opacity: 0.95; }
+  50% { opacity: 0.9; }
+  75% { opacity: 0.97; }
 }
 
-/* Scanlines */
-.scanlines {
+/* Street glow at bottom */
+.street-glow {
   position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0px,
-    transparent 2px,
-    rgba(0, 0, 0, 0.1) 2px,
-    rgba(0, 0, 0, 0.1) 4px
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background: linear-gradient(to top, 
+    rgba(255, 180, 100, 0.25) 0%, 
+    rgba(255, 150, 80, 0.15) 30%, 
+    transparent 100%
+  );
+}
+
+/* Building light rays */
+.building-light-ray {
+  position: absolute;
+  bottom: 30%;
+  width: 2px;
+  height: 200px;
+  background: linear-gradient(to top, 
+    rgba(255, 220, 150, 0.3) 0%, 
+    rgba(255, 200, 120, 0.1) 50%, 
+    transparent 100%
+  );
+  animation: light-ray-pulse 3s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+@keyframes light-ray-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 0.6; transform: scaleY(1.1); }
+}
+
+/* City haze/fog */
+.city-haze {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, 
+    rgba(30, 20, 40, 0.4) 0%, 
+    rgba(40, 30, 60, 0.2) 40%, 
+    transparent 100%
   );
   pointer-events: none;
-  opacity: 0.5;
 }
 
-/* Holographic ads */
-.holo-ad {
+/* Car lights on streets */
+.car-light {
   position: absolute;
-  padding: 8px 16px;
-  background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
-  border: 1px solid rgba(255, 0, 255, 0.5);
-  color: #fff;
-  font-size: 14px;
-  letter-spacing: 4px;
-  animation: holo-flicker 2s ease-in-out infinite;
-  text-shadow: 0 0 10px #ff00ff;
+  left: -20px;
+  width: 15px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    rgba(255, 50, 50, 0.8) 0%, 
+    rgba(255, 100, 100, 0.4) 50%,
+    transparent 100%
+  );
+  border-radius: 2px;
+  animation: car-drive linear infinite;
+  box-shadow: 0 0 10px rgba(255, 50, 50, 0.5);
 }
 
-@keyframes holo-flicker {
-  0%, 100% { opacity: 0.8; transform: scale(1); }
-  10% { opacity: 0.6; }
-  20% { opacity: 0.9; }
-  50% { opacity: 0.7; transform: scale(1.02); }
-  80% { opacity: 0.95; }
+.car-light::before {
+  content: '';
+  position: absolute;
+  right: -30px;
+  top: 0;
+  width: 20px;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    rgba(255, 255, 200, 0.5) 50%, 
+    rgba(255, 255, 150, 0.9) 100%
+  );
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(255, 255, 150, 0.6);
+}
+
+@keyframes car-drive {
+  0% { left: -50px; }
+  100% { left: 105%; }
+}
+
+/* Airplane lights */
+.airplane-light {
+  position: absolute;
+  left: -30px;
+  width: 3px;
+  height: 3px;
+  background: #fff;
+  border-radius: 50%;
+  animation: airplane-fly 25s linear infinite;
+  box-shadow: 0 0 5px #fff, 0 0 10px rgba(255, 0, 0, 0.5);
+}
+
+.airplane-light::before {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 0;
+  width: 2px;
+  height: 2px;
+  background: #ff0000;
+  border-radius: 50%;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes airplane-fly {
+  0% { left: -30px; transform: translateY(0); }
+  100% { left: 110%; transform: translateY(-50px); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
