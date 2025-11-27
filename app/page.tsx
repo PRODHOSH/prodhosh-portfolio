@@ -854,37 +854,36 @@ export default function Home() {
                 <button
                   key={project.id}
                   onClick={() => setSelectedProject(project)}
-                  className="bg-gradient-to-br from-card/50 to-card border-2 border-primary/30 rounded-xl overflow-hidden hover:border-primary transition-all scroll-animate-scale hover:scale-105 transform duration-300 text-left group backdrop-blur-sm"
+                  className="bg-gradient-to-br from-card/50 to-card border-2 border-primary/30 rounded-xl overflow-hidden hover:border-primary transition-all scroll-animate-scale hover:scale-[1.02] transform duration-300 text-left group backdrop-blur-sm"
                 >
-                  {/* Image container with proper cover */}
-                  <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden relative">
+                  {/* Image container - square aspect ratio */}
+                  <div className="aspect-[16/10] bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden relative">
                     <Image
                       src={project.image}
                       alt={project.title}
-                      width={500}
-                      height={300}
-                      className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <div className="p-5">
-                    <h3 className="text-lg font-bold mb-2 font-mono text-primary group-hover:text-accent transition-colors">{project.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+                  <div className="p-4">
+                    <h3 className="text-base font-bold mb-1.5 font-mono text-primary group-hover:text-accent transition-colors">{project.title}</h3>
+                    <p className="text-muted-foreground text-xs mb-3 leading-relaxed line-clamp-2">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-1.5 mb-3">
                       {project.tags.map((tag) => (
-                        <span key={tag} className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-mono border border-primary/30">
+                        <span key={tag} className="px-2 py-0.5 bg-primary/20 text-primary text-[10px] rounded-full font-mono border border-primary/30">
                           {tag}
                         </span>
                       ))}
                     </div>
                     <div className="flex gap-3 flex-wrap items-center">
-                      <span className="text-primary text-xs font-semibold font-mono flex items-center gap-2">
-                        <Github size={16} /> View Code
+                      <span className="text-primary text-xs font-semibold font-mono flex items-center gap-1.5">
+                        <Github size={14} /> View Code
                       </span>
                       {project.liveLink && (
-                        <span className="text-primary text-xs font-semibold font-mono flex items-center gap-2">
-                          <ExternalLink size={16} /> Try Demo
+                        <span className="text-primary text-xs font-semibold font-mono flex items-center gap-1.5">
+                          <ExternalLink size={14} /> Try Demo
                         </span>
                       )}
                     </div>
