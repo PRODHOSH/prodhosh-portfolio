@@ -849,15 +849,15 @@ export default function Home() {
               Featured <span className="text-primary">Projects</span>
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {projects.map((project) => (
                 <button
                   key={project.id}
                   onClick={() => setSelectedProject(project)}
-                  className="bg-gradient-to-br from-card/50 to-card border-2 border-primary/30 rounded-xl overflow-hidden hover:border-primary transition-all scroll-animate-scale hover:scale-[1.02] transform duration-300 text-left group backdrop-blur-sm"
+                  className="bg-gradient-to-br from-card/50 to-card border border-primary/30 rounded-lg overflow-hidden hover:border-primary transition-all scroll-animate-scale hover:scale-[1.03] transform duration-300 text-left group backdrop-blur-sm"
                 >
-                  {/* Image container - square aspect ratio */}
-                  <div className="aspect-[16/10] bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden relative">
+                  {/* Image container - compact */}
+                  <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden relative">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -865,25 +865,22 @@ export default function Home() {
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                   </div>
-                  <div className="p-4">
-                    <h3 className="text-base font-bold mb-1.5 font-mono text-primary group-hover:text-accent transition-colors">{project.title}</h3>
-                    <p className="text-muted-foreground text-xs mb-3 leading-relaxed line-clamp-2">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 mb-3">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="px-2 py-0.5 bg-primary/20 text-primary text-[10px] rounded-full font-mono border border-primary/30">
+                  <div className="p-2.5">
+                    <h3 className="text-xs font-bold mb-1 font-mono text-primary group-hover:text-accent transition-colors truncate">{project.title}</h3>
+                    <div className="flex flex-wrap gap-1 mb-2">
+                      {project.tags.slice(0, 2).map((tag) => (
+                        <span key={tag} className="px-1.5 py-0.5 bg-primary/20 text-primary text-[8px] rounded font-mono">
                           {tag}
                         </span>
                       ))}
                     </div>
-                    <div className="flex gap-3 flex-wrap items-center">
-                      <span className="text-primary text-xs font-semibold font-mono flex items-center gap-1.5">
-                        <Github size={14} /> View Code
+                    <div className="flex gap-2 items-center">
+                      <span className="text-primary text-[10px] font-mono flex items-center gap-1">
+                        <Github size={10} /> Code
                       </span>
                       {project.liveLink && (
-                        <span className="text-primary text-xs font-semibold font-mono flex items-center gap-1.5">
-                          <ExternalLink size={14} /> Try Demo
+                        <span className="text-primary text-[10px] font-mono flex items-center gap-1">
+                          <ExternalLink size={10} /> Demo
                         </span>
                       )}
                     </div>
