@@ -2,256 +2,238 @@
 
 # 🌌 PRODHOSH PORTFOLIO 🌌
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&random=false&width=800&height=100&lines=AI+%2F+ML+Explorer+%F0%9F%9A%80;Data+Scientist+%F0%9F%93%8A;Full+Stack+Developer+%F0%9F%92%BB" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=35&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&random=false&width=800&height=100&lines=AI+%2F+ML+Explorer+%F0%9F%9A%80;Data+Scientist+%F0%9F%93%8A;Full+Stack+Developer+%F0%9F%92%BB;Innovating+the+Future+%E2%9C%A8" alt="Typing SVG" />
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
 
-[![GitHub Pages](https://img.shields.io/badge/🌐_Live_Site-00F7FF?style=for-the-badge&logo=github&logoColor=white)](https://prodhosh.github.io/prodhosh-portfolio/)
+[![Live Site](https://img.shields.io/badge/🌐_Live_Site-00F7FF?style=for-the-badge&logo=github&logoColor=white)](https://prodhosh.github.io/prodhosh-portfolio/)
 [![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docker.com/)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
 <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width="1000">
 
 </div>
 
-## 🎯 About The Project
+---
+
+## ⚡ Quick Start
 
 <div align="center">
-
-```ascii
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║   🌟  A NEXT-GEN PORTFOLIO WITH GALAXY-THEMED DESIGN  🌟        ║
-║                                                                  ║
-║   ✨ Custom Glowing Cursor     🎨 3D Animated Cards             ║
-║   🌠 Starfield Background      ⚡ Lightning Fast Loading        ║
-║   🎭 Interactive Modals        🔮 Smooth Animations             ║
-║   🤖 AI Chatbot Assistant      💬 Google Forms Integration      ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
-```
-
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="100">
-  <img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="100">
-  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100">
-  <img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="100">
-  <img src="https://user-images.githubusercontent.com/74038190/212257463-4d082cb4-7483-4eaf-bc25-6dde2628aabd.gif" width="100">
-  <img src="https://user-images.githubusercontent.com/74038190/212257460-738ff738-247f-4445-a718-cdd0ca76e2db.gif" width="100">
-  <img src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif" width="100">
-</div>
-
-<br>
-
-## 🚀 Features That Make It Stand Out
 
 <table>
 <tr>
-<td width="50%">
+<td align="center" width="50%">
 
-### 🎨 **Visual Excellence**
-- 🌌 **Galaxy Theme** with nebula clouds
-- ⭐ **95 Animated Stars** across 3 layers
-- 💫 **Custom Glowing Cursor** that follows you
-- 🎭 **Smooth Scroll Animations**
-- 🔮 **3D Hover Effects** on cards
-- 🎬 **Success Celebration** animations
+### 🐳 Docker (Recommended)
+
+```bash
+# One-liner to run
+docker-compose up -d
+
+# Visit http://localhost
+```
 
 </td>
-<td width="50%">
+<td align="center" width="50%">
 
-### ⚡ **Technical Prowess**
-- 🚀 **Next.js 16** with Turbopack
-- 📱 **Fully Responsive** design
-- 🎯 **TypeScript** for type safety
-- 💅 **Tailwind CSS** for styling
-- 🔥 **Static Export** for blazing speed
-- 🤖 **AI Chatbot** integration
+### 📦 NPM/PNPM
+
+```bash
+pnpm install
+pnpm dev
+
+# Visit http://localhost:3000
+```
 
 </td>
 </tr>
 </table>
 
-<br>
-
-<div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400">
 </div>
 
-## 🛠️ Tech Stack
+---
+
+## 🎯 About
 
 <div align="center">
 
-| Frontend | Styling | Tools | Deployment |
-|:--------:|:-------:|:-----:|:----------:|
-| ![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=next.js) | ![TailwindCSS](https://img.shields.io/badge/-Tailwind-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white) | ![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=git&logoColor=white) | ![GitHub Pages](https://img.shields.io/badge/-GitHub_Pages-222222?style=flat-square&logo=github) |
-| ![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black) | ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=flat-square&logo=css3) | ![VSCode](https://img.shields.io/badge/-VSCode-007ACC?style=flat-square&logo=visual-studio-code) | ![Vercel Ready](https://img.shields.io/badge/-Vercel_Ready-000000?style=flat-square&logo=vercel) |
-| ![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white) | ![Radix UI](https://img.shields.io/badge/-Radix_UI-161618?style=flat-square&logo=radix-ui&logoColor=white) | ![npm](https://img.shields.io/badge/-npm-CB3837?style=flat-square&logo=npm) | ![CI/CD](https://img.shields.io/badge/-GitHub_Actions-2088FF?style=flat-square&logo=github-actions&logoColor=white) |
+<img src="https://user-images.githubusercontent.com/74038190/225813708-98b745f2-7d22-48cf-9150-083f1b00d6c9.gif" width="500">
+
+A **next-generation portfolio** featuring dual-theme backgrounds (Galaxy 🌌 & Cyberpunk City 🏙️), interactive animations, and an AI chatbot assistant.
 
 </div>
 
-<br>
+---
 
-## 📂 Project Structure
+## ✨ Features
+
+<div align="center">
+
+| 🎨 Visual | ⚡ Performance | 🛠️ Tech |
+|:---------:|:--------------:|:-------:|
+| Galaxy & Cyberpunk Themes | Next.js 16 + Turbopack | TypeScript |
+| Custom Glowing Cursor | Static Export | Tailwind CSS v4 |
+| 3D Animated Cards | Docker Ready | Radix UI |
+| Smooth Scroll Animations | Nginx Optimized | React 19 |
+| Interactive Modals | 95+ Lighthouse Score | pnpm |
+
+</div>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="80">
+  <img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="80">
+  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="80">
+  <img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="80">
+  <img src="https://user-images.githubusercontent.com/74038190/212257463-4d082cb4-7483-4eaf-bc25-6dde2628aabd.gif" width="80">
+  <img src="https://user-images.githubusercontent.com/74038190/212257460-738ff738-247f-4445-a718-cdd0ca76e2db.gif" width="80">
+  <img src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif" width="80">
+</div>
+
+---
+
+## 🐳 Docker Deployment
+
+<div align="center">
+
+<img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="100">
+
+</div>
+
+### Available Options
+
+| Method | Command | Port | Use Case |
+|:------:|:--------|:----:|:---------|
+| 🌐 **Static** (Nginx) | `docker-compose up -d` | `80` | Production - Fastest |
+| 🚀 **Server** (Node) | `docker-compose --profile server up -d` | `3000` | SSR Features |
+| 🛠️ **Dev** (Hot Reload) | `docker-compose --profile dev up -d` | `3000` | Development |
+
+### Quick Commands
+
+```bash
+# 🏗️ Build & Run Static Site
+docker build -f Dockerfile.static -t prodhosh-portfolio .
+docker run -d -p 80:80 prodhosh-portfolio
+
+# 🛑 Stop all containers
+docker-compose down
+
+# 📊 View logs
+docker-compose logs -f
+
+# 🔄 Rebuild after changes
+docker-compose up -d --build
+```
+
+### Docker Files Included
+
+```
+📦 Docker Setup
+├── 🐳 Dockerfile           # Next.js server mode
+├── 🌐 Dockerfile.static    # Nginx static export (recommended)
+├── 🛠️ Dockerfile.dev       # Development with hot reload
+├── 📋 docker-compose.yml   # Orchestration
+├── ⚙️ nginx.conf           # Nginx configuration
+└── 🚫 .dockerignore        # Build exclusions
+```
+
+---
+
+## 📁 Project Structure
 
 ```
 prodhosh-portfolio/
-│
 ├── 🎨 app/
-│   ├── 📄 page.tsx          # Main portfolio component
-│   ├── 🎭 layout.tsx         # Root layout with providers
-│   └── 🌈 globals.css        # Global styles & animations
-│
+│   ├── page.tsx         # Main portfolio (1600+ lines)
+│   ├── layout.tsx       # Root layout
+│   └── globals.css      # Animations & themes
 ├── 🧩 components/
-│   └── 🌓 theme-provider.tsx # Dark theme configuration
-│
-├── 🛠️ lib/
-│   └── ⚙️ utils.ts           # Utility functions
-│
+│   └── theme-provider.tsx
 ├── 🖼️ public/
-│   ├── certificates/         # Project & certificate images
-│   ├── images/              # Profile & assets
-│   └── logos/               # Organization logos
-│
-└── 📦 Configuration Files
+│   ├── certificates/    # Achievement images
+│   ├── images/          # Profile & assets
+│   └── logos/           # Organization logos
+├── 🐳 Docker/
+│   ├── Dockerfile
+│   ├── Dockerfile.static
+│   ├── Dockerfile.dev
+│   ├── docker-compose.yml
+│   └── nginx.conf
+└── ⚙️ Config
     ├── next.config.mjs
-    ├── tailwind.config.ts
     ├── tsconfig.json
     └── package.json
 ```
 
-<br>
+---
 
-## 🎯 Quick Start
-
-<div align="center">
-
-```bash
-# 🔽 Clone the repository
-git clone https://github.com/PRODHOSH/prodhosh-portfolio.git
-
-# 📁 Navigate to directory
-cd prodhosh-portfolio
-
-# 📦 Install dependencies
-npm install
-
-# 🚀 Start development server
-npm run dev
-
-# 🏗️ Build for production
-npm run build
-
-# 🌐 Deploy to GitHub Pages
-git subtree push --prefix out origin gh-pages
-```
-
-</div>
-
-<br>
+## 🎨 Themes
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212284136-03988914-d899-44b4-b1d9-4eeccf656e44.gif" width="400">
-</div>
-
-## ✨ Key Highlights
-
-<div align="center">
-
-| Feature | Description | Status |
-|---------|-------------|--------|
-| 🎯 **Custom Cursor** | Glowing blue cursor with smooth follower | ✅ Active |
-| ⌨️ **Typing Animation** | Dynamic role text that types and deletes | ✅ Active |
-| 🎴 **Project Modals** | Interactive popups with full project details | ✅ Active |
-| 🌌 **Galaxy Background** | Animated stars and nebula clouds | ✅ Active |
-| 🤖 **AI Chatbot** | Intelligent assistant for visitor queries | ✅ Active |
-| 💬 **Contact Form** | Google Forms integration with celebration | ✅ Active |
-| 📱 **Responsive Design** | Perfect on all devices | ✅ Active |
-| ⚡ **Performance** | Lighthouse score 95+ | ✅ Optimized |
-
-</div>
-
-<br>
-
-## 🤖 AI Chatbot Feature
-
-<div align="center">
-
-### **24/7 Intelligent Assistant**
-
-The portfolio features an integrated AI chatbot that provides instant answers to visitor questions about:
-- 💼 **Work Experience** & Projects
-- 🎓 **Education** & Certifications  
-- 💻 **Technical Skills** & Expertise
-- 📧 **Contact Information** & Availability
-
-**Why it matters:**
-- ⚡ Instant responses without waiting
-- 🌐 Available 24/7 for global visitors
-- 🤝 Enhanced user engagement
-- 🚀 Shows innovation & AI integration skills
-
-<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="100">
-
-</div>
-
-<br>
-
-## 🎨 Color Palette
-
-<div align="center">
-
-```css
-🔵 Primary:   #00F7FF  /* Cyan Glow */
-🟣 Accent:    #8B5CF6  /* Purple Magic */
-⚫ Dark:      #0a0118  /* Deep Space */
-🌑 Darker:    #0d0221  /* Void Black */
-💎 Card:      rgba(255, 255, 255, 0.05)
-```
-
-<img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="100">
-
-</div>
-
-## 🌟 Special Features
 
 <table>
 <tr>
-<td>
+<td align="center">
 
-### 🎭 Interactive Elements
-- ✨ Hover effects on all cards
-- 🖱️ Custom cursor throughout
-- 🎨 Smooth transitions
-- 📱 Touch-friendly mobile UI
-- 🤖 AI-powered chatbot assistant
-- 💬 Real-time form submissions
+### 🌌 Galaxy
+Purple nebula clouds  
+95 animated stars  
+Floating orbs  
+Deep space vibes
 
 </td>
-<td>
+<td align="center">
 
-### 🚀 Performance
-- ⚡ Static site generation
-- 🔄 Code splitting
-- 🎯 Optimized images
-- 💾 Minimal bundle size
-- 🎬 Lazy-loaded animations
-- 📦 Efficient React hooks
+### 🏙️ Night City
+Dubai-style skyline  
+White lit windows  
+Flying cyber drones  
+Water reflections
 
 </td>
 </tr>
 </table>
 
-<br>
+</div>
+
+---
+
+## 🛠️ Development
+
+```bash
+# Clone
+git clone https://github.com/PRODHOSH/prodhosh-portfolio.git
+cd prodhosh-portfolio
+
+# Install (pnpm recommended)
+pnpm install
+
+# Dev server
+pnpm dev
+
+# Build
+pnpm build
+
+# Deploy to GitHub Pages
+git subtree push --prefix out origin gh-pages
+```
+
+---
+
+## 🚀 Tech Stack
 
 <div align="center">
 
-## 🤝 Connect With Me
+<img src="https://skillicons.dev/icons?i=nextjs,react,typescript,tailwind,docker,nginx,git,github,vscode" />
+
+</div>
+
+---
+
+## 🤝 Connect
+
+<div align="center">
 
 <a href="https://github.com/PRODHOSH">
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
@@ -262,13 +244,16 @@ The portfolio features an integrated AI chatbot that provides instant answers to
 <a href="mailto:prodhosh3@gmail.com">
   <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
 </a>
+<a href="https://prodhosh.github.io/prodhosh-portfolio/">
+  <img src="https://img.shields.io/badge/Portfolio-00F7FF?style=for-the-badge&logo=firefox&logoColor=white" />
+</a>
 
 <br><br>
 
 <img src="https://user-images.githubusercontent.com/74038190/212284119-fbfd994d-8c2a-4a07-a75f-84e513833c33.gif" width="300">
 
-### 💜 Made with passion and powered by coffee ☕
+### ⭐ Star this repo if you like it!
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=170&section=footer&text=Thank%20You%20for%20Visiting!&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=72" width="100%">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=120&section=footer&text=Built%20with%20%E2%9D%A4%EF%B8%8F%20by%20Prodhosh&fontSize=24&fontColor=fff&animation=twinkling&fontAlignY=70" width="100%">
 
 </div>
