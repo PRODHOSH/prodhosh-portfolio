@@ -1,57 +1,23 @@
-# ================================
-# 🐳 Docker Ignore File
-# ================================
-
 # Dependencies
 node_modules
-.pnpm-store
 
 # Build outputs
 .next
 out
-dist
-build
 
 # Git
 .git
-.gitignore
 
-# IDE
+# IDE & OS
 .vscode
-.idea
-*.swp
-*.swo
+.DS_Store
 
 # Logs
 *.log
-npm-debug.log*
-pnpm-debug.log*
-
-# Environment
-.env
-.env.local
-.env.*.local
-
-# OS
-.DS_Store
-Thumbs.db
 
 # Docker
-Dockerfile*
-docker-compose*.yml
+Dockerfile
 .dockerignore
 
-# Documentation
+# Docs
 README.md
-CHANGELOG.md
-LICENSE
-
-# Tests
-coverage
-.nyc_output
-
-# Misc
-*.md
-.editorconfig
-.prettierrc
-.eslintrc*

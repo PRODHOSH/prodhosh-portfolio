@@ -20,38 +20,18 @@
 
 ## ⚡ Quick Start
 
-<div align="center">
-
-<table>
-<tr>
-<td align="center" width="50%">
-
-### 🐳 Docker (Recommended)
-
 ```bash
-# One-liner to run
-docker-compose up -d
+# Clone & Install
+git clone https://github.com/PRODHOSH/prodhosh-portfolio.git
+cd prodhosh-portfolio
+npm install
 
-# Visit http://localhost
+# Development
+npm run dev
+
+# Build
+npm run build
 ```
-
-</td>
-<td align="center" width="50%">
-
-### 📦 NPM/PNPM
-
-```bash
-pnpm install
-pnpm dev
-
-# Visit http://localhost:3000
-```
-
-</td>
-</tr>
-</table>
-
-</div>
 
 ---
 
@@ -93,49 +73,16 @@ A **next-generation portfolio** featuring dual-theme backgrounds (Galaxy 🌌 & 
 
 ---
 
-## 🐳 Docker Deployment
-
-<div align="center">
-
-<img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="100">
-
-</div>
-
-### Available Options
-
-| Method | Command | Port | Use Case |
-|:------:|:--------|:----:|:---------|
-| 🌐 **Static** (Nginx) | `docker-compose up -d` | `80` | Production - Fastest |
-| 🚀 **Server** (Node) | `docker-compose --profile server up -d` | `3000` | SSR Features |
-| 🛠️ **Dev** (Hot Reload) | `docker-compose --profile dev up -d` | `3000` | Development |
-
-### Quick Commands
+## 🐳 Docker
 
 ```bash
-# 🏗️ Build & Run Static Site
-docker build -f Dockerfile.static -t prodhosh-portfolio .
-docker run -d -p 80:80 prodhosh-portfolio
+# Build image
+docker build -t prodhosh-portfolio .
 
-# 🛑 Stop all containers
-docker-compose down
+# Run container
+docker run -d -p 3000:3000 prodhosh-portfolio
 
-# 📊 View logs
-docker-compose logs -f
-
-# 🔄 Rebuild after changes
-docker-compose up -d --build
-```
-
-### Docker Files Included
-
-```
-📦 Docker Setup
-├── 🐳 Dockerfile           # Next.js server mode
-├── 🌐 Dockerfile.static    # Nginx static export (recommended)
-├── 🛠️ Dockerfile.dev       # Development with hot reload
-├── 📋 docker-compose.yml   # Orchestration
-├── ⚙️ nginx.conf           # Nginx configuration
-└── 🚫 .dockerignore        # Build exclusions
+# Visit http://localhost:3000
 ```
 
 ---
@@ -144,26 +91,14 @@ docker-compose up -d --build
 
 ```
 prodhosh-portfolio/
-├── 🎨 app/
-│   ├── page.tsx         # Main portfolio (1600+ lines)
+├── app/                 # Next.js app directory
+│   ├── page.tsx         # Main portfolio
 │   ├── layout.tsx       # Root layout
-│   └── globals.css      # Animations & themes
-├── 🧩 components/
-│   └── theme-provider.tsx
-├── 🖼️ public/
-│   ├── certificates/    # Achievement images
-│   ├── images/          # Profile & assets
-│   └── logos/           # Organization logos
-├── 🐳 Docker/
-│   ├── Dockerfile
-│   ├── Dockerfile.static
-│   ├── Dockerfile.dev
-│   ├── docker-compose.yml
-│   └── nginx.conf
-└── ⚙️ Config
-    ├── next.config.mjs
-    ├── tsconfig.json
-    └── package.json
+│   └── globals.css      # Styles & animations
+├── components/          # React components
+├── public/              # Static assets
+├── Dockerfile           # Docker config
+└── package.json         # Dependencies
 ```
 
 ---
@@ -199,21 +134,11 @@ Water reflections
 
 ---
 
-## 🛠️ Development
+## 🛠️ Deploy
 
 ```bash
-# Clone
-git clone https://github.com/PRODHOSH/prodhosh-portfolio.git
-cd prodhosh-portfolio
-
-# Install (pnpm recommended)
-pnpm install
-
-# Dev server
-pnpm dev
-
-# Build
-pnpm build
+# Build static export
+npm run build
 
 # Deploy to GitHub Pages
 git subtree push --prefix out origin gh-pages
