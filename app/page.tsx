@@ -241,10 +241,13 @@ export default function Home() {
 
   // Theme effect
   useEffect(() => {
-    // Load saved theme or use default
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'galaxy'
-    setCurrentTheme(savedTheme)
-    document.documentElement.className = `dark theme-${savedTheme}`
+    // Load saved theme or use default - force galaxy on first load to prevent hydration issues
+    const savedTheme = localStorage.getItem('portfolio-theme')
+    // Only use saved theme if it's valid, otherwise default to galaxy
+    const validThemes = ['galaxy', 'cyberpunk']
+    const themeToUse = savedTheme && validThemes.includes(savedTheme) ? savedTheme : 'galaxy'
+    setCurrentTheme(themeToUse)
+    document.documentElement.className = `dark theme-${themeToUse}`
   }, [])
 
   // Handle theme change
