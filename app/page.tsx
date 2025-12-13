@@ -767,7 +767,7 @@ export default function Home() {
               <div className="relative flex items-center justify-center h-96 hero-animate-photo">
                 {/* Outer glow ring */}
                 <div className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full blur-3xl opacity-40 bg-gradient-to-br from-cyan-400/40 via-fuchsia-500/30 to-purple-600/40 animate-spin-slow" />
-                {/* Core orb with embedded photo */}
+                {/* Core orb with embedded photo clipped to orb */}
                 <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full shadow-2xl overflow-hidden">
                   <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full z-0">
                     <defs>
@@ -783,11 +783,21 @@ export default function Home() {
                           <feMergeNode in="SourceGraphic" />
                         </feMerge>
                       </filter>
+                      <clipPath id="avatarClip">
+                        <circle cx="200" cy="200" r="158" />
+                      </clipPath>
                     </defs>
                     {/* Base circle */}
                     <circle cx="200" cy="200" r="160" fill="url(#orbGrad)" filter="url(#softGlow)">
                       <animate attributeName="r" values="155;165;155" dur="6s" repeatCount="indefinite" />
                     </circle>
+                    {/* Photo masked to orb shape */}
+                    <image
+                      href={`${basePath}/images/profile-photo.jpg`}
+                      x="50" y="50" width="300" height="300"
+                      preserveAspectRatio="xMidYMid slice"
+                      clipPath="url(#avatarClip)"
+                    />
                     {/* Swirling highlights */}
                     <g opacity="0.5">
                       <path d="M40,200 C120,80 280,80 360,200" stroke="rgba(0,255,255,0.5)" strokeWidth="8" fill="none">
@@ -810,20 +820,6 @@ export default function Home() {
                       </circle>
                     </g>
                   </svg>
-                  {/* Photo layer */}
-                  <div className="relative z-10 w-full h-full rounded-full overflow-hidden">
-                    <Image
-                      src={`${basePath}/images/profile-photo.jpg`}
-                      alt="Prodhosh V.S"
-                      width={400}
-                      height={400}
-                      className="w-full h-full object-cover object-top"
-                    />
-                    {/* Soft gradient overlay for styling */}
-                    <div className="absolute inset-0 rounded-full pointer-events-none" style={{
-                      background: 'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15), rgba(0,0,0,0) 40%), radial-gradient(circle at 70% 80%, rgba(0,0,0,0.25), rgba(0,0,0,0) 60%)'
-                    }} />
-                  </div>
                   {/* Decorative inner ring */}
                   <div className="absolute inset-0 rounded-full z-20 pointer-events-none ring-2 ring-white/10" />
                 </div>
