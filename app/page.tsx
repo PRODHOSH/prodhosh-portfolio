@@ -777,7 +777,7 @@ export default function Home() {
                       alt="Prodhosh V.S"
                       width={1000}
                       height={1400}
-                      className="w-full h-full object-cover object-bottom"
+                      className="w-full h-full object-cover object-top"
                       priority
                     />
                   </div>
