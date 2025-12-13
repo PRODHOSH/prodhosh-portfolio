@@ -144,21 +144,16 @@ export default function Home() {
   useEffect(() => {
     const text = "Igniting Innovation"
     let index = 0
-    
-    if (!ignitionComplete) {
-      const interval = setInterval(() => {
-        if (index <= text.length) {
-          setIgnitionTyped(text.substring(0, index))
-          index++
-        } else {
-          setIgnitionComplete(true)
-          clearInterval(interval)
-        }
-      }, 100)
-      
-      return () => clearInterval(interval)
-    }
-  }, [ignitionComplete])
+    const interval = setInterval(() => {
+      setIgnitionTyped(text.substring(0, index))
+      index++
+      if (index > text.length) {
+        setIgnitionComplete(true)
+        clearInterval(interval)
+      }
+    }, 90)
+    return () => clearInterval(interval)
+  }, [])
 
   // Typing effect for roles
   useEffect(() => {
