@@ -3,6 +3,7 @@
 # Prodhosh Portfolio
 
 Clean, fast, and animated personal site built with Next.js 16 and Tailwind v4.
+<img src="https://github.blog/wp-content/uploads/2021/10/game-off-gif.gif?resize=1600%2C850" width="500">
 
 [Live](https://prodhosh.github.io/prodhosh-portfolio/) · [Issues](https://github.com/PRODHOSH/prodhosh-portfolio/issues) · [Contact](mailto:prodhosh3@gmail.com)
 
