@@ -941,7 +941,7 @@ export default function Home() {
                   <div className="flex items-start gap-4 mb-4">
                     <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
-                        src={`${basePath}/logos/nallamala_house_iit_madras_logo.png`}
+                        src={`${basePath}/logos/nallamala_house_iit_madras_logo.jpg`}
                         alt="Nallamala House - IIT Madras"
                         width={56}
                         height={56}
@@ -959,76 +959,11 @@ export default function Home() {
                   </p>
                 </div>
 
-                {/* AI/ML Member - Microsoft Club */}
-                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
-                      <Image
-                        src={`${basePath}/logos/microsoft-club-logo.jpeg`}
-                        alt="Microsoft Innovations Club"
-                        width={56}
-                        height={56}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-base font-mono">AI/ML Member</h4>
-                      <p className="text-primary text-sm font-mono">Microsoft Innovations Club, VIT Chennai</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">Oct 2025 - Present</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-foreground/70 font-mono">
-                    Contributed to AI/ML projects and workshops, collaborating with peers to explore cutting-edge
-                    technologies in artificial intelligence and machine learning.
-                  </p>
-                </div>
+                {/* AI/ML Member - Microsoft Innovations Club (removed; shown in Clubs loop) */}
 
-                {/* Website Manager - Nallamala House (IIT Madras) */}
-                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
-                      <Image
-                        src={`${basePath}/logos/nallamala_house_iit_madras_logo.png`}
-                        alt="Nallamala House - IIT Madras"
-                        width={56}
-                        height={56}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-base font-mono">Website Manager</h4>
-                      <p className="text-primary text-sm font-mono">Nallamala House – IIT Madras</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">Dec 2025 - Present · 1 mo · Remote</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-foreground/70 font-mono">
-                    Assisting in managing content and updates for the official Nallamala House website, in coordination with the Web Admin and related teams.
-                  </p>
-                </div>
+                {/* Duplicate Website Manager card removed */}
 
-                {/* Technical Team Member - Mathematics Club */}
-                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
-                      <Image
-                        src={`${basePath}/logos/math-club-logo.jpeg`}
-                        alt="Mathematics Club"
-                        width={56}
-                        height={56}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-base font-mono">Technical Team Member</h4>
-                      <p className="text-primary text-sm font-mono">Mathematics Club, VIT Chennai</p>
-                      <p className="text-xs text-muted-foreground font-mono mt-1">Sept 2025 - Present</p>
-                    </div>
-                  </div>
-                  <p className="text-sm text-foreground/70 font-mono">
-                    Built and managed the club's technical infrastructure, including website and online resources, to
-                    support events and activities.
-                  </p>
-                </div>
+                {/* Technical Team Member - Mathematics Club (removed; shown in Clubs loop) */}
 
                 {/* Student House Captain */}
                 <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
@@ -1119,45 +1054,20 @@ Focused on applying computational and mathematical concepts to real-world engine
               <div className="relative overflow-hidden bg-card/20 rounded-xl">
                 <div className="flex items-center gap-6 py-6 animate-marquee">
                   {[
-                    {
-                      logo: `${basePath}/logos/microsoft-innovations-club.png`,
-                      name: 'Microsoft Innovations Club',
-                      blurb: 'AI/ML member contributing to projects and workshops.',
-                      link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/'
-                    },
-                    {
-                      logo: `${basePath}/logos/math-club-logo.jpeg`,
-                      name: 'Mathematics Club, VIT Chennai',
-                      blurb: 'Technical team member supporting events and initiatives.',
-                      link: 'https://vit.ac.in'
-                    },
-                    {
-                      logo: `${basePath}/logos/microsoft-innovations-club.png`,
-                      name: 'Microsoft Innovations Club',
-                      blurb: 'AI/ML member contributing to projects and workshops.',
-                      link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/'
-                    },
-                    {
-                      logo: `${basePath}/logos/math-club-logo.jpeg`,
-                      name: 'Mathematics Club, VIT Chennai',
-                      blurb: 'Technical team member supporting events and initiatives.',
-                      link: 'https://vit.ac.in'
-                    }
+                    { logo: `${basePath}/logos/microsoft-club-logo.jpeg`, name: 'Microsoft Innovations Club', link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/' },
+                    { logo: `${basePath}/logos/math-club-logo.jpeg`, name: 'Mathematics Club, VIT Chennai', link: 'https://vit.ac.in' },
+                    { logo: `${basePath}/logos/microsoft-club-logo.jpeg`, name: 'Microsoft Innovations Club', link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/' },
+                    { logo: `${basePath}/logos/math-club-logo.jpeg`, name: 'Mathematics Club, VIT Chennai', link: 'https://vit.ac.in' }
                   ].map((item, idx) => (
                     <a
                       key={`${item.name}-${idx}`}
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-4 flex-shrink-0 bg-card/40 backdrop-blur-sm rounded-lg px-4 py-3"
+                      className="flex items-center justify-center flex-shrink-0 bg-card/40 backdrop-blur-sm rounded-lg w-20 h-20"
+                      aria-label={item.name}
                     >
-                      <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
-                        <Image src={item.logo} alt={item.name} width={40} height={40} className="w-full h-full object-cover" />
-                      </div>
-                      <div className="min-w-[220px]">
-                        <p className="font-mono text-sm font-semibold">{item.name}</p>
-                        <p className="font-mono text-xs text-muted-foreground line-clamp-2">{item.blurb}</p>
-                      </div>
+                      <Image src={item.logo} alt={item.name} width={64} height={64} className="w-14 h-14 object-contain" />
                     </a>
                   ))}
                 </div>
