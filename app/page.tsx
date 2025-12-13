@@ -613,7 +613,7 @@ export default function Home() {
       )}
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-background/80 border-b border-border">
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-background/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
@@ -652,14 +652,14 @@ export default function Home() {
               <div className="relative">
                 <button
                   onClick={() => setShowThemeMenu(!showThemeMenu)}
-                  className="p-2 rounded-lg hover:bg-primary/10 transition-all border border-primary/30 hover:border-primary/50"
+                  className="p-2 rounded-lg hover:bg-primary/10 transition-all"
                   aria-label="Change theme"
                 >
                   <Palette className="w-5 h-5 text-primary" />
                 </button>
                 
                 {showThemeMenu && (
-                  <div className="absolute right-0 top-full mt-2 bg-card/95 backdrop-blur-md border border-primary/30 rounded-xl p-2 min-w-[150px] shadow-xl shadow-primary/10 z-50">
+                  <div className="absolute right-0 top-full mt-2 bg-card/95 backdrop-blur-md rounded-xl p-2 min-w-[150px] shadow-xl shadow-primary/10 z-50">
                     {themes.map((theme) => (
                       <button
                         key={theme.id}
@@ -713,7 +713,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
               {/* LEFT SIDE - TEXT BOX */}
               <div className="relative hero-animate-text">
-                <div className="space-y-6 p-8 bg-card/30 backdrop-blur-sm border border-primary/20 rounded-2xl shadow-lg shadow-primary/10">
+                <div className="space-y-6 p-8 bg-card/30 backdrop-blur-sm rounded-2xl shadow-lg shadow-primary/10">
                   <div className="space-y-3">
                     <div className="relative inline-block">
                       <h1 className="text-5xl md:text-6xl font-bold text-primary leading-tight">Prodhosh</h1>
@@ -856,7 +856,7 @@ export default function Home() {
                 <button
                   key={project.id}
                   onClick={() => setSelectedProject(project)}
-                  className="bg-gradient-to-br from-card/50 to-card border-2 border-primary/30 rounded-xl overflow-hidden hover:border-primary transition-all scroll-animate-scale hover:scale-[1.02] transform duration-300 text-left group backdrop-blur-sm"
+                  className="bg-gradient-to-br from-card/50 to-card rounded-xl overflow-hidden transition-all scroll-animate-scale hover:scale-[1.02] transform duration-300 text-left group backdrop-blur-sm"
                 >
                   {/* Image container */}
                   <div className="h-48 bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden relative">
@@ -874,7 +874,7 @@ export default function Home() {
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.tags.map((tag) => (
-                        <span key={tag} className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-mono border border-primary/30">
+                        <span key={tag} className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-mono">
                           {tag}
                         </span>
                       ))}
@@ -1065,9 +1065,9 @@ Focused on applying computational and mathematical concepts to real-world engine
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// VOLUNTEERING'}</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Internshala Student Partner */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
                         src={`${basePath}/logos/internshala-logo.jpg`}
                         alt="Internshala"
@@ -1088,9 +1088,9 @@ Focused on applying computational and mathematical concepts to real-world engine
                 </div>
 
                 {/* Student Volunteer */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
                         src={`${basePath}/logos/v-volunteers-logo.jpeg`}
                         alt="V The Volunteers"
@@ -1112,9 +1112,9 @@ Focused on applying computational and mathematical concepts to real-world engine
                 </div>
 
                 {/* Event Coordinator */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
                         src={`${basePath}/logos/math-club-logo.jpeg`}
                         alt="Mathematics Club"

@@ -118,7 +118,7 @@ export default function PortfolioBuilder() {
       </div>
 
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-background/80 border-b border-border">
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-background/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center gap-2 text-primary hover:text-accent transition-colors">
@@ -135,7 +135,7 @@ export default function PortfolioBuilder() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <section className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6 text-primary text-sm font-semibold">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6 text-primary text-sm font-semibold">
               <Sparkles size={16} />
               <span>FREE PORTFOLIO GENERATOR</span>
             </div>
@@ -156,7 +156,7 @@ export default function PortfolioBuilder() {
 
           {/* Benefits Grid */}
           <section className="grid md:grid-cols-3 gap-6 mb-16">
-            <div className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-xl p-6 text-center hover:border-primary/50 transition-all">
+            <div className="bg-card/30 backdrop-blur-sm rounded-xl p-6 text-center transition-all">
               <div className="w-14 h-14 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="text-primary" size={24} />
               </div>
@@ -164,7 +164,7 @@ export default function PortfolioBuilder() {
               <p className="text-sm text-muted-foreground">Get your portfolio ready in under 5 minutes</p>
             </div>
 
-            <div className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-xl p-6 text-center hover:border-primary/50 transition-all">
+            <div className="bg-card/30 backdrop-blur-sm rounded-xl p-6 text-center transition-all">
               <div className="w-14 h-14 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Code className="text-purple-400" size={24} />
               </div>
@@ -172,7 +172,7 @@ export default function PortfolioBuilder() {
               <p className="text-sm text-muted-foreground">No programming knowledge needed at all</p>
             </div>
 
-            <div className="bg-card/30 backdrop-blur-sm border border-primary/20 rounded-xl p-6 text-center hover:border-primary/50 transition-all">
+            <div className="bg-card/30 backdrop-blur-sm rounded-xl p-6 text-center transition-all">
               <div className="w-14 h-14 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Sparkles className="text-blue-400" size={24} />
               </div>
@@ -183,9 +183,9 @@ export default function PortfolioBuilder() {
 
           {/* The Prompt - Main Feature */}
           <section className="mb-16">
-            <div className="bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm border-2 border-primary/30 rounded-2xl overflow-hidden shadow-xl shadow-primary/10">
+            <div className="bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl shadow-primary/10">
               {/* Header */}
-              <div className="bg-gradient-to-r from-primary/20 to-purple-600/20 border-b border-primary/30 p-6">
+              <div className="bg-gradient-to-r from-primary/20 to-purple-600/20 p-6">
                 <div className="flex items-center justify-between">
                   <div>
                     <h2 className="text-2xl font-bold text-primary mb-2">✨ Step 1: Copy This Prompt</h2>
@@ -234,7 +234,7 @@ export default function PortfolioBuilder() {
             </h2>
             
             <div className="grid md:grid-cols-4 gap-6">
-              <div className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-8 relative">
+              <div className="bg-card/30 backdrop-blur-sm rounded-xl p-8 relative">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-xl font-bold">
                   1
                 </div>
@@ -244,7 +244,7 @@ export default function PortfolioBuilder() {
                 </p>
               </div>
 
-              <div className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-8 relative">
+              <div className="bg-card/30 backdrop-blur-sm rounded-xl p-8 relative">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-cyan-600 rounded-full flex items-center justify-center text-xl font-bold">
                   2
                 </div>
@@ -254,7 +254,7 @@ export default function PortfolioBuilder() {
                 </p>
               </div>
 
-              <div className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-8 relative">
+              <div className="bg-card/30 backdrop-blur-sm rounded-xl p-8 relative">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-xl font-bold">
                   3
                 </div>
@@ -264,7 +264,7 @@ export default function PortfolioBuilder() {
                 </p>
               </div>
 
-              <div className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-8 relative">
+              <div className="bg-card/30 backdrop-blur-sm rounded-xl p-8 relative">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-xl font-bold">
                   4
                 </div>
@@ -291,7 +291,7 @@ export default function PortfolioBuilder() {
                 href="https://lovable.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
+                className="bg-card/30 backdrop-blur-sm rounded-xl p-6 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2 shadow-md">
@@ -313,7 +313,7 @@ export default function PortfolioBuilder() {
                 href="https://v0.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
+                className="bg-card/30 backdrop-blur-sm rounded-xl p-6 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2 shadow-md">
@@ -335,7 +335,7 @@ export default function PortfolioBuilder() {
                 href="https://bolt.new"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-card/30 backdrop-blur-sm border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:scale-105 transform duration-300"
+                className="bg-card/30 backdrop-blur-sm rounded-xl p-6 transition-all hover:scale-105 transform duration-300"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2 shadow-md">
@@ -357,7 +357,7 @@ export default function PortfolioBuilder() {
 
           {/* Portfolio Review Section */}
           <section className="mt-20 mb-16">
-            <div className="bg-card/30 backdrop-blur-sm border-2 border-primary/30 rounded-2xl p-8">
+            <div className="bg-card/30 backdrop-blur-sm rounded-2xl p-8">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-bold mb-3 font-mono">
                   Built Your Portfolio? <span className="text-primary">Get a Review!</span>
@@ -385,7 +385,7 @@ export default function PortfolioBuilder() {
                     required
                     pattern="https?://.+"
                     title="Please enter a valid URL starting with http:// or https://"
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors font-mono text-sm"
+                    className="w-full px-4 py-3 bg-background rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-colors font-mono text-sm"
                   />
                   <button
                     type="submit"
@@ -402,7 +402,7 @@ export default function PortfolioBuilder() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-background/50 backdrop-blur-md mt-20">
+      <footer className="bg-background/50 backdrop-blur-md mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center">
             <p className="text-muted-foreground text-sm font-mono mb-2">
