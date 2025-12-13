@@ -767,9 +767,9 @@ export default function Home() {
               <div className="relative flex items-center justify-center h-96 hero-animate-photo">
                 {/* Outer glow ring */}
                 <div className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full blur-3xl opacity-40 bg-gradient-to-br from-cyan-400/40 via-fuchsia-500/30 to-purple-600/40 animate-spin-slow" />
-                {/* Core orb */}
+                {/* Core orb with embedded photo */}
                 <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full shadow-2xl overflow-hidden">
-                  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+                  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full z-0">
                     <defs>
                       <radialGradient id="orbGrad" cx="50%" cy="50%" r="60%">
                         <stop offset="0%" stopColor="rgba(255,255,255,0.9)" />
@@ -810,6 +810,22 @@ export default function Home() {
                       </circle>
                     </g>
                   </svg>
+                  {/* Photo layer */}
+                  <div className="relative z-10 w-full h-full rounded-full overflow-hidden">
+                    <Image
+                      src={`${basePath}/images/profile-photo.jpg`}
+                      alt="Prodhosh V.S"
+                      width={400}
+                      height={400}
+                      className="w-full h-full object-cover object-top"
+                    />
+                    {/* Soft gradient overlay for styling */}
+                    <div className="absolute inset-0 rounded-full pointer-events-none" style={{
+                      background: 'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15), rgba(0,0,0,0) 40%), radial-gradient(circle at 70% 80%, rgba(0,0,0,0.25), rgba(0,0,0,0) 60%)'
+                    }} />
+                  </div>
+                  {/* Decorative inner ring */}
+                  <div className="absolute inset-0 rounded-full z-20 pointer-events-none ring-2 ring-white/10" />
                 </div>
                 {/* Pulsing ring */}
                 <div className="absolute w-64 h-64 md:w-84 md:h-84 rounded-full ring-4 ring-primary/40 animate-pulse" />
