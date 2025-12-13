@@ -763,68 +763,18 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* RIGHT SIDE - Animated Gradient Orb (replaces photo) */}
-              <div className="relative flex items-center justify-center h-96 hero-animate-photo">
-                {/* Outer glow ring */}
-                <div className="absolute w-72 h-72 md:w-96 md:h-96 rounded-full blur-3xl opacity-40 bg-gradient-to-br from-cyan-400/40 via-fuchsia-500/30 to-purple-600/40 animate-spin-slow" />
-                {/* Core orb with embedded photo clipped to orb */}
-                <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full shadow-2xl overflow-hidden">
-                  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" className="absolute inset-0 w-full h-full z-0">
-                    <defs>
-                      <radialGradient id="orbGrad" cx="50%" cy="50%" r="60%">
-                        <stop offset="0%" stopColor="rgba(255,255,255,0.9)" />
-                        <stop offset="40%" stopColor="rgba(0,200,255,0.6)" />
-                        <stop offset="100%" stopColor="rgba(128,0,255,0.4)" />
-                      </radialGradient>
-                      <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-                        <feGaussianBlur stdDeviation="10" result="blur" />
-                        <feMerge>
-                          <feMergeNode in="blur" />
-                          <feMergeNode in="SourceGraphic" />
-                        </feMerge>
-                      </filter>
-                      <clipPath id="avatarClip">
-                        <circle cx="200" cy="200" r="158" />
-                      </clipPath>
-                    </defs>
-                    {/* Base circle */}
-                    <circle cx="200" cy="200" r="160" fill="url(#orbGrad)" filter="url(#softGlow)">
-                      <animate attributeName="r" values="155;165;155" dur="6s" repeatCount="indefinite" />
-                    </circle>
-                    {/* Photo masked to orb shape */}
-                    <image
-                      href={`${basePath}/images/profile-photo.jpg`}
-                      x="50" y="50" width="300" height="300"
-                      preserveAspectRatio="xMidYMid slice"
-                      clipPath="url(#avatarClip)"
-                    />
-                    {/* Swirling highlights */}
-                    <g opacity="0.5">
-                      <path d="M40,200 C120,80 280,80 360,200" stroke="rgba(0,255,255,0.5)" strokeWidth="8" fill="none">
-                        <animate attributeName="stroke-width" values="6;10;6" dur="7s" repeatCount="indefinite" />
-                      </path>
-                      <path d="M60,240 C140,320 260,320 340,240" stroke="rgba(255,0,255,0.5)" strokeWidth="6" fill="none">
-                        <animate attributeName="stroke-width" values="5;9;5" dur="8s" repeatCount="indefinite" />
-                      </path>
-                    </g>
-                    {/* Floating particles */}
-                    <g>
-                      <circle cx="90" cy="110" r="4" fill="rgba(255,255,255,0.9)">
-                        <animate attributeName="cy" values="100;120;100" dur="5s" repeatCount="indefinite" />
-                      </circle>
-                      <circle cx="310" cy="270" r="3" fill="rgba(255,255,255,0.8)">
-                        <animate attributeName="cy" values="260;280;260" dur="6s" repeatCount="indefinite" />
-                      </circle>
-                      <circle cx="200" cy="60" r="5" fill="rgba(255,255,255,0.8)">
-                        <animate attributeName="cx" values="190;210;190" dur="7s" repeatCount="indefinite" />
-                      </circle>
-                    </g>
-                  </svg>
-                  {/* Decorative inner ring */}
-                  <div className="absolute inset-0 rounded-full z-20 pointer-events-none ring-2 ring-white/10" />
+              {/* RIGHT SIDE - Large Photo with Border */}
+              <div className="relative flex items-center justify-center h-96">
+                <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl ring-4 ring-primary/50">
+                  <Image
+                    src={`${basePath}/images/profile-photo.jpg`}
+                    alt="Prodhosh V.S"
+                    width={640}
+                    height={640}
+                    className="w-full h-full object-cover object-center"
+                    priority
+                  />
                 </div>
-                {/* Pulsing ring */}
-                <div className="absolute w-64 h-64 md:w-84 md:h-84 rounded-full ring-4 ring-primary/40 animate-pulse" />
               </div>
             </div>
 
