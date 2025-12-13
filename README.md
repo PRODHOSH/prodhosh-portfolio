@@ -102,6 +102,9 @@ prodhosh-portfolio/
 ### 🌌 Galaxy & 🏙️ Cyberpunk
 Pick your vibe: nebula skies or neon city.
 
+
+<img src="portfolio_cover.png" width="500">
+
 </div>
 
 ---
