@@ -764,14 +764,14 @@ export default function Home() {
               </div>
 
               {/* RIGHT SIDE - Large Photo with Dual Cyan Ring */}
-              <div className="relative flex items-center justify-center h-[26rem] md:h-[30rem]">
+              <div className="relative flex items-center justify-center h-[24rem] md:h-[28rem]">
                 {/* Outer cyan ring */}
-                <div className="relative w-[18rem] h-[23rem] md:w-[22rem] md:h-[27rem] rounded-full shadow-2xl">
+                <div className="relative w-[16.5rem] h-[21rem] md:w-[20rem] md:h-[25rem] rounded-full shadow-2xl">
                   <div className="absolute inset-0 rounded-full ring-[12px] ring-cyan-500/70" />
                   {/* Inner dark ring */}
-                  <div className="absolute inset-[14px] rounded-full ring-[6px] ring-[#0a1b2e]" />
+                  <div className="absolute inset-[12px] rounded-full ring-[6px] ring-[#0a1b2e]" />
                   {/* Image */}
-                  <div className="absolute inset-[26px] rounded-full overflow-hidden">
+                  <div className="absolute inset-[22px] rounded-full overflow-hidden">
                     <Image
                       src={`${basePath}/images/profile-photo.jpg`}
                       alt="Prodhosh V.S"
