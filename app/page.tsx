@@ -447,7 +447,7 @@ export default function Home() {
         <div className={`loading-screen ${!isLoading ? 'fade-out' : ''}`}>
           <div className="flex flex-col items-center gap-6">
             {/* Animated Logo */}
-            <div className="loading-logo w-24 h-24 rounded-2xl overflow-hidden border-2 border-primary/50">
+            <div className="loading-logo w-24 h-24 rounded-2xl overflow-hidden shadow-md">
               <Image
                 src={`${basePath}/images/favicon.png`}
                 alt="Logo"
@@ -1145,7 +1145,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                   <button
                     key={cert.id}
                     onClick={() => setSelectedCert(cert)}
-                    className="bg-card border border-border rounded-lg p-4 hover:border-primary/50 transition-all text-left group hover:scale-105 transform duration-300"
+                    className="bg-card/40 backdrop-blur-sm rounded-lg p-4 transition-all text-left group hover:scale-105 transform duration-300"
                   >
                     <p className="font-semibold text-sm font-mono group-hover:text-primary transition-colors">
                       {cert.title}
@@ -1189,7 +1189,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                       type="email"
                       placeholder="your@email.com"
                       required
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors font-mono text-sm"
+                      className="w-full px-4 py-3 bg-background rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-colors font-mono text-sm"
                     />
                   </div>
                   <div>
@@ -1202,7 +1202,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                       placeholder="Tell me about your project..."
                       required
                       rows={6}
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none font-mono text-sm"
+                      className="w-full px-4 py-3 bg-background rounded-lg text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 transition-colors resize-none font-mono text-sm"
                     />
                   </div>
                   <button 
@@ -1216,7 +1216,7 @@ Focused on applying computational and mathematical concepts to real-world engine
 
               {/* Quick Links */}
               <div className="space-y-4 scroll-animate-right">
-                <a href="mailto:prodhosh3@gmail.com" className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:bg-card/80 flex items-center gap-3 hover:text-primary transition-all">
+                <a href="mailto:prodhosh3@gmail.com" className="bg-card/40 backdrop-blur-sm rounded-xl p-6 hover:bg-card/80 flex items-center gap-3 hover:text-primary transition-all">
                   <Mail size={20} className="text-primary flex-shrink-0" />
                   <div>
                     <p className="text-xs text-muted-foreground font-mono">EMAIL</p>
@@ -1226,7 +1226,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                   </div>
                 </a>
 
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:bg-card/80">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all hover:bg-card/80">
                   <a
                     href="https://linkedin.com/in/prodhoshvs"
                     target="_blank"
@@ -1241,7 +1241,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                   </a>
                 </div>
 
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:bg-card/80">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all hover:bg-card/80">
                   <a
                     href="https://github.com/PRODHOSH"
                     target="_blank"
@@ -1256,7 +1256,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                   </a>
                 </div>
 
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all hover:bg-card/80">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all hover:bg-card/80">
                   <a href={`${basePath}/resume.pdf`} download="Prodhosh_Resume.pdf" className="flex items-center gap-3 hover:text-primary transition-colors">
                     <Download size={20} className="text-primary flex-shrink-0" />
                     <div>
@@ -1272,7 +1272,7 @@ Focused on applying computational and mathematical concepts to real-world engine
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-border bg-background/50 backdrop-blur-md">
+      <footer className="bg-background/50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
@@ -1312,7 +1312,7 @@ Focused on applying computational and mathematical concepts to real-world engine
             </div>
           </div>
 
-          <div className="border-t border-border pt-8">
+          <div className="pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-6">
               <p className="text-muted-foreground text-xs font-mono">
                 © 2025 Prodhosh V.S. Built with React + Next.js
@@ -1367,7 +1367,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                 className="group"
                 aria-label="View Repository"
               >
-                <div className="flex items-center gap-2 px-4 py-2 bg-card border border-border rounded-lg hover:border-primary/50 transition-all group-hover:shadow-lg group-hover:shadow-primary/10">
+                <div className="flex items-center gap-2 px-4 py-2 bg-card/40 backdrop-blur-sm rounded-lg transition-all group-hover:shadow-lg group-hover:shadow-primary/10">
                   <Github size={16} className="text-muted-foreground group-hover:text-primary transition-colors" />
                   <span className="text-xs font-mono text-muted-foreground group-hover:text-primary transition-colors">GitHub Repository</span>
                 </div>
@@ -1381,7 +1381,7 @@ Focused on applying computational and mathematical concepts to real-world engine
       {showCelebration && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center pointer-events-none animate-in fade-in duration-500">
           <div 
-            className="bg-gradient-to-br from-card/98 via-card/95 to-card/98 backdrop-blur-xl border-2 border-primary/60 shadow-2xl shadow-primary/40 p-10 rounded-3xl text-center pointer-events-auto animate-in zoom-in-95 duration-700" 
+            className="bg-gradient-to-br from-card/98 via-card/95 to-card/98 backdrop-blur-xl shadow-2xl shadow-primary/40 p-10 rounded-3xl text-center pointer-events-auto animate-in zoom-in-95 duration-700" 
             style={{ 
               maxWidth: '520px',
               animation: 'celebrationPulse 2s ease-in-out infinite'
@@ -1403,7 +1403,7 @@ Focused on applying computational and mathematical concepts to real-world engine
               </div>
               
               {/* Success checkmark with animation */}
-              <div className="mx-auto w-20 h-20 rounded-full bg-primary/20 border-4 border-primary flex items-center justify-center mb-6 animate-in zoom-in-50 duration-500" style={{ animationDelay: '0.2s' }}>
+              <div className="mx-auto w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-6 animate-in zoom-in-50 duration-500 ring-4 ring-primary/60" style={{ animationDelay: '0.2s' }}>
                 <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" 
                     style={{
@@ -1451,10 +1451,10 @@ Focused on applying computational and mathematical concepts to real-world engine
           onClick={() => setSelectedProject(null)}
         >
           <div
-            className="bg-card border-2 border-primary/30 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto animate-in fade-in zoom-in-95 duration-200 shadow-2xl shadow-primary/20"
+            className="bg-card/95 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto animate-in fade-in zoom-in-95 duration-200 shadow-2xl shadow-primary/20"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6 border-b border-primary/30 flex justify-between items-center bg-gradient-to-r from-primary/10 to-accent/10">
+            <div className="p-6 flex justify-between items-center bg-gradient-to-r from-primary/10 to-accent/10">
               <h3 className="text-2xl font-bold font-mono text-primary">{selectedProject.title}</h3>
               <button
                 onClick={() => setSelectedProject(null)}
@@ -1503,7 +1503,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                     href={selectedProject.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-primary/20 hover:bg-primary/30 border-2 border-primary text-primary hover:text-accent transition-all py-3 px-6 rounded-lg font-mono text-base font-semibold flex items-center justify-center gap-3"
+                    className="flex-1 bg-primary/20 hover:bg-primary/30 text-primary hover:text-accent transition-all py-3 px-6 rounded-lg font-mono text-base font-semibold flex items-center justify-center gap-3"
                   >
                     <Github size={20} />
                     View on GitHub
@@ -1513,7 +1513,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                       href={selectedProject.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-accent/20 hover:bg-accent/30 border-2 border-accent text-accent hover:text-primary transition-all py-3 px-6 rounded-lg font-mono text-base font-semibold flex items-center justify-center gap-3"
+                      className="flex-1 bg-accent/20 hover:bg-accent/30 text-accent hover:text-primary transition-all py-3 px-6 rounded-lg font-mono text-base font-semibold flex items-center justify-center gap-3"
                     >
                       <ExternalLink size={20} />
                       Live Demo
@@ -1533,10 +1533,10 @@ Focused on applying computational and mathematical concepts to real-world engine
           onClick={() => setSelectedCert(null)}
         >
           <div
-            className="bg-card border border-border rounded-xl max-w-2xl w-full max-h-[90vh] overflow-auto animate-in fade-in zoom-in-95 duration-200"
+            className="bg-card/95 rounded-xl max-w-2xl w-full max-h-[90vh] overflow-auto animate-in fade-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6 border-b border-border flex justify-between items-center">
+            <div className="p-6 flex justify-between items-center">
               <h3 className="text-lg font-bold font-mono">{selectedCert.title}</h3>
               <button
                 onClick={() => setSelectedCert(null)}
@@ -1557,7 +1557,7 @@ Focused on applying computational and mathematical concepts to real-world engine
                 {selectedCert.pending && (
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <div className="bg-background/80 backdrop-blur-sm rounded-2xl px-8 py-6 flex flex-col items-center">
-                      <div className="w-12 h-12 border-4 border-primary/30 border-t-primary rounded-full animate-spin mb-3" />
+                      <div className="w-12 h-12 rounded-full animate-spin mb-3 ring-4 ring-primary/30 ring-offset-2 ring-offset-background" />
                       <p className="text-primary font-mono text-sm font-semibold">In Progress...</p>
                       <p className="text-muted-foreground font-mono text-xs mt-1">Certificate coming soon</p>
                     </div>
@@ -1603,7 +1603,7 @@ Focused on applying computational and mathematical concepts to real-world engine
             className="absolute inset-0 bg-background/80 backdrop-blur-sm"
             onClick={() => setShowGiftModal(false)}
           ></div>
-          <div className="relative bg-card border-2 border-primary/30 rounded-2xl p-8 max-w-lg w-full shadow-2xl shadow-primary/20 animate-in zoom-in-95 duration-300">
+          <div className="relative bg-card/95 rounded-2xl p-8 max-w-lg w-full shadow-2xl shadow-primary/20 animate-in zoom-in-95 duration-300">
             <button
               onClick={() => setShowGiftModal(false)}
               className="absolute top-4 right-4 text-muted-foreground hover:text-primary transition-colors"
