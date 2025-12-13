@@ -765,15 +765,14 @@ export default function Home() {
 
               {/* RIGHT SIDE - LARGE CYAN CIRCLE WITH PROFILE PHOTO */}
               <div className="relative flex items-center justify-center h-96 hero-animate-photo">
-                <div className="absolute w-64 h-64 md:w-80 md:h-80 bg-primary rounded-full" />
-                <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-background/50">
+                <div className="absolute w-64 h-64 md:w-80 md:h-80 bg-primary rounded-full z-0" />
+                <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden z-10 shadow-xl">
                   <Image
                     src={`${basePath}/images/profile-photo.jpg`}
                     alt="Prodhosh V.S"
                     width={288}
                     height={288}
-                    className="w-full h-full object-cover object-top"
-                    style={{ objectPosition: '50% 30%' }}
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
@@ -808,7 +807,7 @@ export default function Home() {
 
             {/* SKILLS SECTION */}
             <div className="grid md:grid-cols-3 gap-8 mt-20">
-              <div className="bg-card border border-border rounded-xl p-8 hover:border-primary/50 transition-colors scroll-animate">
+              <div className="bg-card/40 backdrop-blur-sm rounded-xl p-8 transition-colors scroll-animate">
                 <h3 className="text-primary font-mono font-semibold mb-5 text-sm tracking-widest">LANGUAGES</h3>
                 <ul className="space-y-3 text-base text-muted-foreground font-mono">
                   {["Python", "C++", "JavaScript", "HTML5 & CSS3", "SQL"].map((lang) => (
@@ -820,7 +819,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-8 hover:border-primary/50 transition-colors scroll-animate">
+              <div className="bg-card/40 backdrop-blur-sm rounded-xl p-8 transition-colors scroll-animate">
                 <h3 className="text-primary font-mono font-semibold mb-5 text-sm tracking-widest">FRAMEWORKS</h3>
                 <ul className="space-y-3 text-base text-muted-foreground font-mono">
                   {["React","NumPy & Pandas","Matplotlib","Seaborn", "Scikit-learn"].map((fw) => (
@@ -832,7 +831,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="bg-card border border-border rounded-xl p-8 hover:border-primary/50 transition-colors scroll-animate">
+              <div className="bg-card/40 backdrop-blur-sm rounded-xl p-8 transition-colors scroll-animate">
                 <h3 className="text-primary font-mono font-semibold mb-5 text-sm tracking-widest">TOOLS</h3>
                 <ul className="space-y-3 text-base text-muted-foreground font-mono">
                   {["Git", "VS Code", "Jupyter", "Figma", "Github"].map((tool) => (
@@ -908,9 +907,9 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// EXPERIENCE'}</h3>
 
                 {/* Open Source Contributor - Y-SoC */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
                         src={`${basePath}/logos/Y-SoC-logo.png`}
                         alt="Youth Season of Code"
@@ -931,9 +930,9 @@ export default function Home() {
                 </div>
 
                 {/* AI/ML Member - Microsoft Club */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
                         src={`${basePath}/logos/microsoft-club-logo.jpeg`}
                         alt="Microsoft Innovations Club"
@@ -955,9 +954,9 @@ export default function Home() {
                 </div>
 
                 {/* Technical Team Member - Mathematics Club */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
                         src={`${basePath}/logos/math-club-logo.jpeg`}
                         alt="Mathematics Club"
@@ -979,9 +978,9 @@ export default function Home() {
                 </div>
 
                 {/* Student House Captain */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
                         src={`${basePath}/logos/dav-logo.png`}
                         alt="DAV Group of Schools"
@@ -1009,9 +1008,9 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// EDUCATION'}</h3>
 
                 {/* VIT Chennai */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
                         src={`${basePath}/logos/vit-logo.png`}
                         alt="VIT Chennai"
@@ -1035,9 +1034,9 @@ Focused on applying computational and mathematical concepts to real-world engine
                 </div>
 
                 {/* IIT Madras */}
-                <div className="bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all">
+                <div className="bg-card/40 backdrop-blur-sm rounded-xl p-6 transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-card border border-border rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                    <div className="w-14 h-14 bg-card/40 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
                       <Image
                         src={`${basePath}/logos/iit-madras-logo.png`}
                         alt="IIT Madras"
