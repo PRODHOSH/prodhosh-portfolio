@@ -1052,7 +1052,7 @@ Focused on applying computational and mathematical concepts to real-world engine
             <div className="mt-16 scroll-animate">
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// CLUBS & SOCIETIES'}</h3>
               <div className="relative overflow-hidden bg-card/20 rounded-xl">
-                <div className="flex items-center gap-4 py-4 animate-marquee">
+                <div className="flex items-center gap-0 py-4 animate-marquee">
                   {[
                     {
                       logo: `${basePath}/logos/microsoft-club-logo.jpeg`,
@@ -1092,15 +1092,15 @@ Focused on applying computational and mathematical concepts to real-world engine
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex flex-col items-center justify-center gap-2 flex-shrink-0 bg-card/40 backdrop-blur-sm rounded-lg w-48 h-48 p-3 text-center"
+                      className="flex flex-col items-center justify-center gap-2 flex-shrink-0 bg-card/40 backdrop-blur-sm rounded-lg w-56 h-56 p-3 text-center"
                       aria-label={`${item.role} at ${item.club}`}
                     >
                       <div className="w-12 h-12 rounded-lg overflow-hidden">
                         <Image src={item.logo} alt={item.club} width={48} height={48} className="w-full h-full object-contain" />
                       </div>
-                      <p className="font-mono text-xs font-semibold leading-tight line-clamp-1">{item.role} · {item.club}</p>
-                      <p className="font-mono text-[11px] text-muted-foreground line-clamp-1">{item.dates}</p>
-                      <p className="font-mono text-[11px] text-muted-foreground line-clamp-1">{item.blurb}</p>
+                      <p className="font-mono text-xs font-semibold leading-tight">{item.role} · {item.club}</p>
+                      <p className="font-mono text-[11px] text-muted-foreground">{item.dates}</p>
+                      <p className="font-mono text-[11px] text-muted-foreground">{item.blurb}</p>
                     </a>
                   ))}
                 </div>
