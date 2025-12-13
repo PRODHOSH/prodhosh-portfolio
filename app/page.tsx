@@ -1113,6 +1113,57 @@ Focused on applying computational and mathematical concepts to real-world engine
               </div>
             </div>
 
+            {/* CLUBS & SOCIETIES - Marquee (placed after Experience & Education) */}
+            <div className="mt-16 scroll-animate">
+              <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// CLUBS & SOCIETIES'}</h3>
+              <div className="relative overflow-hidden bg-card/20 rounded-xl">
+                <div className="flex items-center gap-6 py-6 animate-marquee">
+                  {[
+                    {
+                      logo: `${basePath}/logos/microsoft-innovations-club.png`,
+                      name: 'Microsoft Innovations Club',
+                      blurb: 'AI/ML member contributing to projects and workshops.',
+                      link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/'
+                    },
+                    {
+                      logo: `${basePath}/logos/math-club-logo.jpeg`,
+                      name: 'Mathematics Club, VIT Chennai',
+                      blurb: 'Technical team member supporting events and initiatives.',
+                      link: 'https://vit.ac.in'
+                    },
+                    {
+                      logo: `${basePath}/logos/microsoft-innovations-club.png`,
+                      name: 'Microsoft Innovations Club',
+                      blurb: 'AI/ML member contributing to projects and workshops.',
+                      link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/'
+                    },
+                    {
+                      logo: `${basePath}/logos/math-club-logo.jpeg`,
+                      name: 'Mathematics Club, VIT Chennai',
+                      blurb: 'Technical team member supporting events and initiatives.',
+                      link: 'https://vit.ac.in'
+                    }
+                  ].map((item, idx) => (
+                    <a
+                      key={`${item.name}-${idx}`}
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 flex-shrink-0 bg-card/40 backdrop-blur-sm rounded-lg px-4 py-3"
+                    >
+                      <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+                        <Image src={item.logo} alt={item.name} width={40} height={40} className="w-full h-full object-cover" />
+                      </div>
+                      <div className="min-w-[220px]">
+                        <p className="font-mono text-sm font-semibold">{item.name}</p>
+                        <p className="font-mono text-xs text-muted-foreground line-clamp-2">{item.blurb}</p>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* VOLUNTEERING SECTION */}
             <div id="volunteering" className="mt-16 scroll-animate">
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// VOLUNTEERING'}</h3>
@@ -1212,131 +1263,7 @@ Focused on applying computational and mathematical concepts to real-world engine
               </div>
             </div>
 
-            {/* CLUBS & SOCIETIES MARQUEE */}
-            <div className="mt-16 scroll-animate">
-              <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// CLUBS & SOCIETIES'}</h3>
-              <div className="relative overflow-hidden bg-card/20 rounded-xl">
-                <div className="flex gap-6 py-4 animate-marquee [--duration:25s]">
-                  {/* Repeat items twice for seamless loop */}
-                  {[
-                    {
-                      logo: `${basePath}/logos/microsoft-innovations-club.png`,
-                      name: 'Microsoft Innovations Club',
-                      blurb: 'Exploring AI/ML projects and workshops with peers.',
-                      link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/'
-                    },
-                    {
-                      logo: `${basePath}/logos/math-club-logo.jpeg`,
-                      name: 'Mathematics Club, VIT Chennai',
-                      blurb: 'Organizing events and fostering problem-solving culture.',
-                      link: 'https://vit.ac.in'
-                    },
-                  ].concat([
-                    {
-                      logo: `${basePath}/logos/microsoft-innovations-club.png`,
-                      name: 'Microsoft Innovations Club',
-                      blurb: 'Exploring AI/ML projects and workshops with peers.',
-                      link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/'
-                    },
-                    {
-                      logo: `${basePath}/logos/math-club-logo.jpeg`,
-                      name: 'Mathematics Club, VIT Chennai',
-                      blurb: 'Organizing events and fostering problem-solving culture.',
-                      link: 'https://vit.ac.in'
-                    },
-                  ]).map((item, idx) => (
-                    <a
-                      key={`${item.name}-${idx}`}
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-4 py-3 bg-card/40 backdrop-blur-sm rounded-lg hover:bg-card/60 transition-colors min-w-[320px]"
-                      aria-label={item.name}
-                    >
-                      <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
-                        <Image src={item.logo} alt={item.name} width={40} height={40} className="w-full h-full object-contain" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-sm font-semibold font-mono">{item.name}</p>
-                        <p className="text-xs text-muted-foreground font-mono line-clamp-2">{item.blurb}</p>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-              <style jsx>{`
-                .animate-marquee {
-                  animation: marquee var(--duration) linear infinite;
-                  width: max-content;
-                  will-change: transform;
-                }
-                @keyframes marquee {
-                  0% { transform: translateX(0); }
-                  100% { transform: translateX(-50%); }
-                }
-                @media (prefers-reduced-motion: reduce) {
-                  .animate-marquee { animation: none; }
-                }
-              `}</style>
-            </div>
-
-            {/* Clubs & Societies - Marquee Loop */}
-            <div className="mt-16 scroll-animate">
-              <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// CLUBS & SOCIETIES'}</h3>
-              <div className="relative overflow-hidden bg-card/20 rounded-xl">
-                <div className="flex items-center gap-6 py-6 animate-marquee will-change-transform">
-                  {/* Duplicate items for seamless loop */}
-                  {[
-                    {
-                      logo: `${basePath}/logos/microsoft-innovations-club.png`,
-                      name: 'Microsoft Innovations Club',
-                      blurb: 'AI/ML member contributing to projects and workshops.'
-                    },
-                    {
-                      logo: `${basePath}/logos/math-club-logo.jpeg`,
-                      name: 'Mathematics Club, VIT Chennai',
-                      blurb: 'Technical team member supporting events and initiatives.'
-                    },
-                  ,
-                    {
-                      logo: `${basePath}/logos/microsoft-innovations-club.png`,
-                      name: 'Microsoft Innovations Club',
-                      blurb: 'AI/ML member contributing to projects and workshops.'
-                    },
-                    {
-                      logo: `${basePath}/logos/math-club-logo.jpeg`,
-                      name: 'Mathematics Club, VIT Chennai',
-                      blurb: 'Technical team member supporting events and initiatives.'
-                    }].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-4 flex-shrink-0 bg-card/40 backdrop-blur-sm rounded-lg px-4 py-3">
-                      <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
-                        <Image src={item.logo} alt={item.name} width={40} height={40} className="w-full h-full object-cover" />
-                      </div>
-                      <div className="min-w-[220px]">
-                        <p className="font-mono text-sm font-semibold">{item.name}</p>
-                        <p className="font-mono text-xs text-muted-foreground line-clamp-2">{item.blurb}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <style jsx>{`
-                @keyframes marqueeScroll {
-                  0% { transform: translateX(0); }
-                  100% { transform: translateX(-50%); }
-                }
-                .animate-marquee {
-                  width: max-content;
-                  animation: marqueeScroll 20s linear infinite;
-                }
-                @media (hover: hover) {
-                  .animate-marquee:hover { animation-play-state: paused; }
-                }
-                @media (prefers-reduced-motion: reduce) {
-                  .animate-marquee { animation-duration: 0s; }
-                }
-              `}</style>
-            </div>
+            
       </section>
 
           {/* CONTACT SECTION */}
@@ -1612,16 +1539,6 @@ Focused on applying computational and mathematical concepts to real-world engine
         </div>
       )}
 
-      <style jsx>{`
-        @keyframes celebrationPulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.02); }
-        }
-        
-        @keyframes drawCheck {
-          to { strokeDashoffset: 0; }
-        }
-      `}</style>
 
       {/* PROJECT MODAL */}
       {selectedProject && (

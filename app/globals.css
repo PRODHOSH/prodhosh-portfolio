@@ -485,6 +485,30 @@
   transform: translateX(0);
 }
 
+/* ----- Global Marquee & Celebration Animations ----- */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  width: max-content;
+  animation: marqueeScroll 20s linear infinite;
+}
+@media (hover: hover) {
+  .animate-marquee:hover { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation-duration: 0s; }
+}
+
+@keyframes celebrationPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+
 .scroll-animate-scale {
   opacity: 0;
   transform: scale(0.98);
