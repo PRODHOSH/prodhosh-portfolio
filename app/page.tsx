@@ -1052,22 +1052,52 @@ Focused on applying computational and mathematical concepts to real-world engine
             <div className="mt-16 scroll-animate">
               <h3 className="text-2xl font-bold mb-6 text-primary font-mono">{'// CLUBS & SOCIETIES'}</h3>
               <div className="relative overflow-hidden bg-card/20 rounded-xl">
-                <div className="flex items-center gap-6 py-6 animate-marquee">
+                <div className="flex items-center gap-6 py-4 animate-marquee">
                   {[
-                    { logo: `${basePath}/logos/microsoft-club-logo.jpeg`, name: 'Microsoft Innovations Club', link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/' },
-                    { logo: `${basePath}/logos/math-club-logo.jpeg`, name: 'Mathematics Club, VIT Chennai', link: 'https://vit.ac.in' },
-                    { logo: `${basePath}/logos/microsoft-club-logo.jpeg`, name: 'Microsoft Innovations Club', link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/' },
-                    { logo: `${basePath}/logos/math-club-logo.jpeg`, name: 'Mathematics Club, VIT Chennai', link: 'https://vit.ac.in' }
+                    {
+                      logo: `${basePath}/logos/microsoft-club-logo.jpeg`,
+                      club: 'Microsoft Innovations Club',
+                      role: 'AI/ML Member',
+                      dates: 'Oct 2025 – Present',
+                      link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/'
+                    },
+                    {
+                      logo: `${basePath}/logos/math-club-logo.jpeg`,
+                      club: 'Mathematics Club, VIT Chennai',
+                      role: 'Technical Team Member',
+                      dates: 'Sept 2025 – Present',
+                      link: 'https://vit.ac.in'
+                    },
+                    {
+                      logo: `${basePath}/logos/microsoft-club-logo.jpeg`,
+                      club: 'Microsoft Innovations Club',
+                      role: 'AI/ML Member',
+                      dates: 'Oct 2025 – Present',
+                      link: 'https://www.linkedin.com/company/microsoft-innovations-club-vit-chennai/'
+                    },
+                    {
+                      logo: `${basePath}/logos/math-club-logo.jpeg`,
+                      club: 'Mathematics Club, VIT Chennai',
+                      role: 'Technical Team Member',
+                      dates: 'Sept 2025 – Present',
+                      link: 'https://vit.ac.in'
+                    }
                   ].map((item, idx) => (
                     <a
-                      key={`${item.name}-${idx}`}
+                      key={`${item.club}-${idx}`}
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center flex-shrink-0 bg-card/40 backdrop-blur-sm rounded-lg w-20 h-20"
-                      aria-label={item.name}
+                      className="flex items-center gap-3 flex-shrink-0 bg-card/40 backdrop-blur-sm rounded-lg px-4 py-3 min-w-[280px]"
+                      aria-label={`${item.role} at ${item.club}`}
                     >
-                      <Image src={item.logo} alt={item.name} width={64} height={64} className="w-14 h-14 object-contain" />
+                      <div className="w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+                        <Image src={item.logo} alt={item.club} width={48} height={48} className="w-full h-full object-contain" />
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-mono text-sm font-semibold leading-tight">{item.role} · {item.club}</p>
+                        <p className="font-mono text-xs text-muted-foreground">{item.dates}</p>
+                      </div>
                     </a>
                   ))}
                 </div>
