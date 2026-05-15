@@ -7,7 +7,7 @@ import Experience from "../pages/experience/Experience";
 import Certificates from "../pages/certificates/Certificates";
 import MoreCertificates from "../pages/certificates/MoreCertificates";
 import MoreBadges from "../pages/certificates/MoreBadges";
-import OpenSource from "../pages/opensource/OpenSource";
+import OpenSource from "../pages/opensource/Opensource";
 import Contact from "../pages/contact/ContactComponent";
 import Projects from "../pages/projects/Projects";
 import { settings } from "../portfolio.js";

@@ -7,7 +7,7 @@ import PullRequestCard from "../../components/pullRequestCard/PullRequestCard";
 import PullRequestChart from "../../components/pullRequestChart/PullRequestChart";
 import IssueChart from "../../components/issueChart/IssueChart";
 import PullRequestData from "../../shared/opensource/pull_requests.json";
-import "./OpenSource.css";
+import "./Opensource.css";
 
 class OpenSource extends Component {
   state = {
