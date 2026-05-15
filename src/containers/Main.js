@@ -4,7 +4,10 @@ import Home from "../pages/home/HomeComponent";
 import Splash from "../pages/splash/Splash";
 import Education from "../pages/education/EducationComponent";
 import Experience from "../pages/experience/Experience";
-import Opensource from "../pages/opensource/Opensource";
+import Certificates from "../pages/certificates/Certificates";
+import MoreCertificates from "../pages/certificates/MoreCertificates";
+import MoreBadges from "../pages/certificates/MoreBadges";
+import OpenSource from "../pages/opensource/OpenSource";
 import Contact from "../pages/contact/ContactComponent";
 import Projects from "../pages/projects/Projects";
 import { settings } from "../portfolio.js";
@@ -63,9 +66,31 @@ export default class Main extends Component {
             )}
           />
           <Route
+            path="/certificates"
+            render={(props) => (
+              <Certificates {...props} theme={this.props.theme} />
+            )}
+          />
+          <Route
+            path="/more-certificates"
+            render={(props) => (
+              <MoreCertificates {...props} theme={this.props.theme} />
+            )}
+          />
+          <Route
+            path="/more-badges"
+            render={(props) => (
+              <MoreBadges {...props} theme={this.props.theme} />
+            )}
+          />
+          <Route
             path="/opensource"
             render={(props) => (
-              <Opensource {...props} theme={this.props.theme} />
+              <OpenSource
+                {...props}
+                theme={this.props.theme}
+                onToggle={this.props.onToggle}
+              />
             )}
           />
           <Route
@@ -86,7 +111,9 @@ export default class Main extends Component {
           />
           <Route
             path="/resume"
-            render={(props) => <ResumePage {...props} theme={this.props.theme} />}
+            render={(props) => (
+              <ResumePage {...props} theme={this.props.theme} />
+            )}
           />
           <Route
             path="*"

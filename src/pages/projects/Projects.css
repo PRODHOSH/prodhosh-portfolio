@@ -1,6 +1,5 @@
 .projects-main {
   width: 100%;
-  text-align: center;
 }
 
 .basic-projects {
@@ -23,6 +22,10 @@
 }
 
 .projects-heading-text-div {
+  text-align: center;
+}
+
+.publications-heading-div {
   text-align: center;
 }
 
@@ -73,6 +76,7 @@
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 60px;
+  justify-content: center;
 }
 
 @media (max-width: 1380px) {

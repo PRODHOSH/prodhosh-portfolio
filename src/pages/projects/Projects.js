@@ -2,16 +2,11 @@ import React, { Component } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import GithubRepoCard from "../../components/githubRepoCard/GithubRepoCard";
-import PublicationCard from "../../components/publicationsCard/PublicationCard";
+
 import Button from "../../components/button/Button";
 import TopButton from "../../components/topButton/TopButton";
 import { Fade } from "react-reveal";
-import {
-  greeting,
-  projectsHeader,
-  publicationsHeader,
-  publications,
-} from "../../portfolio.js";
+import { greeting, projectsHeader } from "../../portfolio.js";
 import ProjectsData from "../../shared/opensource/projects.json";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
@@ -62,34 +57,100 @@ class Projects extends Component {
           theme={theme}
         />
 
-        {/* Publications  */}
-        {publications.data.length > 0 ? (
-          <div className="basic-projects">
-            <Fade bottom duration={2000} distance="40px">
-              <div className="publications-heading-div">
-                <div className="publications-heading-text-div">
-                  <h1
-                    className="publications-heading-text"
-                    style={{ color: theme.text }}
+        {/* GitHub Calendar Section */}
+        <div
+          className="basic-projects"
+          style={{ marginTop: "50px", marginBottom: "50px" }}
+        >
+          <Fade bottom duration={2000} distance="40px">
+            <div className="publications-heading-div">
+              <div className="publications-heading-text-div">
+                <h1
+                  className="publications-heading-text"
+                  style={{ color: theme.text, marginBottom: "40px" }}
+                >
+                  Days I Code
+                </h1>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
+                    src="https://ghchart.rshah.org/c084f5/PRODHOSH"
+                    alt="PRODHOSH's Github Contributions"
+                    style={{ width: "100%", maxWidth: "1000px" }}
+                  />
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      width: "100%",
+                      maxWidth: "1000px",
+                      marginTop: "10px",
+                      fontSize: "14px",
+                      color: theme.secondaryText,
+                      fontFamily: "Google Sans Regular",
+                    }}
                   >
-                    {publicationsHeader.title}
-                  </h1>
-                  <p
-                    className="projects-header-detail-text subTitle"
-                    style={{ color: theme.secondaryText }}
-                  >
-                    {publicationsHeader["description"]}
-                  </p>
+                    <span>Contributions in the last year</span>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "5px",
+                      }}
+                    >
+                      <span>Less</span>
+                      <div
+                        style={{
+                          width: "12px",
+                          height: "12px",
+                          backgroundColor: "#ebedf0",
+                          borderRadius: "2px",
+                        }}
+                      ></div>
+                      <div
+                        style={{
+                          width: "12px",
+                          height: "12px",
+                          backgroundColor: "#e2d5f8",
+                          borderRadius: "2px",
+                        }}
+                      ></div>
+                      <div
+                        style={{
+                          width: "12px",
+                          height: "12px",
+                          backgroundColor: "#c084f5",
+                          borderRadius: "2px",
+                        }}
+                      ></div>
+                      <div
+                        style={{
+                          width: "12px",
+                          height: "12px",
+                          backgroundColor: "#8a4de8",
+                          borderRadius: "2px",
+                        }}
+                      ></div>
+                      <div
+                        style={{
+                          width: "12px",
+                          height: "12px",
+                          backgroundColor: "#5c2da8",
+                          borderRadius: "2px",
+                        }}
+                      ></div>
+                      <span>More</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </Fade>
-          </div>
-        ) : null}
-
-        <div className="repo-cards-div-main">
-          {publications.data.map((pub) => {
-            return <PublicationCard pub={pub} theme={theme} />;
-          })}
+            </div>
+          </Fade>
         </div>
 
         <Footer theme={this.props.theme} onToggle={this.props.onToggle} />

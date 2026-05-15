@@ -188,6 +188,25 @@
   border-top: 5px solid #062e56;
 }
 
+.pr-labels {
+  margin-left: 4%;
+  margin-top: 4px;
+  margin-bottom: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pr-label-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-family: "Google Sans Medium";
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
 @media (max-width: 1380px) {
 }
 

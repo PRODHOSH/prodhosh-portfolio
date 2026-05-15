@@ -8,13 +8,16 @@ export default function TopButton({ theme }) {
   }
 
   function scrollFunction() {
+    const topButton = document.getElementById("topButton");
+    if (!topButton) return;
+
     if (
       document.body.scrollTop > 30 ||
       document.documentElement.scrollTop > 30
     ) {
-      document.getElementById("topButton").style.visibility = "visible";
+      topButton.style.visibility = "visible";
     } else {
-      document.getElementById("topButton").style.visibility = "hidden";
+      topButton.style.visibility = "hidden";
     }
   }
 

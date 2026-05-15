@@ -44,6 +44,7 @@ class Header extends Component {
                   style={{ color: theme.text }}
                   onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                   onMouseOut={(event) => onMouseOut(event)}
+                  data-text="Home"
                 >
                   Home
                 </NavLink>
@@ -56,6 +57,7 @@ class Header extends Component {
                   style={{ color: theme.text }}
                   onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                   onMouseOut={(event) => onMouseOut(event)}
+                  data-text="Education"
                 >
                   Education
                 </NavLink>
@@ -68,6 +70,7 @@ class Header extends Component {
                   style={{ color: theme.text }}
                   onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                   onMouseOut={(event) => onMouseOut(event)}
+                  data-text="Experience"
                 >
                   Experience
                 </NavLink>
@@ -80,6 +83,7 @@ class Header extends Component {
                   style={{ color: theme.text }}
                   onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                   onMouseOut={(event) => onMouseOut(event)}
+                  data-text="Projects"
                 >
                   Projects
                 </NavLink>
@@ -92,6 +96,7 @@ class Header extends Component {
                   style={{ color: theme.text }}
                   onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                   onMouseOut={(event) => onMouseOut(event)}
+                  data-text="Open Source"
                 >
                   Open Source
                 </NavLink>
@@ -104,6 +109,7 @@ class Header extends Component {
                   style={{ color: theme.text }}
                   onMouseEnter={(event) => onMouseEnter(event, theme.highlight)}
                   onMouseOut={(event) => onMouseOut(event)}
+                  data-text="Contact Me"
                 >
                   Contact Me
                 </NavLink>

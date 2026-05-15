@@ -1,38 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ashutoshhathidara.com/</loc>
-    <changefreq>yearly</changefreq>
+    <loc>https://prodhosh.me/</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ashutoshhathidara.com/experience</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.85</priority>
+    <loc>https://prodhosh.me/home</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ashutoshhathidara.com/education</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ashutoshhathidara.com/contact</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://ashutoshhathidara.com/projects</loc>
+    <loc>https://prodhosh.me/projects</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ashutoshhathidara.com/opensource</loc>
+    <loc>https://prodhosh.me/experience</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://prodhosh.me/education</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prodhosh.me/opensource</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://ashutoshhathidara.com/resume</loc>
+    <loc>https://prodhosh.me/resume</loc>
+    <lastmod>2026-05-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prodhosh.me/contact</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
   </url>
 </urlset>
