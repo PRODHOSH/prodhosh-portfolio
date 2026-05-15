@@ -1,0 +1,107 @@
+{
+  "closed": 9,
+  "data": [
+    {
+      "id": "ISS_NSoC_001",
+      "closed": false,
+      "title": "feat: Add dark mode to contributor dashboard",
+      "createdAt": "2026-05-13T10:00:00Z",
+      "url": "https://github.com/nexus-soc/nexus-platform/issues/55",
+      "number": 55,
+      "assignees": {
+        "nodes": []
+      },
+      "repository": {
+        "name": "nexus-platform",
+        "url": "https://github.com/nexus-soc/nexus-platform",
+        "owner": {
+          "login": "nexus-soc",
+          "avatarUrl": "https://avatars.githubusercontent.com/nexus-soc?v=4",
+          "url": "https://github.com/nexus-soc"
+        }
+      }
+    },
+    {
+      "id": "ISS_NSoC_002",
+      "closed": true,
+      "title": "fix: Sidebar collapses unexpectedly on tablet viewport",
+      "createdAt": "2026-05-06T08:30:00Z",
+      "url": "https://github.com/nexus-soc/nexus-platform/issues/48",
+      "number": 48,
+      "assignees": {
+        "nodes": []
+      },
+      "repository": {
+        "name": "nexus-platform",
+        "url": "https://github.com/nexus-soc/nexus-platform",
+        "owner": {
+          "login": "nexus-soc",
+          "avatarUrl": "https://avatars.githubusercontent.com/nexus-soc?v=4",
+          "url": "https://github.com/nexus-soc"
+        }
+      }
+    },
+    {
+      "id": "ISS_GSSoC_001",
+      "closed": true,
+      "title": "feat: Support streaming responses for AI chat module",
+      "createdAt": "2026-04-25T14:00:00Z",
+      "url": "https://github.com/girlscript/gssoc-ext/issues/201",
+      "number": 201,
+      "assignees": {
+        "nodes": []
+      },
+      "repository": {
+        "name": "gssoc-ext",
+        "url": "https://github.com/girlscript/gssoc-ext",
+        "owner": {
+          "login": "girlscript",
+          "avatarUrl": "https://avatars.githubusercontent.com/girlscript?v=4",
+          "url": "https://github.com/girlscript"
+        }
+      }
+    },
+    {
+      "id": "ISS_GSSoC_002",
+      "closed": false,
+      "title": "bug: Login page flickers on Safari mobile",
+      "createdAt": "2026-05-11T09:00:00Z",
+      "url": "https://github.com/girlscript/gssoc-platform/issues/93",
+      "number": 93,
+      "assignees": {
+        "nodes": []
+      },
+      "repository": {
+        "name": "gssoc-platform",
+        "url": "https://github.com/girlscript/gssoc-platform",
+        "owner": {
+          "login": "girlscript",
+          "avatarUrl": "https://avatars.githubusercontent.com/girlscript?v=4",
+          "url": "https://github.com/girlscript"
+        }
+      }
+    },
+    {
+      "id": "ISS_OWN_001",
+      "closed": true,
+      "title": "feat: Add Open Source contributions page to portfolio",
+      "createdAt": "2026-05-14T11:00:00Z",
+      "url": "https://github.com/PRODHOSH/masterPortfolio/issues/2",
+      "number": 2,
+      "assignees": {
+        "nodes": []
+      },
+      "repository": {
+        "name": "masterPortfolio",
+        "url": "https://github.com/PRODHOSH/masterPortfolio",
+        "owner": {
+          "login": "PRODHOSH",
+          "avatarUrl": "https://avatars.githubusercontent.com/PRODHOSH?v=4",
+          "url": "https://github.com/PRODHOSH"
+        }
+      }
+    }
+  ],
+  "open": 2,
+  "totalCount": 11
+}
