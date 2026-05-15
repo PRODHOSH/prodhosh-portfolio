@@ -1,0 +1,154 @@
+{
+  "data": [
+    {
+      "id": "bsprep",
+      "name": "BS Prep",
+      "createdAt": "2024-01-10T00:00:00Z",
+      "url": "https://github.com/PRODHOSH/bs-prep",
+      "description": "A full-stack learning platform designed for the IITM BS student community. Centralized dashboard for accessing courses, live classes, and community resources. Handles authentication, course enrollment, and live sessions.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Next.js",
+          "iconifyClass": "logos:nextjs-icon"
+        },
+        {
+          "name": "TypeScript",
+          "iconifyClass": "logos:typescript-icon"
+        },
+        {
+          "name": "Tailwind CSS",
+          "iconifyClass": "logos:tailwindcss-icon"
+        }
+      ]
+    },
+    {
+      "id": "ecolens",
+      "name": "EcoLens",
+      "createdAt": "2024-04-20T00:00:00Z",
+      "url": "https://github.com/PRODHOSH/ecolens-cloudinary",
+      "description": "AI-powered web platform that analyzes uploaded images for optimization opportunities, sustainability impact, and performance improvements using Cloudinary APIs and AI integrations.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Next.js",
+          "iconifyClass": "logos:nextjs-icon"
+        },
+        {
+          "name": "TypeScript",
+          "iconifyClass": "logos:typescript-icon"
+        },
+        {
+          "name": "Tailwind CSS",
+          "iconifyClass": "logos:tailwindcss-icon"
+        }
+      ]
+    },
+    {
+      "id": "flashfetch",
+      "name": "FlashFetch",
+      "createdAt": "2024-03-15T00:00:00Z",
+      "url": "https://github.com/PRODHOSH/rag-document-qa-bot",
+      "description": "A Retrieval-Augmented Generation (RAG) powered document QA system. Upload PDFs, TXT, or Markdown files and ask questions in natural language. Every answer is grounded in your documents.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Next.js",
+          "iconifyClass": "logos:nextjs-icon"
+        },
+        {
+          "name": "TypeScript",
+          "iconifyClass": "logos:typescript-icon"
+        },
+        {
+          "name": "FastAPI",
+          "iconifyClass": "simple-icons:fastapi"
+        }
+      ]
+    },
+    {
+      "id": "flickmood",
+      "name": "FlickMood",
+      "createdAt": "2024-02-12T00:00:00Z",
+      "url": "https://github.com/PRODHOSH/ai-movie-recommender",
+      "description": "AI-powered movie recommendation application that suggests movies based on mood and genre preferences using TMDB API and Gemini API integrations. Designed responsive UI with personalized workflows.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "React",
+          "iconifyClass": "logos:react"
+        },
+        {
+          "name": "JavaScript",
+          "iconifyClass": "logos:javascript"
+        },
+        {
+          "name": "Tailwind CSS",
+          "iconifyClass": "logos:tailwindcss-icon"
+        }
+      ]
+    },
+    {
+      "id": "nallamala-house",
+      "name": "Nallamala House",
+      "createdAt": "2023-11-20T00:00:00Z",
+      "url": "https://github.com/PRODHOSH/nallamala-website",
+      "description": "Built and maintaining the official website for Nallamala House, IIT Madras. Central hub for house leadership, communities, blogs, updates, and events.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Next.js",
+          "iconifyClass": "logos:nextjs-icon"
+        },
+        {
+          "name": "TypeScript",
+          "iconifyClass": "logos:typescript-icon"
+        },
+        {
+          "name": "React",
+          "iconifyClass": "logos:react"
+        }
+      ]
+    },
+    {
+      "id": "codecrafters",
+      "name": "CodeCrafters",
+      "createdAt": "2023-10-05T00:00:00Z",
+      "url": "https://github.com/CodeCrafters-IITMBS/code-crafters",
+      "description": "Designed, developed, and deployed the official website for CodeCrafters Coding Society at IIT Madras BS. Central hub for events, council, domains, and community engagement with immersive UI.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "React",
+          "iconifyClass": "logos:react"
+        },
+        {
+          "name": "TypeScript",
+          "iconifyClass": "logos:typescript-icon"
+        },
+        {
+          "name": "Three.js",
+          "iconifyClass": "logos:threejs"
+        }
+      ]
+    },
+    {
+      "id": "bb84-simulator",
+      "name": "BB84 Quantum Simulator",
+      "createdAt": "2023-08-12T00:00:00Z",
+      "url": "https://github.com/PRODHOSH/bb84-simulator",
+      "description": "An interactive 3D simulator demonstrating the BB84 Quantum Key Distribution protocol. Visualizes photon polarization, key generation, and eavesdropping detection in real-time.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "logos:python"
+        },
+        {
+          "name": "Three.js",
+          "iconifyClass": "logos:threejs"
+        }
+      ]
+    }
+  ]
+}
