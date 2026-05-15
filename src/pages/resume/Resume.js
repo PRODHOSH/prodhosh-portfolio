@@ -77,7 +77,7 @@ export default class ResumePage extends Component {
 
   render() {
     const theme = this.props.theme;
-    const { pageWidth, numPages, currentPage, isLoading, error } = this.state;
+    const { isLoading, error } = this.state;
 
     return (
       <div className="resume-main">
