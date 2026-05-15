@@ -22,7 +22,8 @@ function SeoHeader() {
 
   let mail = socialMediaLinks
     .find((media) => media.link.startsWith("mailto"))
-    .link.substring("mailto:".length);
+    ?.link.substring("mailto:".length);
+
   let job = experience.sections
     ?.find((section) => section.work)
     ?.experiences?.at(0);
@@ -37,18 +38,21 @@ function SeoHeader() {
       description: certification.subtitle,
     });
   });
-  const data = {
+
+  const canonicalUrl = seo?.og?.url || "https://prodhosh.me";
+  const ogImage = `${canonicalUrl}/og-image.png`;
+
+  const structuredData = {
     "@context": "https://schema.org/",
     "@type": "Person",
     name: greeting.title,
-    url: seo?.og?.url,
+    url: canonicalUrl,
     email: mail,
-    telephone: contactPageData.phoneSection?.subtitle,
     sameAs: sameAs,
-    jobTitle: job.title,
+    jobTitle: job?.title,
     worksFor: {
       "@type": "Organization",
-      name: job.company,
+      name: job?.company,
     },
     address: {
       "@type": "PostalAddress",
@@ -58,16 +62,41 @@ function SeoHeader() {
       postalCode: contactPageData.addressSection?.postalCode,
       streetAddress: contactPageData.addressSection?.streetAddress,
     },
+    image: ogImage,
     hasCredential: credentials,
   };
+
   return (
     <Helmet>
+      {/* Primary */}
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={canonicalUrl} />
+
+      {/* Open Graph */}
       <meta property="og:title" content={seo?.og?.title} />
       <meta property="og:type" content={seo?.og?.type} />
-      <meta property="og:url" content={seo?.og?.url} />
-      <script type="application/ld+json">{JSON.stringify(data)}</script>
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:description" content={seo.description} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:site_name" content="Prodhosh VS Portfolio" />
+      <meta property="og:locale" content="en_US" />
+
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@prodhosh3" />
+      <meta name="twitter:creator" content="@prodhosh3" />
+      <meta name="twitter:title" content={seo?.og?.title} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={ogImage} />
+
+      {/* JSON-LD Structured Data */}
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
     </Helmet>
   );
 }

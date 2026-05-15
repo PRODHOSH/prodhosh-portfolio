@@ -17,7 +17,11 @@ class DegreeCard extends Component {
                   maxHeight: "100%",
                   transform: "scale(0.9)",
                 }}
-                src={require(`../../assets/images/${degree.logo_path}`)}
+                src={
+                  degree.logo_path.startsWith("http")
+                    ? degree.logo_path
+                    : require(`../../assets/images/${degree.logo_path}`)
+                }
                 alt={degree.alt_name}
               />
             </div>

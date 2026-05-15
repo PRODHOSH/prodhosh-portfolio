@@ -1,111 +1,101 @@
 .cert-card {
-  width: 30%;
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  width: 100%;
+  border-radius: 12px;
   border: 1px solid #d9dbdf;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px #d9dbdf;
-  margin-bottom: 30px;
-  flex: 0 0 30%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: #fff;
 }
 
-.cert-header {
-  margin: 0px;
-  border-radius: 5px 5px 0px 0px;
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
 }
 
-.logo_img {
-  margin: 3px;
-  width: auto;
-  height: 100px;
+/* ── Thumbnail ── */
+.cert-thumb {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #f4f4f8;
 }
 
+.cert-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* PDF placeholder */
+.cert-pdf-thumb {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #fdecea, #fff);
+}
+
+.cert-pdf-label {
+  font-family: "Google Sans Regular", sans-serif;
+  font-size: 13px;
+  color: #e53935;
+}
+
+/* Hover overlay */
+.cert-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cert-card:hover .cert-thumb-overlay {
+  opacity: 1;
+}
+
+.cert-thumb-view {
+  color: #fff;
+  font-family: "Google Sans Regular", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* ── Card body ── */
 .cert-body {
-  margin: 0px;
+  padding: 14px 16px 16px;
 }
 
 .cert-body-title {
   font-family: "Google Sans Regular";
-  font-size: 20px;
-  margin: 10px;
+  font-size: 18px;
+  margin: 0 0 4px;
 }
 
 .cert-body-subtitle {
   font-family: "Google Sans Regular";
-  font-size: 18px;
+  font-size: 14px;
   color: #808080;
-  margin: 10px;
-}
-
-.content {
-  position: relative;
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
-}
-
-.content .content-overlay {
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  height: 99%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  opacity: 0;
-  -webkit-transition: all 0.4s ease-in-out 0s;
-  -moz-transition: all 0.4s ease-in-out 0s;
-  transition: all 0.4s ease-in-out 0s;
-}
-
-.content:hover .content-overlay {
-  opacity: 1;
-}
-
-.content-details {
-  position: absolute;
-  text-align: center;
-  padding-left: 1em;
-  padding-right: 1em;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  opacity: 0;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  -moz-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.content:hover .content-details {
-  top: 50%;
-  left: 50%;
-  opacity: 1;
-}
-
-.content-details h3 {
-  color: #fff;
-  font-weight: 500;
-  font-family: "Google Sans Regular";
-  letter-spacing: 0.15em;
-  margin-bottom: 0.5em;
-  text-transform: uppercase;
-}
-
-.fadeIn-top {
-  top: 20%;
-}
-
-@media (max-width: 1380px) {
+  margin: 0;
 }
 
 @media (max-width: 768px) {
-  .cert-card {
-    width: 100%;
+  .cert-thumb {
+    height: 150px;
   }
 }

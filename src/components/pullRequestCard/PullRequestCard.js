@@ -104,6 +104,23 @@ class PullRequestCard extends Component {
               <p className="files-changed-text-2">Files Changed</p>
             </div>
           </div>
+          {pullRequest["labels"] && pullRequest["labels"].length > 0 && (
+            <div className="pr-labels">
+              {pullRequest["labels"].map((label) => (
+                <span
+                  key={label.name}
+                  className="pr-label-badge"
+                  style={{
+                    backgroundColor: label.color + "22",
+                    color: label.color,
+                    border: `1px solid ${label.color}`,
+                  }}
+                >
+                  {label.name}
+                </span>
+              ))}
+            </div>
+          )}
           <div className="pr-down">
             <div className="changes-repo">
               <p className="parent-repo">

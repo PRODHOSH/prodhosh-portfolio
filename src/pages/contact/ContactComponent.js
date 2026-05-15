@@ -8,7 +8,7 @@ import BlogsImg from "./BlogsImg";
 import AddressImg from "./AddressImg";
 import { Fade } from "react-reveal";
 import "./ContactComponent.css";
-import { contactPageData } from "../../portfolio.js";
+import { contactPageData, greeting } from "../../portfolio.js";
 
 const ContactData = contactPageData.contactSection;
 const blogSection = contactPageData.blogSection;
@@ -16,6 +16,45 @@ const addressSection = contactPageData.addressSection;
 const phoneSection = contactPageData.phoneSection;
 
 class Contact extends Component {
+  componentDidMount() {
+    (function (C, A, L) {
+      let p = function (a, ar) {
+        a.q.push(ar);
+      };
+      let d = C.document;
+      C.Cal =
+        C.Cal ||
+        function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () {
+              p(api, arguments);
+            };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            typeof namespace === "string"
+              ? (cal.ns[namespace] = cal.ns[namespace] || api)
+              : p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    window.Cal("init", "15min", { origin: "https://cal.com" });
+    window.Cal.ns["15min"]("ui", {
+      hideEventTypeDetails: false,
+      layout: "month_view",
+    });
+  }
+
   render() {
     const theme = this.props.theme;
     return (
@@ -44,11 +83,27 @@ class Contact extends Component {
                   {ContactData["description"]}
                 </p>
                 <SocialMedia theme={theme} />
-                <div className="resume-btn-div">
+                <div
+                  className="resume-btn-div"
+                  style={{
+                    display: "flex",
+                    gap: "20px",
+                    flexWrap: "wrap",
+                    justifyContent: "center",
+                  }}
+                >
                   <Button
                     text="See My Resume"
-                    href="/resume"
+                    newTab={true}
+                    href={greeting.resumeLink}
                     theme={theme}
+                  />
+                  <Button
+                    text="Book a call with me"
+                    theme={theme}
+                    data-cal-namespace="15min"
+                    data-cal-link="itzprodhosh/15min"
+                    data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
                   />
                 </div>
               </div>

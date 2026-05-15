@@ -1,2 +1,6 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
+Allow: /
+Disallow: /build/
+Disallow: /node_modules/
+
+Sitemap: https://prodhosh.me/sitemap.xml

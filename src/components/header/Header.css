@@ -2,7 +2,7 @@
 
 .header {
   display: block;
-  max-width: 90%;
+  width: 90vw !important;
   padding: 20px 10px;
   margin: 0px auto;
 }
@@ -19,10 +19,23 @@
 }
 
 .header li a {
-  display: block;
-  padding: 20px 20px;
-  /* color: black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
   text-decoration: none;
+  font-size: 18px;
+  text-align: center;
+}
+
+.header li a::after {
+  display: block;
+  content: attr(data-text);
+  font-weight: bold;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 .header li a:hover,
@@ -37,6 +50,8 @@
   text-decoration: none;
   margin-top: 10px;
   line-height: normal;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .header .logo-name {
   font-family: "Agustina Regular";
@@ -125,17 +140,29 @@
 
 /* 69em = 1104px */
 
-@media (min-width: 69em) {
+@media (min-width: 48em) {
   .header li {
-    float: left;
+    display: inline-block;
+  }
+  .header li a {
+    padding: 20px 0px;
+    white-space: nowrap;
   }
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 90vw !important;
+    max-width: 1300px;
+    margin: 0 auto;
   }
   .header .menu {
     max-height: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    gap: 30px;
   }
   .header .menu-icon {
     display: none;

@@ -3,13 +3,13 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import { Fade } from "react-reveal";
 import "./Resume.css";
-import myResumePdf from "../../assets/docs/Ashutosh_Hathidara_Resume_ML.pdf";
-import { Document, Page, pdfjs } from "react-pdf";
+// import myResumePdf from "../../assets/docs/resume.pdf";
+// import { Document, Page, pdfjs } from "react-pdf";
 import Button from "../../components/button/Button";
 import { greeting } from "../../portfolio";
 import TopButton from "../../components/topButton/TopButton";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+// pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 export default class ResumePage extends Component {
   constructor(props) {
@@ -135,60 +135,20 @@ export default class ResumePage extends Component {
               {/* PDF Document */}
               {!error && (
                 <div className="resume-page">
-                  <Document
-                    file={myResumePdf}
-                    onLoadSuccess={this.onDocumentLoadSuccess}
-                    onLoadError={this.onDocumentLoadError}
-                    loading={
-                      <div className="resume-loading">
-                        <div className="loading-spinner"></div>
-                        <p>Loading resume...</p>
-                      </div>
-                    }
-                  >
-                    {pageWidth && (
-                      <Page
-                        pageNumber={currentPage}
-                        width={pageWidth}
-                        loading={
-                          <div className="page-loading">
-                            <div className="loading-spinner"></div>
-                          </div>
-                        }
-                      />
-                    )}
-                  </Document>
-
-                  {/* Pagination Controls */}
-                  {numPages && numPages > 1 && (
-                    <div className="pagination-controls">
-                      <button
-                        onClick={this.goToPreviousPage}
-                        disabled={currentPage === 1}
-                        className="pagination-btn"
-                        aria-label="Previous page"
-                      >
-                        ← Previous
-                      </button>
-                      <span className="page-info" aria-live="polite">
-                        Page {currentPage} of {numPages}
-                      </span>
-                      <button
-                        onClick={this.goToNextPage}
-                        disabled={currentPage === numPages}
-                        className="pagination-btn"
-                        aria-label="Next page"
-                      >
-                        Next →
-                      </button>
-                    </div>
-                  )}
+                  <div className="resume-content">
+                    <p>Click the button below to view your resume:</p>
+                    <Button
+                      text="View Resume (PDF)"
+                      newTab={true}
+                      href={greeting.resumeLink}
+                    />
+                  </div>
                 </div>
               )}
             </div>
           </Fade>
         </div>
-        <Footer theme={theme} onToggle={this.props.onToggle}/>
+        <Footer theme={theme} onToggle={this.props.onToggle} />
         <TopButton theme={theme} />
       </div>
     );
