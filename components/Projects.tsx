@@ -98,7 +98,7 @@ export default function Projects() {
 
                 <div className="flex flex-wrap gap-2 relative z-10">
                   {project.tags.map((tag, idx) => (
-                    <span key={idx} className="px-3 py-1 text-xs font-mono rounded-full bg-white/5 border border-white/10 text-neutral-300 group-hover:border-white/20 transition-colors">
+                    <span key={idx} className="px-3 py-1 text-xs font-mono rounded-full bg-white/5 border border-white/10 text-neutral-300 uppercase tracking-wider group-hover:border-white/20 transition-colors">
                       {tag}
                     </span>
                   ))}

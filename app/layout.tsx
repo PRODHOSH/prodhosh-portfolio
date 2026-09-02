@@ -6,6 +6,7 @@ import DotGrid from "@/components/DotGrid";
 import CalSetup from "@/components/CalSetup";
 import FloatingHireMe from "@/components/FloatingHireMe";
 import CustomCursor from "@/components/CustomCursor";
+import Loader from "@/components/Loader";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -18,6 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://prodhosh.me"),
   title: "Prodhosh VS | Full Stack Developer & AI Engineer",
   description: "Portfolio of Prodhosh VS, a passionate individual building scalable social and technical systems. Explore my projects, skills, and professional experience.",
   icons: {
@@ -51,6 +53,7 @@ export default function RootLayout({
       className={`${bricolage.variable} ${spaceGrotesk.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-transparent text-white font-sans selection:bg-white/20 selection:text-white relative">
+        <Loader />
         <CustomCursor />
         <CalSetup />
         <DotGrid />
