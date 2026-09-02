@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Code, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -54,11 +55,11 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             {/* Always show links on desktop */}
             <div className="hidden lg:flex items-center gap-8 mr-4">
-              <a href="#about" className="text-sm text-neutral-400 hover:text-white transition-colors">about</a>
-              <a href="#what-i-do" className="text-sm text-neutral-400 hover:text-white transition-colors">services</a>
-              <a href="#projects" className="text-sm text-neutral-400 hover:text-white transition-colors">projects</a>
-              <a href="#education" className="text-sm text-neutral-400 hover:text-white transition-colors">education</a>
-              <a href="#contact" className="text-sm text-neutral-400 hover:text-white transition-colors">contact</a>
+              <Link href="/" className="text-sm text-neutral-400 hover:text-white transition-colors">Home</Link>
+              <Link href="/services" className="text-sm text-neutral-400 hover:text-white transition-colors">Services</Link>
+              <Link href="/projects" className="text-sm text-neutral-400 hover:text-white transition-colors">Projects</Link>
+              <Link href="/experience" className="text-sm text-neutral-400 hover:text-white transition-colors">Experience</Link>
+              <Link href="/contact" className="text-sm text-neutral-400 hover:text-white transition-colors">Contact</Link>
             </div>
 
             <a href="/latest_resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm bg-white text-black px-5 py-2 rounded-full font-medium hover:bg-neutral-200 transition-colors hidden md:block">
@@ -88,23 +89,26 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-10 flex-1 items-center justify-center text-center">
               {[
-                { label: "ABOUT", href: "#about" },
-                { label: "SERVICES", href: "#what-i-do" },
-                { label: "PROJECTS", href: "#projects" },
-                { label: "EDUCATION", href: "#education" },
-                { label: "CONTACT", href: "#contact" }
+                { label: "HOME", href: "/" },
+                { label: "SERVICES", href: "/services" },
+                { label: "PROJECTS", href: "/projects" },
+                { label: "EXPERIENCE", href: "/experience" },
+                { label: "CONTACT", href: "/contact" }
               ].map((link, i) => (
-                <motion.a
+                <Link
                   key={i}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1, duration: 0.4 }}
-                  className="text-4xl sm:text-5xl font-display font-bold text-white tracking-widest hover:text-emerald-400 transition-colors"
                 >
-                  {link.label}
-                </motion.a>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1, duration: 0.4 }}
+                    className="text-4xl sm:text-5xl font-display font-bold text-white tracking-widest hover:text-emerald-400 transition-colors"
+                  >
+                    {link.label}
+                  </motion.div>
+                </Link>
               ))}
             </div>
 

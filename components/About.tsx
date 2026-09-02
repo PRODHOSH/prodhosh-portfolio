@@ -1,71 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Database, BrainCircuit, Cloud } from "lucide-react";
 import WavyUnderline from "./WavyUnderline";
 import Timeline from "./Timeline";
 import Typewriter from "./Typewriter";
 
-import MagneticIcon from "./MagneticIcon";
-import { 
-  SiPython, SiC, SiCplusplus, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiVite, 
-  SiHtml5, SiCss, SiTailwindcss, SiFastapi, SiPostgresql, SiMysql, SiSupabase, SiPrisma, 
-  SiNumpy, SiPandas, SiScikitlearn, SiCloudflare, SiDigitalocean, SiDocker
-} from "react-icons/si";
-import { FaJava, FaAws, FaGoogle } from "react-icons/fa";
-
-const techSkills = [
-  {
-    category: "Languages",
-    skills: [
-      { name: "Python", icon: <SiPython className="w-6 h-6" /> },
-      { name: "C", icon: <SiC className="w-6 h-6" /> },
-      { name: "C++", icon: <SiCplusplus className="w-6 h-6" /> },
-      { name: "Java", icon: <FaJava className="w-6 h-6" /> },
-      { name: "JavaScript", icon: <SiJavascript className="w-6 h-6" /> },
-      { name: "TypeScript", icon: <SiTypescript className="w-6 h-6" /> }
-    ]
-  },
-  {
-    category: "Web Development",
-    skills: [
-      { name: "React", icon: <SiReact className="w-6 h-6" /> },
-      { name: "Next.js", icon: <SiNextdotjs className="w-6 h-6" /> },
-      { name: "Vite", icon: <SiVite className="w-6 h-6" /> },
-      { name: "HTML5", icon: <SiHtml5 className="w-6 h-6" /> },
-      { name: "CSS3", icon: <SiCss className="w-6 h-6" /> },
-      { name: "Tailwind", icon: <SiTailwindcss className="w-6 h-6" /> }
-    ]
-  },
-  {
-    category: "Backend & Databases",
-    skills: [
-      { name: "FastAPI", icon: <SiFastapi className="w-6 h-6" /> },
-      { name: "PostgreSQL", icon: <SiPostgresql className="w-6 h-6" /> },
-      { name: "MySQL", icon: <SiMysql className="w-6 h-6" /> },
-      { name: "Supabase", icon: <SiSupabase className="w-6 h-6" /> },
-      { name: "Prisma", icon: <SiPrisma className="w-6 h-6" /> }
-    ]
-  },
-  {
-    category: "Data Science & ML",
-    skills: [
-      { name: "NumPy", icon: <SiNumpy className="w-6 h-6" /> },
-      { name: "Pandas", icon: <SiPandas className="w-6 h-6" /> },
-      { name: "Scikit-Learn", icon: <SiScikitlearn className="w-6 h-6" /> }
-    ]
-  },
-  {
-    category: "Cloud & Infra",
-    skills: [
-      { name: "AWS", icon: <FaAws className="w-6 h-6" /> },
-      { name: "Google Cloud", icon: <FaGoogle className="w-6 h-6" /> },
-      { name: "Cloudflare", icon: <SiCloudflare className="w-6 h-6" /> },
-      { name: "DigitalOcean", icon: <SiDigitalocean className="w-6 h-6" /> },
-      { name: "Docker", icon: <SiDocker className="w-6 h-6" /> }
-    ]
-  }
-];
+import SkillsPyramid from "./skills/SkillsPyramid";
 
 export default function About() {
   return (
@@ -164,29 +104,8 @@ export default function About() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-6xl mx-auto">
-            {techSkills.map((section, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="p-8 rounded-3xl bg-white/[0.02] border border-white/10 flex flex-col group hover:border-emerald-500/30 hover:bg-emerald-500/[0.02] transition-colors"
-              >
-                <h3 className="text-2xl font-display tracking-tight text-neutral-400 group-hover:text-emerald-400 transition-colors duration-300 mb-8">
-                  {section.category}
-                </h3>
-                
-                <div className="flex flex-wrap gap-4 mt-auto">
-                  {section.skills.map((skill, idx) => (
-                    <MagneticIcon key={idx} name={skill.name}>
-                      {skill.icon}
-                    </MagneticIcon>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+          <div className="w-full mt-16 max-w-7xl mx-auto">
+            <SkillsPyramid />
           </div>
         </div>
 
