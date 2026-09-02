@@ -1,0 +1,17 @@
+# Prodhosh VS - Full Stack Developer & AI Engineer
+
+> A passionate individual building scalable social and technical systems to create impact.
+
+Prodhosh VS is a Software Engineer Intern at Annexra, Next.js Developer Intern at Sindra, and Founding Engineer at BS Prep. 
+He specializes in Frontend Architecture, Backend & Databases, AI & Data Science, Cloud & DevOps, and SEO.
+
+## Links
+- [GitHub](https://github.com/PRODHOSH)
+- [LinkedIn](https://www.linkedin.com/in/prodhoshvs/)
+- [Twitter](https://x.com/prodhosh3)
+- [Email](mailto:hello@prodhosh.me)
+
+## Projects & Experience
+- Explore projects: https://prodhosh.me/#projects
+- Experience timeline: https://prodhosh.me/#experience
+- Booking link: https://cal.com/itzprodhosh/15min

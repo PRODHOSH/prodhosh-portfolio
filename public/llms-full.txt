@@ -1,0 +1,34 @@
+# Prodhosh VS
+
+> CS Sophomore at VIT Chennai and IIT Madras BS Data Science. I like building things that people actually use.
+
+## About
+I'm interested in AI engineering and building products that can think, learn, and scale. Most of my time is spent designing and developing SaaS-style platforms, developer tools, and software solutions for businesses, communities, and organizations.
+
+Over the past few years, I've worked on 7+ freelance projects, built products used by thousands of users, contributed to open source, and launched everything from learning platforms and analytics tools to AI-powered applications.
+
+I enjoy working across the entire stack, from UI and user experience to architecture, databases, APIs, performance, SEO, and system design. Currently, I'm focused on full stack development, AI products, and becoming a better engineer with every project I build.
+
+## Services
+- **Frontend Architecture**: Building scalable, high-performance, and visually stunning web interfaces using React, Next.js, and Tailwind CSS.
+- **Backend & Databases**: Designing robust server architectures, RESTful APIs, and managing complex relational data models.
+- **AI & Data Science**: Integrating powerful LLMs, building Retrieval-Augmented Generation (RAG) pipelines, and analyzing large datasets.
+- **Cloud & DevOps**: Deploying applications on modern cloud infrastructure, automating CI/CD pipelines, and utilizing serverless architectures.
+- **Business Automations & SEO**: Streamlining operations through custom workflow automations and developing highly optimized websites.
+
+## Experience
+- **Software Engineer Intern @ Annexra** (Aug 2026 - Present)
+- **Next.js Developer Intern @ Sindra** (Jul 2026 - Present)
+- **Founding Engineer @ BS Prep** (Jan 2026 - Present)
+  - Designed, developed, and launched the core BSPrep platform, serving as the primary learning hub for students.
+  - Built and deployed the official BSPrep Blogs platform to improve SEO, increase organic traffic, and strengthen community engagement.
+  - Engineered the complete Student Ambassador Portal.
+  - Led business development for the ambassador program by pitching to companies and securing 4 corporate sponsorships.
+  - Owned the complete product lifecycle, from planning and UI/UX design to development, deployment, and maintenance using Next.js, TypeScript, Tailwind CSS, and Supabase.
+- **Developer Intern @ EnlightEd** (Jun 2026 - Jul 2026)
+
+## Contact
+Email: hello@prodhosh.me
+Booking: https://cal.com/itzprodhosh/15min
+GitHub: https://github.com/PRODHOSH
+LinkedIn: https://www.linkedin.com/in/prodhoshvs/
