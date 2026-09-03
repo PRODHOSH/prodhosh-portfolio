@@ -1,34 +1,80 @@
-# Prodhosh VS
+# Prodhosh VS - Comprehensive Technical Profile
+> Full Stack Developer & AI Engineer
 
-> CS Sophomore at VIT Chennai and IIT Madras BS Data Science. I like building things that people actually use.
+## Contact Information
+- **Website**: https://prodhosh.me
+- **GitHub**: https://github.com/PRODHOSH
+- **LinkedIn**: https://www.linkedin.com/in/prodhoshvs/
+- **Email**: hello@prodhosh.me
+- **Location**: Chennai, Tamil Nadu, India
 
-## About
-I'm interested in AI engineering and building products that can think, learn, and scale. Most of my time is spent designing and developing SaaS-style platforms, developer tools, and software solutions for businesses, communities, and organizations.
+## Summary
+A passionate individual who thrives on building end-to-end products that develop sustainable and scalable social and technical systems to create impact. I specialize in Next.js frontend architecture, backend API design with PostgreSQL/Supabase, and integrating AI/LLMs into practical, scalable applications.
 
-Over the past few years, I've worked on 7+ freelance projects, built products used by thousands of users, contributed to open source, and launched everything from learning platforms and analytics tools to AI-powered applications.
+## Education
+1. **Vellore Institute of Technology (VIT Chennai)**
+   - B.Tech in Computer Science Engineering (Jun 2025 - Jul 2029)
+   - Core computer science engineering with a focus on algorithms, databases, and systems design.
+2. **Indian Institute of Technology Madras (IIT Madras)**
+   - B.S in Data Science (May 2025 - May 2029)
+   - Specialized degree with comprehensive mathematics, machine learning, and AI foundations.
 
-I enjoy working across the entire stack, from UI and user experience to architecture, databases, APIs, performance, SEO, and system design. Currently, I'm focused on full stack development, AI products, and becoming a better engineer with every project I build.
+## Core Technical Skills
+- **Frontend Architecture**: Building responsive, highly scalable, and pixel-perfect web applications using React, Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+- **Backend & Databases**: Designing robust server architectures and secure RESTful APIs using Python, Node.js, PostgreSQL, MySQL, and Supabase.
+- **AI & Data Science**: Integrating LLMs into real-world applications, building Retrieval-Augmented Generation (RAG) pipelines using Vector DBs, Scikit-Learn, and FastAPI.
+- **Cloud & DevOps**: Implementing CI/CD pipelines, containerizing applications with Docker, and deploying on AWS, Vercel, Netlify, and Railway.
+- **Business Automations**: Connecting disparate systems using n8n, Webhooks, and API integrations to build automated workflows.
 
-## Services
-- **Frontend Architecture**: Building scalable, high-performance, and visually stunning web interfaces using React, Next.js, and Tailwind CSS.
-- **Backend & Databases**: Designing robust server architectures, RESTful APIs, and managing complex relational data models.
-- **AI & Data Science**: Integrating powerful LLMs, building Retrieval-Augmented Generation (RAG) pipelines, and analyzing large datasets.
-- **Cloud & DevOps**: Deploying applications on modern cloud infrastructure, automating CI/CD pipelines, and utilizing serverless architectures.
-- **Business Automations & SEO**: Streamlining operations through custom workflow automations and developing highly optimized websites.
+## Professional Experience
 
-## Experience
-- **Software Engineer Intern @ Annexra** (Aug 2026 - Present)
-- **Next.js Developer Intern @ Sindra** (Jul 2026 - Present)
-- **Founding Engineer @ BS Prep** (Jan 2026 - Present)
-  - Designed, developed, and launched the core BSPrep platform, serving as the primary learning hub for students.
-  - Built and deployed the official BSPrep Blogs platform to improve SEO, increase organic traffic, and strengthen community engagement.
-  - Engineered the complete Student Ambassador Portal.
-  - Led business development for the ambassador program by pitching to companies and securing 4 corporate sponsorships.
-  - Owned the complete product lifecycle, from planning and UI/UX design to development, deployment, and maintenance using Next.js, TypeScript, Tailwind CSS, and Supabase.
-- **Developer Intern @ EnlightEd** (Jun 2026 - Jul 2026)
+### Freelance & Internships
+- **Annexra | Software Engineer Intern** (Aug 2026 - Present)
+  - Designed and developed the company's new full-stack website, owning UI/UX, frontend, backend integration, responsive design, and SEO.
+  - Contributing to client projects including a full-stack e-commerce platform.
+- **Sindra | Next.js Developer Intern** (Jul 2026 - Present)
+  - Developing and optimizing scalable frontend applications using Next.js and TypeScript.
+- **EnlightEd | Developer Intern** (Jun 2026 - Jul 2026)
+  - Engineered production-ready features for an AI-powered adaptive learning platform.
+- **Cloudinary | Cloudinary Creator** (Mar 2026 - Present)
+  - Developed EcoLens, an award-winning full-stack media optimization platform utilizing Next.js, TypeScript, and Cloudinary APIs.
+- **BS Prep | Founding Engineer** (Jan 2026 - Present)
+  - Leading end-to-end technical development and product strategy for a comprehensive learning platform serving IIT Madras BS students. Architected scalable core systems with Next.js and Supabase.
 
-## Contact
-Email: hello@prodhosh.me
-Booking: https://cal.com/itzprodhosh/15min
-GitHub: https://github.com/PRODHOSH
-LinkedIn: https://www.linkedin.com/in/prodhoshvs/
+### Select Open Source & Communities
+- **EduLinkUp**: Project Admin for OSSfolio. Overseeing workflows, PRs, and maintaining high code standards.
+- **GirlScript Summer of Code 2026**: Campus Ambassador and Open Source Contributor for AI/Agent tracks.
+- **Nallamala House (IIT Madras)**: Website Manager (Dec 2025 - May 2026). Led end-to-end frontend development for a community platform serving 4,500+ members.
+- **CodeCrafters (IIT Madras BS)**: Council member for WebOps, Coding & Cybersecurity. Deployed official community platform.
+
+## Featured Projects
+
+1. **GSSoC Tracker**
+   - **Tech Stack**: Next.js 15, TypeScript, Recharts, Framer Motion, Nodemailer, Vercel
+   - A fast, personal tracker for GSSoC contributors and mentors to view PRs, labels, and track scores using official formulas.
+
+2. **OSSfolio**
+   - **Tech Stack**: Next.js, TypeScript, Tailwind CSS, Supabase, Cloudflare Pages
+   - A free, open-source platform where every contributor gets a public profile page showing merged PRs, issues, orgs, and program participations.
+
+3. **FlashFetch**
+   - **Tech Stack**: Next.js, FastAPI, FAISS, Supabase, Groq LLaMA 3
+   - A Retrieval-Augmented Generation (RAG) powered document QA system. Upload PDFs/TXT and ask questions grounded entirely in document context.
+
+4. **NBA 2026 Playoff Predictor**
+   - **Tech Stack**: Python, Streamlit, SciPy, Pandas, Monte Carlo
+   - Web app that simulates the NBA playoff bracket using Monte Carlo methods on live official NBA API data.
+
+5. **BB84 Quantum Key Distribution - Simulator**
+   - **Tech Stack**: Qiskit, Python, Three.js
+   - An interactive 3D simulator demonstrating the BB84 Quantum Key Distribution protocol in real-time.
+
+## Publications & Research
+- **Neuro-Symbolic Sudoku Solver**: Published in KDD KiML 2023 (https://arxiv.org/abs/2307.00653)
+- **Consistency Models & MDP-Diffusion**: Authored technical AI blogs published in Paperspace.
+
+## Certifications & Badges
+- **Google Cloud**: Introduction to Generative AI
+- **deeplearning.ai (Andrew Ng)**: AI For Everyone
+- **Coursera/BYAMN**: Build Your AI Startup
+- **AWS Educate Badge**, **Cloudinary Creator Badge**, **YSoC Badge**

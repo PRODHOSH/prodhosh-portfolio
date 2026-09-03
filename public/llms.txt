@@ -1,17 +1,21 @@
-# Prodhosh VS - Full Stack Developer & AI Engineer
+# Prodhosh VS
+> Full Stack Developer & AI Engineer
 
-> A passionate individual building scalable social and technical systems to create impact.
-
-Prodhosh VS is a Software Engineer Intern at Annexra, Next.js Developer Intern at Sindra, and Founding Engineer at BS Prep. 
-He specializes in Frontend Architecture, Backend & Databases, AI & Data Science, Cloud & DevOps, and SEO.
+Welcome to the AI-readable representation of my portfolio! I am Prodhosh VS, a passionate Full Stack Developer and AI Engineer based in Chennai, India. I am pursuing a B.Tech in CSE at VIT Chennai and a B.S in Data Science at IIT Madras.
 
 ## Links
-- [GitHub](https://github.com/PRODHOSH)
-- [LinkedIn](https://www.linkedin.com/in/prodhoshvs/)
-- [Twitter](https://x.com/prodhosh3)
-- [Email](mailto:hello@prodhosh.me)
+- Website: https://prodhosh.me
+- GitHub: https://github.com/PRODHOSH
+- LinkedIn: https://www.linkedin.com/in/prodhoshvs/
+- Email: hello@prodhosh.me
 
-## Projects & Experience
-- Explore projects: https://prodhosh.me/#projects
-- Experience timeline: https://prodhosh.me/#experience
-- Booking link: https://cal.com/itzprodhosh/15min
+## Quick Overview
+- **Skills**: Next.js, React, TypeScript, Tailwind CSS, Python, Node.js, PostgreSQL, Supabase, LLMs, RAG, Docker, AWS.
+- **Current Roles**: Software Engineer Intern at Annexra, Next.js Developer Intern at Sindra, Founding Engineer at BS Prep, and active Open Source Contributor.
+- **Top Projects**: 
+  - GSSoC Tracker (Next.js 15, Recharts)
+  - OSSfolio (Next.js, Supabase)
+  - FlashFetch (RAG Document QA system using Groq & FAISS)
+  - BS Prep (IITM BS Learning Platform)
+
+For a complete, in-depth look at my projects, detailed work experience, certifications, and technical writing, please read [llms-full.txt](https://prodhosh.me/llms-full.txt).
