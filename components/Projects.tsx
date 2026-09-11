@@ -1,75 +1,66 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { FaGithub } from "react-icons/fa";
+import { ArrowRight } from "lucide-react";
 import WavyUnderline from "./WavyUnderline";
-import { GitHubCalendar } from "react-github-calendar";
+import Image from "next/image";
 
 const projects = [
   {
-    name: "GSSoC Tracker",
-    desc: "A fast, personal tracker for GSSoC contributors and mentors to view PRs, labels, and track scores using the official formula. Built to provide a clearer way to understand contributions.",
-    link: "https://gssoc-tracker.vercel.app/",
-    github: "https://github.com/PRODHOSH/gssoc-tracker",
-    image: "/images/gssoc_logo.png",
-    tags: ["Next.js 15", "TypeScript", "Recharts", "Framer Motion", "Nodemailer", "Vercel"]
-  },
-  {
-    name: "OSSfolio",
-    desc: "Your open-source identity, beyond GitHub. A free, open-source platform where every contributor gets a public profile page showing merged PRs, issues, orgs, and program participations.",
-    link: "https://ossfolio.me",
-    github: "https://github.com/PRODHOSH/ossfolio",
-    image: "/images/github-repo.png",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Cloudflare Pages"]
-  },
-  {
-    name: "NBA 2026 Playoff Predictor",
-    desc: "A Streamlit web app that shows the real 2026 NBA playoff bracket and lets you simulate the remaining rounds using Monte Carlo methods. Built with live data from the official NBA stats API.",
-    link: "",
-    github: "https://github.com/PRODHOSH/nba-playoff-predictor",
-    image: "/images/projects_image.svg",
-    tags: ["Python", "Streamlit", "SciPy", "Pandas", "Monte Carlo"]
-  },
-  {
-    name: "FlashFetch",
-    desc: "A Retrieval-Augmented Generation (RAG) powered document QA system. Upload PDFs, TXT, or Markdown files and ask questions in natural language. Every answer is grounded in your documents with source citations.",
-    link: "https://flashfetch.app",
-    github: "https://github.com/PRODHOSH/rag-document-qa-bot",
-    image: "/images/cine-ai.png",
-    tags: ["Next.js", "FastAPI", "FAISS", "Supabase", "Groq LLaMA 3"]
-  },
-  {
-    name: "BS Prep - IITM BS Learning Platform",
+    name: "BS Prep",
+    category: "LEARNING PLATFORM",
     desc: "A full-stack learning platform designed for the IITM BS student community. Handles authentication, course enrollment, payment workflows, and live session delivery.",
     link: "https://www.bsprep.com",
     github: "https://github.com/PRODHOSH/bs-prep",
-    image: "/images/prodshell.png",
-    tags: ["Next.js 16", "TypeScript", "Supabase", "Razorpay", "Google Sheets API"]
+    image: "/projects/bsprep-screenshot.png",
   },
   {
-    name: "Nallamala House - IIT Madras Official Website",
-    desc: "Built and maintaining the official website for Nallamala House, IIT Madras. Central hub for house leadership, communities, blogs, updates, and events.",
-    link: "https://nallamala.iitm.ac.in",
-    github: "https://github.com/PRODHOSH/nallamala-website",
-    image: "/images/nallamala-house.png",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "React"]
+    name: "FlashFetch",
+    category: "AI SaaS",
+    desc: "A Retrieval-Augmented Generation (RAG) powered document QA system. Upload PDFs, TXT, or Markdown files and ask questions in natural language. Every answer is grounded with source citations.",
+    link: "https://flashfetch.app",
+    github: "https://github.com/PRODHOSH/rag-document-qa-bot",
+    image: "/projects/flashfetch-screenshot.png",
   },
   {
-    name: "CodeCrafters Coding Society",
-    desc: "Designed, developed, and deployed the official website for CodeCrafters Coding Society at IIT Madras BS. Central hub for events, council, domains, and community engagement.",
-    link: "https://codecrafters.iitmbs.org",
-    github: "https://github.com/CodeCrafters-IITMBS/code-crafters",
-    image: "/images/code-crafters.png",
-    tags: ["React 18", "TypeScript", "Vite", "Framer Motion", "Three.js"]
+    name: "OSS Connect",
+    category: "OPEN SOURCE",
+    desc: "Your open-source identity, beyond GitHub. A free, open-source platform where every contributor gets a public profile page showing merged PRs, issues, orgs, and program participations.",
+    link: "https://ossconnect.me",
+    github: "https://github.com/PRODHOSH/ossconnect",
+    image: "/projects/ossconnect-screenshot.png",
   },
   {
-    name: "BB84 Quantum Simulator",
-    desc: "An interactive 3D simulator demonstrating the BB84 Quantum Key Distribution protocol. Visualizes photon polarization, key generation, and eavesdropping detection in real-time.",
-    link: "",
-    github: "https://github.com/PRODHOSH/bb84-simulator",
-    image: "/images/bb84_photo.png",
-    tags: ["Qiskit", "Python", "Three.js", "Quantum Computing"]
+    name: "Annexra",
+    category: "WEB AGENCY",
+    desc: "A modern, highly optimized portfolio and landing page for Annexra Web Agency. Built with Next.js and Tailwind CSS for blazing fast performance.",
+    link: "https://annexra.com",
+    github: "https://github.com/PRODHOSH/annexra",
+    image: "/projects/annexra-screenshot.png",
+  },
+  {
+    name: "EcoLens",
+    category: "AI PLATFORM",
+    desc: "An AI-powered environmental monitoring platform. Leverages computer vision to detect and classify waste in real-time, helping communities manage sustainability.",
+    link: "#",
+    github: "https://github.com/PRODHOSH/ecolens",
+    image: "/projects/ecolens-screenshot.png",
+  },
+  {
+    name: "FlickMood",
+    category: "ENTERTAINMENT",
+    desc: "A semantic movie recommendation engine. Describe your mood in natural language, and FlickMood uses vector embeddings to find the perfect movie for you.",
+    link: "#",
+    github: "https://github.com/PRODHOSH/flickmood",
+    image: "/projects/flickmood-screenshot.png",
+  },
+  {
+    name: "Nallamala",
+    category: "ECOMMERCE",
+    desc: "A beautifully designed, full-stack ecommerce platform for Nallamala products. Features a robust cart system, secure checkout, and a custom admin dashboard.",
+    link: "#",
+    github: "https://github.com/PRODHOSH/nallamala",
+    image: "/projects/nallamala-screenshot.png",
   }
 ];
 
@@ -83,102 +74,75 @@ export default function Projects() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center space-y-6"
         >
-          <h2 className="text-4xl md:text-6xl font-display tracking-tight text-white relative inline-block">
-            featured projects
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black font-display tracking-tighter text-white capitalize relative inline-block">
+            Featured Projects
             <WavyUnderline className="text-emerald-500/70" />
           </h2>
-          <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
-            Building scalable web platforms, AI-powered systems, and innovative solutions. From RAG-powered document intelligence to quantum cryptography simulators.
+          <p className="text-neutral-400 text-lg md:text-xl max-w-3xl mx-auto">
+            Building scalable web platforms, AI-powered systems, and innovative solutions. From RAG document intelligence to community-driven hubs.
           </p>
         </motion.div>
       </div>
 
-      {/* GitHub Calendar Section */}
-      <div className="w-full max-w-5xl mx-auto mb-24 flex flex-col items-center">
-         <h3 className="text-2xl font-display font-semibold text-white mb-8 text-center flex items-center gap-3">
-            <FaGithub className="w-6 h-6" /> GitHub Contributions
-         </h3>
-         <div className="p-4 md:p-8 rounded-3xl bg-[#050505] border border-white/10 shadow-[0_0_40px_rgba(16,185,129,0.05)] w-full overflow-x-auto flex justify-center hover:border-emerald-500/30 transition-colors duration-500">
-            <GitHubCalendar 
-              username="PRODHOSH" 
-              colorScheme="dark" 
-              theme={{
-                light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
-                dark: ['#161b22', '#064e3b', '#047857', '#10b981', '#059669'],
-              }}
-              fontSize={14}
-              blockSize={12}
-              blockMargin={4}
-            />
-         </div>
-      </div>
-
       {/* Grid Layout for Projects */}
-      <div className="relative w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="relative w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
         {projects.map((project, i) => {
           return (
-            <div 
+            <motion.div 
               key={i}
-              className="w-full h-full"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: (i % 3) * 0.1 }}
+              className={`w-full h-full flex ${i === 6 ? "md:col-span-2 lg:col-span-1 lg:col-start-2" : ""}`}
             >
-              <div className="relative w-full h-full bg-[#050505] border border-white/10 rounded-[32px] p-6 flex flex-col shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.8)] origin-top group hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] transition-all duration-500">
-                {/* Background Glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/[0.03] to-transparent pointer-events-none rounded-[32px]" />
+              <div className="relative w-full bg-[#0a0a0a] rounded-[40px] flex flex-col group shadow-2xl transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(16,185,129,0.1)]">
                 
-                {/* Top: Image */}
-                <div className="w-full h-48 bg-[#0a0a0a] rounded-2xl p-6 flex items-center justify-center border border-white/10 relative overflow-hidden mb-6">
-                  <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
-                  <img 
+                {/* Top: Image Container */}
+                <div className="w-full h-80 lg:h-[400px] relative overflow-hidden bg-neutral-900 border-b border-white/5 rounded-t-[40px]">
+                  <Image 
                     src={project.image} 
                     alt={project.name} 
-                    className="w-auto h-auto max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out relative z-20"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover object-top transition-transform duration-700 ease-in-out group-hover:scale-105"
                   />
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 flex flex-col relative z-20">
-                  <div className="flex items-start justify-between gap-4 mb-4">
-                    <h3 className="text-2xl font-display tracking-tight text-white leading-tight">
-                      {project.name}
-                    </h3>
-                    <div className="flex gap-2 shrink-0">
-                      {project.github && (
-                        <a 
-                          href={project.github} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-neutral-400 hover:text-white transition-colors border border-white/5"
-                        >
-                          <FaGithub className="w-4 h-4" />
-                        </a>
-                      )}
-                      {project.link && (
-                        <a 
-                          href={project.link} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          className="p-2 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 transition-colors border border-emerald-500/20"
-                        >
-                          <ArrowUpRight className="w-4 h-4" />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-
-                  <p className="text-neutral-400 leading-relaxed text-sm mb-8 flex-1">
+                {/* Bottom: Content Container */}
+                <div className="flex-1 flex flex-col p-8 sm:p-10 relative bg-[#0a0a0a] rounded-b-[40px]">
+                  
+                  <h3 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-white mb-4 pr-16">
+                    {project.name}
+                  </h3>
+                  <p className="text-neutral-400 text-lg leading-relaxed mb-10 flex-1 pr-12">
                     {project.desc}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/5">
-                    {project.tags.map((tag, idx) => (
-                      <span key={idx} className="px-2.5 py-1 text-[10px] sm:text-xs font-mono rounded-full bg-white/5 border border-white/10 text-emerald-400/80 uppercase tracking-wider">
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="flex items-center mt-auto pb-4">
+                    <span className="px-4 py-2 bg-white/5 text-neutral-300 text-xs font-mono font-semibold rounded-lg border border-white/10 uppercase tracking-widest">
+                      {project.category}
+                    </span>
                   </div>
+
+                  {/* Corner Action Button (Cutout style) */}
+                  <a 
+                    href={project.link || project.github} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="absolute bottom-0 right-0 w-24 h-24 sm:w-28 sm:h-28 bg-emerald-500 flex items-center justify-center text-black z-20 overflow-hidden border-[8px] border-black transition-colors duration-300 group-hover:bg-emerald-400"
+                    style={{
+                      borderTopLeftRadius: '48px',
+                      borderBottomRightRadius: '40px',
+                    }}
+                    aria-label={`View ${project.name}`}
+                  >
+                    <ArrowRight className="w-8 h-8 sm:w-10 sm:h-10 transform group-hover:scale-110 group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
                 </div>
+                
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

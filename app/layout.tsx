@@ -6,7 +6,6 @@ import DotGrid from "@/components/DotGrid";
 import CalSetup from "@/components/CalSetup";
 import FloatingHireMe from "@/components/FloatingHireMe";
 import CustomCursor from "@/components/CustomCursor";
-import Loader from "@/components/Loader";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -53,7 +52,6 @@ export default function RootLayout({
       className={`${bricolage.variable} ${spaceGrotesk.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-transparent text-white font-sans selection:bg-white/20 selection:text-white relative">
-        <Loader />
         <CustomCursor />
         <CalSetup />
         <DotGrid />

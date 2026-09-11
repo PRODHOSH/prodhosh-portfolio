@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import About from "@/components/About";
+import Projects from "@/components/Projects";
 import Metrics from "@/components/Metrics";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <Marquee />
       <About />
+      <Projects />
       <Metrics />
       <CTA />
       <Footer />

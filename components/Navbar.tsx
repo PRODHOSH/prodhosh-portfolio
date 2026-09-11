@@ -56,10 +56,10 @@ export default function Navbar() {
             {/* Always show links on desktop */}
             <div className="hidden lg:flex items-center gap-8 mr-4">
               <Link href="/" className="text-sm text-neutral-400 hover:text-white transition-colors">Home</Link>
-              <Link href="/services" className="text-sm text-neutral-400 hover:text-white transition-colors">Services</Link>
-              <Link href="/projects" className="text-sm text-neutral-400 hover:text-white transition-colors">Projects</Link>
-              <Link href="/experience" className="text-sm text-neutral-400 hover:text-white transition-colors">Experience</Link>
-              <Link href="/contact" className="text-sm text-neutral-400 hover:text-white transition-colors">Contact</Link>
+              <Link href="/#about" className="text-sm text-neutral-400 hover:text-white transition-colors">About</Link>
+              <Link href="/#experience" className="text-sm text-neutral-400 hover:text-white transition-colors">Experience</Link>
+              <Link href="/#projects" className="text-sm text-neutral-400 hover:text-white transition-colors">Projects</Link>
+              <Link href="/#contact" className="text-sm text-neutral-400 hover:text-white transition-colors">Contact</Link>
             </div>
 
             <a href="/latest_resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm bg-white text-black px-5 py-2 rounded-full font-medium hover:bg-neutral-200 transition-colors hidden md:block">
@@ -90,10 +90,10 @@ export default function Navbar() {
             <div className="flex flex-col gap-10 flex-1 items-center justify-center text-center">
               {[
                 { label: "HOME", href: "/" },
-                { label: "SERVICES", href: "/services" },
-                { label: "PROJECTS", href: "/projects" },
-                { label: "EXPERIENCE", href: "/experience" },
-                { label: "CONTACT", href: "/contact" }
+                { label: "ABOUT", href: "/#about" },
+                { label: "EXPERIENCE", href: "/#experience" },
+                { label: "PROJECTS", href: "/#projects" },
+                { label: "CONTACT", href: "/#contact" }
               ].map((link, i) => (
                 <Link
                   key={i}
