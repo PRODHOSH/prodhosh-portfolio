@@ -34,15 +34,13 @@ export default function Navbar() {
         <motion.div
           animate={{
             width: isScrolled ? "100%" : "auto",
-            borderRadius: isScrolled ? "0px" : "9999px",
-            backgroundColor: isScrolled ? "rgba(10, 10, 10, 0.95)" : "rgba(10, 10, 10, 0.4)",
-            backdropFilter: "blur(12px)",
-            borderColor: isScrolled ? "rgba(255, 255, 255, 0.05)" : "rgba(255, 255, 255, 0.1)",
           }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className={cn(
-            "pointer-events-auto flex items-center justify-between gap-8 md:gap-16 py-3 border-b md:border shadow-[0_0_30px_rgba(0,0,0,0.5)] relative",
-            isScrolled ? "px-8 w-full" : "px-6 border-white/10"
+            "pointer-events-auto flex items-center justify-between gap-8 md:gap-16 py-3 border shadow-[0_0_30px_rgba(0,0,0,0.5)] relative backdrop-blur-md transition-all duration-400",
+            isScrolled 
+              ? "px-8 w-full bg-[#0a0a0a]/95 border-b border-white/5 rounded-none border-t-0 border-x-0" 
+              : "px-6 border-white/10 bg-[#0a0a0a]/40 rounded-full"
           )}
         >
           <div className="flex items-center gap-3">
