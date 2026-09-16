@@ -26,6 +26,7 @@ export default function Footer() {
             <a href="https://github.com/PRODHOSH" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
             <a href="https://www.linkedin.com/in/prodhoshvs/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a>
             <a href="https://x.com/prodhosh3" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Twitter</a>
+            <a href="https://discordapp.com/users/itzprodhoshh" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Discord</a>
             <a href="mailto:hello@prodhosh.me" className="hover:text-white transition-colors">Email</a>
           </div>
         </div>

@@ -14,6 +14,13 @@ export default function AskProWidget() {
   const [isTyping, setIsTyping] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [recognition, setRecognition] = useState<any>(null);
+  
+  // New State variables for Memory and History
+  const [lastIntentId, setLastIntentId] = useState<string | null>(null);
+  const [inputHistory, setInputHistory] = useState<string[]>([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
+  const [aiCredits, setAiCredits] = useState(3); // Abuse protection limit
+  
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -22,9 +29,21 @@ export default function AskProWidget() {
 
   useEffect(() => {
     scrollToBottom();
+    // Save chat history to localStorage
+    if (messages.length > 1) {
+      localStorage.setItem("askPro_chatHistory", JSON.stringify(messages));
+    }
   }, [messages, isTyping]);
 
   useEffect(() => {
+    // Load chat history on mount
+    const saved = localStorage.getItem("askPro_chatHistory");
+    if (saved) {
+      try {
+        setMessages(JSON.parse(saved));
+      } catch (e) { console.error(e); }
+    }
+
     if (typeof window !== "undefined") {
       const SpeechRecognition = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
       if (SpeechRecognition) {
@@ -54,20 +73,90 @@ export default function AskProWidget() {
     }
   }, []);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!input.trim()) return;
     
     const userMsg = input.trim();
     // Add user message
     setMessages(prev => [...prev, { id: Date.now(), text: userMsg, sender: "user" }]);
+    
+    // Add to input history
+    setInputHistory(prev => [userMsg, ...prev]);
+    setHistoryIndex(-1);
+    
     setInput("");
     setIsTyping(true);
 
-    // Get response from logic engine
-    const botResponse = getChatbotResponse(userMsg);
+    // Localized Name Memory Logic
+    let botResponse = "";
+    let intentId: string | null = null;
+
+    const nameMatch = userMsg.match(/(?:my name is|i am|im|call me)\s+([a-zA-Z]+)/i);
+    if (nameMatch) {
+      const name = nameMatch[1];
+      localStorage.setItem('askPro_userName', name);
+      botResponse = `nice to meet u ${name}! im askPro. u can ask me about prodhosh's projects or resume.`;
+      intentId = "local_name_save"; // Skip AI
+    } else if (userMsg.toLowerCase().includes("remember me") || userMsg.toLowerCase().includes("what is my name") || userMsg.toLowerCase().includes("whats my name")) {
+      const name = localStorage.getItem('askPro_userName');
+      botResponse = name ? `yepp u are ${name}! what's up?` : `nope, u never told me ur name lol.`;
+      intentId = "local_name_recall"; // Skip AI
+    } else {
+      // Get response from logic engine with contextual memory
+      const result = getChatbotResponse(userMsg, lastIntentId);
+      botResponse = result.response;
+      intentId = result.intentId;
+    }
     
-    // Calculate dynamic typing delay (simulate human typing speed)
-    const typingDelay = Math.min(Math.max(botResponse.length * 20, 600), 2000);
+    if (intentId) {
+      setLastIntentId(intentId);
+    } else {
+      // Layer 2: Secure AI Fallback with Credits Limit
+      if (aiCredits > 0) {
+        try {
+          const apiMessages = messages.slice(-5).map(m => ({
+            role: m.sender === 'user' ? 'user' : 'assistant',
+            content: m.text
+          }));
+          apiMessages.push({ role: 'user', content: userMsg });
+
+          const res = await fetch("/api/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ messages: apiMessages })
+          });
+          
+          if (res.ok) {
+            const data = await res.json();
+            botResponse = data.response;
+            setAiCredits(prev => prev - 1);
+          } else if (res.status === 429) {
+             botResponse = "whoa slow down there! u hit the api rate limit ngl. ask about my hardcoded stuff instead!";
+          }
+        } catch (error) {
+          console.error("AI Fallback failed", error);
+        }
+      } else {
+        botResponse = "im out of AI juice tbh (credit limit reached). stick to asking about my projects, resume, or contact info ✌️";
+      }
+    }
+    
+    // Smart Typing: Calculate dynamic typing delay
+    const baseDelay = botResponse.length * 15;
+    const punctuationDelay = (botResponse.match(/[.,!?]/g) || []).length * 150;
+    // If it's an AI response, we make the typing delay shorter since the API already took time
+    const typingDelay = intentId ? Math.min(Math.max(baseDelay + punctuationDelay, 600), 2500) : 300;
+
+    // Fire-and-forget email logging (does not block UI)
+    fetch("/api/log-chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        question: userMsg,
+        answer: botResponse,
+        isAi: intentId === null
+      })
+    }).catch(err => console.error("Failed to log chat", err));
 
     setTimeout(() => {
       setIsTyping(false);
@@ -186,6 +275,23 @@ export default function AskProWidget() {
                     if (e.key === 'Enter' && !e.shiftKey) {
                       e.preventDefault();
                       handleSend();
+                    } else if (e.key === 'ArrowUp') {
+                      e.preventDefault();
+                      if (inputHistory.length > 0 && historyIndex < inputHistory.length - 1) {
+                        const newIdx = historyIndex + 1;
+                        setHistoryIndex(newIdx);
+                        setInput(inputHistory[newIdx]);
+                      }
+                    } else if (e.key === 'ArrowDown') {
+                      e.preventDefault();
+                      if (historyIndex > 0) {
+                        const newIdx = historyIndex - 1;
+                        setHistoryIndex(newIdx);
+                        setInput(inputHistory[newIdx]);
+                      } else if (historyIndex === 0) {
+                        setHistoryIndex(-1);
+                        setInput("");
+                      }
                     }
                   }}
                   placeholder="Ask me anything..."

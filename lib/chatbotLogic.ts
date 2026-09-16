@@ -88,11 +88,27 @@ const intents: Intent[] = [
     ]
   },
   {
-    id: "age",
-    keywords: ["old", "age", "born", "birthday"],
-    patterns: [/(how old|age|birthday|born)/i],
+    id: "age_height",
+    keywords: ["old", "age", "born", "birthday", "height", "tall", "feet"],
+    patterns: [/(how old|age|birthday|born|height|how tall)/i],
     responses: [
-      "he's a college sophomore rn, balancing studies and building epic software"
+      "he just turned 18! and for height, he's 6 feet raw. with shoes, maybe a little over 6 on a good day lol 📏"
+    ]
+  },
+  {
+    id: "mentor",
+    keywords: ["mentor", "teach", "guide", "help", "learn"],
+    patterns: [/(will he mentor|can you teach|mentor me|teach me)/i],
+    responses: [
+      "foshoo! reach out to him at hello@prodhosh.me, he will help as much as he can 🤝"
+    ]
+  },
+  {
+    id: "donate",
+    keywords: ["donate", "fund", "money", "support", "sponsor"],
+    patterns: [/(donate|fund|sponsor|support financially)/i],
+    responses: [
+      "yes u can definitely donate or sponsor! reach out to him at hello@prodhosh.me to set it up 💸"
     ]
   },
   {
@@ -194,10 +210,10 @@ const intents: Intent[] = [
   },
   {
     id: "cgpa",
-    keywords: ["cgpa", "grades", "gpa", "marks"],
-    patterns: [/(cgpa|grades|gpa|marks)/i],
+    keywords: ["cgpa", "grades", "gpa", "marks", "pointer"],
+    patterns: [/(cgpa|grades|gpa|marks|9 pointer)/i],
     responses: [
-      "can't be revealed ngl... ask prodhosh directly, but he prolly won't say lol"
+      "can't be revealed ngl... ask prodhosh directly. but no lol he is not a 9 pointer 😂"
     ]
   },
   {
@@ -214,6 +230,14 @@ const intents: Intent[] = [
     patterns: [/(schedule|meet|call|calendar|book a meeting)/i],
     responses: [
       "wanna grab a virtual coffee? u can book a meet with him here! <a href='https://cal.com/prodhosh' target='_blank' class='text-emerald-400 font-semibold hover:underline'>cal.com/prodhosh</a> ☕"
+    ]
+  },
+  {
+    id: "suggest",
+    keywords: ["suggest", "recommend", "start", "where", "options"],
+    patterns: [/(what do you suggest|hmmm you suggest|what should i ask|suggest something|recommend)/i],
+    responses: [
+      "how about i show u some of his key projects or his professional experience? u can also ask for his resume!"
     ]
   },
   {
@@ -263,6 +287,158 @@ const intents: Intent[] = [
     responses: [
       "im just a hardcoded rule engine doing my best out here 😅 try asking about his projects instead.",
       "ouch! my feelings are just if-statements, but that still hurt 🤖"
+    ]
+  },
+  {
+    id: "hackathons",
+    keywords: ["hackathon", "win", "won", "prize", "swag"],
+    patterns: [/(hackathon|did he win|prizes|swag)/i],
+    responses: [
+      "he's won a couple online hackathons (got Claude Pro & some sick swag), plus he's won hackathons in VIT with cash prizes and special mentions 🏆"
+    ]
+  },
+  {
+    id: "location",
+    keywords: ["where", "live", "based", "from", "location", "city", "country"],
+    patterns: [/(where is he from|where does he live|based in|location)/i],
+    responses: [
+      "prodhosh is based in chennai, india 🇮🇳"
+    ]
+  },
+  {
+    id: "gear",
+    keywords: ["gear", "setup", "laptop", "computer", "macbook", "phone", "iphone", "hp"],
+    patterns: [/(what laptop|setup|gear|what phone|macbook|iphone)/i],
+    responses: [
+      "he uses an hp pavilion rn but he's looking to buy a macbook air when the price drops lol. also rocks an iphone 16e 📱💻"
+    ]
+  },
+  {
+    id: "personal_reject",
+    keywords: ["my", "name", "is", "im", "i", "am"],
+    patterns: [/(my name is|im |i am )/i],
+    responses: [
+      "sry i just respond for prodhosh, not here for entertaining conversations ngl 😅 ask me about his work!"
+    ]
+  },
+  {
+    id: "hobbies_sports",
+    keywords: ["hobbies", "sports", "nba", "basketball", "curry", "warriors", "play", "free", "time"],
+    patterns: [/(hobbies|free time|sports|nba|basketball|warriors|steph curry)/i],
+    responses: [
+      "he loves playing sports! huge nba superfan, warriors fan, and loves steph curry. he plays basketball too (shooting guard 🏀)"
+    ]
+  },
+  {
+    id: "hobbies_chess",
+    keywords: ["chess", "elo", "rating", "bullet", "blitz", "play", "game"],
+    patterns: [/(chess|elo|bullet|blitz|play a game)/i],
+    responses: [
+      "he's a huge chess fan! highest elo is 1600. doesn't play as much rn but always down for some bullet or blitz ♟️"
+    ]
+  },
+  {
+    id: "dsa_java",
+    keywords: ["dsa", "leetcode", "java", "algorithms", "data", "structures"],
+    patterns: [/(dsa|leetcode|java|data structures)/i],
+    responses: [
+      "yes he's secretly grinding dsa rn and working heavily with java 🤫👨‍💻"
+    ]
+  },
+  {
+    id: "job_search",
+    keywords: ["looking", "job", "hire", "unpaid", "paid", "internship", "fulltime"],
+    patterns: [/(looking for a job|want a job|hire him|unpaid)/i],
+    responses: [
+      "yes for sure! but only if u pay him. not looking for some unpaid job dude, reach out at hello@prodhosh.me if u got the budget 💰"
+    ]
+  },
+  {
+    id: "youtube_resources",
+    keywords: ["youtube", "resources", "learn", "suggest", "channels", "watch"],
+    patterns: [/(youtube channels|resources|how to learn|who to watch)/i],
+    responses: [
+      "he highly suggests: brocode, fireship, sajjad khader, and supersimple dev. elite tier youtube resources fr 📺"
+    ]
+  },
+  {
+    id: "advice_internships",
+    keywords: ["advice", "how", "get", "internship", "hackathon", "win", "tips", "start", "club"],
+    patterns: [/(how to win|how to get internship|advice|tips to start)/i],
+    responses: [
+      "start vibecoding and learning in parallel! join tech clubs, make their websites, and be obsessed. once u build stuff, cold email startups—it's surprisingly easy to get in if u show value! 🚀"
+    ]
+  },
+  {
+    id: "clubs",
+    keywords: ["clubs", "societies", "acm", "mic", "aws", "microsoft"],
+    patterns: [/(what clubs|clubs|societies|acm|mic|aws student club)/i],
+    responses: [
+      "at VIT, he's in the ACM Technical Dept, Microsoft Innovation Club (AI/ML & Dev Dept), and AWS Student Club (Web Dev Dept). bro is everywhere 🚀"
+    ]
+  },
+  {
+    id: "bsprep",
+    keywords: ["bsprep", "startup", "founding", "cto", "bs prep"],
+    patterns: [/(bsprep|bs prep|founding engineer|cto)/i],
+    responses: [
+      "he's the founding engineer & CTO at BSPrep! built the entire tech side from scratch. wanna work with us? go to <a href='https://bsprep.in/careers' target='_blank' class='text-emerald-400 font-semibold hover:underline'>bsprep.in/careers</a> or mail <a href='mailto:careers@bsprep.in' class='text-emerald-400 font-semibold hover:underline'>careers@bsprep.in</a> 🚀"
+    ]
+  },
+  {
+    id: "open_source",
+    keywords: ["open", "source", "oss", "gssoc", "nsoc", "communities", "contribute"],
+    patterns: [/(open source|oss|gssoc|nsoc|open source communities)/i],
+    responses: [
+      "open source is his jam! he was a GSSoC Ambassador & Contributor, built a GSSoC Tracker (used by 2500+ ppl, 101 stars ⭐, 4.8/5 rating), was in NSOC, EduLinkUp, and hangs in communities led by GSoC/LFX folks like OSS Connect!"
+    ]
+  },
+  {
+    id: "socials_expanded",
+    keywords: ["discord", "twitter", "x", "linkedin", "github", "email"],
+    patterns: [/(socials|links|connect|discord|twitter|linkedin|github|email)/i],
+    responses: [
+      "here u go: LinkedIn (linkedin.com/in/prodhoshvs), X (x.com/prodhosh3), GitHub (PRODHOSH), Discord (itzprodhoshh), or Email (hello@prodhosh.me) ✌️"
+    ]
+  },
+  {
+    id: "links",
+    keywords: ["links", "linktree", "booking", "call", "form"],
+    patterns: [/(links|linktree|all socials|booking|book a call)/i],
+    responses: [
+      "u can find all his socials, booking links, and freelance contact forms at <a href='https://links.prodhosh.me' target='_blank' class='text-emerald-400 font-semibold hover:underline'>links.prodhosh.me</a> 🔗"
+    ]
+  },
+  {
+    id: "blog",
+    keywords: ["blog", "blogs", "articles", "writing", "read", "tech"],
+    patterns: [/(blog|articles|writing|tech blog)/i],
+    responses: [
+      "definitely check out his cool tech blogs at <a href='https://blog.prodhosh.me' target='_blank' class='text-emerald-400 font-semibold hover:underline'>blog.prodhosh.me</a> ✍️🔥"
+    ]
+  },
+  {
+    id: "intelligence",
+    keywords: ["smart", "intelligent", "iq", "genius", "brain"],
+    patterns: [/(how smart is he|is he smart|iq|intelligent)/i],
+    responses: [
+      "bro is built different tbh. he engineered this exact hybrid-router chatbot from scratch, grinds DSA, and ships full-stack SaaS platforms on the regular 🧠⚡"
+    ]
+  },
+  {
+    id: "latest_project",
+    keywords: ["latest", "recent", "new", "current", "working", "on"],
+    patterns: [/(latest project|recent project|what is he working on|current project)/i],
+    responses: [
+      "his latest project is actually this portfolio itself! it's a Next.js masterpiece with Framer Motion, a custom-built rule engine, and an AI fallback layer 🚀"
+    ]
+  },
+  {
+    id: "chatbot_architecture",
+    keywords: ["build", "chatbot", "engine", "architecture", "regex", "askpro", "how", "did"],
+    patterns: [/(how did you build this chatbot|how was askpro built|chatbot architecture|how does this chatbot work|how did he build you|how did he build this chatbot)/i],
+    responses: [
+      "he engineered a 2-layer hybrid architecture for me! layer 1 is a blazingly fast hardcoded rule engine using Regex priority matching and Levenshtein distance for typo tolerance. layer 2 is a secure OpenRouter AI fallback. maximum speed, zero hallucinations 🤖🔥"
     ]
   },
   {
@@ -452,25 +628,45 @@ const getEditDistance = (a: string, b: string): number => {
   return matrix[b.length][a.length];
 };
 
-export const getChatbotResponse = (userInput: string): string => {
-  const inputLower = userInput.toLowerCase();
+export const getChatbotResponse = (userInput: string, lastIntentId?: string | null): { response: string, intentId: string | null } => {
+  let inputLower = userInput.toLowerCase();
   
   // 1. REGEX PRIORITY MATCHING (Highest priority for specific questions)
   for (const intent of intents) {
     if (intent.patterns) {
       for (const pattern of intent.patterns) {
         if (pattern.test(inputLower)) {
-          return intent.responses[Math.floor(Math.random() * intent.responses.length)];
+          return {
+            response: intent.responses[Math.floor(Math.random() * intent.responses.length)],
+            intentId: intent.id
+          };
         }
       }
     }
   }
 
-  // 2. TOKENIZER AND FUZZY MATCHING
+  // 2. CONTEXTUAL MEMORY (Pronoun Resolution)
+  // If the user uses a pronoun and we have a recent context, we inject the context's keywords 
+  // into the search string so the fuzzy matcher remembers what we are talking about.
+  const pronouns = ["there", "it", "that", "this", "he", "more"];
   const tokens = tokenize(userInput);
+  const hasPronoun = pronouns.some(p => tokens.includes(p));
+  
+  if (lastIntentId && hasPronoun) {
+    const lastIntent = intents.find(i => i.id === lastIntentId);
+    if (lastIntent) {
+      // Inject the primary keyword from the last context into the input
+      inputLower = inputLower + " " + lastIntent.keywords[0];
+      tokens.push(...tokenize(lastIntent.keywords[0]));
+    }
+  }
+
+  // 3. TOKENIZER AND FUZZY MATCHING
   const normalizedTokens = tokens.map(normalizeRepeats);
   
-  if (tokens.length === 0) return fallbacks[0];
+  if (tokens.length === 0) {
+    return { response: fallbacks[0], intentId: null };
+  }
 
   let bestIntent = null;
   let maxScore = 0;
@@ -522,8 +718,14 @@ export const getChatbotResponse = (userInput: string): string => {
 
   // Threshold for a fuzzy match
   if (!bestIntent || maxScore < 1.0) {
-     return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+     return { 
+       response: fallbacks[Math.floor(Math.random() * fallbacks.length)], 
+       intentId: null 
+     };
   }
   
-  return bestIntent.responses[Math.floor(Math.random() * bestIntent.responses.length)];
+  return {
+    response: bestIntent.responses[Math.floor(Math.random() * bestIntent.responses.length)],
+    intentId: bestIntent.id
+  };
 };
