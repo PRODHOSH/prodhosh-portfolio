@@ -29,23 +29,23 @@ export default function AskProWidget() {
 
   useEffect(() => {
     scrollToBottom();
-    // Save chat history to localStorage
-    if (messages.length > 1) {
-      localStorage.setItem("askPro_chatHistory", JSON.stringify(messages));
-    }
   }, [messages, isTyping]);
 
   useEffect(() => {
-    // Load chat history on mount
-    const saved = localStorage.getItem("askPro_chatHistory");
-    if (saved) {
-      try {
-        setMessages(JSON.parse(saved));
-      } catch (e) { console.error(e); }
-    }
+    const handleBeforeUnload = () => {
+      if (messages.length > 1) {
+        const blob = new Blob([JSON.stringify({ messages })], { type: 'application/json' });
+        navigator.sendBeacon("/api/log-chat", blob);
+      }
+    };
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [messages]);
+
+  useEffect(() => {
 
     if (typeof window !== "undefined") {
-      const SpeechRecognition = window.SpeechRecognition || (window as any).webkitSpeechRecognition;
+      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
       if (SpeechRecognition) {
         const recog = new SpeechRecognition();
         recog.continuous = false;
@@ -147,16 +147,6 @@ export default function AskProWidget() {
     // If it's an AI response, we make the typing delay shorter since the API already took time
     const typingDelay = intentId ? Math.min(Math.max(baseDelay + punctuationDelay, 600), 2500) : 300;
 
-    // Fire-and-forget email logging (does not block UI)
-    fetch("/api/log-chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        question: userMsg,
-        answer: botResponse,
-        isAi: intentId === null
-      })
-    }).catch(err => console.error("Failed to log chat", err));
 
     setTimeout(() => {
       setIsTyping(false);
@@ -181,6 +171,17 @@ export default function AskProWidget() {
       setInput(""); // clear input when starting to listen
       recognition.start();
       setIsListening(true);
+    }
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    if (messages.length > 1) {
+      fetch("/api/log-chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages })
+      }).catch(err => console.error("Failed to log chat on close", err));
     }
   };
 
@@ -216,7 +217,7 @@ export default function AskProWidget() {
                 </div>
               </div>
               <button 
-                onClick={() => setIsOpen(false)}
+                onClick={handleClose}
                 className="text-neutral-400 hover:text-white transition-colors p-2 rounded-lg hover:bg-white/10"
               >
                 <X size={20} />
