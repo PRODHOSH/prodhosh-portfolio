@@ -136,12 +136,12 @@ export default function Projects() {
             viewport={{ once: true, margin: "-50px" }}
             className="flex flex-col gap-6 bg-neutral-900/40 p-5 rounded-[32px] border border-white/5"
           >
-            <div className="relative w-full aspect-video rounded-[24px] overflow-hidden bg-transparent">
+            <div className="relative w-full aspect-[16/10] rounded-[24px] overflow-hidden bg-transparent">
               <Image 
                 src={project.image} 
                 alt={project.name} 
                 fill
-                className="object-contain"
+                className={["Kivo", "Relay", "Vector"].includes(project.name) ? "object-contain" : "object-cover object-top"}
               />
             </div>
             
@@ -213,12 +213,12 @@ export default function Projects() {
                 className="w-[450px] xl:w-[550px] shrink-0 flex flex-col gap-6 bg-[#0a0a0a] p-6 rounded-[32px] border border-white/10 hover:border-emerald-500/30 hover:bg-[#0f0f0f] transition-colors duration-500 group shadow-2xl"
               >
                 {/* Image */}
-                <div className="w-full aspect-video rounded-[24px] overflow-hidden relative bg-transparent">
+                <div className="w-full aspect-[16/10] rounded-[24px] overflow-hidden relative bg-transparent">
                   <Image 
                     src={project.image} 
                     alt={project.name} 
                     fill
-                    className="object-contain transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                    className={`${["Kivo", "Relay", "Vector"].includes(project.name) ? "object-contain" : "object-cover object-top"} transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105`}
                   />
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
