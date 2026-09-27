@@ -50,8 +50,9 @@ const services = [
 ];
 
 export default function About() {
+  const currentYear = new Date().getFullYear();
   const [selectedYear, setSelectedYear] = useState<number | 'last'>('last');
-  const years: (number | 'last')[] = ['last', 2024, 2023];
+  const years: (number | 'last')[] = ['last', currentYear, currentYear - 1];
   return (
     <section className="w-full bg-transparent py-32 px-6" id="about">
       <div className="max-w-7xl mx-auto space-y-32">

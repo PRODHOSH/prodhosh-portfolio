@@ -28,7 +28,7 @@ const experienceSections = [
       {
         title: "Next.js Developer Intern",
         company: "Sindra",
-        duration: "Jul 2026 - Present",
+        duration: "Jul 2026 - Sep 2026",
         location: "Remote",
         description: "Developing and optimizing scalable frontend applications using Next.js and TypeScript. Collaborating with cross-functional teams to implement responsive UI components and enhance overall web performance and user experience.",
         color: "#9333EA",
@@ -67,6 +67,24 @@ const experienceSections = [
     title: "Clubs & Societies",
     experiences: [
       {
+        title: "Development Member",
+        company: "Microsoft Innovations Club",
+        duration: "Sep 2026 - Present",
+        location: "VIT Chennai",
+        description: "Contributing to the club's development initiatives, exploring Azure cloud services, and implementing modern engineering solutions.",
+        color: "#00A4EF",
+        logo_path: "microsoft-club-logo.jpeg"
+      },
+      {
+        title: "Website Committee Volunteer",
+        company: "TechnoVIT Chennai",
+        duration: "Aug 2026 - Sep 2026",
+        location: "Hybrid",
+        description: "Served as a volunteer member for the website committee, contributing to the development and maintenance of the official TechnoVIT'26 website.",
+        color: "#3b82f6",
+        logo_path: "technovit.png"
+      },
+      {
         title: "Technical Member",
         company: "ACM Student Chapter VITC",
         duration: "Mar 2026 - Present",
@@ -87,20 +105,11 @@ const experienceSections = [
       {
         title: "Council - WebOps & Cybersec",
         company: "Code Crafters - IITM BS",
-        duration: "Dec 2025 - Present",
+        duration: "Dec 2025 - Jul 2026",
         location: "Remote",
         description: "Architected and deployed the official CodeCrafters community platform using Next.js and Tailwind CSS. Implemented responsive interfaces, optimized SEO, and integrated secure data collection workflows to enhance user engagement.",
         color: "#2563eb",
         logo_path: "codecrafters_logo.jpg"
-      },
-      {
-        title: "Development Member",
-        company: "Microsoft Innovations Club",
-        duration: "Sep 2026 - Present",
-        location: "VIT Chennai",
-        description: "Contributing to the club's development initiatives, exploring Azure cloud services, and implementing modern engineering solutions.",
-        color: "#00A4EF",
-        logo_path: "microsoft-club-logo.jpeg"
       },
       {
         title: "AI/ML Member",
@@ -119,38 +128,38 @@ const experienceSections = [
       {
         title: "Project Admin",
         company: "EduLinkUp",
-        duration: "May 2026 - Present",
+        duration: "May 2026 - Aug 2026",
         location: "Remote",
-        description: "Serving as Project Admin for the OSSfolio open-source platform, overseeing project workflows, issue management, and contributor mentorship. Reviewing pull requests and maintaining high-quality code standards while fostering an active global developer community.",
+        description: "Served as Project Admin for the OSSfolio open-source platform, overseeing project workflows, issue management, and contributor mentorship. Ranked 2nd place in the EduLinkUp Summer of Code.",
         color: "#1C7ED6",
         logo_path: "elusoc.png"
       },
       {
+        title: "Open Source Contributor",
+        company: "Nexus Spring of Code",
+        duration: "May 2026 - Jul 2026",
+        location: "Remote",
+        description: "Participated as an active contributor resolving critical issues and implementing new features across web and AI projects. Collaborated closely with project maintainers to improve system performance and code reliability.",
+        color: "#0077B5",
+        logo_path: "nexus_logo.png"
+      },
+      {
         title: "Campus Ambassador",
         company: "GirlScript Summer of Code 2026",
-        duration: "Apr 2026 - Present",
+        duration: "Apr 2026 - Aug 2026",
         location: "Remote",
-        description: "Promoting open-source culture and development practices on campus by organizing coding events and technical workshops. Mentoring students and facilitating meaningful contributions to various global open-source initiatives.",
+        description: "Promoted open-source culture and development practices on campus by organizing coding events and technical workshops. Mentored students and facilitated meaningful contributions to various global open-source initiatives.",
         color: "#FF5B9C",
         logo_path: "gssoc_logo.png"
       },
       {
         title: "Open Source Contributor - AI/Agent Track",
         company: "GirlScript Summer of Code",
-        duration: "Apr 2026 - Present",
+        duration: "Apr 2026 - Aug 2026",
         location: "Remote",
-        description: "Contributing scalable code and documentation to open-source projects focused on artificial intelligence and agent-based systems. Collaborating with global maintainers to integrate innovative AI solutions and enhance core feature implementations.",
+        description: "Contributed scalable code and documentation to open-source projects focused on artificial intelligence and agent-based systems. Collaborated with global maintainers to integrate innovative AI solutions and enhance core feature implementations.",
         color: "#FF5B9C",
         logo_path: "gssoc_logo.png"
-      },
-      {
-        title: "Open Source Contributor",
-        company: "Nexus Spring of Code",
-        duration: "May 2026 - Present",
-        location: "Remote",
-        description: "Participated as an active contributor resolving critical issues and implementing new features across web and AI projects. Collaborated closely with project maintainers to improve system performance and code reliability.",
-        color: "#0077B5",
-        logo_path: "nexus_logo.png"
       }
     ]
   },
@@ -176,15 +185,6 @@ const experienceSections = [
         logo_path: "internshala-logo.jpg"
       },
       {
-        title: "Student House Captain",
-        company: "DAV Group of Schools, Chennai",
-        duration: "Jun 2023 - Apr 2024",
-        location: "Chennai",
-        description: "Directed student engagement initiatives and coordinated inter-house activities for a large student body. Demonstrated strong leadership capabilities through team coordination and athletic team management.",
-        color: "#1F70C1",
-        logo_path: "dav-logo.png"
-      },
-      {
         title: "Student Volunteer",
         company: "V The Volunteers",
         duration: "Feb 2024",
@@ -192,6 +192,15 @@ const experienceSections = [
         description: "Coordinated logistical operations and facilitated engagement activities for community service events. Demonstrated strong organizational skills while supporting social welfare initiatives.",
         color: "#E22E42",
         logo_path: "v-volunteers-logo.jpeg"
+      },
+      {
+        title: "Student House Captain",
+        company: "DAV Group of Schools, Chennai",
+        duration: "Jun 2023 - Apr 2024",
+        location: "Chennai",
+        description: "Directed student engagement initiatives and coordinated inter-house activities for a large student body. Demonstrated strong leadership capabilities through team coordination and athletic team management.",
+        color: "#1F70C1",
+        logo_path: "dav-logo.png"
       }
     ]
   }

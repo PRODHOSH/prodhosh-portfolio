@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, X, Mic, Send, Bot, User } from "lucide-react";
-import { getChatbotResponse } from "@/lib/chatbotLogic";
 
 export default function AskProWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +15,8 @@ export default function AskProWidget() {
   const [recognition, setRecognition] = useState<any>(null);
   
   // New State variables for Memory and History
-  const [lastIntentId, setLastIntentId] = useState<string | null>(null);
   const [inputHistory, setInputHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [aiCredits, setAiCredits] = useState(3); // Abuse protection limit
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -87,65 +84,37 @@ export default function AskProWidget() {
     setInput("");
     setIsTyping(true);
 
-    // Localized Name Memory Logic
     let botResponse = "";
-    let intentId: string | null = null;
 
-    const nameMatch = userMsg.match(/(?:my name is|i am|im|call me)\s+([a-zA-Z]+)/i);
-    if (nameMatch) {
-      const name = nameMatch[1];
-      localStorage.setItem('askPro_userName', name);
-      botResponse = `nice to meet u ${name}! im askPro. u can ask me about prodhosh's projects or resume.`;
-      intentId = "local_name_save"; // Skip AI
-    } else if (userMsg.toLowerCase().includes("remember me") || userMsg.toLowerCase().includes("what is my name") || userMsg.toLowerCase().includes("whats my name")) {
-      const name = localStorage.getItem('askPro_userName');
-      botResponse = name ? `yepp u are ${name}! what's up?` : `nope, u never told me ur name lol.`;
-      intentId = "local_name_recall"; // Skip AI
-    } else {
-      // Get response from logic engine with contextual memory
-      const result = getChatbotResponse(userMsg, lastIntentId);
-      botResponse = result.response;
-      intentId = result.intentId;
-    }
-    
-    if (intentId) {
-      setLastIntentId(intentId);
-    } else {
-      // Layer 2: Secure AI Fallback with Credits Limit
-      if (aiCredits > 0) {
-        try {
-          const apiMessages = messages.slice(-5).map(m => ({
-            role: m.sender === 'user' ? 'user' : 'assistant',
-            content: m.text
-          }));
-          apiMessages.push({ role: 'user', content: userMsg });
+    try {
+      const apiMessages = messages.slice(-5).map(m => ({
+        role: m.sender === 'user' ? 'user' : 'assistant',
+        content: m.text
+      }));
+      apiMessages.push({ role: 'user', content: userMsg });
 
-          const res = await fetch("/api/chat", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ messages: apiMessages })
-          });
-          
-          if (res.ok) {
-            const data = await res.json();
-            botResponse = data.response;
-            setAiCredits(prev => prev - 1);
-          } else if (res.status === 429) {
-             botResponse = "whoa slow down there! u hit the api rate limit ngl. ask about my hardcoded stuff instead!";
-          }
-        } catch (error) {
-          console.error("AI Fallback failed", error);
-        }
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: apiMessages })
+      });
+      
+      if (res.ok) {
+        const data = await res.json();
+        botResponse = data.response;
+      } else if (res.status === 429) {
+         botResponse = "whoa slow down there! u hit the api rate limit ngl. ask me again in a bit!";
       } else {
-        botResponse = "im out of AI juice tbh (credit limit reached). stick to asking about my projects, resume, or contact info ✌️";
+         botResponse = "im having some trouble thinking right now tbh! try asking again later.";
       }
+    } catch (error) {
+      console.error("AI Fallback failed", error);
+      botResponse = "my ai brain is a bit fried right now tbh! try again in a bit ✌️";
     }
     
     // Smart Typing: Calculate dynamic typing delay
-    const baseDelay = botResponse.length * 15;
-    const punctuationDelay = (botResponse.match(/[.,!?]/g) || []).length * 150;
-    // If it's an AI response, we make the typing delay shorter since the API already took time
-    const typingDelay = intentId ? Math.min(Math.max(baseDelay + punctuationDelay, 600), 2500) : 300;
+    const typingDelay = 300; // API takes time anyway, so small delay
+
 
 
     setTimeout(() => {
@@ -153,7 +122,8 @@ export default function AskProWidget() {
       setMessages(prev => [...prev, { 
         id: Date.now(), 
         text: botResponse, 
-        sender: "bot" 
+        sender: "bot",
+        isAi: true
       }]);
     }, typingDelay);
   };
@@ -320,7 +290,7 @@ export default function AskProWidget() {
                 </div>
               </div>
               <p className="text-[10px] text-center text-neutral-500 mt-3 font-medium">
-                askPro uses hardcoded logic. Responses are limited to predefined topics.
+                askPro uses AI. Responses may vary, but it's built to know everything about Prodhosh.
               </p>
             </div>
           </motion.div>

@@ -62,37 +62,56 @@ const projects = [
     link: "#",
     github: "https://github.com/PRODHOSH/nallamala",
     image: "/projects/nallamala-screenshot.png",
+  },
+  {
+    name: "Kivo",
+    category: "DESKTOP AI",
+    desc: "tell your computer simply. Kivo is a lightning-fast, privacy-first desktop voice assistant that automates your OS workflows using local LLMs and Whisper.net.",
+    link: "#",
+    github: "https://github.com/PRODHOSH/kivo",
+    image: "/projects/kivo-screenshot.png",
+  },
+  {
+    name: "Relay",
+    category: "PRODUCTIVITY",
+    desc: "The local-first document and email engine. Generate dynamic LaTeX PDFs and dispatch bulk emails directly from your machine.",
+    link: "#",
+    github: "https://github.com/PRODHOSH/relay",
+    image: "/projects/relay-screenshot.png",
+  },
+  {
+    name: "Vector",
+    category: "TASK MANAGEMENT",
+    desc: "A modern, kanban-driven task management operating system built specifically for students. Replaces the chaos of scattered notes with a fluid interface, calendar sync, and smart integrations.",
+    link: "#",
+    github: "https://github.com/PRODHOSH/vector",
+    image: "/projects/vector-screenshot.png",
   }
 ];
 
 export default function Projects() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const targetRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollRange, setScrollRange] = useState(0);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = Number(entry.target.getAttribute("data-index"));
-            setActiveIndex(index);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "-50% 0px -50% 0px", // Trigger strictly in the center
-        threshold: 0,
+    const updateScrollRange = () => {
+      if (scrollRef.current) {
+        setScrollRange(scrollRef.current.scrollWidth - window.innerWidth);
       }
-    );
-
-    const projectElements = document.querySelectorAll(".project-card");
-    projectElements.forEach((el) => observer.observe(el));
-
-    return () => {
-      projectElements.forEach((el) => observer.unobserve(el));
     };
+    
+    updateScrollRange();
+    window.addEventListener("resize", updateScrollRange);
+    return () => window.removeEventListener("resize", updateScrollRange);
   }, []);
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  // Map scroll progress exactly to the remaining width
+  const x = useTransform(scrollYProgress, [0, 1], [0, -scrollRange]);
 
   return (
     <section className="w-full bg-transparent relative z-10" id="projects">
@@ -115,9 +134,9 @@ export default function Projects() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 bg-neutral-900/40 p-5 rounded-[32px] border border-white/5"
           >
-            <div className="relative w-full aspect-[4/3] rounded-[32px] overflow-hidden bg-neutral-900 border border-white/5">
+            <div className="relative w-full aspect-[16/10] rounded-[24px] overflow-hidden bg-black">
               <Image 
                 src={project.image} 
                 alt={project.name} 
@@ -127,138 +146,130 @@ export default function Projects() {
             </div>
             
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <span className="text-emerald-500 font-mono font-bold text-lg">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-3xl font-display font-bold text-white">
+                    {project.name}
+                  </h3>
+                  <span className="text-emerald-500 font-mono text-xs uppercase tracking-widest mt-1 block">
+                    {project.category}
+                  </span>
+                </div>
+                <span className="text-neutral-600 font-mono text-xl font-bold">
                   {(i + 1).toString().padStart(2, '0')}
                 </span>
-                <h3 className="text-3xl font-display font-bold text-white">
-                  {project.name}
-                </h3>
               </div>
               
-              <div className="flex items-center gap-3">
-                <span className="px-3 py-1.5 bg-white/5 border border-white/10 text-neutral-300 text-xs font-mono rounded-lg uppercase tracking-widest">
-                  {project.category}
-                </span>
-              </div>
-              
-              <p className="text-neutral-400 text-lg leading-relaxed">
+              <p className="text-neutral-400 text-base leading-relaxed">
                 {project.desc}
               </p>
               
-              <a 
-                href={project.link || project.github} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="inline-flex items-center gap-2 text-emerald-400 font-semibold mt-2"
-              >
-                View Project <ArrowUpRight className="w-5 h-5" />
-              </a>
+              <div className="flex flex-col gap-3 mt-2">
+                <a 
+                  href={project.link !== "#" ? project.link : project.github} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="w-full py-3.5 bg-white text-black text-center rounded-xl font-bold hover:bg-emerald-400 transition-colors flex items-center justify-center gap-2 text-sm"
+                >
+                  Live Demo <ArrowUpRight className="w-4 h-4" />
+                </a>
+                <a 
+                  href={project.github} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="w-full py-3.5 bg-white/5 text-white border border-white/10 text-center rounded-xl font-bold hover:bg-white/10 transition-colors flex items-center justify-center gap-2 text-sm"
+                >
+                  Source Code <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}
       </div>
 
-      {/* DESKTOP LAYOUT (Sticky + Scroll) */}
+      {/* DESKTOP LAYOUT (Horizontal Scroll) */}
       <div 
-        className="hidden lg:flex max-w-[1400px] mx-auto px-12 relative items-start pb-40 pt-20"
-        ref={containerRef}
+        className="hidden lg:block h-[400vh] relative"
+        ref={targetRef}
       >
-        
-        {/* Left Side: Sticky Listings */}
-        <div className="w-[45%] sticky top-[10vh] h-[80vh] flex flex-col justify-center pr-16 z-10">
+        <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
           
-          <h2 className="text-6xl xl:text-7xl font-black font-display tracking-tighter text-white mb-16 relative inline-block w-fit">
-            Featured <br/>
-            <span className="text-emerald-500 relative">
-              Projects
-              <div className="absolute -bottom-2 left-0 right-0">
+          <div className="pl-12 lg:pl-24 mb-16 relative z-10">
+            <h2 className="text-6xl xl:text-7xl font-black font-display tracking-tighter text-white relative inline-block">
+              Featured <span className="text-emerald-500">Projects</span>
+              <div className="absolute -bottom-4 left-0 right-0">
                 <WavyUnderline className="text-emerald-500/70" />
               </div>
-            </span>
-            
-            {/* Ambient glow behind title */}
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-32 h-32 bg-emerald-500/20 blur-[100px] -z-10 rounded-full" />
-          </h2>
+            </h2>
+            <p className="text-neutral-400 mt-8 text-xl max-w-lg leading-relaxed">
+              A selection of my recent work, SaaS platforms, and open-source contributions.
+            </p>
+          </div>
 
-          <div className="relative h-[450px] w-full mt-8">
-            {projects.map((project, index) => {
-              const isActive = activeIndex === index;
-              const isPast = index < activeIndex;
-              
-              return (
-                <div
-                  key={index}
-                  className="absolute inset-0 flex flex-col gap-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                  style={{
-                    opacity: isActive ? 1 : 0,
-                    transform: `translateY(${isActive ? 0 : isPast ? -40 : 40}px)`,
-                    pointerEvents: isActive ? 'auto' : 'none',
-                    visibility: Math.abs(index - activeIndex) > 1 ? 'hidden' : 'visible'
-                  }}
-                >
-                  <div className="flex items-center gap-6">
-                    <span className="text-3xl font-mono font-bold text-emerald-500">
-                      {(index + 1).toString().padStart(2, '0')}
+          <motion.div ref={scrollRef} style={{ x }} className="flex gap-8 pl-12 lg:pl-24 pr-[10vw] w-max">
+            {projects.map((project, i) => (
+              <div 
+                key={i}
+                className="w-[450px] xl:w-[550px] shrink-0 flex flex-col gap-6 bg-[#0a0a0a] p-6 rounded-[32px] border border-white/10 hover:border-emerald-500/30 hover:bg-[#0f0f0f] transition-colors duration-500 group shadow-2xl"
+              >
+                {/* Image */}
+                <div className="w-full aspect-[16/10] rounded-[24px] overflow-hidden relative bg-black">
+                  <Image 
+                    src={project.image} 
+                    alt={project.name} 
+                    fill
+                    className="object-cover object-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+                </div>
+                
+                {/* Info */}
+                <div className="flex flex-col gap-4 flex-1">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-3xl xl:text-4xl font-display font-bold text-white group-hover:text-emerald-400 transition-colors duration-300">
+                        {project.name}
+                      </h3>
+                      <span className="text-emerald-500/80 font-mono text-sm uppercase tracking-widest mt-1 block font-semibold">
+                        {project.category}
+                      </span>
+                    </div>
+                    <span className="text-neutral-700 font-mono text-3xl font-black opacity-50 group-hover:text-emerald-500/30 transition-colors">
+                      {(i + 1).toString().padStart(2, '0')}
                     </span>
-                    <h3 className="text-5xl xl:text-6xl font-display font-bold text-white tracking-tight">
-                      {project.name}
-                    </h3>
                   </div>
                   
-                  <div className="pl-16 pr-8">
-                    <span className="inline-block px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono font-semibold rounded-lg uppercase tracking-widest mb-6">
-                      {project.category}
-                    </span>
-                    <p className="text-neutral-300 text-xl leading-relaxed mb-10">
-                      {project.desc}
-                    </p>
-                    
+                  <p className="text-neutral-400 leading-relaxed min-h-[5rem]">
+                    {project.desc}
+                  </p>
+                  
+                  {/* Links */}
+                  <div className="mt-auto pt-6 flex gap-3">
                     <a 
-                      href={project.link || project.github} 
+                      href={project.link !== "#" ? project.link : project.github} 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="inline-flex items-center gap-2 text-black bg-white hover:bg-emerald-400 px-6 py-3 rounded-full font-bold transition-colors group/btn shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(16,185,129,0.3)]"
+                      className="flex-1 py-3.5 px-4 bg-white text-black text-center rounded-xl font-bold hover:bg-emerald-400 transition-colors flex items-center justify-center gap-2 group/btn"
                     >
-                      View Project
-                      <ArrowUpRight className="w-5 h-5 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      Live Demo 
+                      <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                    </a>
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="flex-1 py-3.5 px-4 bg-white/5 text-white border border-white/10 text-center rounded-xl font-bold hover:bg-white/10 hover:border-white/20 transition-colors flex items-center justify-center gap-2 group/btn2"
+                    >
+                      GitHub 
+                      <ArrowUpRight className="w-4 h-4 group-hover/btn2:translate-x-0.5 group-hover/btn2:-translate-y-0.5 transition-transform" />
                     </a>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-
-
-        {/* Right Side: Scrolling Cards */}
-        <div className="w-[55%] py-[20vh] flex flex-col gap-[30vh]">
-          {projects.map((project, i) => (
-            <div 
-              key={i} 
-              data-index={i} 
-              className="project-card relative w-full aspect-[4/3] xl:aspect-[16/11] rounded-[40px] overflow-hidden shadow-2xl border border-white/10 group bg-neutral-900"
-            >
-              {/* Image Parallax Effect Wrapper */}
-              <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-105">
-                <Image 
-                  src={project.image} 
-                  alt={project.name} 
-                  fill
-                  sizes="(max-width: 1400px) 50vw, 800px"
-                  className="object-cover object-top"
-                />
               </div>
-              
-              {/* Overlays */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
-              
-              {/* Subtle inner shadow for depth */}
-              <div className="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.5)] pointer-events-none rounded-[40px]"></div>
-            </div>
-          ))}
+            ))}
+          </motion.div>
+          
         </div>
-
       </div>
     </section>
   );
