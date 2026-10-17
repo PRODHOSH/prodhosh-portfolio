@@ -500,9 +500,10 @@ export function Process() {
         yPercent: 110, duration: 1.1, ease: "power4.out", stagger: 0.1,
         scrollTrigger: { trigger: ".prc-title", start: "top 85%" },
       });
+      // quick, one-time entrance; the cards always end exactly where the layout puts them
       gsap.from(".prc", {
-        y: 80, opacity: 0, rotate: (i: number) => (i % 2 ? 3 : -3), duration: 1, ease: "power4.out", stagger: 0.12,
-        scrollTrigger: { trigger: ".prcs", start: "top 85%" },
+        y: 36, opacity: 0, rotate: (i: number) => (i % 2 ? 1.5 : -1.5), duration: 0.7, ease: "power3.out", stagger: 0.08,
+        scrollTrigger: { trigger: ".prcs", start: "top 92%", once: true },
       });
     }, root);
     return () => ctx.revert();
