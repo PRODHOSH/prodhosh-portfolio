@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // R3F canvases double-mount under StrictMode in dev and log "unmount a root" errors.
+  reactStrictMode: false,
 };
 
 export default nextConfig;
