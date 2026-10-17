@@ -46,7 +46,7 @@ main { position: relative; overflow-x: clip; }
 /* ---------- loader (just the wordmark) ---------- */
 .loader { position: fixed; inset: 0; z-index: 200; background: var(--pink); display: grid; place-items: center; will-change: transform; }
 .ld-word { display: flex; align-items: baseline; justify-content: center; white-space: nowrap; font-family: var(--f-flare); font-weight: 700; font-size: clamp(44px, 12.5vw, 220px); line-height: 1; color: var(--black); overflow: hidden; padding: .06em .1em; }
-.ld-ch { display: inline-block; will-change: transform; }
+.ld-ch { display: inline-block; will-change: transform; opacity: 0; } /* hidden until the animation starts, so the server-rendered word never flashes first */
 .ld-ch.o { color: var(--orange); }
 .ld-gap { display: inline-block; width: .28em; }
 .loader-curve { position: absolute; left: -10%; right: -10%; top: calc(100% - 1px); height: 14vw; background: var(--pink); border-radius: 0 0 50% 50% / 0 0 100% 100%; }
