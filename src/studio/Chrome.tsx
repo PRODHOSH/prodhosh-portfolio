@@ -5,13 +5,8 @@ import { ArrowUpRight } from "lucide-react";
 import { gsap, reducedMotion, setupGsap } from "./motion";
 import { me } from "./data";
 
-const LINES = ["hey, stranger.", "wait… are you stalking me? 👀", "ok fine. welcome in."];
-
 export function Loader({ onDone }: { onDone: () => void }) {
   const el = useRef<HTMLDivElement>(null);
-  const typed = useRef<HTMLSpanElement>(null);
-  const bar = useRef<HTMLElement>(null);
-  const num = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     setupGsap();
@@ -19,84 +14,43 @@ export function Loader({ onDone }: { onDone: () => void }) {
     const hide = () => { root.style.display = "none"; };
     if (reducedMotion()) { hide(); onDone(); return; }
 
-    const prog = { v: 0 };
-    const renderProg = () => {
-      if (bar.current) bar.current.style.transform = `scaleX(${prog.v / 100})`;
-      if (num.current) num.current.textContent = String(Math.round(prog.v)).padStart(3, "0");
-    };
-
-    // gate: the typing has to finish AND the real assets (fonts + hero photo) have to be ready
-    let climbed = false;
-    let loaded = false;
+    // the wordmark pops in, rests for a beat (and waits for the fonts), then the screen lifts away
+    let played = false;
+    let fontsReady = false;
     let finished = false;
     const finish = () => {
       if (finished) return;
       finished = true;
       window.clearTimeout(hard);
       gsap.timeline({ onComplete: hide })
-        .to(prog, { v: 100, duration: 0.35, ease: "power2.out", onUpdate: renderProg })
-        .to(".loader-type", { yPercent: -120, opacity: 0, duration: 0.6, ease: "power4.in" }, "+=0.35")
-        .to(".loader-meta", { opacity: 0, duration: 0.3 }, "<")
-        .to(root, { yPercent: -112, duration: 1.1, ease: "expo.inOut" }, "-=0.15")
-        .call(onDone, undefined, "-=0.8");
+        .to(".ld-ch", { yPercent: -110, opacity: 0, duration: 0.55, ease: "power4.in", stagger: 0.025 })
+        .to(root, { yPercent: -112, duration: 1, ease: "expo.inOut" }, "-=0.2")
+        .call(onDone, undefined, "-=0.75");
     };
-    const check = () => { if (climbed && loaded) finish(); };
-    const hard = window.setTimeout(() => { climbed = true; loaded = true; finish(); }, 8000);
+    const check = () => { if (played && fontsReady) finish(); };
+    const hard = window.setTimeout(() => { played = true; fontsReady = true; finish(); }, 6000);
 
     Promise.all([
-      document.fonts.load('800 100px "Mdnichrometest Dark"'),
       document.fonts.load('700 100px "Mdnichrometest"'),
-      new Promise<void>((res) => { const i = new Image(); i.onload = () => res(); i.onerror = () => res(); i.src = "/me-cut.webp"; }),
-    ]).catch(() => undefined).then(() => { loaded = true; check(); });
+      document.fonts.load('800 100px "Mdnichrometest Dark"'),
+    ]).catch(() => undefined).then(() => { fontsReady = true; check(); });
 
-    // typewriter: type a line, hold, backspace it, next line (the last line stays).
-    // Timer-driven on purpose: if the page is busy hydrating, it just runs a little slower and never skips letters.
-    let dead = false;
-    const sleep = (ms: number) => new Promise<void>((r) => window.setTimeout(r, ms));
-    const total = LINES.reduce((n, l) => n + Array.from(l).length, 0);
-    let typedCount = 0;
-    const run = async () => {
-      await sleep(350);
-      for (let li = 0; li < LINES.length && !dead; li++) {
-        const chars = Array.from(LINES[li]);
-        for (let c = 1; c <= chars.length && !dead; c++) {
-          if (typed.current) typed.current.textContent = chars.slice(0, c).join("");
-          typedCount++;
-          prog.v = (typedCount / total) * 92;
-          renderProg();
-          await sleep(chars[c - 1] === " " ? 55 : 36);
-        }
-        if (li < LINES.length - 1) {
-          await sleep(li === 0 ? 450 : 700);
-          for (let c = chars.length - 1; c >= 0 && !dead; c--) {
-            if (typed.current) typed.current.textContent = chars.slice(0, c).join("");
-            await sleep(12);
-          }
-          await sleep(120);
-        } else {
-          await sleep(500);
-        }
-      }
-      if (!dead) { climbed = true; check(); }
-    };
-    run();
+    const tl = gsap.timeline({ delay: 0.15, onComplete: () => { played = true; check(); } });
+    tl.fromTo(".ld-ch", { yPercent: 115, opacity: 0, rotate: () => gsap.utils.random(-12, 12) },
+      { yPercent: 0, opacity: 1, rotate: 0, duration: 0.8, stagger: 0.055, ease: "back.out(1.8)" })
+      .to({}, { duration: 0.55 });
 
-    return () => { dead = true; window.clearTimeout(hard); };
+    return () => { window.clearTimeout(hard); tl.kill(); };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div className="loader" ref={el}>
-      <div className="loader-top loader-meta"><span>prodhosh.me</span><span>portfolio · {new Date().getFullYear()}</span></div>
-      <p className="loader-type" aria-label="Welcome to Prodhosh's portfolio">
-        <span ref={typed} />
-        <i className="loader-caret" />
+    <div className="loader" ref={el} aria-label="Prodhosh V S">
+      <p className="ld-word" aria-hidden>
+        {Array.from("PRODHOSH").map((c, i) => <span key={i} className="ld-ch">{c}</span>)}
+        <span className="ld-gap" />
+        {Array.from("VS").map((c, i) => <span key={`v${i}`} className="ld-ch o">{c}</span>)}
       </p>
-      <div className="loader-bottom loader-meta">
-        <span>loading the good stuff</span>
-        <span><span ref={num}>000</span>%</span>
-      </div>
-      <div className="loader-bar"><i ref={bar as React.RefObject<HTMLElement>} /></div>
       <div className="loader-curve" />
     </div>
   );
