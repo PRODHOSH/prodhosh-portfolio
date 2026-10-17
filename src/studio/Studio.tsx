@@ -6,6 +6,7 @@ import { gsap, motion, reducedMotion, ScrollTrigger, setupGsap } from "./motion"
 import { Cursor, Loader, Nav } from "./Chrome";
 import Hero from "./Hero";
 import Contact from "./Contact";
+import Chat from "./Chat";
 import { About, Faq, Footer, Process, Ribbon, Services, Skills, Story, Work } from "./Sections";
 
 export default function Studio() {
@@ -66,6 +67,7 @@ export default function Studio() {
       <Cursor />
       <Nav />
       <Contact />
+      <Chat />
       <main>
         <Hero ready={ready} />
         <Ribbon />

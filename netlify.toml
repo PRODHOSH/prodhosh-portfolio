@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  # Next.js runs through the Netlify Next.js runtime, so the publish dir is ".next" (NOT "build")
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

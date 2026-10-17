@@ -583,3 +583,39 @@ a:hover > .cool-arrow, button:hover > .cool-arrow { transform: translate(.12em, 
 .cert.o img { background: var(--white); padding: 9px; }
 .cert img.wide { width: 78px; height: 54px; padding: 4px 6px; background: transparent; }
 @media (max-width: 900px) { .ct-pill.right { left: auto; right: var(--pad); } }
+
+/* ---------- askPro chat ---------- */
+.chat { position: fixed; right: clamp(14px, 2vw, 28px); bottom: clamp(14px, 2vw, 28px); z-index: 120; display: grid; justify-items: end; gap: 12px; }
+.chat-fab { display: inline-flex; align-items: center; gap: 9px; padding: .85em 1.3em; border-radius: 99px; background: var(--black); color: var(--white); font-weight: 700; font-size: 15px; box-shadow: 0 10px 30px rgba(11, 11, 11, .25); transition: transform .5s var(--ease), background .3s; }
+.chat-fab:hover { background: var(--orange); transform: translateY(-3px) rotate(-2deg); }
+.chat-fab.is-open { padding: .85em; background: var(--orange); }
+.chat-panel { width: min(390px, calc(100vw - 28px)); height: min(580px, calc(100svh - 120px)); display: flex; flex-direction: column; background: var(--bg); border-radius: 28px; overflow: hidden; box-shadow: 0 24px 70px rgba(11, 11, 11, .3); transform-origin: 100% 100%; }
+.chat-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 18px; background: var(--orange); color: var(--white); }
+.chat-head h3 { font-family: var(--f-display); font-weight: 800; font-size: 30px; line-height: 1; text-transform: uppercase; }
+.chat-head p { margin-top: 3px; font-size: 12.5px; font-weight: 600; opacity: .9; display: flex; align-items: center; }
+.chat-head-btns { display: flex; gap: 6px; }
+.chat-head-btns button { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: rgba(253, 248, 245, .2); transition: background .3s; }
+.chat-head-btns button:hover { background: var(--black); }
+.chat-body { flex: 1; overflow-y: auto; padding: 16px 16px 8px; display: flex; flex-direction: column; gap: 10px; overscroll-behavior: contain; }
+.bubble { max-width: 84%; padding: .7em 1em; border-radius: 20px; font-size: 14.5px; line-height: 1.4; font-weight: 500; word-wrap: break-word; }
+.bubble.bot { align-self: flex-start; background: var(--white); border-bottom-left-radius: 6px; }
+.bubble.user { align-self: flex-end; background: var(--black); color: var(--white); border-bottom-right-radius: 6px; }
+.bubble a { color: var(--orange); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; word-break: break-all; }
+.bubble.typing { display: inline-flex; gap: 5px; padding: .9em 1.1em; }
+.bubble.typing span { width: 7px; height: 7px; border-radius: 50%; background: var(--orange); animation: bounce 1s infinite; }
+.bubble.typing span:nth-child(2) { animation-delay: .15s; }
+.bubble.typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes bounce { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-6px); } }
+.chat-chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; }
+.chat-chips button { padding: .5em 1em; border-radius: 99px; background: var(--pink); font-size: 13px; font-weight: 600; transition: background .3s, color .3s, transform .4s var(--ease); }
+.chat-chips button:hover { background: var(--orange); color: var(--white); transform: translateY(-2px) rotate(-1.5deg); }
+.chat-input { display: flex; align-items: center; gap: 6px; margin: 8px 12px 0; padding: 6px 6px 6px 16px; background: var(--white); border-radius: 99px; }
+.chat-input input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 14.5px; font-weight: 500; }
+.chat-input .mic { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--black); transition: background .3s, color .3s; }
+.chat-input .mic:hover { background: var(--pink); }
+.chat-input .mic.on { background: var(--orange); color: var(--white); animation: ping 1.4s infinite; }
+.chat-input .go { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--orange); color: var(--white); transition: transform .4s var(--ease), background .3s; }
+.chat-input .go:hover:not(:disabled) { background: var(--black); transform: rotate(-12deg) scale(1.06); }
+.chat-input .go:disabled { opacity: .4; cursor: not-allowed; }
+.chat-note { padding: 8px 16px 12px; text-align: center; font-size: 11.5px; font-weight: 600; opacity: .55; }
+@media (max-width: 640px) { .chat-fab span { display: none; } .chat-fab { padding: .9em; } }
