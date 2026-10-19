@@ -29,7 +29,7 @@ FREELANCE (this is a big one, mention it when relevant):
 
 EXPERIENCE:
 - Midgreen: Full Stack Developer Intern. Helps businesses replace plastic packaging with better material alternatives. (Sep 2026 - Present)
-- Annexra: Software Engineer Intern. Built the core SaaS website and engineers scalable B2B solutions. (Aug 2026 - Present)
+- Annexra: Chief Technology Officer (CTO) since October 2026, promoted from Software Engineer Intern (Aug - Sep 2026). Built the core SaaS website and owns tech for client projects (D2C e-commerce, internal ERP).
 - Sindra: Next.js Developer Intern. Built an internal OS, a centralized workspace unifying CRM, project management and chat. (Jul 2026 - Sep 2026)
 - EnlightEd: Developer Intern. Production features for an AI-powered adaptive learning platform. (Jun 2026 - Jul 2026)
 - Cloudinary: Cloudinary Creator. Built EcoLens, an award-winning media optimization platform that won their May Mini Hack. (Mar 2026 - Present)

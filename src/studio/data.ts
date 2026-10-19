@@ -106,8 +106,10 @@ export const experience: RoleGroup[] = [
     roles: [
       { title: "Full Stack Developer Intern", org: "Midgreen", when: "Sep 2026 — Now", where: "Remote", logo: "midgreen.png",
         body: "Built across the full stack for Midgreen, a platform that helps businesses find the right sustainable packaging material: the public site, the admin panel and a search-and-matching engine that turns a plain sentence into ranked, explainable results." },
-      { title: "Software Engineer Intern", org: "Annexra", when: "Aug 2026 — Now", where: "Remote", logo: "annexra.png",
-        body: "Build production software for Annexra and its clients: the company website, a full D2C e-commerce platform with Razorpay checkout and an admin panel, and an internal client ERP workspace." },
+      { title: "Chief Technology Officer", org: "Annexra", when: "Oct 2026 — Now", where: "Remote", logo: "annexra.png",
+        body: "Promoted to CTO in October 2026. I now own technology and engineering at Annexra: architecture, delivery and quality across the company site and every client project." },
+      { title: "Software Engineer Intern", org: "Annexra", when: "Aug — Sep 2026", where: "Remote", logo: "annexra.png",
+        body: "Built production software for Annexra and its clients: the company website, a full D2C e-commerce platform with Razorpay checkout and an admin panel, and an internal client ERP workspace." },
       { title: "Next.js Developer Intern", org: "Sindra", when: "Jul — Sep 2026", where: "Remote", logo: "sindra.png",
         body: "Built Sindra Internal OS: one workspace for project management, CRM, internal chat, email and documents, with Supabase auth, role-based access and automated workflows." },
       { title: "Developer Intern", org: "EnlightEd", when: "Jun — Jul 2026", where: "Remote", logo: "enlighted.webp",
