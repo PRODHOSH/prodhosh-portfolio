@@ -130,15 +130,18 @@ main { position: relative; overflow-x: clip; }
 .hero-star { width: 34px; height: 34px; color: var(--orange); }
 
 @media (max-width: 1000px) {
-  .hero .pill.p1, .hero .pill.p4 { display: none; }
+  /* all the tags stay: they drop out of the title and wrap in a tidy row beneath it */
+  .hero-head { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 6px; max-width: 94vw; }
+  .hero-title { flex: 0 0 100%; }
+  .hero .pill { position: static; margin: 0; font-size: 13px; }
+  .hero .pill.p2 { order: 1; } .hero .pill.p1 { order: 2; } .hero .pill.p3 { order: 3; } .hero .pill.p4 { order: 4; }
   .hero-stage { --sh: min(60svh, 640px); }
 }
 @media (max-width: 640px) {
   .hero { padding-top: 110px; }
   .hero-title { font-size: 11.6vw; }
   .hero-title .ln { white-space: nowrap; }
-  .hero .pill.p3 { display: none; }
-  .hero .pill.p2 { left: 8%; top: -22%; }
+  .hero .pill { font-size: 12px; padding: .5em .95em; }
   .hero-stage { --sh: 56svh; }
   .hero-card { width: 30vw; bottom: 3%; }
   .hero-card.l { right: auto; left: 3vw; }
