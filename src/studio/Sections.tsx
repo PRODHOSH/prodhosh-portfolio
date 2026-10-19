@@ -592,26 +592,105 @@ export function Story() {
           </div>
         ))}
       </div>
-      <div className="certs">
+      <CertStack />
+    </section>
+  );
+}
+
+/* ---------- Certifications: a stack of tilted cards that flick through ---------- */
+
+const STACK_ROT = [-2, 4, -6, 7, -8];
+const STACK_TONE = ["tone-o", "tone-w", "tone-b", "tone-p", "tone-w", "tone-o"];
+
+function CertStack() {
+  const root = useRef<HTMLDivElement>(null);
+  const order = useRef(certs.map((_, i) => i));
+  const busy = useRef(false);
+  const paused = useRef(false);
+  const [cur, setCur] = useState(0);
+  const n = certs.length;
+
+  useEffect(() => {
+    setupGsap();
+    const el = root.current!;
+    const cards = Array.from(el.querySelectorAll<HTMLElement>(".cs-card"));
+    const target = (p: number) => ({
+      x: p * 16, y: p * -16, rotate: STACK_ROT[p % STACK_ROT.length], scale: 1 - p * 0.045,
+      opacity: p < 4 ? 1 : 0, zIndex: n - p,
+    });
+    const layout = (animate: boolean) =>
+      order.current.forEach((ci, p) => {
+        if (animate) gsap.to(cards[ci], { ...target(p), duration: 0.7, ease: "power3.out", overwrite: "auto" });
+        else gsap.set(cards[ci], target(p));
+      });
+    layout(false);
+
+    const go = (dir: 1 | -1) => {
+      if (busy.current) return;
+      busy.current = true;
+      const o = order.current;
+      if (dir === 1) {
+        const top = cards[o[0]];
+        order.current = [...o.slice(1), o[0]];
+        gsap.timeline({ onComplete: () => { busy.current = false; } })
+          .to(top, { x: "125%", y: -30, rotate: 18, opacity: 0, duration: 0.5, ease: "power2.in" }, 0)
+          .add(() => { setCur(order.current[0]); layout(true); }, 0.12)
+          .set(top, { ...target(n - 1), x: target(n - 1).x }, 0.55);
+      } else {
+        const last = cards[o[n - 1]];
+        order.current = [o[n - 1], ...o.slice(0, n - 1)];
+        gsap.set(last, { zIndex: n + 1 });
+        gsap.timeline({ onComplete: () => { busy.current = false; } })
+          .fromTo(last, { x: "-125%", rotate: -18, opacity: 0, y: -30, scale: 1 }, { ...target(0), duration: 0.6, ease: "back.out(1.4)" }, 0)
+          .add(() => { setCur(order.current[0]); layout(true); }, 0);
+      }
+    };
+
+    const next = () => go(1);
+    const prev = () => go(-1);
+    el.addEventListener("cs:next", next);
+    el.addEventListener("cs:prev", prev);
+    const timer = reducedMotion() ? 0 : window.setInterval(() => { if (!paused.current) go(1); }, 4800);
+    return () => {
+      window.clearInterval(timer);
+      el.removeEventListener("cs:next", next);
+      el.removeEventListener("cs:prev", prev);
+    };
+  }, [n]);
+
+  const fire = (type: "cs:next" | "cs:prev") => root.current?.dispatchEvent(new Event(type));
+
+  return (
+    <div className="certs" ref={root} onMouseEnter={() => { paused.current = true; }} onMouseLeave={() => { paused.current = false; }}>
+      <div className="cs-left">
         <p className="eyebrow">LICENSES &amp; CERTIFICATIONS</p>
-        <div className="cert-grid">
-          {certs.map((c) => (
-            <div className={`cert ${c.tone}`} key={c.title}>
+        <p className="cs-count" aria-label={`${n} certifications`}>{String(n).padStart(2, "0")}</p>
+        <p className="cs-note">credentials and counting. Cloud, AI and developer tooling, straight from the source.</p>
+        <div className="cs-ctrl">
+          <button onClick={() => fire("cs:prev")} aria-label="Previous certification" data-cursor="PREV"><ArrowUpRight size={20} strokeWidth={2.6} style={{ transform: "rotate(-135deg)" }} /></button>
+          <button onClick={() => fire("cs:next")} aria-label="Next certification" data-cursor="NEXT"><ArrowUpRight size={20} strokeWidth={2.6} style={{ transform: "rotate(45deg)" }} /></button>
+          <span className="cs-pos">{String(cur + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}</span>
+        </div>
+      </div>
+      <div className="cs-stack" aria-live="polite">
+        {certs.map((c, i) => (
+          <article className={`cs-card ${STACK_TONE[i % STACK_TONE.length]}`} key={c.title} onClick={() => fire("cs:next")}>
+            <span className="cs-mark">{String(i + 1).padStart(2, "0")}</span>
+            <div className="cs-logo">
               {c.logo ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img className={"wide" in c && c.wide ? "wide" : ""} src={`/logos/${c.logo}`} alt="" aria-hidden />
               ) : (
-                <span className="cert-mono">A</span>
+                <b>A</b>
               )}
-              <div>
-                <h4>{c.title}</h4>
-                <p>{c.org} · {c.when}</p>
-              </div>
             </div>
-          ))}
-        </div>
+            <h4>{c.title}</h4>
+            <p>{c.org}</p>
+            <span className="cs-date">{c.when}</span>
+          </article>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
 
