@@ -354,7 +354,6 @@ export function Services() {
 
 const INITIAL = 9;
 
-const initials = (n: string) => n.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
 
 // Same technique as the reference: one fat scribble path. A coloured brush grows along it first, then a second copy
 // (used as an SVG mask) uncovers a different section of the page underneath. stroke-width + DrawSVG are tweened together.
@@ -413,7 +412,8 @@ function Card({ p }: { p: Project }) {
       </div>
       <div className="card-info">
         <div className="card-title">
-          <span className="mono">{initials(p.name)}</span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="mono" src={p.logo} alt="" width={46} height={46} loading="lazy" decoding="async" />
           <div>
             <h3>{p.name}</h3>
             <span className="card-cat">{p.cat}</span>

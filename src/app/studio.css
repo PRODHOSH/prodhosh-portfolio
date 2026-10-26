@@ -204,8 +204,8 @@ main { position: relative; overflow-x: clip; }
 .card:hover .card-tag { transform: rotate(3deg) scale(1.06); background: var(--black); }
 .card-info { padding: 16px 4px 0; }
 .card-title { display: flex; align-items: center; gap: 14px; }
-.mono { flex: none; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: var(--pink); color: var(--orange); font-family: var(--f-flare); font-weight: 700; font-size: 16px; letter-spacing: .02em; transition: background .3s, color .3s, transform .5s var(--ease); }
-.card:hover .mono { background: var(--orange); color: var(--white); transform: rotate(-8deg); }
+.mono { flex: none; width: 46px; height: 46px; border-radius: 50%; object-fit: cover; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.08); transition: transform .5s var(--ease); }
+.card:hover .mono { transform: rotate(-8deg) scale(1.06); }
 .card-title > div { flex: 1; min-width: 0; }
 .card-info h3 { font-family: var(--f-display); font-weight: 800; font-size: clamp(26px, 2.2vw, 36px); line-height: .95; text-transform: uppercase; }
 .card-cat { display: block; margin-top: 4px; color: var(--orange); font-weight: 700; font-size: 12.5px; text-transform: uppercase; letter-spacing: .04em; }
