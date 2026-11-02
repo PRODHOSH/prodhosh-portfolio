@@ -648,3 +648,22 @@ a:hover > .cool-arrow, button:hover > .cool-arrow { transform: translate(.12em, 
 .cs-card.tone-b .cs-date { background: rgba(253, 248, 245, .16); }
 .cs-card.tone-p { background: #fcc7b0; color: var(--black); }
 @media (max-width: 900px) { .certs { grid-template-columns: 1fr; } .cs-count { font-size: clamp(96px, 28vw, 180px); } }
+
+/* 404 */
+.nf { min-height: 100svh; background: var(--pink); display: flex; flex-direction: column; align-items: center; padding: 28px var(--pad) 48px; overflow: hidden; }
+.nf-logo { font-family: var(--f-display); font-weight: 800; font-size: 28px; letter-spacing: .01em; color: var(--orange); }
+.nf-body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 14px; }
+.nf-tag { display: inline-flex; align-items: center; gap: 8px; padding: .45em 1em; border-radius: 99px; background: var(--black); color: var(--white); font-size: 13px; font-weight: 600; }
+.nf-code { display: flex; gap: .02em; font-family: var(--f-display); font-weight: 800; font-size: clamp(120px, 30vw, 380px); line-height: .85; color: var(--orange); letter-spacing: -.01em; }
+.nf-code span { display: inline-block; animation: nf-pop .9s var(--ease) both; }
+.nf-code span:nth-child(2) { animation-delay: .12s; }
+.nf-code span:nth-child(3) { animation-delay: .24s; }
+.nf-o { color: var(--black); animation: nf-pop .9s var(--ease) .12s both, nf-spin 7s linear 1.2s infinite; }
+.nf-title { font-family: var(--f-display); font-weight: 800; font-size: clamp(24px, 3.4vw, 44px); text-transform: uppercase; line-height: 1; margin-top: 10px; }
+.nf-sub { max-width: 42ch; opacity: .75; }
+.nf-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 12px; }
+.nf-ghost { display: inline-flex; align-items: center; padding: 1em 1.7em; border-radius: 99px; font-weight: 700; font-size: clamp(15px, 1.3vw, 19px); box-shadow: inset 0 0 0 2px var(--black); transition: transform .4s var(--ease), background .3s, color .3s; }
+.nf-ghost:hover { background: var(--black); color: var(--white); transform: translateY(-3px) rotate(1.5deg); }
+@keyframes nf-pop { from { transform: translateY(40%) rotate(-10deg); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes nf-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .nf-code span, .nf-o { animation: none; } }
