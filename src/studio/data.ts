@@ -60,7 +60,7 @@ export const projects: Project[] = [
     stack: ["Web design", "Frontend", "E-commerce"], live: "https://banyaindia.com", shot: "/shots/banya-t.webp" },
   { name: "Annexra", logo: "/projects/annexra.webp", cat: "Web agency", group: "Websites", tint: "#ffc9b0",
     desc: "Full company website for Annexra. UI/UX, frontend, backend integration, responsive design and SEO, owned end to end.",
-    stack: ["Next.js", "Tailwind", "SEO"], live: "https://annexra.com", code: "https://github.com/PRODHOSH/annexra", shot: "/work/annexra.webp" },
+    stack: ["Next.js", "Tailwind", "SEO"], live: "https://annexra.in", code: "https://github.com/PRODHOSH/annexra", shot: "/shots/annexra-t.webp" },
   { name: "FlashFetch", logo: "/projects/flashfetch.webp", cat: "AI SaaS", group: "AI", tint: "#f9e2e1",
     desc: "RAG document Q&A. Upload PDFs, ask in plain language, get answers grounded with source citations.",
     stack: ["Next.js", "FastAPI", "FAISS", "Groq LLaMA 3"], live: "http://flashfetch.vercel.app", code: "https://github.com/PRODHOSH/rag-document-qa-bot", shot: "/shots/flashfetch-t.webp" },
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "TypeScript", "Cloudinary"], live: "http://ecolens-cloudinary.vercel.app", code: "https://github.com/PRODHOSH/ecolens", shot: "/shots/ecolens-t.webp" },
   { name: "Nallamala House", logo: "/projects/nallamala.webp", cat: "Community platform", group: "Websites", tint: "#f9e2e1",
     desc: "Community platform for Nallamala House, IIT Madras, serving 4,500+ members. I led the frontend.",
-    stack: ["Next.js", "Tailwind", "Community"], live: "https://nallamala.iitbs.org", shot: "/work/nallamala.webp" },
+    stack: ["Next.js", "Tailwind", "Community"], live: "https://nallamala.iitmbs.org", shot: "/shots/nallamala-t.webp" },
   { name: "CodeCrafters", logo: "/projects/codecrafters.webp", cat: "Community website", group: "Websites", tint: "#ffd2b8",
     desc: "Official CodeCrafters platform for IITM BS: responsive interfaces, SEO and secure data collection workflows.",
     stack: ["Next.js", "Tailwind", "SEO"], live: "http://codecrafters.iitmbs.org", shot: "/shots/codecrafters-t.webp" },
@@ -93,7 +93,13 @@ export const projects: Project[] = [
     stack: ["Web design", "Frontend", "Vercel"], live: "http://mathematicsclubvitc.vercel.app", shot: "/shots/mathclub-t.webp" },
   { name: "FlickMood", logo: "/projects/flickmood.webp", cat: "Semantic search", group: "AI", tint: "#f9e2e1",
     desc: "Describe your mood in plain words; vector embeddings find the movie to match.",
-    stack: ["Embeddings", "Next.js", "Vector DB"], code: "https://github.com/PRODHOSH/flickmood", shot: "/work/flickmood.webp" },
+    stack: ["Embeddings", "Next.js", "Vector DB"], live: "https://flickmood.netlify.app", code: "https://github.com/PRODHOSH/ai-movie-recommender", shot: "/shots/flickmood-t.webp" },
+  { name: "Blog", logo: "/projects/blog.webp", cat: "Writing on tech & AI", group: "Websites", tint: "#ffd2b8",
+    desc: "My own blog on tech, AI and building things: full-stack publishing with a custom admin, built and hosted by me.",
+    stack: ["Next.js", "Postgres", "Drizzle"], live: "https://blog.prodhosh.me", code: "https://github.com/PRODHOSH/prodhosh-blog", shot: "/shots/blog-t.webp" },
+  { name: "Quarry UI", logo: "/projects/quarry.webp", cat: "Component library", group: "Open source", tint: "#e7e0f7",
+    desc: "Free React components and full app templates with real motion. Copy one into your project with a single command.",
+    stack: ["React", "Next.js", "Motion"], live: "https://quarry-ui.vercel.app", code: "https://github.com/PRODHOSH/quarry-ui", shot: "/shots/quarry-t.webp" },
 ];
 
 export const filters = ["All", "Websites", "Web apps", "AI", "Software", "Open source"] as const;

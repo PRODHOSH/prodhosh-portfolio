@@ -39,17 +39,18 @@ OPEN SOURCE & COMMUNITIES:
 - GSSoC (GirlScript Summer of Code): Campus Ambassador & contributor. Built a GSSoC Tracker (used by 2500+ people, 101 stars, 4.8/5 rating).
 - EduLinkUp: Project Admin for the OSSfolio open-source platform. Ranked 2nd in their Summer of Code.
 - Nexus Spring of Code: open source contributor.
-- Nallamala House (IIT Madras): website manager, led frontend for a platform serving 4,500+ members. CodeCrafters (IITM BS): council member, WebOps and cybersecurity.
+- Nallamala House (IIT Madras, nallamala.iitmbs.org): website manager, led frontend for a platform serving 4,500+ members. CodeCrafters (IITM BS): council member, WebOps and cybersecurity.
 
 CERTIFICATIONS: Claude Code 101 (Anthropic), AWS Cloud Practitioner, Certified Cloudinary Media Developer Master, Python for Data Science (NPTEL), Supervised Machine Learning (DeepLearning.AI), AI For Everyone (DeepLearning.AI).
 
 PROJECTS:
 - BS Prep: learning platform for IITM BS (bsprep.in), plus the ambassador portal (ambassador.bsprep.in).
-- Annexra: company website for a web agency (annexra.com). Banya: e-commerce storefront (banyaindia.com).
+- Annexra: company website for a web agency (annexra.in). Banya: e-commerce storefront (banyaindia.com).
 - FlashFetch: RAG document Q&A using Groq & FAISS, chat with PDFs with citations (flashfetch.vercel.app).
 - Kivo: privacy-first desktop voice assistant with local LLMs and Whisper.net (kivo.prodhosh.me). Relay: local-first LaTeX PDF + bulk email engine (relay.prodhosh.me). Vector: kanban task OS for students (vector.prodhosh.me).
 - OSS Connect: open-source identity platform. GSSoC Tracker: contributor tracker (gssoc-tracker.vercel.app).
-- EcoLens: AI media optimisation for Cloudinary. FlickMood: semantic movie recommendations from a mood.
+- EcoLens: AI media optimisation for Cloudinary. FlickMood: semantic movie recommendations from a mood (flickmood.netlify.app).
+- Blog: his own blog on tech and AI (blog.prodhosh.me). Quarry UI: free React components and app templates with real motion (quarry-ui.vercel.app).
 - CodeCrafters (codecrafters.iitmbs.org) and the VIT Mathematics Club site (mathematicsclubvitc.vercel.app).
 - Full list is in the work section of this site.
 
