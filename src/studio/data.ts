@@ -134,7 +134,7 @@ export const experience: RoleGroup[] = [
       { title: "Website Committee Volunteer", org: "TechnoVIT Chennai", when: "Aug — Sep 2026", where: "Hybrid", logo: "technovit.png", body: "Contributed to the development and maintenance of the official TechnoVIT'26 website." },
       { title: "Technical Member", org: "ACM Student Chapter VITC", when: "Mar 2026 — Now", where: "VIT Chennai", logo: "acm_logo.png", body: "Leading frontend for chapter events including Server Surfers, with CDN and asset-delivery optimisation." },
       { title: "Web Development Member", org: "AWS Cloud Club VIT Chennai", when: "Mar 2026 — Now", where: "VIT Chennai", logo: "aws_logo.png", body: "Cloud workshops and projects around AWS infrastructure and highly available deployments." },
-      { title: "Council · WebOps & Cybersec", org: "Code Crafters, IITM BS", when: "Dec 2025 — Now", where: "Remote", logo: "codecrafters_logo.jpg", body: "Built and deployed the official CodeCrafters community platform with Next.js and Tailwind, SEO and secure data collection." },
+      { title: "Council · WebOps & Cybersec", org: "Code Crafters, IITM BS", when: "Dec 2025 — Oct 2026", where: "Remote", logo: "codecrafters_logo.jpg", body: "Built and deployed the official CodeCrafters community platform with Next.js and Tailwind, SEO and secure data collection." },
       { title: "AI/ML Member", org: "Microsoft Innovations Club", when: "Oct 2025 — Now", where: "VIT Chennai", logo: "microsoft-club-logo.jpeg", body: "Microsoft-centric AI and ML projects using Azure AI services." },
     ],
   },

@@ -821,6 +821,7 @@ export function Footer() {
           <a href="#experience">Experience</a>
           <a href="#about">About</a>
           <a href={me.resume} target="_blank" rel="noopener noreferrer">Resume</a>
+          <a href="https://blog.prodhosh.me" target="_blank" rel="noopener noreferrer">Blog<ArrowUpRight size={14} strokeWidth={2.4} /></a>
         </nav>
         <nav className="ft-col" aria-label="Social">
           <h4>Elsewhere</h4>

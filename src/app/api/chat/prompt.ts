@@ -39,7 +39,7 @@ OPEN SOURCE & COMMUNITIES:
 - GSSoC (GirlScript Summer of Code): Campus Ambassador & contributor. Built a GSSoC Tracker (used by 2500+ people, 101 stars, 4.8/5 rating).
 - EduLinkUp: Project Admin for the OSSfolio open-source platform. Ranked 2nd in their Summer of Code.
 - Nexus Spring of Code: open source contributor.
-- Nallamala House (IIT Madras, nallamala.iitmbs.org): website manager, led frontend for a platform serving 4,500+ members. CodeCrafters (IITM BS): council member, WebOps and cybersecurity.
+- Nallamala House (IIT Madras, nallamala.iitmbs.org): website manager, led frontend for a platform serving 4,500+ members. CodeCrafters (IITM BS): council member for WebOps and cybersecurity, Dec 2025 - Oct 2026.
 
 CERTIFICATIONS: Claude Code 101 (Anthropic), AWS Cloud Practitioner, Certified Cloudinary Media Developer Master, Python for Data Science (NPTEL), Supervised Machine Learning (DeepLearning.AI), AI For Everyone (DeepLearning.AI).
 
