@@ -42,3 +42,8 @@ next-env.d.ts
 .old-backup
 
 !.env.example
+
+# local tooling and logs
+/dev.log
+/.agents/
+/skills-lock.json
