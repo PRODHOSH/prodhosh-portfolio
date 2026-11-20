@@ -52,4 +52,3 @@ next-env.d.ts
 
 # env files
 !.env.example
-config.bat
