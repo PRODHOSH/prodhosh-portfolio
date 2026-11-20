@@ -4,11 +4,11 @@
   "version": "0.1.0",
   "homepage": "https://PRODHOSH.github.io",
   "scripts": {
-    "build": "node init && react-scripts --openssl-legacy-provider build",
+    "build": "react-scripts --openssl-legacy-provider build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b gh-pages -d build",
     "eject": "react-scripts eject",
-    "start": "node init && react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "test": "react-scripts test"
   },
   "dependencies": {
